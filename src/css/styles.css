@@ -1,0 +1,70 @@
+/* Color Palette based on logo */
+:root {
+  --primary-blue: #1666a9;
+  --accent-teal: #6ec1a6;
+  --background: #ffffff;
+  --text-dark: #133b5c;
+  --text-light: #f4f8fb;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-dark);
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-blue);
+  margin-top: 0;
+}
+
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-teal);
+}
+
+button, .btn {
+  background: var(--primary-blue);
+  color: var(--text-light);
+  border: none;
+  border-radius: 4px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover, .btn:hover {
+  background: var(--accent-teal);
+  color: var(--primary-blue);
+}
+
+/* Accent utility class */
+.accent {
+  color: var(--accent-teal);
+}
+
+/* Card style example */
+.card {
+  background: var(--text-light);
+  border: 1px solid #e0e6ed;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(22, 102, 169, 0.06);
+  padding: 1.5em;
+  margin: 1em 0;
+}
+
+/* Underline style for headings (like the logo) */
+.heading-underline {
+  display: inline-block;
+  border-bottom: 4px solid var(--primary-blue);
+  padding-bottom: 0.2em;
+}
