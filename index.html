@@ -42,152 +42,114 @@
         .hero-section {
             position: relative;
             width: 100%;
-            height: 90vh;
+            height: 100vh;
             min-height: 600px;
             overflow: hidden;
             display: flex;
-            align-items: flex-end;
-            padding-bottom: 5rem;
+            align-items: stretch;
+            background: #000;
         }
         
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        
-        .hero-video {
+        .hero-video-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 1;
         }
         
-        .hero-overlay {
+        .hero-overlay-bar {
             position: absolute;
-            top: 0;
             left: 0;
+            bottom: 0;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to bottom,
-                rgba(0, 0, 0, 0.2) 0%,
-                rgba(0, 0, 0, 0.4) 60%,
-                rgba(0, 0, 0, 0.7) 100%
-            );
-            z-index: 2;
-        }
-        
-        .hero-content {
-            position: relative;
+            background: rgba(30, 30, 30, 0.65);
+            backdrop-filter: blur(8px);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 2.5rem 4vw 2.5rem 4vw;
             z-index: 3;
-            width: 100%;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            min-height: 180px;
         }
         
-        .hero-text-container {
-            max-width: 650px;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            padding: 2.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--teal-primary);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
+        .hero-headline {
+            color: #fff;
+            font-size: 2.8rem;
+            font-weight: 600;
+            line-height: 1.15;
+            max-width: 520px;
+            margin-right: 2vw;
         }
         
-        .hero-text-container:before {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            width: 20px;
-            height: 20px;
-            border-top: 2px solid var(--teal-primary);
-            border-left: 2px solid var(--teal-primary);
-            opacity: 0.7;
-        }
-        
-        .hero-text-container:after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            right: -5px;
-            width: 20px;
-            height: 20px;
-            border-bottom: 2px solid var(--teal-primary);
-            border-right: 2px solid var(--teal-primary);
-            opacity: 0.7;
-        }
-        
-        .hero-title {
-            font-size: 3.2rem;
-            font-weight: 700;
-            line-height: 1.2;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.9);
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        .hero-support {
+            color: #fff;
+            font-size: 1.1rem;
+            max-width: 340px;
+            margin-bottom: 1.2rem;
         }
         
         .hero-cta {
+            margin-top: 0.5rem;
             display: inline-block;
-            background-color: var(--teal-primary);
-            color: #ffffff;
+            background: #004E98;
+            color: #fff;
             font-weight: 600;
-            font-size: 1.1rem;
+            border-radius: 6px;
             padding: 0.9rem 2.2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             border: none;
-            cursor: pointer;
+            font-size: 1.08rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+            outline: none;
         }
         
-        .hero-cta:hover {
-            background-color: var(--teal-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        .hero-cta:hover, .hero-cta:focus {
+            background: #003366;
+            color: #fff;
+            border: 2px solid #003366;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
         }
         
-        @media (max-width: 768px) {
-            .hero-section {
-                height: 80vh;
-                padding-bottom: 2rem;
+        @media (max-width: 900px) {
+            .hero-overlay-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 2rem 5vw;
             }
-            
-            .hero-text-container {
-                padding: 1.5rem;
-                max-width: 100%;
+            .hero-headline {
+                font-size: 2.1rem;
+                margin-bottom: 1.2rem;
+                margin-right: 0;
             }
-            
-            .hero-title {
-                font-size: 2.2rem;
-            }
-            
-            .hero-subtitle {
+            .hero-support {
                 font-size: 1rem;
-                margin-bottom: 1.5rem;
+                margin-bottom: 1rem;
             }
-            
-            .hero-cta {
-                width: 100%;
-                text-align: center;
+        }
+        
+        @media (max-width: 600px) {
+            .main-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.5rem 1rem;
+            }
+            .hero-section {
+                min-height: 400px;
+            }
+            .hero-overlay-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1.2rem 4vw;
+            }
+            .hero-headline {
+                font-size: 1.3rem;
+                margin-bottom: 0.8rem;
+            }
+            .hero-support {
+                font-size: 0.95rem;
             }
         }
         
@@ -402,9 +364,11 @@
         }
         
         .logo {
-            height: 80px;
+            height: 64px;
+            max-width: 220px;
             width: auto;
-            transition: all 0.3s ease;
+            margin-right: 2rem;
+            transition: height 0.2s, max-width 0.2s;
         }
         
         .footer-logo {
@@ -467,281 +431,653 @@
             margin: 4rem 0;
         }
         
-        /* Navigation Styles */
+        /* Minimal Navigation Styles */
         .main-nav {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 0;
-            background-color: var(--white);
-            border-bottom: 1px solid rgba(0, 78, 152, 0.1);
-        }
-        
-        /* Mobile Navigation Styles */
-        .mobile-menu-button {
-            background: transparent;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            background: rgba(30, 30, 30, 0.55);
+            backdrop-filter: blur(12px);
             border: none;
-            cursor: pointer;
-            padding: 0.5rem;
+            box-shadow: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            max-width: 100vw;
+            transition: background 0.2s, backdrop-filter 0.2s;
         }
-        
-        .mobile-menu-button .bar {
-            transition: all 0.3s ease;
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            background: transparent;
+            /* The logo container inherits the nav blur */
         }
-        
-        .mobile-menu-button.active .bar:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+        .logo {
+            height: 64px;
+            max-width: 220px;
+            width: auto;
+            margin-right: 2rem;
+            transition: height 0.2s, max-width 0.2s;
         }
-        
-        .mobile-menu-button.active .bar:nth-child(2) {
-            opacity: 0;
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
-        .mobile-menu-button.active .bar:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
+        .nav-link {
+            color: #fff;
+            font-weight: 400;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            background: none;
+            border: none;
+            border-radius: 0;
+            transition: color 0.2s;
+            position: relative;
         }
-        
-        #mobile-menu {
-            background-color: var(--white);
-            border-bottom: 1px solid rgba(0, 78, 152, 0.1);
+        .nav-link:hover, .nav-link:focus {
+            color: #00A3A3;
         }
-        
-        #mobile-menu a {
-            color: var(--fleet-blue);
-            font-weight: 500;
-            padding: 0.75rem 1rem;
+        .nav-link::after {
+            content: '';
             display: block;
-            transition: all 0.2s ease;
+            width: 0;
+            height: 2px;
+            background: #00A3A3;
+            transition: width 0.2s;
+            position: absolute;
+            left: 0;
+            bottom: 0;
         }
-        
-        #mobile-menu a:hover {
-            color: var(--teal-primary);
-            background-color: rgba(0, 128, 128, 0.05);
+        .nav-link:hover::after, .nav-link:focus::after {
+            width: 100%;
+        }
+        @media (max-width: 900px) {
+            .logo {
+                height: 48px;
+                max-width: 150px;
+            }
+            .nav-link {
+                font-size: 0.95rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .main-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.5rem 1rem;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+                width: 100%;
+            }
+            .logo {
+                height: 40px;
+                max-width: 120px;
+            }
+        }
+        .cta-bottom {
+            background: #004E98;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 0.9rem 2.2rem;
+            border: none;
+            font-size: 1.08rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+            outline: none;
+            display: inline-block;
+        }
+        .cta-bottom:hover, .cta-bottom:focus {
+            background: #003366;
+            color: #fff;
+            border: 2px solid #003366;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+        }
+        .process-section {
+            background: #fff;
+            padding: 5rem 0 4rem 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+        }
+        .process-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            margin-top: 3rem;
+        }
+        .process-card {
+            background: #323336;
+            border-radius: 1.5rem;
+            padding: 2.5rem 2rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 370px;
+            position: relative;
+            box-shadow: none;
+        }
+        .process-number {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            background: #323336;
+            border-radius: 50%;
+            border: 1.5px solid #b0b0b0;
+            color: #fff;
+            font-size: 2.9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            letter-spacing: -1px;
+        }
+        .process-title {
+            color: #fff;
+            font-size: 1.18rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            margin-top: 4.5rem;
+            text-align: left;
+            letter-spacing: -0.5px;
+        }
+        .process-desc {
+            color: #d1d1d1;
+            font-size: 1.01rem;
+            text-align: left;
+            line-height: 1.55;
+            margin-bottom: 0;
+            margin-top: 0;
+            font-weight: 400;
+            min-height: 60px;
+            display: flex;
+            align-items: flex-end;
+        }
+        .process-line {
+            position: absolute;
+            top: 90px; /* 50px (top) + 40px (half of 80px circle) */
+            left: 10%;
+            width: 80%;
+            height: 0;
+            border-top: 1.5px solid #b0b0b0;
+            z-index: 1;
+        }
+        @media (max-width: 1100px) {
+            .process-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 700px) {
+            .process-cards {
+                grid-template-columns: 1fr;
+            }
+            .process-line {
+                display: none;
+            }
+            .process-card {
+                min-height: 260px;
+            }
+            .process-number {
+                width: 56px;
+                height: 56px;
+                font-size: 1.7rem;
+                top: 1.2rem;
+            }
+            .process-title {
+                margin-top: 2.8rem;
+            }
+        }
+        .stats-section {
+            background-color: #fff;
+            padding: 4rem 0;
+            margin: 3rem 0;
+        }
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .stat-card {
+            background-color: #f5f5f5;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            text-align: left;
+            box-shadow: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.6s ease forwards;
+            border: 1px solid #ededed;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #004E98;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        .stat-label {
+            color: #222;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .platform-section {
+            padding: 5rem 0;
+            background-color: #fff;
+        }
+        .platform-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .platform-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        .platform-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #111;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        .platform-title:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -12px;
+            width: 80px;
+            height: 4px;
+            background-color: #008080;
+            border-radius: 2px;
+        }
+        .platform-description {
+            font-size: 1.2rem;
+            color: #444;
+            line-height: 1.6;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        .feature-card {
+            display: flex;
+            align-items: flex-start;
+            animation: fadeInUp 0.6s ease forwards;
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            border: 1px solid #ededed;
+            box-shadow: none;
+        }
+        .feature-icon-container {
+            background-color: rgba(0, 128, 128, 0.08);
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        .feature-icon {
+            color: #004E98;
+            font-size: 1.8rem;
+        }
+        .feature-content {
+            flex: 1;
+        }
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #111;
+            margin-bottom: 1rem;
+        }
+        .feature-description {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.6;
+        }
+        .section-separator {
+            height: 1px;
+            background: #ededed;
+            margin: 3rem 0;
+            max-width: 1200px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .stat-card:nth-child(2), .feature-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .stat-card:nth-child(3), .feature-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        @media (max-width: 768px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .platform-title {
+                font-size: 2rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+        /* Why IVMS? icon color */
+        .benefit-icon {
+            color: #004E98;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            min-width: 1.5em;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .cta-bottom, .hero-cta {
+            background: #004E98;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 0.9rem 2.2rem;
+            border: none;
+            font-size: 1.08rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+            outline: none;
+            display: inline-block;
+        }
+        .cta-bottom:hover, .cta-bottom:focus, .hero-cta:hover, .hero-cta:focus {
+            background: #003366;
+            color: #fff;
+            border: 2px solid #003366;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="bg-white fixed w-full z-50 transition-all duration-300 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-24">
-                <div class="flex items-center">
-                    <a href="/" class="flex items-center">
-                        <img src="src/images/images:ivms-logo.png" alt="IVMS Logo" class="logo">
-                    </a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-4 items-center">
-                    <a href="#solutions" class="nav-link">Solutions</a>
-                    <a href="#technology" class="nav-link">Technology</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                    <button class="glow-button ml-4">
-                        Book a Demo
-                    </button>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden mobile-menu-button">
-                    <span class="bar w-6 h-0.5 bg-[#004E98] mb-1.5"></span>
-                    <span class="bar w-6 h-0.5 bg-[#004E98] mb-1.5"></span>
-                    <span class="bar w-6 h-0.5 bg-[#004E98]"></span>
-                </button>
-            </div>
-
-            <!-- Mobile Menu -->
-            <div id="mobile-menu" class="hidden md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1">
-                    <a href="#solutions" class="nav-link">Solutions</a>
-                    <a href="#technology" class="nav-link">Technology</a>
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                    <button class="w-full mt-2 glow-button">
-                        Book a Demo
-                    </button>
-                </div>
-            </div>
+    <nav class="main-nav">
+        <div class="nav-logo">
+            <a href="/" class="flex items-center">
+                <img src="src/images/images:ivms-logo.png" alt="IVMS Logo" class="logo">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="#solutions" class="nav-link">Solutions</a>
+            <a href="#technology" class="nav-link">Technology</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="hero-background">
-            <video class="hero-video" autoplay loop muted playsinline poster="src/images/hero-poster.jpg">
-                <source src="src/videos/hero-background.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-text-container">
-                <h1 class="hero-title">AI-powered fleet intelligence that predicts, optimises, and protects</h1>
-                <p class="hero-subtitle">Advanced telematics solutions for rental companies, logistics fleets, and transport operators</p>
+        <video class="hero-video-bg" autoplay loop muted playsinline poster="src/images/hero-poster.jpg">
+            <source src="src/videos/hero-background.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay-bar">
+            <div class="hero-headline">
+                AI-powered fleet intelligence<br>that predicts, optimises, and protects.
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: flex-end; min-width: 220px;">
+                <div class="hero-support">
+                    Advanced telematics solutions for rental companies, logistics fleets, and transport operators
+                </div>
                 <a href="#" class="hero-cta">Book a Demo</a>
             </div>
         </div>
     </section>
 
     <!-- Solutions Section -->
-    <section id="solutions" class="py-20 bg-[#0A0A0A]">
+    <section id="solutions" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="section-heading text-white">Our Solutions</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- SpeedSense Card -->
-                <div class="solution-card">
-                    <div class="relative h-48 mb-6 overflow-hidden rounded-lg">
-                        <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="src/images/speedsense-poster.jpg">
-                            <source src="src/videos/speedsense-demo.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <h3>SpeedSense Technology</h3>
-                    <p>Reduce speeding fines by 70-90% with our advanced detection technology</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i>Real-time speed alerts</li>
-                        <li><i class="fas fa-check"></i>Camera location database</li>
-                        <li><i class="fas fa-check"></i>Driver behaviour analysis</li>
+            <div class="mb-12">
+                <h2 class="text-4xl font-bold text-left mb-2" style="letter-spacing:-1px;">Solutions<span style="color:#0066cc;">.</span></h2>
+                <div class="text-lg text-gray-600 mb-8">Build immersive fleet management experiences with AI-powered technology.</div>
+            </div>
+            <!-- Solution Card 1 -->
+            <div class="flex flex-col md:flex-row items-stretch mb-12 bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="md:w-1/2 p-8 flex flex-col justify-center">
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">SpeedSense Technology</h3>
+                    <p class="text-gray-700 mb-4">Reduce speeding fines by 70-90% with our advanced detection technology.</p>
+                    <ul class="mb-6 text-gray-600 list-disc pl-5">
+                        <li>Real-time speed alerts</li>
+                        <li>Camera location database</li>
+                        <li>Driver behaviour analysis</li>
                     </ul>
-                    <a href="#" class="learn-more">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <a href="#" class="inline-block px-6 py-2 border border-black text-black rounded hover:bg-black hover:text-white transition">Learn more</a>
                 </div>
-
-                <!-- Fleet Intelligence Card -->
-                <div class="solution-card">
-                    <div class="relative h-48 mb-6 overflow-hidden rounded-lg">
-                        <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="src/images/fleet-intelligence-poster.jpg">
-                            <source src="src/videos/fleet-intelligence-demo.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <h3>Fleet Intelligence Platform</h3>
-                    <p>Optimise operations with real-time analytics and predictive maintenance</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i>Real-time fleet tracking</li>
-                        <li><i class="fas fa-check"></i>Advanced analytics dashboard</li>
-                        <li><i class="fas fa-check"></i>Route optimisation</li>
-                    </ul>
-                    <a href="#" class="learn-more">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                <div class="md:w-1/2 flex items-center justify-center bg-gray-50" style="min-height:260px;">
+                    <video
+                        src="src/videos/speedsense-demo.mp4"
+                        class="rounded-xl shadow"
+                        style="width:90%;height:200px;object-fit:cover;background:#e5e7eb;"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                    ></video>
                 </div>
-
-                <!-- Vehicle Health Card -->
-                <div class="solution-card">
-                    <div class="relative h-48 mb-6 overflow-hidden rounded-lg">
-                        <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="src/images/vehicle-health-poster.jpg">
-                            <source src="src/videos/vehicle-health-demo.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <h3>Vehicle Health Management</h3>
-                    <p>Extend vehicle lifespan by 20% with predictive maintenance</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i>Predictive maintenance alerts</li>
-                        <li><i class="fas fa-check"></i>Diagnostic trouble code analysis</li>
-                        <li><i class="fas fa-check"></i>Maintenance scheduling</li>
+            </div>
+            <!-- Solution Card 2 -->
+            <div class="flex flex-col md:flex-row items-stretch mb-12 bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="md:w-1/2 p-8 flex flex-col justify-center">
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">Fleet Intelligence Platform</h3>
+                    <p class="text-gray-700 mb-4">Optimise operations with real-time analytics and predictive maintenance.</p>
+                    <ul class="mb-6 text-gray-600 list-disc pl-5">
+                        <li>Real-time fleet tracking</li>
+                        <li>Advanced analytics dashboard</li>
+                        <li>Route optimisation</li>
                     </ul>
-                    <a href="#" class="learn-more">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <a href="#" class="inline-block px-6 py-2 border border-black text-black rounded hover:bg-black hover:text-white transition">Learn more</a>
+                </div>
+                <div class="md:w-1/2 flex items-center justify-center bg-gray-50" style="min-height:260px;">
+                    <video
+                        src="src/videos/fleet-intelligence-demo.mp4"
+                        class="rounded-xl shadow"
+                        style="width:90%;height:200px;object-fit:cover;background:#e5e7eb;"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                    ></video>
+                </div>
+            </div>
+            <!-- Solution Card 3 -->
+            <div class="flex flex-col md:flex-row items-stretch mb-12 bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <div class="md:w-1/2 p-8 flex flex-col justify-center">
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">Vehicle Health Management</h3>
+                    <p class="text-gray-700 mb-4">Extend vehicle lifespan by 20% with predictive maintenance.</p>
+                    <ul class="mb-6 text-gray-600 list-disc pl-5">
+                        <li>Predictive maintenance alerts</li>
+                        <li>Diagnostic trouble code analysis</li>
+                        <li>Maintenance scheduling</li>
+                    </ul>
+                    <a href="#" class="inline-block px-6 py-2 border border-black text-black rounded hover:bg-black hover:text-white transition">Learn more</a>
+                </div>
+                <div class="md:w-1/2 flex items-center justify-center bg-gray-50" style="min-height:260px;">
+                    <video
+                        src="src/videos/vehicle-health-demo.mp4"
+                        class="rounded-xl shadow"
+                        style="width:90%;height:200px;object-fit:cover;background:#e5e7eb;"
+                        autoplay
+                        loop
+                        muted
+                        playsinline
+                    ></video>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="py-20 bg-[#1A1A1A]">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="stat-card">
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">
                     <i class="fas fa-car-crash"></i>
-                    <p class="stat-number">37%</p>
-                    <p>Reduction in Crashes</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-number">37%</div>
+                <div class="stat-label">Reduction in Crashes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
                     <i class="fas fa-tools"></i>
-                    <p class="stat-number">49%</p>
-                    <p>Reduction in Breakdowns</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-number">49%</div>
+                <div class="stat-label">Reduction in Breakdowns</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
                     <i class="fas fa-shield-alt"></i>
-                    <p class="stat-number">88%</p>
-                    <p>Reduction in Vehicle Thefts</p>
+                </div>
+                <div class="stat-number">88%</div>
+                <div class="stat-label">Reduction in Vehicle Thefts</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-separator"></div>
+
+    <!-- Platform Section -->
+    <section class="platform-section">
+        <div class="platform-container">
+            <div class="platform-header">
+                <h2 class="platform-title">One platform to manage your entire fleet</h2>
+                <p class="platform-description">Our comprehensive platform combines cutting-edge technology with powerful analytics to give you complete control over your fleet operations.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-container">
+                        <i class="fas fa-brain feature-icon"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">AI-powered predictive analysis</h3>
+                        <p class="feature-description">Anticipate maintenance needs and optimise routes using advanced AI algorithms</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-container">
+                        <i class="fas fa-bell feature-icon"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Real-time monitoring and alerts</h3>
+                        <p class="feature-description">Instant notifications for critical events and performance metrics</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon-container">
+                        <i class="fas fa-database feature-icon"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3 class="feature-title">Comprehensive data integration</h3>
+                        <p class="feature-description">Seamless integration with your existing systems and workflows</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Platform Overview Section -->
-    <section id="technology" class="py-20 bg-[#0A0A0A]">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-4xl font-bold mb-6 text-white">One platform to manage your entire fleet</h2>
-                    <p class="text-gray-300 mb-8">Our comprehensive platform combines cutting-edge technology with powerful analytics to give you complete control over your fleet operations.</p>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <i class="fas fa-brain text-[#00A3A3] text-2xl mt-1 mr-4"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2 text-white">AI-powered predictive analysis</h3>
-                                <p class="text-gray-300">Anticipate maintenance needs and optimise routes using advanced AI algorithms</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-bell text-[#00A3A3] text-2xl mt-1 mr-4"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2 text-white">Real-time monitoring and alerts</h3>
-                                <p class="text-gray-300">Instant notifications for critical events and performance metrics</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-database text-[#00A3A3] text-2xl mt-1 mr-4"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold mb-2 text-white">Comprehensive data integration</h3>
-                                <p class="text-gray-300">Seamless integration with your existing systems and workflows</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative h-[600px] rounded-lg overflow-hidden">
-                    <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="src/images/platform-poster.jpg">
-                        <source src="src/videos/platform-demo.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
+    <!-- Platform Benefits Section -->
+    <section class="py-20 bg-[#f7f7f9]">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Why IVMS?</h2>
+            <p class="text-gray-700 mb-10 text-lg">
+                Our comprehensive platform combines cutting-edge technology with powerful analytics to give you complete control over your fleet operations.
+            </p>
+            <ul class="space-y-7">
+                <li class="flex items-start">
+                    <i class="fas fa-brain benefit-icon"></i>
+                    <span class="text-gray-800 text-base">
+                        <strong>AI-powered optimization:</strong> Anticipate maintenance needs and optimise routes using advanced AI algorithms.
+                    </span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-bell benefit-icon"></i>
+                    <span class="text-gray-800 text-base">
+                        <strong>Instant notifications:</strong> Get real-time alerts for critical events and performance metrics.
+                    </span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-database benefit-icon"></i>
+                    <span class="text-gray-800 text-base">
+                        <strong>Seamless integration:</strong> Easily connect with your existing systems and workflows.
+                    </span>
+                </li>
+            </ul>
         </div>
     </section>
 
     <!-- How It Works Section -->
-    <section class="py-20 bg-[#1A1A1A]">
+    <section class="process-section">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 text-white">How It Works</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="timeline-step text-center">
-                    <div class="solution-card rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl font-bold text-[#00A3A3]">1</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-white">Install</h3>
-                    <p class="text-gray-300">Quick device installation in vehicles</p>
+            <h2 class="text-4xl font-bold text-center mb-4" style="letter-spacing:-1px;">How It Works<span style="color:#0066cc;">.</span></h2>
+            <div class="text-center text-lg text-gray-600 mb-14">Seamless onboarding and intelligent fleet management in four simple steps.</div>
+            <div class="process-cards">
+                <div class="process-line"></div>
+                <!-- Step 1 -->
+                <div class="process-card">
+                    <div class="process-number">1</div>
+                    <div class="process-title">Install</div>
+                    <div class="process-desc">Quick device installation in vehicles by certified technicians. Minimal downtime, maximum reliability.</div>
                 </div>
-                <div class="timeline-step text-center">
-                    <div class="solution-card rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl font-bold text-[#00A3A3]">2</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-white">Connect</h3>
-                    <p class="text-gray-300">Secure connection to cloud platform</p>
+                <!-- Step 2 -->
+                <div class="process-card">
+                    <div class="process-number">2</div>
+                    <div class="process-title">Connect</div>
+                    <div class="process-desc">Securely connect your fleet to our cloud platform. Encrypted data transfer ensures privacy and compliance.</div>
                 </div>
-                <div class="timeline-step text-center">
-                    <div class="solution-card rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl font-bold text-[#00A3A3]">3</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-white">Monitor</h3>
-                    <p class="text-gray-300">Real-time insights via web or mobile</p>
+                <!-- Step 3 -->
+                <div class="process-card">
+                    <div class="process-number">3</div>
+                    <div class="process-title">Monitor</div>
+                    <div class="process-desc">Access real-time insights and analytics via web or mobile. Monitor vehicle health, driver behavior, and more.</div>
                 </div>
-                <div class="timeline-step text-center">
-                    <div class="solution-card rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl font-bold text-[#00A3A3]">4</span>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-white">Optimise</h3>
-                    <p class="text-gray-300">Implement AI recommendations</p>
+                <!-- Step 4 -->
+                <div class="process-card">
+                    <div class="process-number">4</div>
+                    <div class="process-title">Optimise</div>
+                    <div class="process-desc">Leverage AI-driven recommendations to optimize routes, reduce costs, and improve safety across your fleet.</div>
                 </div>
             </div>
         </div>
@@ -764,11 +1100,40 @@
     <!-- Call to Action Section -->
     <section class="py-20 bg-gradient-to-r from-[#00A3A3] to-[#00D1D1]">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-6 text-white">Ready to transform your fleet management?</h2>
+            <h2 class="text-4xl font-bold mb-6 text-black">Ready to transform your fleet management?</h2>
             <p class="text-xl mb-8 text-white opacity-90">Schedule a 30-minute consultation with our team</p>
-            <button class="bg-white text-[#00A3A3] px-8 py-4 rounded-md text-lg font-semibold hover:bg-opacity-90 transition-all duration-300">
+            <button class="cta-bottom">
                 Book a Demo
             </button>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="flex items-start">
+                    <h2 class="text-5xl font-bold text-gray-900 leading-tight">Let's talk.</h2>
+                </div>
+                <div class="flex items-center">
+                    <div class="text-xl text-gray-700">We're happy to demonstrate the power of our platform.</div>
+                </div>
+                <div class="flex items-center">
+                    <div class="text-sm text-gray-600">To find out how we can help your business increase customer engagement, boost brand loyalty and increase conversions, leave your details and we'll get in touch.</div>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row md:justify-end">
+                <form class="w-full md:w-2/3 lg:w-1/2 space-y-4">
+                    <input type="text" name="first_name" placeholder="First name*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                    <input type="text" name="last_name" placeholder="Last name*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                    <input type="text" name="company" placeholder="Company*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                    <input type="email" name="email" placeholder="E-Mail*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                    <input type="tel" name="phone" placeholder="Phone*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                    <input type="text" name="job_title" placeholder="Job title*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                    <textarea name="message" placeholder="Message*" required rows="4" class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]"></textarea>
+                    <button type="submit" class="cta-bottom w-full md:w-auto mt-2">Submit inquiry</button>
+                </form>
+            </div>
         </div>
     </section>
 
