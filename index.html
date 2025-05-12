@@ -8,40 +8,447 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="src/images/images:ivms-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --teal: #008080;
-            --teal-light: #00A3A3;
-            --blue: #004E98;
-            --blue-light: #3A6EA5;
-            --white: #FDFFF7;
-            --grey: #50514F;
-            --grey-light: #EBEBEB;
+            --primary-blue: #004E98;
+            --secondary-blue: #3A6EA5;
+            --neon-blue: #00F0FF;
+            --electric-blue: #0066FF;
+            --dark-bg: #0A0A0A;
+            --light-bg: #FFFFFF;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text-primary: #FFFFFF;
+            --text-secondary: #A0A0A0;
+            --fleet-blue: #0057A0;
+            --urban-slate: #3A3F45;
+            --teal-primary: #00A3A3;
+            --teal-light: #00D1D1;
+            --teal-dark: #007A7A;
+            --white: #FFFFFF;
+            --black: #000000;
+            --text-dark: #1A1A1A;
+            --text-medium: #333333;
+            --overlay-opacity: 0.85;
         }
         
-        .hero-gradient {
-            background: linear-gradient(135deg, var(--white) 0%, var(--teal-light) 100%);
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+            background-color: var(--white);
+            color: var(--urban-slate);
+            overflow-x: hidden;
         }
         
-        .cta-gradient {
-            background: linear-gradient(135deg, var(--blue) 0%, var(--teal) 100%);
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 5rem;
         }
         
-        .feature-card {
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.2) 0%,
+                rgba(0, 0, 0, 0.4) 60%,
+                rgba(0, 0, 0, 0.7) 100%
+            );
+            z-index: 2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero-text-container {
+            max-width: 650px;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            padding: 2.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--teal-primary);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .hero-text-container:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 20px;
+            height: 20px;
+            border-top: 2px solid var(--teal-primary);
+            border-left: 2px solid var(--teal-primary);
+            opacity: 0.7;
+        }
+        
+        .hero-text-container:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            width: 20px;
+            height: 20px;
+            border-bottom: 2px solid var(--teal-primary);
+            border-right: 2px solid var(--teal-primary);
+            opacity: 0.7;
+        }
+        
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background-color: var(--teal-primary);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.9rem 2.2rem;
+            border-radius: 4px;
+            text-decoration: none;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+            cursor: pointer;
         }
         
-        .feature-card:hover {
+        .hero-cta:hover {
+            background-color: var(--teal-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 80vh;
+                padding-bottom: 2rem;
+            }
+            
+            .hero-text-container {
+                padding: 1.5rem;
+                max-width: 100%;
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .hero-cta {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        .cta-button {
+            background-color: var(--teal-primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 163, 163, 0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background-color: var(--teal-light);
+            box-shadow: 0 6px 12px rgba(0, 163, 163, 0.3);
+        }
+        
+        .cta-button:active {
+            transform: translateY(0);
+            background-color: var(--teal-dark);
+        }
+        
+        .animated-text {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .glow-button {
+            background-color: var(--teal-primary);
+            color: var(--white);
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .glow-button:hover {
+            background-color: var(--teal-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .solution-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--teal-primary);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .solution-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .solution-card h3 {
+            color: var(--fleet-blue);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .solution-card p {
+            color: var(--text-medium);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .solution-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+        
+        .solution-card ul li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            color: var(--text-medium);
+        }
+        
+        .solution-card ul li i {
+            position: absolute;
+            left: 0;
+            color: var(--teal-primary);
+            font-weight: bold;
+        }
+        
+        .solution-card a {
+            color: var(--teal-primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            margin-top: auto;
+            transition: all 0.2s ease;
+        }
+        
+        .solution-card a:hover {
+            color: var(--teal-dark);
+        }
+        
+        .solution-card a i {
+            margin-left: 0.5rem;
+            transition: transform 0.2s ease;
+        }
+        
+        .solution-card a:hover i {
+            transform: translateX(3px);
         }
         
         .stat-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            text-align: center;
             transition: all 0.3s ease;
+            height: 100%;
         }
         
         .stat-card:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        
+        .stat-card i {
+            font-size: 2.5rem;
+            color: var(--fleet-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--teal-primary);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-card p {
+            color: var(--text-medium);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .section-heading {
+            color: var(--fleet-blue);
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-heading:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--teal-primary);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+        
+        .solution-card, .stat-card {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .solution-card:nth-child(2), .stat-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .solution-card:nth-child(3), .stat-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @media (max-width: 768px) {
+            .solution-card, .stat-card {
+                padding: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .solution-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        .logo {
+            height: 80px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-logo {
+            height: 100px;
+            width: auto;
+        }
+        
+        .whatsapp-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            z-index: 100;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-button i {
+            font-size: 28px;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
         }
         
         .client-logo {
@@ -51,29 +458,39 @@
         
         .client-logo:hover {
             filter: grayscale(0%);
+            transform: scale(1.1);
         }
         
-        .process-step {
-            position: relative;
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--electric-blue) 50%, transparent 100%);
+            margin: 4rem 0;
         }
         
-        .process-step:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            right: -50%;
-            width: 100%;
-            height: 2px;
-            background: var(--grey-light);
-            z-index: 1;
+        /* Navigation Styles */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 0;
+            background-color: var(--white);
+            border-bottom: 1px solid rgba(0, 78, 152, 0.1);
         }
         
+        /* Mobile Navigation Styles */
         .mobile-menu-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-menu-button .bar {
             transition: all 0.3s ease;
         }
         
         .mobile-menu-button.active .bar:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
+            transform: rotate(45deg) translate(5px, 5px);
         }
         
         .mobile-menu-button.active .bar:nth-child(2) {
@@ -81,70 +498,67 @@
         }
         
         .mobile-menu-button.active .bar:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
+            transform: rotate(-45deg) translate(5px, -5px);
         }
         
         #mobile-menu {
-            transition: all 0.3s ease;
+            background-color: var(--white);
+            border-bottom: 1px solid rgba(0, 78, 152, 0.1);
         }
         
-        .logo {
-            height: 40px;
-            width: auto;
+        #mobile-menu a {
+            color: var(--fleet-blue);
+            font-weight: 500;
+            padding: 0.75rem 1rem;
+            display: block;
+            transition: all 0.2s ease;
         }
         
-        .footer-logo {
-            height: 50px;
-            width: auto;
-        }
-        
-        .whatsapp-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
+        #mobile-menu a:hover {
+            color: var(--teal-primary);
+            background-color: rgba(0, 128, 128, 0.05);
         }
     </style>
 </head>
-<body class="font-sans bg-[#FDFFF7]">
+<body>
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full z-50">
+    <nav class="bg-white fixed w-full z-50 transition-all duration-300 shadow-sm">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="flex justify-between items-center h-16">
+            <div class="flex justify-between items-center h-24">
                 <div class="flex items-center">
-                    <a href="#" class="flex items-center">
+                    <a href="/" class="flex items-center">
                         <img src="src/images/images:ivms-logo.png" alt="IVMS Logo" class="logo">
                     </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <div class="hidden md:flex space-x-8">
-                    <a href="#solutions" class="text-[#50514F] hover:text-[#004E98]">Solutions</a>
-                    <a href="#technology" class="text-[#50514F] hover:text-[#004E98]">Technology</a>
-                    <a href="#about" class="text-[#50514F] hover:text-[#004E98]">About</a>
-                    <a href="#contact" class="text-[#50514F] hover:text-[#004E98]">Contact</a>
-                    <button class="bg-[#008080] text-white px-6 py-2 rounded-md hover:bg-[#00A3A3] transition-colors">
-                        Book Consultation
+                <div class="hidden md:flex space-x-4 items-center">
+                    <a href="#solutions" class="nav-link">Solutions</a>
+                    <a href="#technology" class="nav-link">Technology</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <button class="glow-button ml-4">
+                        Book a Demo
                     </button>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden mobile-menu-button flex flex-col justify-center items-center w-10 h-10">
-                    <span class="bar w-6 h-0.5 bg-[#50514F] mb-1.5"></span>
-                    <span class="bar w-6 h-0.5 bg-[#50514F] mb-1.5"></span>
-                    <span class="bar w-6 h-0.5 bg-[#50514F]"></span>
+                <button id="mobile-menu-button" class="md:hidden mobile-menu-button">
+                    <span class="bar w-6 h-0.5 bg-[#004E98] mb-1.5"></span>
+                    <span class="bar w-6 h-0.5 bg-[#004E98] mb-1.5"></span>
+                    <span class="bar w-6 h-0.5 bg-[#004E98]"></span>
                 </button>
             </div>
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden">
-                <div class="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg rounded-b-lg">
-                    <a href="#solutions" class="block px-3 py-2 text-[#50514F] hover:text-[#004E98] hover:bg-gray-50 rounded-md">Solutions</a>
-                    <a href="#technology" class="block px-3 py-2 text-[#50514F] hover:text-[#004E98] hover:bg-gray-50 rounded-md">Technology</a>
-                    <a href="#about" class="block px-3 py-2 text-[#50514F] hover:text-[#004E98] hover:bg-gray-50 rounded-md">About</a>
-                    <a href="#contact" class="block px-3 py-2 text-[#50514F] hover:text-[#004E98] hover:bg-gray-50 rounded-md">Contact</a>
-                    <button class="w-full mt-2 bg-[#008080] text-white px-4 py-2 rounded-md hover:bg-[#00A3A3]">
-                        Book Consultation
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#solutions" class="nav-link">Solutions</a>
+                    <a href="#technology" class="nav-link">Technology</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <button class="w-full mt-2 glow-button">
+                        Book a Demo
                     </button>
                 </div>
             </div>
@@ -152,298 +566,274 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-gradient text-[#50514F] pt-32 pb-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6">AI-powered fleet technology that predicts, optimises, and protects</h1>
-                    <p class="text-xl mb-8">Advanced telematics solutions for rental companies, logistics fleets, and transport operators</p>
-                    <button class="bg-[#008080] text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-[#00A3A3] transition-colors">
-                        Book Consultation
-                    </button>
-                    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="text-center">
-                            <p class="text-2xl font-bold text-[#004E98]">10+</p>
-                            <p class="text-sm">Countries</p>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-2xl font-bold text-[#004E98]">20+</p>
-                            <p class="text-sm">Industries</p>
-                        </div>
-                        <div class="text-center">
-                            <p class="text-2xl font-bold text-[#004E98]">1M+</p>
-                            <p class="text-sm">Miles Analysed Daily</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="hidden md:block">
-                    <img src="https://placehold.co/600x400" alt="Fleet Management Dashboard" class="rounded-lg shadow-xl">
-                </div>
+    <section class="hero-section">
+        <div class="hero-background">
+            <video class="hero-video" autoplay loop muted playsinline poster="src/images/hero-poster.jpg">
+                <source src="src/videos/hero-background.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text-container">
+                <h1 class="hero-title">AI-powered fleet intelligence that predicts, optimises, and protects</h1>
+                <p class="hero-subtitle">Advanced telematics solutions for rental companies, logistics fleets, and transport operators</p>
+                <a href="#" class="hero-cta">Book a Demo</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="solutions" class="py-20 bg-white">
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-20 bg-[#0A0A0A]">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Our Solutions</h2>
+            <h2 class="section-heading text-white">Our Solutions</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- SpeedSense Card -->
-                <div class="feature-card bg-white p-8 rounded-lg shadow-md border-t-4 border-[#008080]">
-                    <i class="fas fa-tachometer-alt text-4xl text-[#008080] mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">SpeedSense Technology</h3>
-                    <p class="text-[#50514F] mb-4">UAE-Specific Camera Detection</p>
-                    <p class="text-gray-600 mb-6">Reduce speeding fines by 70-90% with our advanced detection technology for rental fleets</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-[#008080] mr-2"></i>
-                            <span>Real-time speed alerts</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-[#008080] mr-2"></i>
-                            <span>Camera location database</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-[#008080] mr-2"></i>
-                            <span>Driver behaviour analysis</span>
-                        </li>
+                <div class="solution-card">
+                    <div class="relative h-48 mb-6 overflow-hidden rounded-lg">
+                        <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="src/images/speedsense-poster.jpg">
+                            <source src="src/videos/speedsense-demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h3>SpeedSense Technology</h3>
+                    <p>Reduce speeding fines by 70-90% with our advanced detection technology</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Real-time speed alerts</li>
+                        <li><i class="fas fa-check"></i>Camera location database</li>
+                        <li><i class="fas fa-check"></i>Driver behaviour analysis</li>
                     </ul>
-                    <a href="#" class="text-[#008080] hover:text-[#00A3A3] font-semibold">Learn More →</a>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
 
                 <!-- Fleet Intelligence Card -->
-                <div class="feature-card bg-white p-8 rounded-lg shadow-md border-t-4 border-[#004E98]">
-                    <i class="fas fa-chart-line text-4xl text-[#004E98] mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Fleet Intelligence Platform</h3>
-                    <p class="text-[#50514F] mb-4">Complete Fleet Monitoring Solution</p>
-                    <p class="text-gray-600 mb-6">Optimise operations with real-time analytics and predictive maintenance for logistics fleets</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-[#004E98] mr-2"></i>
-                            <span>Real-time fleet tracking</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-[#004E98] mr-2"></i>
-                            <span>Advanced analytics dashboard</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-[#004E98] mr-2"></i>
-                            <span>Route optimisation</span>
-                        </li>
+                <div class="solution-card">
+                    <div class="relative h-48 mb-6 overflow-hidden rounded-lg">
+                        <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="src/images/fleet-intelligence-poster.jpg">
+                            <source src="src/videos/fleet-intelligence-demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h3>Fleet Intelligence Platform</h3>
+                    <p>Optimise operations with real-time analytics and predictive maintenance</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Real-time fleet tracking</li>
+                        <li><i class="fas fa-check"></i>Advanced analytics dashboard</li>
+                        <li><i class="fas fa-check"></i>Route optimisation</li>
                     </ul>
-                    <a href="#" class="text-[#004E98] hover:text-[#3A6EA5] font-semibold">Learn More →</a>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
 
                 <!-- Vehicle Health Card -->
-                <div class="feature-card bg-white p-8 rounded-lg shadow-md border-t-4 border-[#008080]">
-                    <i class="fas fa-car text-4xl text-[#008080] mb-4"></i>
-                    <h3 class="text-xl font-semibold mb-2">Vehicle Health Management</h3>
-                    <p class="text-[#50514F] mb-4">AI-Powered Diagnostics</p>
-                    <p class="text-gray-600 mb-6">Extend vehicle lifespan by 20% with predictive maintenance and advanced diagnostic tools</p>
-                    <ul class="space-y-2 mb-6">
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-[#008080] mr-2"></i>
-                            <span>Predictive maintenance alerts</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-[#008080] mr-2"></i>
-                            <span>Diagnostic trouble code analysis</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-check text-[#008080] mr-2"></i>
-                            <span>Maintenance scheduling</span>
-                        </li>
+                <div class="solution-card">
+                    <div class="relative h-48 mb-6 overflow-hidden rounded-lg">
+                        <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="src/images/vehicle-health-poster.jpg">
+                            <source src="src/videos/vehicle-health-demo.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <h3>Vehicle Health Management</h3>
+                    <p>Extend vehicle lifespan by 20% with predictive maintenance</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i>Predictive maintenance alerts</li>
+                        <li><i class="fas fa-check"></i>Diagnostic trouble code analysis</li>
+                        <li><i class="fas fa-check"></i>Maintenance scheduling</li>
                     </ul>
-                    <a href="#" class="text-[#008080] hover:text-[#00A3A3] font-semibold">Learn More →</a>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section class="py-20 bg-[#EBEBEB]">
+    <!-- Stats Section -->
+    <section class="py-20 bg-[#1A1A1A]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="stat-card bg-white p-8 rounded-lg shadow-md text-center">
-                    <i class="fas fa-car-crash text-4xl text-[#008080] mb-4"></i>
-                    <p class="text-4xl font-bold text-[#004E98] mb-2">37%</p>
-                    <p class="text-[#50514F]">Reduction in Crashes</p>
+                <div class="stat-card">
+                    <i class="fas fa-car-crash"></i>
+                    <p class="stat-number">37%</p>
+                    <p>Reduction in Crashes</p>
                 </div>
-                <div class="stat-card bg-white p-8 rounded-lg shadow-md text-center">
-                    <i class="fas fa-tools text-4xl text-[#008080] mb-4"></i>
-                    <p class="text-4xl font-bold text-[#004E98] mb-2">49%</p>
-                    <p class="text-[#50514F]">Reduction in Breakdowns</p>
+                <div class="stat-card">
+                    <i class="fas fa-tools"></i>
+                    <p class="stat-number">49%</p>
+                    <p>Reduction in Breakdowns</p>
                 </div>
-                <div class="stat-card bg-white p-8 rounded-lg shadow-md text-center">
-                    <i class="fas fa-shield-alt text-4xl text-[#008080] mb-4"></i>
-                    <p class="text-4xl font-bold text-[#004E98] mb-2">88%</p>
-                    <p class="text-[#50514F]">Reduction in Vehicle Thefts</p>
+                <div class="stat-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <p class="stat-number">88%</p>
+                    <p>Reduction in Vehicle Thefts</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technology Overview Section -->
-    <section id="technology" class="py-20 bg-white">
+    <!-- Platform Overview Section -->
+    <section id="technology" class="py-20 bg-[#0A0A0A]">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-3xl font-bold mb-6">One platform to manage your entire fleet</h2>
-                    <p class="text-gray-600 mb-8">Our comprehensive platform combines cutting-edge technology with powerful analytics to give you complete control over your fleet operations.</p>
-                    <div class="space-y-4">
+                    <h2 class="text-4xl font-bold mb-6 text-white">One platform to manage your entire fleet</h2>
+                    <p class="text-gray-300 mb-8">Our comprehensive platform combines cutting-edge technology with powerful analytics to give you complete control over your fleet operations.</p>
+                    <div class="space-y-6">
                         <div class="flex items-start">
-                            <i class="fas fa-brain text-[#008080] text-xl mt-1 mr-4"></i>
+                            <i class="fas fa-brain text-[#00A3A3] text-2xl mt-1 mr-4"></i>
                             <div>
-                                <h3 class="font-semibold mb-1">AI-powered predictive analysis</h3>
-                                <p class="text-gray-600">Anticipate maintenance needs and optimise routes using advanced AI algorithms</p>
+                                <h3 class="text-xl font-semibold mb-2 text-white">AI-powered predictive analysis</h3>
+                                <p class="text-gray-300">Anticipate maintenance needs and optimise routes using advanced AI algorithms</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-bell text-[#008080] text-xl mt-1 mr-4"></i>
+                            <i class="fas fa-bell text-[#00A3A3] text-2xl mt-1 mr-4"></i>
                             <div>
-                                <h3 class="font-semibold mb-1">Real-time monitoring and alerts</h3>
-                                <p class="text-gray-600">Instant notifications for critical events and performance metrics</p>
+                                <h3 class="text-xl font-semibold mb-2 text-white">Real-time monitoring and alerts</h3>
+                                <p class="text-gray-300">Instant notifications for critical events and performance metrics</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <i class="fas fa-database text-[#008080] text-xl mt-1 mr-4"></i>
+                            <i class="fas fa-database text-[#00A3A3] text-2xl mt-1 mr-4"></i>
                             <div>
-                                <h3 class="font-semibold mb-1">Comprehensive data integration</h3>
-                                <p class="text-gray-600">Seamless integration with your existing systems and workflows</p>
+                                <h3 class="text-xl font-semibold mb-2 text-white">Comprehensive data integration</h3>
+                                <p class="text-gray-300">Seamless integration with your existing systems and workflows</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="hidden md:block">
-                    <img src="https://placehold.co/600x400" alt="IVMS Dashboard" class="rounded-lg shadow-xl">
+                <div class="relative h-[600px] rounded-lg overflow-hidden">
+                    <video class="w-full h-full object-cover" autoplay muted loop playsinline poster="src/images/platform-poster.jpg">
+                        <source src="src/videos/platform-demo.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- How It Works Section -->
-    <section class="py-20 bg-[#EBEBEB]">
+    <section class="py-20 bg-[#1A1A1A]">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+            <h2 class="text-4xl font-bold text-center mb-16 text-white">How It Works</h2>
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="process-step text-center">
-                    <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-md">
-                        <span class="text-2xl font-bold text-[#008080]">1</span>
+                <div class="timeline-step text-center">
+                    <div class="solution-card rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-[#00A3A3]">1</span>
                     </div>
-                    <h3 class="font-semibold mb-2">Install</h3>
-                    <p class="text-gray-600">Quick device installation in vehicles</p>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Install</h3>
+                    <p class="text-gray-300">Quick device installation in vehicles</p>
                 </div>
-                <div class="process-step text-center">
-                    <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-md">
-                        <span class="text-2xl font-bold text-[#008080]">2</span>
+                <div class="timeline-step text-center">
+                    <div class="solution-card rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-[#00A3A3]">2</span>
                     </div>
-                    <h3 class="font-semibold mb-2">Connect</h3>
-                    <p class="text-gray-600">Secure connection to cloud platform</p>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Connect</h3>
+                    <p class="text-gray-300">Secure connection to cloud platform</p>
                 </div>
-                <div class="process-step text-center">
-                    <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-md">
-                        <span class="text-2xl font-bold text-[#008080]">3</span>
+                <div class="timeline-step text-center">
+                    <div class="solution-card rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-[#00A3A3]">3</span>
                     </div>
-                    <h3 class="font-semibold mb-2">Monitor</h3>
-                    <p class="text-gray-600">Real-time insights via web or mobile</p>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Monitor</h3>
+                    <p class="text-gray-300">Real-time insights via web or mobile</p>
                 </div>
-                <div class="process-step text-center">
-                    <div class="bg-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 shadow-md">
-                        <span class="text-2xl font-bold text-[#008080]">4</span>
+                <div class="timeline-step text-center">
+                    <div class="solution-card rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl font-bold text-[#00A3A3]">4</span>
                     </div>
-                    <h3 class="font-semibold mb-2">Optimise</h3>
-                    <p class="text-gray-600">Implement AI recommendations</p>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Optimise</h3>
+                    <p class="text-gray-300">Implement AI recommendations</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Client Logo Section -->
-    <section class="py-20 bg-white">
+    <section class="py-20 bg-[#0A0A0A]">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Trusted by industry leaders</h2>
+            <h2 class="text-4xl font-bold text-center mb-16">Trusted by industry leaders</h2>
             <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-                <img src="https://placehold.co/200x100" alt="Client Logo" class="client-logo">
-                <img src="https://placehold.co/200x100" alt="Client Logo" class="client-logo">
-                <img src="https://placehold.co/200x100" alt="Client Logo" class="client-logo">
-                <img src="https://placehold.co/200x100" alt="Client Logo" class="client-logo">
-                <img src="https://placehold.co/200x100" alt="Client Logo" class="client-logo">
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonial Section -->
-    <section class="py-20 bg-[#EBEBEB]">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="bg-white p-8 rounded-lg shadow-md max-w-3xl mx-auto">
-                <div class="flex items-center mb-6">
-                    <img src="https://placehold.co/100x100" alt="Client" class="w-16 h-16 rounded-full mr-4">
-                    <div>
-                        <h3 class="font-semibold">John Smith</h3>
-                        <p class="text-gray-600">Fleet Manager, Global Logistics</p>
-                    </div>
-                </div>
-                <blockquote class="text-xl text-[#50514F] italic">
-                    "IVMS has transformed our fleet operations. The predictive maintenance features alone have saved us thousands in repair costs."
-                </blockquote>
+                <img src="src/images/client1.png" alt="Client Logo" class="client-logo w-full h-20 object-contain">
+                <img src="src/images/client2.png" alt="Client Logo" class="client-logo w-full h-20 object-contain">
+                <img src="src/images/client3.png" alt="Client Logo" class="client-logo w-full h-20 object-contain">
+                <img src="src/images/client4.png" alt="Client Logo" class="client-logo w-full h-20 object-contain">
+                <img src="src/images/client5.png" alt="Client Logo" class="client-logo w-full h-20 object-contain">
             </div>
         </div>
     </section>
 
     <!-- Call to Action Section -->
-    <section class="cta-gradient text-white py-20">
+    <section class="py-20 bg-gradient-to-r from-[#00A3A3] to-[#00D1D1]">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Ready to transform your fleet management?</h2>
-            <p class="text-xl mb-8">Schedule a 30-minute consultation with our team</p>
-            <button class="bg-white text-[#008080] px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 transition-colors">
-                Book Consultation
+            <h2 class="text-4xl font-bold mb-6 text-white">Ready to transform your fleet management?</h2>
+            <p class="text-xl mb-8 text-white opacity-90">Schedule a 30-minute consultation with our team</p>
+            <button class="bg-white text-[#00A3A3] px-8 py-4 rounded-md text-lg font-semibold hover:bg-opacity-90 transition-all duration-300">
+                Book a Demo
             </button>
-            <a href="#" class="block mt-4 text-white hover:text-gray-200">Learn More</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#50514F] text-white py-12">
+    <footer class="bg-[#0A0A0A] text-white py-12">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <img src="src/images/images:ivms-logo.png" alt="IVMS Logo" class="footer-logo mb-4">
-                    <p class="text-gray-400 mb-4">Salem Ahmad Abdulla bin Dasmal Al Suwaidi Building, Office 2 – B 29, Al Qouz 1, Dubai, UAE</p>
+                    <p class="text-gray-400 mb-4">Dubai, UAE</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <h4 class="font-semibold mb-4 text-white">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#solutions" class="text-gray-400 hover:text-[#FDFFF7]">Solutions</a></li>
-                        <li><a href="#technology" class="text-gray-400 hover:text-[#FDFFF7]">Technology</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-[#FDFFF7]">About</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-[#FDFFF7]">Contact</a></li>
+                        <li><a href="#solutions" class="text-gray-400 hover:text-[#00A3A3] transition-colors">Solutions</a></li>
+                        <li><a href="#technology" class="text-gray-400 hover:text-[#00A3A3] transition-colors">Technology</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-[#00A3A3] transition-colors">About</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-[#00A3A3] transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <h4 class="font-semibold mb-4 text-white">Contact</h4>
                     <ul class="space-y-2">
-                        <li class="text-gray-400">Phone: +971 52 767 8899</li>
-                        <li class="text-gray-400">Email: info@ivmsgroup.com</li>
+                        <li class="text-gray-400">Phone: <a href="tel:+971585994323" class="hover:text-[#00A3A3] transition-colors">+971 58 599 4323</a></li>
+                        <li class="text-gray-400">Email: <a href="mailto:info@ivmsgroup.com" class="hover:text-[#00A3A3] transition-colors">info@ivmsgroup.com</a></li>
                     </ul>
                     <div class="mt-4 flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-[#FDFFF7]"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-[#FDFFF7]"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-[#FDFFF7]"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-[#00A3A3] transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-[#00A3A3] transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-[#00A3A3] transition-colors"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
                 <p>&copy; 2024 IVMS Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/971527678899" class="whatsapp-button bg-[#25D366] text-white px-6 py-3 rounded-full shadow-lg hover:bg-[#128C7E] transition-colors">
-        <i class="fab fa-whatsapp mr-2"></i>
-        Chat Now
+    <a href="https://wa.me/971585994323" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="src/js/main.js"></script>
+    <script>
+        // Video pause on scroll for better performance
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroVideo = document.querySelector('.hero-video');
+            const heroSection = document.querySelector('.hero-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        heroVideo.play();
+                    } else {
+                        heroVideo.pause();
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            if (heroSection) {
+                observer.observe(heroSection);
+            }
+        });
+    </script>
 </body>
 </html>
