@@ -11,20 +11,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #004E98;
-            --secondary-blue: #3A6EA5;
-            --neon-blue: #00F0FF;
-            --electric-blue: #0066FF;
-            --dark-bg: #0A0A0A;
-            --light-bg: #FFFFFF;
+            --primary-blue: #004E98;      /* Main brand blue - Use for primary CTAs, headings */
+            --secondary-blue: #3A6EA5;    /* Secondary blue - Use for hover states */
+            --teal-primary: #00A3A3;      /* Primary teal - Use for accents, icons */
+            --teal-light: #00D1D1;        /* Light teal - Use for hover states */
+            --teal-dark: #007A7A;         /* Dark teal - Use for active states */
+            --dark-bg: #0A0A0A;           /* Dark background - Use for footer, dark sections */
+            --light-bg: #FFFFFF;          /* Light background - Use for main background */
+            --text-primary: #1A1A1A;      /* Primary text - Use for main content */
+            --text-secondary: #444444;    /* Secondary text - Use for supporting content */
+            --text-light: #FFFFFF;        /* Light text - Use for dark backgrounds */
+            --text-muted: #666666;        /* Muted text - Use for less important content */
+            --border-light: #EDEDED;      /* Light border - Use for subtle separators */
+            --overlay-dark: rgba(30, 30, 30, 0.65); /* Dark overlay - Use for hero section */
             --card-bg: rgba(255, 255, 255, 0.05);
-            --text-primary: #FFFFFF;
-            --text-secondary: #A0A0A0;
             --fleet-blue: #0057A0;
             --urban-slate: #3A3F45;
-            --teal-primary: #00A3A3;
-            --teal-light: #00D1D1;
-            --teal-dark: #007A7A;
             --white: #FFFFFF;
             --black: #000000;
             --text-dark: #1A1A1A;
@@ -75,6 +77,17 @@
             min-height: 180px;
         }
         
+        .hero-container-align {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        
         .hero-headline {
             color: #fff;
             font-size: 2.8rem;
@@ -91,26 +104,24 @@
             margin-bottom: 1.2rem;
         }
         
-        .hero-cta {
-            margin-top: 0.5rem;
-            display: inline-block;
-            background: #004E98;
-            color: #fff;
+        .hero-cta, .cta-bottom {
+            background: var(--primary-blue);
+            color: var(--text-light);
             font-weight: 600;
             border-radius: 6px;
             padding: 0.9rem 2.2rem;
             border: none;
             font-size: 1.08rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-            transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
-            outline: none;
+            box-shadow: 0 4px 16px rgba(0, 78, 152, 0.15);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            min-width: 120px;
         }
         
-        .hero-cta:hover, .hero-cta:focus {
-            background: #003366;
-            color: #fff;
-            border: 2px solid #003366;
-            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+        .hero-cta:hover, .cta-bottom:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 78, 152, 0.25);
         }
         
         @media (max-width: 900px) {
@@ -118,6 +129,10 @@
                 flex-direction: column;
                 align-items: flex-start;
                 padding: 2rem 5vw;
+            }
+            .hero-container-align {
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
             .hero-headline {
                 font-size: 2.1rem;
@@ -150,6 +165,13 @@
             }
             .hero-support {
                 font-size: 0.95rem;
+            }
+            .hero-cta, .cta-bottom {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.98rem;
+                min-width: 100px;
+                text-align: center;
+                white-space: nowrap;
             }
         }
         
@@ -206,16 +228,10 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
         
-        .solution-card {
-            background-color: var(--white);
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            padding: 2rem;
-            height: 100%;
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--teal-primary);
-            display: flex;
-            flex-direction: column;
+        .solution-card, .stat-card {
+            background: var(--light-bg);
+            border: 1px solid var(--border-light);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
         }
         
         .solution-card:hover {
@@ -295,7 +311,7 @@
         
         .stat-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
         }
         
         .stat-card i {
@@ -319,7 +335,7 @@
         }
         
         .section-heading {
-            color: var(--fleet-blue);
+            color: var(--text-primary);
             font-size: 2.5rem;
             font-weight: 700;
             text-align: center;
@@ -350,8 +366,9 @@
         }
         
         @media (max-width: 768px) {
-            .solution-card, .stat-card {
-                padding: 1.5rem;
+            .solution-card {
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             }
             
             .stat-number {
@@ -427,7 +444,7 @@
         
         .section-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent 0%, var(--electric-blue) 50%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, var(--teal-primary) 50%, transparent 100%);
             margin: 4rem 0;
         }
         
@@ -469,17 +486,22 @@
         }
         .nav-link {
             color: #fff;
-            font-weight: 400;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 0.5rem 1.2rem;
             background: none;
             border: none;
-            border-radius: 0;
-            transition: color 0.2s;
+            border-radius: 6px;
+            transition: all 0.3s ease;
             position: relative;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
         }
         .nav-link:hover, .nav-link:focus {
-            color: #00A3A3;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
         }
         .nav-link::after {
             content: '';
@@ -487,13 +509,14 @@
             width: 0;
             height: 2px;
             background: #00A3A3;
-            transition: width 0.2s;
+            transition: width 0.3s ease;
             position: absolute;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             bottom: 0;
         }
         .nav-link:hover::after, .nav-link:focus::after {
-            width: 100%;
+            width: 70%;
         }
         @media (max-width: 900px) {
             .logo {
@@ -522,23 +545,22 @@
             }
         }
         .cta-bottom {
-            background: #004E98;
-            color: #fff;
+            background: var(--primary-blue);
+            color: var(--text-light);
             font-weight: 600;
             border-radius: 6px;
             padding: 0.9rem 2.2rem;
             border: none;
             font-size: 1.08rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-            transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+            box-shadow: 0 4px 16px rgba(0, 78, 152, 0.15);
+            transition: all 0.2s ease;
             outline: none;
             display: inline-block;
         }
         .cta-bottom:hover, .cta-bottom:focus {
-            background: #003366;
-            color: #fff;
-            border: 2px solid #003366;
-            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 78, 152, 0.25);
         }
         .process-section {
             background: #fff;
@@ -650,17 +672,29 @@
             margin: 0 auto;
             padding: 0 2rem;
         }
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        .stat-image {
+            margin-bottom: -1rem;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+        }
         .stat-card {
             background-color: #f5f5f5;
-            border-radius: 12px;
+            border-radius: 0 0 12px 12px;
             padding: 2.5rem 2rem;
             text-align: left;
             box-shadow: none;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            animation: fadeInUp 0.6s ease forwards;
             border: 1px solid #ededed;
+            border-top: none;
         }
         .stat-card:hover {
             transform: translateY(-5px);
@@ -669,7 +703,7 @@
         .stat-icon {
             font-size: 2rem;
             margin-bottom: 1.5rem;
-            color: #004E98;
+            color: var(--teal-primary);
         }
         .stat-number {
             font-size: 2.5rem;
@@ -700,7 +734,7 @@
         .platform-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #111;
+            color: var(--text-primary);
             margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
@@ -718,7 +752,7 @@
         }
         .platform-description {
             font-size: 1.2rem;
-            color: #444;
+            color: var(--text-secondary);
             line-height: 1.6;
         }
         .features-grid {
@@ -731,10 +765,10 @@
             display: flex;
             align-items: flex-start;
             animation: fadeInUp 0.6s ease forwards;
-            background: #f5f5f5;
+            background: var(--light-bg);
             border-radius: 12px;
             padding: 2rem 1.5rem;
-            border: 1px solid #ededed;
+            border: 1px solid var(--border-light);
             box-shadow: none;
         }
         .feature-icon-container {
@@ -749,7 +783,7 @@
             flex-shrink: 0;
         }
         .feature-icon {
-            color: #004E98;
+            color: var(--primary-blue) !important;
             font-size: 1.8rem;
         }
         .feature-content {
@@ -758,12 +792,12 @@
         .feature-title {
             font-size: 1.3rem;
             font-weight: 600;
-            color: #111;
+            color: var(--text-primary);
             margin-bottom: 1rem;
         }
         .feature-description {
             font-size: 1rem;
-            color: #444;
+            color: var(--text-secondary);
             line-height: 1.6;
         }
         .section-separator {
@@ -806,31 +840,123 @@
         }
         /* Why IVMS? icon color */
         .benefit-icon {
-            color: #004E98;
+            color: var(--primary-blue) !important;
             font-size: 1.5rem;
             margin-right: 1rem;
             min-width: 1.5em;
             display: inline-block;
             vertical-align: middle;
         }
-        .cta-bottom, .hero-cta {
-            background: #004E98;
-            color: #fff;
-            font-weight: 600;
-            border-radius: 6px;
-            padding: 0.9rem 2.2rem;
-            border: none;
-            font-size: 1.08rem;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-            transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
-            outline: none;
-            display: inline-block;
+        .footer-heading {
+            color: #111 !important;
         }
-        .cta-bottom:hover, .cta-bottom:focus, .hero-cta:hover, .hero-cta:focus {
-            background: #003366;
-            color: #fff;
-            border: 2px solid #003366;
-            box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+        .footer-text, .footer-link {
+            color: #444 !important;
+        }
+        .footer-link:hover {
+            color: #00A3A3 !important;
+        }
+        .stats-section-london {
+            background: #fff;
+            padding: 3.5rem 0 0.5rem 0; /* More space above */
+        }
+        .stats-intro-london-flex {
+            max-width: 1200px;
+            margin: 0 auto 2.5rem auto;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 2.5rem;
+            padding: 0 1.5rem;
+        }
+        .stats-intro-london-heading-enterprise {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -1px;
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            margin-bottom: 0.2rem;
+            line-height: 1.15;
+        }
+        .stats-intro-london-desc-enterprise {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            line-height: 1.5;
+            max-width: 700px;
+            margin-top: 0.1rem;
+            font-weight: 400;
+        }
+        .stats-london-container-enterprise {
+            display: flex;
+            flex-direction: row;
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+        @media (max-width: 1100px) {
+            .stats-london-container-enterprise {
+                gap: 1.2rem;
+            }
+        }
+        @media (max-width: 900px) {
+            .stats-intro-london-flex {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.2rem;
+            }
+            .stats-intro-london-heading-enterprise {
+                font-size: 1.5rem;
+                max-width: 100%;
+            }
+            .stats-intro-london-desc-enterprise {
+                font-size: 1rem;
+                max-width: 100%;
+            }
+            .stats-london-container-enterprise {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+            .stat-london {
+                max-width: 95vw;
+            }
+        }
+        .stat-london-img-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e5e7eb;
+            color: #444;
+            font-size: 1.3rem;
+            font-weight: 600;
+            width: 100%;
+            max-width: 320px;
+            height: 180px;
+            border-radius: 18px;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 8px rgba(30,30,30,0.07);
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+        .stat-london-img {
+            width: 320px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 8px rgba(30,30,30,0.07);
+            display: block;
+        }
+        @media (max-width: 1100px) {
+            .stat-london-img {
+                width: 100%;
+                max-width: 320px;
+                height: 180px;
+            }
         }
     </style>
 </head>
@@ -841,7 +967,7 @@
             <a href="/" class="flex items-center">
                 <img src="src/images/images:ivms-logo.png" alt="IVMS Logo" class="logo">
             </a>
-        </div>
+                </div>
         <div class="nav-links">
             <a href="#solutions" class="nav-link">Solutions</a>
             <a href="#technology" class="nav-link">Technology</a>
@@ -856,14 +982,42 @@
             <source src="src/videos/hero-background.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay-bar">
-            <div class="hero-headline">
-                AI-powered fleet intelligence<br>that predicts, optimises, and protects.
-            </div>
-            <div style="display: flex; flex-direction: column; align-items: flex-end; min-width: 220px;">
-                <div class="hero-support">
-                    Advanced telematics solutions for rental companies, logistics fleets, and transport operators
+            <div class="max-w-7xl mx-auto px-4 w-full flex flex-col items-start justify-center">
+                <div class="hero-headline" style="text-align:left;">
+                    Intelligent Fleet Management<br>Powered by Advanced AI
                 </div>
-                <a href="#" class="hero-cta">Book a Demo</a>
+                <div class="hero-support" style="text-align:left;">
+                    Transform your fleet operations with real-time monitoring, predictive analytics, and automated optimisation
+                </div>
+            </div>
+            <a href="#" class="hero-cta">Book a Demo</a>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section-london">
+        <div class="max-w-7xl mx-auto px-4 mb-10">
+            <h2 class="text-4xl font-bold text-left mb-2" style="letter-spacing:-1px; color: var(--text-primary);">Transform your fleet operations</h2>
+            <div class="text-lg text-gray-600 mb-8" style="max-width:700px;">Our intelligent fleet management platform empowers your business to reduce costs, improve efficiency, and deliver outstanding service. Harness real-time data, predictive analytics, and advanced optimisation tools to drive measurable results across your entire fleet.</div>
+        </div>
+        <div class="stats-london-container stats-london-container-enterprise">
+            <div class="stat-london">
+                <img src="src/images/stat1.jpg" alt="Stat 1" class="stat-london-img">
+                <div class="stat-london-percent" style="color:var(--primary-blue);">35%</div>
+                <div class="stat-london-desc">reduction in fuel costs achieved through advanced route optimisation.</div>
+                <div class="stat-london-source">Fleet News</div>
+            </div>
+            <div class="stat-london">
+                <img src="src/images/stat2.jpg" alt="Stat 2" class="stat-london-img">
+                <div class="stat-london-percent" style="color:var(--primary-blue);">50%</div>
+                <div class="stat-london-desc">fewer maintenance incidents with predictive analytics and real-time monitoring.</div>
+                <div class="stat-london-source">Telematics Today</div>
+            </div>
+            <div class="stat-london">
+                <img src="src/images/stat3.jpg" alt="Stat 3" class="stat-london-img">
+                <div class="stat-london-percent" style="color:var(--primary-blue);">70%</div>
+                <div class="stat-london-desc">improvement in on-time deliveries after implementing fleet management solutions.</div>
+                <div class="stat-london-source">Logistics Insights</div>
             </div>
         </div>
     </section>
@@ -872,18 +1026,18 @@
     <section id="solutions" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-12">
-                <h2 class="text-4xl font-bold text-left mb-2" style="letter-spacing:-1px;">Solutions<span style="color:#0066cc;">.</span></h2>
-                <div class="text-lg text-gray-600 mb-8">Build immersive fleet management experiences with AI-powered technology.</div>
+                <h2 class="text-4xl font-bold text-left mb-2" style="letter-spacing:-1px;">Enterprise Solutions<span style="color:var(--primary-blue);">.</span></h2>
+                <div class="text-lg text-gray-600 mb-8">Comprehensive fleet management solutions designed for modern enterprises</div>
             </div>
             <!-- Solution Card 1 -->
-            <div class="flex flex-col md:flex-row items-stretch mb-12 bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden">
                 <div class="md:w-1/2 p-8 flex flex-col justify-center">
-                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">SpeedSense Technology</h3>
-                    <p class="text-gray-700 mb-4">Reduce speeding fines by 70-90% with our advanced detection technology.</p>
+                    <h3 class="text-2xl font-semibold mb-3 text-gray-900">SpeedSense™ Technology</h3>
+                    <p class="text-gray-700 mb-4">Reduce speeding violations by up to 90% with our advanced AI-powered detection system</p>
                     <ul class="mb-6 text-gray-600 list-disc pl-5">
-                        <li>Real-time speed alerts</li>
-                        <li>Camera location database</li>
-                        <li>Driver behaviour analysis</li>
+                        <li>Real-time speed monitoring and alerts</li>
+                        <li>Comprehensive camera location database</li>
+                        <li>Driver behavior analysis and coaching</li>
                     </ul>
                     <a href="#" class="inline-block px-6 py-2 border border-black text-black rounded hover:bg-black hover:text-white transition">Learn more</a>
                 </div>
@@ -900,14 +1054,14 @@
                 </div>
             </div>
             <!-- Solution Card 2 -->
-            <div class="flex flex-col md:flex-row items-stretch mb-12 bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden">
                 <div class="md:w-1/2 p-8 flex flex-col justify-center">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900">Fleet Intelligence Platform</h3>
-                    <p class="text-gray-700 mb-4">Optimise operations with real-time analytics and predictive maintenance.</p>
+                    <p class="text-gray-700 mb-4">Optimize operations with AI-driven analytics and predictive maintenance</p>
                     <ul class="mb-6 text-gray-600 list-disc pl-5">
-                        <li>Real-time fleet tracking</li>
-                        <li>Advanced analytics dashboard</li>
-                        <li>Route optimisation</li>
+                        <li>Real-time fleet tracking and monitoring</li>
+                        <li>Advanced analytics and reporting dashboard</li>
+                        <li>Intelligent route optimization</li>
                     </ul>
                     <a href="#" class="inline-block px-6 py-2 border border-black text-black rounded hover:bg-black hover:text-white transition">Learn more</a>
                 </div>
@@ -924,14 +1078,14 @@
                 </div>
             </div>
             <!-- Solution Card 3 -->
-            <div class="flex flex-col md:flex-row items-stretch mb-12 bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden">
                 <div class="md:w-1/2 p-8 flex flex-col justify-center">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900">Vehicle Health Management</h3>
-                    <p class="text-gray-700 mb-4">Extend vehicle lifespan by 20% with predictive maintenance.</p>
+                    <p class="text-gray-700 mb-4">Extend vehicle lifespan and reduce maintenance costs with predictive diagnostics</p>
                     <ul class="mb-6 text-gray-600 list-disc pl-5">
-                        <li>Predictive maintenance alerts</li>
-                        <li>Diagnostic trouble code analysis</li>
-                        <li>Maintenance scheduling</li>
+                        <li>AI-powered predictive maintenance alerts</li>
+                        <li>Advanced diagnostic trouble code analysis</li>
+                        <li>Automated maintenance scheduling</li>
                     </ul>
                     <a href="#" class="inline-block px-6 py-2 border border-black text-black rounded hover:bg-black hover:text-white transition">Learn more</a>
                 </div>
@@ -950,41 +1104,12 @@
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-car-crash"></i>
-                </div>
-                <div class="stat-number">37%</div>
-                <div class="stat-label">Reduction in Crashes</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-tools"></i>
-                </div>
-                <div class="stat-number">49%</div>
-                <div class="stat-label">Reduction in Breakdowns</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <div class="stat-number">88%</div>
-                <div class="stat-label">Reduction in Vehicle Thefts</div>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-separator"></div>
-
     <!-- Platform Section -->
     <section class="platform-section">
         <div class="platform-container">
             <div class="platform-header">
-                <h2 class="platform-title">One platform to manage your entire fleet</h2>
-                <p class="platform-description">Our comprehensive platform combines cutting-edge technology with powerful analytics to give you complete control over your fleet operations.</p>
+                <h2 class="platform-title">Enterprise-Grade Fleet Management Platform</h2>
+                <p class="platform-description">Our comprehensive platform combines cutting-edge AI technology with powerful analytics to deliver complete visibility and control over your fleet operations.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
@@ -992,8 +1117,8 @@
                         <i class="fas fa-brain feature-icon"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 class="feature-title">AI-powered predictive analysis</h3>
-                        <p class="feature-description">Anticipate maintenance needs and optimise routes using advanced AI algorithms</p>
+                        <h3 class="feature-title">AI-Powered Predictive Analytics</h3>
+                        <p class="feature-description">Leverage machine learning algorithms to predict maintenance needs and optimize routes in real-time</p>
                     </div>
                 </div>
                 <div class="feature-card">
@@ -1001,8 +1126,8 @@
                         <i class="fas fa-bell feature-icon"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 class="feature-title">Real-time monitoring and alerts</h3>
-                        <p class="feature-description">Instant notifications for critical events and performance metrics</p>
+                        <h3 class="feature-title">Real-Time Monitoring & Alerts</h3>
+                        <p class="feature-description">Receive instant notifications for critical events and performance metrics across your fleet</p>
                     </div>
                 </div>
                 <div class="feature-card">
@@ -1010,8 +1135,8 @@
                         <i class="fas fa-database feature-icon"></i>
                     </div>
                     <div class="feature-content">
-                        <h3 class="feature-title">Comprehensive data integration</h3>
-                        <p class="feature-description">Seamless integration with your existing systems and workflows</p>
+                        <h3 class="feature-title">Enterprise Integration</h3>
+                        <p class="feature-description">Seamlessly integrate with your existing enterprise systems and workflows</p>
                     </div>
                 </div>
             </div>
@@ -1088,11 +1213,11 @@
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-16">Trusted by industry leaders</h2>
             <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-                <img src="src/images/client1.png" alt="Client Logo" class="client-logo w-full h-20 object-contain">
-                <img src="src/images/client2.png" alt="Client Logo" class="client-logo w-full h-20 object-contain">
-                <img src="src/images/client3.png" alt="Client Logo" class="client-logo w-full h-20 object-contain">
-                <img src="src/images/client4.png" alt="Client Logo" class="client-logo w-full h-20 object-contain">
-                <img src="src/images/client5.png" alt="Client Logo" class="client-logo w-full h-20 object-contain">
+                <div style="background:#f5f6fa;border-radius:12px;height:80px;display:flex;align-items:center;justify-content:center;font-weight:600;color:#333;font-size:1.1rem;">Image 1</div>
+                <div style="background:#f5f6fa;border-radius:12px;height:80px;display:flex;align-items:center;justify-content:center;font-weight:600;color:#333;font-size:1.1rem;">Image 2</div>
+                <div style="background:#f5f6fa;border-radius:12px;height:80px;display:flex;align-items:center;justify-content:center;font-weight:600;color:#333;font-size:1.1rem;">Image 3</div>
+                <div style="background:#f5f6fa;border-radius:12px;height:80px;display:flex;align-items:center;justify-content:center;font-weight:600;color:#333;font-size:1.1rem;">Image 4</div>
+                <div style="background:#f5f6fa;border-radius:12px;height:80px;display:flex;align-items:center;justify-content:center;font-weight:600;color:#333;font-size:1.1rem;">Image 5</div>
             </div>
         </div>
     </section>
@@ -1101,7 +1226,7 @@
     <section class="py-20 bg-gradient-to-r from-[#00A3A3] to-[#00D1D1]">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-6 text-black">Ready to transform your fleet management?</h2>
-            <p class="text-xl mb-8 text-white opacity-90">Schedule a 30-minute consultation with our team</p>
+            <p class="text-xl mb-8 text-black">Schedule a 30-minute consultation with our team</p>
             <button class="cta-bottom">
                 Book a Demo
             </button>
@@ -1116,10 +1241,10 @@
                     <h2 class="text-5xl font-bold text-gray-900 leading-tight">Let's talk.</h2>
                 </div>
                 <div class="flex items-center">
-                    <div class="text-xl text-gray-700">We're happy to demonstrate the power of our platform.</div>
+                    <div class="text-xl text-gray-700">Schedule a personalized demonstration of our platform.</div>
                 </div>
                 <div class="flex items-center">
-                    <div class="text-sm text-gray-600">To find out how we can help your business increase customer engagement, boost brand loyalty and increase conversions, leave your details and we'll get in touch.</div>
+                    <div class="text-sm text-gray-600">Discover how IVMS can help your organization optimize fleet operations, reduce costs, and enhance safety. Leave your details and our team will contact you within 24 hours.</div>
                 </div>
             </div>
             <div class="flex flex-col md:flex-row md:justify-end">
@@ -1143,31 +1268,31 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
                     <img src="src/images/images:ivms-logo.png" alt="IVMS Logo" class="footer-logo mb-4">
-                    <p class="text-gray-400 mb-4">Dubai, UAE</p>
+                    <p class="footer-text mb-4">Dubai, UAE</p>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4 text-white">Quick Links</h4>
+                    <h4 class="footer-heading font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#solutions" class="text-gray-400 hover:text-[#00A3A3] transition-colors">Solutions</a></li>
-                        <li><a href="#technology" class="text-gray-400 hover:text-[#00A3A3] transition-colors">Technology</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-[#00A3A3] transition-colors">About</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-[#00A3A3] transition-colors">Contact</a></li>
+                        <li><a href="#solutions" class="footer-link transition-colors">Solutions</a></li>
+                        <li><a href="#technology" class="footer-link transition-colors">Technology</a></li>
+                        <li><a href="#about" class="footer-link transition-colors">About</a></li>
+                        <li><a href="#contact" class="footer-link transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4 text-white">Contact</h4>
+                    <h4 class="footer-heading font-semibold mb-4">Contact</h4>
                     <ul class="space-y-2">
-                        <li class="text-gray-400">Phone: <a href="tel:+971585994323" class="hover:text-[#00A3A3] transition-colors">+971 58 599 4323</a></li>
-                        <li class="text-gray-400">Email: <a href="mailto:info@ivmsgroup.com" class="hover:text-[#00A3A3] transition-colors">info@ivmsgroup.com</a></li>
+                        <li class="footer-text">Phone: <a href="tel:+971585994323" class="footer-link transition-colors">+971 58 599 4323</a></li>
+                        <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link transition-colors">info@ivmsgroup.com</a></li>
                     </ul>
                     <div class="mt-4 flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-[#00A3A3] transition-colors"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-[#00A3A3] transition-colors"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-[#00A3A3] transition-colors"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="footer-link transition-colors"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="footer-link transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-link transition-colors"><i class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center footer-text">
                 <p>&copy; 2024 IVMS Solutions. All rights reserved.</p>
             </div>
         </div>
