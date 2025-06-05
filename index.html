@@ -880,13 +880,59 @@
             vertical-align: middle;
         }
         .footer-heading {
-            color: #111 !important;
+            color: #fff !important;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 1;
         }
-        .footer-text, .footer-link {
-            color: #444 !important;
+        .footer-text {
+            color: #fff !important;
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+        .footer-link {
+            color: #fff !important;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            text-decoration: none;
         }
         .footer-link:hover {
             color: #00A3A3 !important;
+            opacity: 1;
+        }
+        .footer-logo {
+            height: 80px;
+            width: auto;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+        .footer-social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .footer-social-links a {
+            color: #fff;
+            opacity: 0.8;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .footer-social-links a:hover {
+            color: #00A3A3;
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+        .footer-divider {
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 3rem 0 2rem 0;
+        }
+        .footer-copyright {
+            color: #fff;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            text-align: center;
         }
         .stats-section-london {
             background: #fff;
@@ -1452,37 +1498,38 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#0A0A0A] text-white py-12">
+    <footer class="bg-[#0A0A0A] text-white py-12" style="background-color: #0A0A0A !important; color: #ffffff !important; display: block !important; position: relative !important; min-height: 200px !important;">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="flex flex-col items-center mb-4">
-                    <img src="src/images/images:ivms-logo.png" alt="IVMS Logo" class="footer-logo mb-2">
+                <div class="flex flex-col items-center mb-4" style="color: #ffffff !important;">
+                    <img src="src/images/images:ivms-logo.png" alt="IVMS Logo" class="footer-logo">
                     <p class="footer-text">Dubai, UAE</p>
                 </div>
-                <div>
-                    <h4 class="footer-heading font-semibold mb-4">Quick Links</h4>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#solutions" class="footer-link transition-colors">Solutions</a></li>
-                        <li><a href="#technology" class="footer-link transition-colors">Technology</a></li>
-                        <li><a href="#about" class="footer-link transition-colors">About</a></li>
-                        <li><a href="#contact" class="footer-link transition-colors">Contact</a></li>
+                        <li><a href="#solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
+                        <li><a href="#technology" class="footer-link" style="color: #ffffff !important;">Technology</a></li>
+                        <li><a href="#about" class="footer-link" style="color: #ffffff !important;">About</a></li>
+                        <li><a href="#contact" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 class="footer-heading font-semibold mb-4">Contact</h4>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Contact</h4>
                     <ul class="space-y-2">
-                        <li class="footer-text">Phone: <a href="tel:+971585994323" class="footer-link transition-colors">+971 58 599 4323</a></li>
-                        <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link transition-colors">info@ivmsgroup.com</a></li>
+                        <li class="footer-text">Phone: <a href="tel:+971585994323" class="footer-link" style="color: #ffffff !important;">+971 58 599 4323</a></li>
+                        <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link" style="color: #ffffff !important;">info@ivmsgroup.com</a></li>
                     </ul>
-                    <div class="mt-4 flex space-x-4">
-                        <a href="#" class="footer-link transition-colors"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="footer-link transition-colors"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-link transition-colors"><i class="fab fa-facebook"></i></a>
-                        <a href="https://instagram.com/YOUR_INSTAGRAM" class="footer-link transition-colors"><i class="fab fa-instagram"></i></a>
+                    <div class="footer-social-links">
+                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/YOUR_INSTAGRAM" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center footer-text">
+            <hr class="footer-divider">
+            <div class="footer-copyright" style="color: #ffffff !important; opacity: 0.6;">
                 <p>&copy; 2025 IVMS Solutions. All rights reserved.</p>
             </div>
         </div>
