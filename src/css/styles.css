@@ -68,3 +68,118 @@ button:hover, .btn:hover {
   border-bottom: 4px solid var(--primary-blue);
   padding-bottom: 0.2em;
 }
+
+/* Hero Section Styles */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Adjust as needed */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light); /* Default text color for hero */
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.hero-overlay-bar {
+    position: relative; /* Changed from absolute */
+    z-index: 1; /* Ensure overlay is above video */
+    width: 100%;
+    /* Added dark overlay */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    padding: 40px 0; /* Added vertical padding */
+}
+
+.hero-overlay-bar .max-w-7xl {
+    display: flex;
+    flex-direction: column; /* Stack columns on small screens */
+    align-items: flex-start; /* Align items to the start on small screens */
+    gap: 30px; /* Space between columns */
+}
+
+@media (min-width: 768px) { /* Medium screens and up */
+    .hero-overlay-bar .max-w-7xl {
+        flex-direction: row; /* Two columns on medium screens */
+        align-items: center; /* Center align items vertically */
+    }
+
+    /* Ensure left column takes appropriate space */
+    .hero-overlay-bar .max-w-7xl > div:first-child {
+        flex: 1; /* Allow left column to grow */
+        max-width: 60%; /* Limit width of left column */
+    }
+
+     /* Ensure right column takes appropriate space and aligns content */
+     .hero-overlay-bar .max-w-7xl > div:last-child {
+        flex: 1; /* Allow right column to grow */
+        max-width: 40%; /* Limit width of right column */
+        display: flex; /* Use flexbox for right column content */
+        flex-direction: column; /* Stack text and button */
+        align-items: flex-end; /* Align right column content to the end */
+     }
+
+     .hero-support {
+         text-align: right !important; /* Align support text to the right on larger screens */
+         margin-bottom: 0; /* Remove bottom margin to align button closer */
+     }
+}
+
+
+.hero-headline {
+    font-size: 2.5rem; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+    margin-bottom: 10px; /* Space below headline */
+    line-height: 1.2; /* Improve line spacing */
+    color: inherit; /* Inherit color from parent (.hero-overlay-bar) */
+}
+
+.hero-support {
+    font-size: 1.1rem; /* Adjust font size */
+    margin-bottom: 20px; /* Space below support text */
+     color: inherit; /* Inherit color from parent (.hero-overlay-bar) */
+}
+
+.hero-cta {
+    display: inline-block;
+    background-color: #007bff; /* Blue color for button */
+    color: white; /* White text */
+    padding: 12px 24px; /* Adjust padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.hero-cta:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Navigation Bar Styles for transparency and readability */
+nav {
+    background-color: rgba(30, 30, 30, 0.65); /* Semi-transparent dark background matching hero overlay */
+    backdrop-filter: blur(5px); /* Optional: Adds a blur effect behind the nav */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    padding: 0 1rem; /* Add some padding */
+}
+
+/* Style for navigation links */
+nav a {
+    color: var(--text-light); /* Default link color set to white */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 1.1rem; /* Increase font size */
+    margin: 0 10px; /* Add horizontal spacing */
+}
+
+nav a:hover {
+    color: var(--teal-light); /* Teal color on hover */
+}

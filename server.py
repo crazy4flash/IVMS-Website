@@ -1,47 +1,22 @@
-import http.server
-import socketserver
+from flask import Flask, send_from_directory
 import os
 
-PORT = 8000
+app = Flask(__name__, static_folder='src')
 
-class CustomHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
-    def end_headers(self):
-        # Add CORS headers
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'GET')
-        self.send_header('Cache-Control', 'no-store, no-cache, must-revalidate')
-        return super().end_headers()
+@app.route('/')
+def index():
+    return send_from_directory('.', 'index.html')
 
-    def guess_type(self, path):
-        # Add custom MIME types
-        if path.endswith('.js'):
-            return 'application/javascript'
-        if path.endswith('.css'):
-            return 'text/css'
-        if path.endswith('.mp4'):
-            return 'video/mp4'
-        if path.endswith('.webm'):
-            return 'video/webm'
-        return super().guess_type(path)
+@app.route('/speedsense')
+def speedsense():
+    return send_from_directory('.', 'speedsense.html')
 
-    def handle(self):
-        try:
-            super().handle()
-        except BrokenPipeError:
-            print("Client closed connection (BrokenPipeError) — ignoring.")
+@app.route('/<path:path>')
+def serve_static(path):
+    return send_from_directory('.', path)
 
-    def send_error(self, code, message=None, explain=None):
-        if code == 404:
-            print(f"404 Not Found: {self.path}")
-        super().send_error(code, message, explain)
-
-Handler = CustomHTTPRequestHandler
-
-with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print(f"Serving at http://localhost:{PORT}")
+if __name__ == '__main__':
+    print("Starting Flask server...")
+    print("Server running at http://localhost:8000")
     print("Press Ctrl+C to stop the server")
-    try:
-        httpd.serve_forever()
-    except KeyboardInterrupt:
-        print("\nShutting down server...")
-        httpd.server_close() 
+    app.run(debug=True, host='0.0.0.0', port=8000) 

@@ -67,7 +67,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            background: rgba(30, 30, 30, 0.65);
+            background: rgba(0, 0, 0, 0.85);
             backdrop-filter: blur(8px);
             display: flex;
             justify-content: space-between;
@@ -459,8 +459,8 @@
             align-items: center;
             justify-content: space-between;
             padding: 0.5rem 0;
-            background: rgba(30, 30, 30, 0.55);
-            backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
             border: none;
             box-shadow: none;
             position: fixed;
@@ -1079,22 +1079,54 @@
                 margin: 0 0.25rem;
             }
         }
+        /* Style for navigation links */
+        nav a {
+            color: var(--text-light); /* Default link color set to white */
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+            font-size: 1.1rem; /* Increased font size */
+            padding: 0 15px; /* Added horizontal padding for spacing */
+        }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="max-w-7xl mx-auto px-4 w-full flex items-center justify-between">
-            <div class="nav-logo">
-                <a href="/" class="flex items-center">
-                    <img src="src/images/images:ivms-logo.png" alt="IVMS Logo" class="logo">
-                </a>
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 main-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="h-12 w-auto" src="src/images/images:ivms-logo.png" alt="IVMS Logo">
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="nav-link">Home</a>
+                        <a href="#solutions" class="nav-link">Solutions</a>
+                        <a href="#technology" class="nav-link">Technology</a>
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-200 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="nav-links">
-                <a href="#solutions" class="nav-link">Solutions</a>
-                <a href="#technology" class="nav-link">Technology</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Home</a>
+                <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Solutions</a>
+                <a href="#technology" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Technology</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
             </div>
         </div>
     </nav>
@@ -1106,15 +1138,19 @@
         </video>
         <div class="hero-overlay-bar">
             <div class="max-w-7xl mx-auto px-4 w-full flex flex-col md:flex-row items-start md:items-center justify-between">
+                <!-- Left column for main headline -->
                 <div>
                     <div class="hero-headline" style="text-align:left;">
                         Intelligent Fleet Management<br>Powered by Advanced AI
                     </div>
-                    <div class="hero-support" style="text-align:left;">
+                </div>
+                <!-- Right column for support text and button -->
+                <div class="flex flex-col items-start md:items-end">
+                    <div class="hero-support" style="text-align:left; margin-bottom: 20px;">
                         Transform your fleet operations with real-time monitoring, predictive analytics, and automated optimisation
                     </div>
+                    <a href="#" class="hero-cta">Book a Demo</a>
                 </div>
-                <a href="#" class="hero-cta mt-6 md:mt-0 md:ml-8">Book a Demo</a>
             </div>
         </div>
     </section>
@@ -1124,7 +1160,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-10 gap-8">
                 <h2 class="text-4xl font-bold text-left mb-2 md:mb-0 md:pt-2" style="letter-spacing:-1px; color: var(--text-primary); min-width:320px;">
-                    Transform your fleet operations
+                    Transform your fleet operations<span style="color:#0066cc;">.</span>
                 </h2>
                 <div class="text-lg text-gray-600 md:pt-2" style="max-width:700px;">
                     Our intelligent fleet management platform empowers your business to reduce costs, improve efficiency, and deliver outstanding service. Harness real-time data, predictive analytics, and advanced optimisation tools to drive measurable results across your entire fleet.
@@ -1132,19 +1168,19 @@
             </div>
             <div class="flex flex-col md:flex-row md:items-start md:justify-start gap-8">
                 <div class="stat-london flex-1 flex flex-col items-start">
-                    <img src="src/images/stat1.jpg" alt="Stat 1" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
+                    <img src="src/images/stat1.png" alt="Stat 1" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
                     <div class="stat-london-percent-below mt-4">35%</div>
                     <div class="stat-london-desc-below">reduction in fuel costs achieved through advanced route optimisation.</div>
                     <div class="stat-london-source-below">Fleet News</div>
                 </div>
                 <div class="stat-london flex-1 flex flex-col items-start">
-                    <img src="src/images/stat2.jpg" alt="Stat 2" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
+                    <img src="src/images/stat2.png" alt="Stat 2" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
                     <div class="stat-london-percent-below mt-4">50%</div>
                     <div class="stat-london-desc-below">fewer maintenance incidents with predictive analytics and real-time monitoring.</div>
                     <div class="stat-london-source-below">Telematics Today</div>
                 </div>
                 <div class="stat-london flex-1 flex flex-col items-start">
-                    <img src="src/images/stat3.jpg" alt="Stat 3" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
+                    <img src="src/images/stat3.png" alt="Stat 3" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
                     <div class="stat-london-percent-below mt-4">70%</div>
                     <div class="stat-london-desc-below">improvement in on-time deliveries after implementing fleet management solutions.</div>
                     <div class="stat-london-source-below">Logistics Insights</div>
@@ -1174,7 +1210,7 @@
                 </div>
                 <div class="md:w-1/2 flex items-center justify-center bg-gray-50" style="min-height:260px;">
                     <video
-                        src="src/videos/speedsense-demo.mp4"
+                        src="src/videos/speedsense-demo.mov"
                         class="rounded-xl shadow"
                         style="width:90%;height:200px;object-fit:cover;background:#e5e7eb;"
                         autoplay
@@ -1198,7 +1234,7 @@
                 </div>
                 <div class="md:w-1/2 flex items-center justify-center bg-gray-50" style="min-height:260px;">
                     <video
-                        src="src/videos/fleet-intelligence-demo.mp4"
+                        src="src/videos/fleet-intelligence-demo.mov"
                         class="rounded-xl shadow"
                         style="width:90%;height:200px;object-fit:cover;background:#e5e7eb;"
                         autoplay
@@ -1222,7 +1258,7 @@
                 </div>
                 <div class="md:w-1/2 flex items-center justify-center bg-gray-50" style="min-height:260px;">
                     <video
-                        src="src/videos/vehicle-health-demo.mp4"
+                        src="src/videos/vehicle-health-demo.mov"
                         class="rounded-xl shadow"
                         style="width:90%;height:200px;object-fit:cover;background:#e5e7eb;"
                         autoplay
@@ -1239,11 +1275,11 @@
     <section class="platform-section">
         <div class="platform-container">
             <div class="platform-header">
-                <h2 class="platform-title">Enterprise-Grade Fleet Management Platform</h2>
+                <h2 class="platform-title">Enterprise-Grade Fleet Management Platform<span style="color:#0066cc;">.</span></h2>
                 <p class="platform-description">Our comprehensive platform combines cutting-edge AI technology with powerful analytics to deliver complete visibility and control over your fleet operations.</p>
             </div>
             <div class="platform-video-box">
-                <video id="platform-overview-video" class="platform-demo-video" src="src/videos/fleet-platform-overview.mp4" autoplay muted playsinline loop></video>
+                <video id="platform-overview-video" class="platform-demo-video" src="src/videos/fleet-platform-overview.mov" autoplay muted playsinline loop></video>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
@@ -1345,7 +1381,7 @@
     <!-- Client Logo Section -->
     <section class="py-10 bg-[#f7f7f9] overflow-hidden">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10 text-black">Trusted by industry leaders</h2>
+            <h2 class="text-4xl font-bold text-center mb-10 text-black">Trusted by industry leaders<span style="color:#0066cc;">.</span></h2>
             <div class="client-logos-container">
                 <div class="client-logos-track">
                     <div class="client-logo-wrapper">
@@ -1391,7 +1427,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                 <div class="flex items-start">
-                    <h2 class="text-5xl font-bold text-gray-900 leading-tight">Let's talk.</h2>
+                    <h2 class="text-5xl font-bold text-gray-900 leading-tight">Let's talk<span style="color:#0066cc;">.</span></h2>
                 </div>
                 <div class="flex items-center">
                     <div class="text-xl text-gray-700">Schedule a personalized demonstration of our platform.</div>
@@ -1461,7 +1497,7 @@
     <script>
         // Video pause on scroll for better performance
         document.addEventListener('DOMContentLoaded', function() {
-            const heroVideo = document.querySelector('.hero-video');
+            const heroVideo = document.querySelector('.hero-video-bg');
             const heroSection = document.querySelector('.hero-section');
             
             const observer = new IntersectionObserver((entries) => {
