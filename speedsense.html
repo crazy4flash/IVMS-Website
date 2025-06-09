@@ -44,27 +44,33 @@
         .hero-section-new-layout {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            padding: 6rem 0 4rem 0;
-            background-color: #fff; /* Or a suitable background */
+            align-items: flex-start;
+            padding: 8rem 0 6rem 0;
+            background-color: var(--white);
+            text-align: left;
         }
 
         .new-hero-headline {
             color: var(--text-primary);
-            font-size: 2.8rem;
+            font-size: 3.8rem;
             font-weight: 700;
-            line-height: 1.15;
+            line-height: 1.1;
             margin-bottom: 1.5rem;
-            text-align: center;
+            text-align: left;
+            max-width: 900px;
+            margin-left: 0;
+            margin-right: auto;
         }
 
         .new-hero-support {
             color: var(--text-secondary);
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             line-height: 1.6;
-            margin-bottom: 2rem;
-            max-width: 800px; /* Limit width for readability */
-            text-align: center;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            text-align: left;
+            margin-left: 0;
+            margin-right: auto;
         }
 
         .new-hero-image {
@@ -72,27 +78,28 @@
             height: auto;
             object-fit: contain; /* Ensure the whole image is visible */
             border-radius: 8px; /* Optional: add some rounded corners */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-top: 2rem; /* Space above the image */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            margin-top: 0; /* No specific top margin here */
         }
 
         /* Adjust for larger screens */
         @media (min-width: 768px) {
             .new-hero-headline {
-                 font-size: 3.5rem;
+                font-size: 4.5rem;
+                max-width: 1000px;
+                margin-left: 0;
             }
-             .new-hero-support {
-                 font-size: 1.2rem;
+            .new-hero-support {
+                font-size: 1.5rem;
+                max-width: 900px;
+                margin-left: 0;
             }
-             .new-hero-image {
-                max-width: 800px; /* Adjust max width for larger screens */
-            }
-             .hero-section-new-layout {
-                padding: 10rem 0 6rem 0; /* Further increased top padding for larger screens */
+            .hero-section-new-layout {
+                padding: 10rem 0 8rem 0;
             }
         }
 
-        /* Remove old hero styles */
+        /* Remove old hero styles that are no longer relevant */
         .hero-section-split,
         .hero-image-container,
         .hero-split-image,
@@ -100,9 +107,11 @@
         .hero-section,
         .hero-video-bg,
         .hero-overlay-bar,
-        .hero-container-align {
-            /* These styles are no longer needed for the new layout */
-             display: none;
+        .hero-container-align,
+        .hero-content-box, /* Remove black box */
+        .hero-image-border /* Remove black border */
+         {
+            display: none; /* Hide these if they are still present */
         }
         
         .hero-cta, .cta-bottom {
@@ -371,12 +380,10 @@
                 border-radius: 12px;
                 box-shadow: 0 2px 8px rgba(0,0,0,0.04);
             }
-            
-            .stat-number {
+             .stat-number {
                 font-size: 2.5rem;
             }
-            
-            .solution-card h3 {
+             .solution-card h3 {
                 font-size: 1.3rem;
             }
         }
@@ -568,8 +575,8 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 24px rgba(0, 78, 152, 0.25);
         }
-        .process-section {
-            background: #fff;
+        .process-section { /* Core Features Section Styles */
+            background: #0A0A0A; /* Changed to dark background */
             padding: 5rem 0 4rem 0;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
         }
@@ -586,14 +593,14 @@
             padding: 2.5rem 2rem 2rem 2rem;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            min-height: 370px;
+            justify-content: flex-start;
+            min-height: 450px;
             position: relative;
             box-shadow: none;
         }
         .process-number {
             position: absolute;
-            top: 50px;
+            top: 30px;
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
@@ -611,29 +618,37 @@
             letter-spacing: -1px;
         }
         .process-title {
-            color: #fff;
+            color: #FFFFFF;
             font-size: 1.18rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            margin-top: 4.5rem;
+            margin-top: 7.5rem;
             text-align: left;
             letter-spacing: -0.5px;
+            line-height: 1.3;
+            height: 90px;
+            display: flex;
+            align-items: flex-start;
         }
         .process-desc {
-            color: #d1d1d1;
+            color: #FFFFFF;
+            opacity: 1;
             font-size: 1.01rem;
             text-align: left;
-            line-height: 1.55;
+            line-height: 1.6;
             margin-bottom: 0;
             margin-top: 0;
             font-weight: 400;
-            min-height: 60px;
+            flex-grow: 1;
             display: flex;
-            align-items: flex-end;
+            align-items: flex-start;
+            padding-top: 0;
+            height: auto;
+            min-height: 120px;
         }
         .process-line {
             position: absolute;
-            top: 90px; /* 50px (top) + 40px (half of 80px circle) */
+            top: 90px;
             left: 10%;
             width: 80%;
             height: 0;
@@ -653,16 +668,18 @@
                 display: none;
             }
             .process-card {
-                min-height: 260px;
-            }
-            .process-number {
-                width: 56px;
-                height: 56px;
-                font-size: 1.7rem;
-                top: 1.2rem;
+                min-height: 350px;
+                padding: 2rem 1.5rem 1.5rem 1.5rem;
             }
             .process-title {
-                margin-top: 2.8rem;
+                height: 75px;
+                margin-top: 5rem;
+            }
+            .process-number {
+                top: 25px;
+            }
+            .process-desc {
+                min-height: 80px;
             }
         }
         .stats-section {
@@ -1195,15 +1212,22 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-section-new-layout py-20">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <h1 class="new-hero-headline text-4xl font-bold mb-6">
+            <div class="max-w-7xl mx-auto px-4">
+                <h1 class="new-hero-headline text-5xl font-bold mb-8">
                     SpeedSense™ by iVMS<br>
                     <span style="color: #004E98;">Rental Fleet Protection Reimagined</span>
                 </h1>
-                <p class="new-hero-support text-lg text-gray-600 mb-10">
-                    Speed camera fines cost rental companies worldwide <span style="color: #004E98;">money, time, and customer goodwill</span> while creating administrative headaches. iVMS's solution intercepts violations, handles paperwork, and provides real-time fleet visibility.
+                <p class="new-hero-support text-xl text-gray-600 mb-12">
+                    Speed camera fines cost rental companies worldwide money, time, and customer goodwill while creating administrative headaches. iVMS's solution intercepts violations, handles paperwork, and provides real-time fleet visibility.
                 </p>
-                <img src="src/images/speedsense-dashboard.png" alt="SpeedSense Dashboard" class="new-hero-image mx-auto rounded-lg shadow-xl w-full md:w-3/4 lg:w-2/3">
+                <button class="hero-cta mt-8">Book a Demo</button>
+            </div>
+        </section>
+
+        <!-- Image Section (Moved outside Hero) -->
+        <section class="py-12">
+            <div class="max-w-7xl mx-auto px-4">
+                <img src="src/images/speedsense-dashboard.png" alt="SpeedSense Dashboard" class="new-hero-image mx-auto rounded-lg shadow-xl w-full">
             </div>
         </section>
 
@@ -1221,8 +1245,8 @@
                         </p>
                         <div class="space-y-6">
                             <div class="flex items-start">
-                                <div class="flex-shrink-0 w-12 h-12 bg-[#f7f7f9] rounded-full flex items-center justify-center mr-4 text-[#004E98]">
-                                    <i class="fas fa-exclamation-triangle text-xl"></i>
+                                <div class="flex-shrink-0 w-12 h-12 bg-[#f7f7f9] rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-exclamation-triangle text-xl" style="color: #004E98;"></i>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-semibold mb-2">Caught in the Flash</h3>
@@ -1230,8 +1254,8 @@
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <div class="flex-shrink-0 w-12 h-12 bg-[#f7f7f9] rounded-full flex items-center justify-center mr-4 text-[#004E98]">
-                                    <i class="fas fa-plane-departure text-xl"></i>
+                                <div class="flex-shrink-0 w-12 h-12 bg-[#f7f7f9] rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-plane-departure text-xl" style="color: #004E98;"></i>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-semibold mb-2">Tourists Vanish</h3>
@@ -1239,8 +1263,8 @@
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <div class="flex-shrink-0 w-12 h-12 bg-[#f7f7f9] rounded-full flex items-center justify-center mr-4 text-[#004E98]">
-                                    <i class="fas fa-chart-line text-xl"></i>
+                                <div class="flex-shrink-0 w-12 h-12 bg-[#f7f7f9] rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-chart-line text-xl" style="color: #004E98;"></i>
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-semibold mb-2">Your Bottom Line Suffers</h3>
@@ -1250,7 +1274,10 @@
                         </div>
                     </div>
                     <div class="lg:w-1/2">
-                        <img src="src/images/stat1.png" alt="Problem Illustration" class="rounded-lg shadow-xl">
+                        <div class="relative">
+                            <img src="src/images/speed-camera-problem.jpg" alt="Speed Camera Problem" class="rounded-lg shadow-xl w-full">
+                            <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1270,17 +1297,29 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-[#004E98] text-4xl mb-4"><i class="fas fa-shield-alt"></i></div>
+                        <div class="relative mb-6">
+                            <img src="src/images/deposit-system.jpg" alt="Deposit System" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-4xl mb-4"><i class="fas fa-shield-alt" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Innovative Deposit System</h3>
                         <p class="text-gray-600">Secure minimal deposits with <span style="color: #004E98;">3D authentication</span>. Charge customer cards after rental contract expires.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-[#004E98] text-4xl mb-4"><i class="fas fa-camera"></i></div>
+                        <div class="relative mb-6">
+                            <img src="src/images/violation-coverage.jpg" alt="Violation Coverage" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-4xl mb-4"><i class="fas fa-camera" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Comprehensive Violation Coverage</h3>
                         <p class="text-gray-600">Captures all traffic violations with <span style="color: #004E98;">irrefutable digital evidence</span> and instant real-time notifications.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
-                        <div class="text-[#004E98] text-4xl mb-4"><i class="fas fa-gavel"></i></div>
+                        <div class="relative mb-6">
+                            <img src="src/images/legal-enforcement.jpg" alt="Legal Enforcement" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-4xl mb-4"><i class="fas fa-gavel" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Powerful Legal Enforcement</h3>
                         <p class="text-gray-600">Integration with <span style="color: #004E98;">local authorities</span> ensures customers cannot avoid settling outstanding violations.</p>
                     </div>
@@ -1289,54 +1328,31 @@
         </section>
 
         <!-- Core Features Section with Timeline -->
-        <section class="py-20 bg-white">
+        <section class="py-20 process-section">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-16">
+                <h2 class="text-4xl font-bold text-center mb-16" style="color: white;">
                     Core Features With Every Installation<span style="color:#004E98;">.</span>
                 </h2>
-                <div class="relative">
-                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[#f7f7f9]"></div>
-                    <div class="space-y-12">
-                        <div class="relative flex items-center">
-                            <div class="flex-1 pr-12 text-right">
-                                <h3 class="text-2xl font-bold mb-2">Driver Behaviour Management</h3>
-                                <p class="text-gray-600">Complete scoring system for renters. Monitor driving behaviour and <span style="color: #004E98;">geofence breaches</span>.</p>
-                            </div>
-                            <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-[#004E98] rounded-full flex items-center justify-center">
-                                <i class="fas fa-user-shield text-white text-xl"></i>
-                            </div>
-                            <div class="flex-1 pl-12"></div>
-                        </div>
-                        <div class="relative flex items-center">
-                            <div class="flex-1 pr-12"></div>
-                            <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-[#004E98] rounded-full flex items-center justify-center">
-                                <i class="fas fa-heartbeat text-white text-xl"></i>
-                            </div>
-                            <div class="flex-1 pl-12">
-                                <h3 class="text-2xl font-bold mb-2">Vehicle Health Protection</h3>
-                                <p class="text-gray-600">Real-time diagnostics and <span style="color: #004E98;">fault monitoring</span>. Track parts life expectancy.</p>
-                            </div>
-                        </div>
-                        <div class="relative flex items-center">
-                            <div class="flex-1 pr-12 text-right">
-                                <h3 class="text-2xl font-bold mb-2">Advanced Tracking System</h3>
-                                <p class="text-gray-600">Real-time location monitoring with <span style="color: #004E98;">complete trip history</span> and parameter tracking.</p>
-                            </div>
-                            <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-[#004E98] rounded-full flex items-center justify-center">
-                                <i class="fas fa-map-marker-alt text-white text-xl"></i>
-                            </div>
-                            <div class="flex-1 pl-12"></div>
-                        </div>
-                        <div class="relative flex items-center">
-                            <div class="flex-1 pr-12"></div>
-                            <div class="absolute left-1/2 transform -translate-x-1/2 w-12 h-12 bg-[#004E98] rounded-full flex items-center justify-center">
-                                <i class="fas fa-file-contract text-white text-xl"></i>
-                            </div>
-                            <div class="flex-1 pl-12">
-                                <h3 class="text-2xl font-bold mb-2">Administrative Efficiency</h3>
-                                <p class="text-gray-600">Digital contract management and <span style="color: #004E98;">streamlined processes</span>.</p>
-                            </div>
-                        </div>
+                <div class="process-cards">
+                    <div class="process-card">
+                        <div class="process-number">1</div>
+                        <h3 class="process-title">Driver Behaviour Management</h3>
+                        <p class="process-desc">Complete scoring system for renters. Monitor driving behaviour and geofence breaches in real-time to assess driver risk and improve safety.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">2</div>
+                        <h3 class="process-title">Vehicle Health Protection</h3>
+                        <p class="process-desc">Real-time diagnostics and fault monitoring. Track parts life expectancy and proactively manage vehicle maintenance.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">3</div>
+                        <h3 class="process-title">Advanced Tracking System</h3>
+                        <p class="process-desc">Real-time location monitoring with complete trip history and parameter tracking for comprehensive fleet oversight.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">4</div>
+                        <h3 class="process-title">Administrative Efficiency</h3>
+                        <p class="process-desc">Digital contract management and streamlined processes for all administrative tasks, saving time and resources.</p>
                     </div>
                 </div>
             </div>
@@ -1348,22 +1364,38 @@
                 <h2 class="text-4xl font-bold text-center mb-10 text-black">Beyond Fines: Complete Fleet Management<span style="color:#004E98;">.</span></h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-teal-600 text-4xl mb-4"><i class="fas fa-tachometer-alt"></i></div>
+                        <div class="relative mb-6">
+                            <img src="src/images/vehicle-dashboard.jpg" alt="Vehicle Dashboard" class="w-full h-40 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-4xl mb-4"><i class="fas fa-tachometer-alt" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Vehicle Health Dashboard</h3>
                         <p class="text-gray-600">Live mileage and fuel monitoring with maintenance alerts</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-teal-600 text-4xl mb-4"><i class="fas fa-tools"></i></div>
+                        <div class="relative mb-6">
+                            <img src="src/images/remote-diagnostics.jpg" alt="Remote Diagnostics" class="w-full h-40 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-4xl mb-4"><i class="fas fa-tools" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Remote Diagnostics</h3>
                         <p class="text-gray-600">Clear DTC codes remotely and reduce vehicle downtime</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-teal-600 text-4xl mb-4"><i class="fas fa-lock"></i></div>
+                        <div class="relative mb-6">
+                            <img src="src/images/security-management.jpg" alt="Security Management" class="w-full h-40 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-4xl mb-4"><i class="fas fa-lock" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Security Management</h3>
                         <p class="text-gray-600">Employee login system with complete audit trail</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-teal-600 text-4xl mb-4"><i class="fas fa-file-signature"></i></div>
+                        <div class="relative mb-6">
+                            <img src="src/images/digital-contracts.jpg" alt="Digital Contracts" class="w-full h-40 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-4xl mb-4"><i class="fas fa-file-signature" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Digital Contracts</h3>
                         <p class="text-gray-600">Email delivery & via iVMS portal</p>
                     </div>
@@ -1379,55 +1411,55 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-[#004E98] text-4xl mb-4"><i class="fas fa-chart-line"></i></div>
+                        <div class="text-4xl mb-4"><i class="fas fa-chart-line" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Financial Protection</h3>
                         <ul class="text-gray-600 space-y-3">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-[#004E98] mr-2"></i>
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
                                 <span>Recover up to <span style="color: #004E98;">95%</span> of traffic fines</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-[#004E98] mr-2"></i>
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
                                 <span>Dramatically reduce financial liability</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-[#004E98] mr-2"></i>
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
                                 <span>Create new revenue streams</span>
                             </li>
                         </ul>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-[#004E98] text-4xl mb-4"><i class="fas fa-cogs"></i></div>
+                        <div class="text-4xl mb-4"><i class="fas fa-cogs" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Operational Efficiency</h3>
                         <ul class="text-gray-600 space-y-3">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-[#004E98] mr-2"></i>
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
                                 <span><span style="color: #004E98;">85%</span> reduction in processing time</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-[#004E98] mr-2"></i>
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
                                 <span>Lower maintenance costs</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-[#004E98] mr-2"></i>
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
                                 <span>Remote diagnostics eliminate garage visits</span>
                             </li>
                         </ul>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-[#004E98] text-4xl mb-4"><i class="fas fa-shield-alt"></i></div>
+                        <div class="text-4xl mb-4"><i class="fas fa-shield-alt" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Risk Reduction</h3>
                         <ul class="text-gray-600 space-y-3">
                             <li class="flex items-center">
-                                <i class="fas fa-check text-[#004E98] mr-2"></i>
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
                                 <span>Blacklist integration across companies</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-[#004E98] mr-2"></i>
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
                                 <span>Pre-approval driver risk scoring</span>
                             </li>
                             <li class="flex items-center">
-                                <i class="fas fa-check text-[#004E98] mr-2"></i>
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
                                 <span>Advanced theft prevention</span>
                             </li>
                         </ul>
@@ -1444,19 +1476,31 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <div class="text-center">
-                        <div class="text-6xl font-bold text-[#004E98] mb-4">95%</div>
+                        <div class="relative mb-6">
+                            <img src="src/images/recovery-rate.jpg" alt="Recovery Rate" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-6xl font-bold mb-4" style="color: #004E98;">95%</div>
                         <h3 class="text-2xl font-semibold text-gray-800 mb-4">Recovery Rate</h3>
                         <p class="text-gray-600">Successfully recover nearly all traffic violations from customers, eliminating financial losses</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-6xl font-bold text-[#004E98] mb-4">85%</div>
+                        <div class="relative mb-6">
+                            <img src="src/images/time-saved.jpg" alt="Time Saved" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-6xl font-bold mb-4" style="color: #004E98;">85%</div>
                         <h3 class="text-2xl font-semibold text-gray-800 mb-4">Time Saved</h3>
                         <p class="text-gray-600">Dramatically reduce administrative workload with automated violation processing systems</p>
                     </div>
                     <div class="text-center">
-                        <div class="text-6xl font-bold text-[#004E98] mb-4">Minimal</div>
+                        <div class="relative mb-6">
+                            <img src="src/images/deposit-required.jpg" alt="Deposit Required" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-6xl font-bold mb-4" style="color: #004E98;">1%</div>
                         <h3 class="text-2xl font-semibold text-gray-800 mb-4">Deposit Required</h3>
-                        <p class="text-gray-600">Minimal security deposit requirement whilst maintaining complete rental protection</p>
+                        <p class="text-gray-600">Only a 1% security deposit required, while maintaining complete rental protection</p>
                     </div>
                 </div>
             </div>
