@@ -45,7 +45,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding: 8rem 0 6rem 0;
+            padding: 8rem 0 0rem 0;
             background-color: var(--white);
             text-align: left;
         }
@@ -55,7 +55,7 @@
             font-size: 3.8rem;
             font-weight: 700;
             line-height: 1.1;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0rem;
             text-align: left;
             max-width: 900px;
             margin-left: 0;
@@ -66,7 +66,7 @@
             color: var(--text-secondary);
             font-size: 1.3rem;
             line-height: 1.6;
-            margin-bottom: 2.5rem;
+            margin-bottom: 0rem;
             max-width: 800px;
             text-align: left;
             margin-left: 0;
@@ -79,7 +79,13 @@
             object-fit: contain; /* Ensure the whole image is visible */
             border-radius: 8px; /* Optional: add some rounded corners */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-            margin-top: 0; /* No specific top margin here */
+            margin-top: 4rem; /* Increased space above the image */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .new-hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
         /* Adjust for larger screens */
@@ -95,7 +101,7 @@
                 margin-left: 0;
             }
             .hero-section-new-layout {
-                padding: 10rem 0 8rem 0;
+                padding: 10rem 0 1rem 0;
             }
         }
 
@@ -1211,21 +1217,17 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero-section-new-layout py-20">
+        <section class="hero-section-new-layout">
             <div class="max-w-7xl mx-auto px-4">
-                <h1 class="new-hero-headline text-5xl font-bold mb-8">
+                <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                     SpeedSense™ by iVMS<br>
-                    <span style="color: #004E98;">Rental Fleet Protection Reimagined</span>
+                    <span style="color: #004E98;">Rental Fleet Protection Reimagined.</span>
                 </h1>
-                <p class="new-hero-support text-xl text-gray-600 mb-12">
-                    Speed camera fines cost rental companies worldwide money, time, and customer goodwill while creating administrative headaches. iVMS's solution intercepts violations, handles paperwork, and provides real-time fleet visibility.
-                </p>
-                <button class="hero-cta mt-8">Book a Demo</button>
             </div>
         </section>
 
         <!-- Image Section (Moved outside Hero) -->
-        <section class="py-12">
+        <section class="py-0">
             <div class="max-w-7xl mx-auto px-4">
                 <img src="src/images/speedsense-dashboard.png" alt="SpeedSense Dashboard" class="new-hero-image mx-auto rounded-lg shadow-xl w-full">
             </div>
@@ -1275,7 +1277,7 @@
                     </div>
                     <div class="lg:w-1/2">
                         <div class="relative">
-                            <img src="src/images/speed-camera-problem.jpg" alt="Speed Camera Problem" class="rounded-lg shadow-xl w-full">
+                            <img src="src/images/speed-camera-problem.png" alt="Speed Camera Problem" class="rounded-lg shadow-xl w-full">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
                         </div>
                     </div>
@@ -1298,7 +1300,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
                         <div class="relative mb-6">
-                            <img src="src/images/deposit-system.jpg" alt="Deposit System" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/deposit-system.png" alt="Deposit System" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-shield-alt" style="color: #004E98;"></i></div>
@@ -1307,7 +1309,7 @@
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
                         <div class="relative mb-6">
-                            <img src="src/images/violation-coverage.jpg" alt="Violation Coverage" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/violation-coverage.png" alt="Violation Coverage" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-camera" style="color: #004E98;"></i></div>
@@ -1316,7 +1318,7 @@
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
                         <div class="relative mb-6">
-                            <img src="src/images/legal-enforcement.jpg" alt="Legal Enforcement" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/legal-enforcement.png" alt="Legal Enforcement" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-gavel" style="color: #004E98;"></i></div>
@@ -1365,7 +1367,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-8">
                         <div class="relative mb-6">
-                            <img src="src/images/vehicle-dashboard.jpg" alt="Vehicle Dashboard" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/vehicle-dashboard.png" alt="Vehicle Dashboard" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-tachometer-alt" style="color: #004E98;"></i></div>
@@ -1374,7 +1376,7 @@
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
                         <div class="relative mb-6">
-                            <img src="src/images/remote-diagnostics.jpg" alt="Remote Diagnostics" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/remote-diagnostics.png" alt="Remote Diagnostics" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-tools" style="color: #004E98;"></i></div>
@@ -1383,7 +1385,7 @@
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
                         <div class="relative mb-6">
-                            <img src="src/images/security-management.jpg" alt="Security Management" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/security-management.png" alt="Security Management" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-lock" style="color: #004E98;"></i></div>
@@ -1392,7 +1394,7 @@
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
                         <div class="relative mb-6">
-                            <img src="src/images/digital-contracts.jpg" alt="Digital Contracts" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/digital-contracts.png" alt="Digital Contracts" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-file-signature" style="color: #004E98;"></i></div>
@@ -1477,7 +1479,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <div class="text-center">
                         <div class="relative mb-6">
-                            <img src="src/images/recovery-rate.jpg" alt="Recovery Rate" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/recovery-rate.png" alt="Recovery Rate" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-6xl font-bold mb-4" style="color: #004E98;">95%</div>
@@ -1486,7 +1488,7 @@
                     </div>
                     <div class="text-center">
                         <div class="relative mb-6">
-                            <img src="src/images/time-saved.jpg" alt="Time Saved" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/time-saved.png" alt="Time Saved" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-6xl font-bold mb-4" style="color: #004E98;">85%</div>
@@ -1495,7 +1497,7 @@
                     </div>
                     <div class="text-center">
                         <div class="relative mb-6">
-                            <img src="src/images/deposit-required.jpg" alt="Deposit Required" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/deposit-required.png" alt="Deposit Required" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-6xl font-bold mb-4" style="color: #004E98;">1%</div>
