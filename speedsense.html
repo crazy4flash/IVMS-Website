@@ -582,7 +582,7 @@
             box-shadow: 0 6px 24px rgba(0, 78, 152, 0.25);
         }
         .process-section { /* Core Features Section Styles */
-            background: #0A0A0A; /* Changed to dark background */
+            background: #FFFFFF !important; /* Explicitly set to white background with !important */
             padding: 5rem 0 4rem 0;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
         }
@@ -594,7 +594,7 @@
             margin-top: 3rem;
         }
         .process-card {
-            background: #323336;
+            background: #323336; /* Retain dark background */
             border-radius: 1.5rem;
             padding: 2.5rem 2rem 2rem 2rem;
             display: flex;
@@ -603,6 +603,12 @@
             min-height: 450px;
             position: relative;
             box-shadow: none;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
         }
         .process-number {
             position: absolute;
@@ -611,7 +617,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 80px;
-            background: #323336;
+            background: #323336; /* Retain dark background */
             border-radius: 50%;
             border: 1.5px solid #b0b0b0;
             color: #fff;
@@ -624,7 +630,7 @@
             letter-spacing: -1px;
         }
         .process-title {
-            color: #FFFFFF;
+            color: #FFFFFF; /* Retain white text color */
             font-size: 1.18rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
@@ -637,7 +643,7 @@
             align-items: flex-start;
         }
         .process-desc {
-            color: #FFFFFF;
+            color: #FFFFFF; /* Retain white text color */
             opacity: 1;
             font-size: 1.01rem;
             text-align: left;
@@ -658,7 +664,7 @@
             left: 10%;
             width: 80%;
             height: 0;
-            border-top: 1.5px solid #b0b0b0;
+            border-top: 1.5px solid #b0b0b0; /* Retain original line color */
             z-index: 1;
         }
         @media (max-width: 1100px) {
@@ -1332,7 +1338,7 @@
         <!-- Core Features Section with Timeline -->
         <section class="py-20 process-section">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-16" style="color: white;">
+                <h2 class="text-4xl font-bold text-center mb-16 text-black">
                     Core Features With Every Installation<span style="color:#004E98;">.</span>
                 </h2>
                 <div class="process-cards">
