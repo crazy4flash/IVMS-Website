@@ -45,7 +45,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding: 8rem 0 0rem 0;
+            padding: 5rem 0 0rem 0;
             background-color: var(--white);
             text-align: left;
         }
@@ -1224,18 +1224,16 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-section-new-layout">
-            <div class="max-w-7xl mx-auto px-4">
-                <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                    SpeedSense™ by iVMS<br>
-                    <span style="color: #004E98;">Rental Fleet Protection Reimagined.</span>
-                </h1>
-            </div>
-        </section>
-
-        <!-- Image Section (Moved outside Hero) -->
-        <section class="py-0">
-            <div class="max-w-7xl mx-auto px-4">
-                <img src="src/images/speedsense-dashboard.png" alt="SpeedSense Dashboard" class="new-hero-image mx-auto rounded-lg shadow-xl w-full">
+            <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        SpeedSense™ by iVMS<br>
+                        <span style="color: #004E98;">Rental Fleet Protection Reimagined.</span>
+                    </h1>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="src/images/speedsense-dashboard.png" alt="SpeedSense Dashboard" class="new-hero-image rounded-lg shadow-xl w-full">
+                </div>
             </div>
         </section>
 
@@ -1282,8 +1280,8 @@
                         </div>
                     </div>
                     <div class="lg:w-1/2">
-                        <div class="relative">
-                            <img src="src/images/speed-camera-problem.png" alt="Speed Camera Problem" class="rounded-lg shadow-xl w-full">
+                        <div class="relative flex justify-center items-center">
+                            <img src="src/images/speed-camera-problem.png" alt="Speed Camera Problem" class="rounded-lg shadow-xl w-full h-[600px] object-cover">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
                         </div>
                     </div>
@@ -1515,11 +1513,11 @@
         </section>
 
         <!-- Call to Action Section -->
-        <section class="py-20 bg-gradient-to-r from-[#004E98] to-[#00A3A3]">
+        <section class="pt-0 pb-48 bg-gradient-to-r from-[#004E98] to-[#00A3A3]">
             <div class="max-w-7xl mx-auto px-4">
-                <div class="text-center text-white">
-                    <h2 class="text-4xl font-bold mb-6">Ready to transform your fleet operations?</h2>
-                    <p class="text-xl mb-10">Book a demo to see how SpeedSense by iVMS can protect your revenue and streamline your business.</p>
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold mb-6 text-black">Ready to transform your fleet operations?</h2>
+                    <p class="text-xl mb-4 text-black">Book a demo to see how SpeedSense by iVMS can protect your revenue and streamline your business.</p>
                     <button class="cta-bottom bg-white text-[#004E98] hover:bg-gray-100">Book a Demo</button>
                 </div>
             </div>
