@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IVMS - Complete rental fleet management solutions. Advanced telematics and fleet management platform for rental and leasing companies.">
+    <title>Rental & Leasing Solutions | IVMS - Intelligent Vehicle Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="src/images/ivms-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #004E98;      /* Main brand blue - Use for primary CTAs, headings */
+            --secondary-blue: #3A6EA5;    /* Secondary blue - Use for hover states */
+            --teal-primary: #00A3A3;      /* Primary teal - Use for accents, icons */
+            --teal-light: #00D1D1;        /* Light teal - Use for hover states */
+            --teal-dark: #007A7A;         /* Dark teal - Use for active states */
+            --dark-bg: #0A0A0A;           /* Dark background - Use for footer, dark sections */
+            --light-bg: #FFFFFF;          /* Light background - Use for main background */
+            --text-primary: #1A1A1A;      /* Primary text - Use for main content */
+            --text-secondary: #444444;    /* Secondary text - Use for supporting content */
+            --text-light: #FFFFFF;        /* Light text - Use for dark backgrounds */
+            --text-muted: #666666;        /* Muted text - Use for less important content */
+            --border-light: #EDEDED;      /* Light border - Use for subtle separators */
+            --overlay-dark: rgba(30, 30, 30, 0.65); /* Dark overlay - Use for hero section */
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --fleet-blue: var(--primary-blue);
+            --urban-slate: #3A3F45;
+            --white: #FFFFFF;
+            --black: #000000;
+            --text-dark: #1A1A1A;
+            --text-medium: #333333;
+            --overlay-opacity: 0.85;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+            background-color: var(--white);
+            color: var(--urban-slate);
+            overflow-x: hidden;
+        }
+        
+        .hero-section-new-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 5rem 0 0rem 0;
+            background-color: var(--white);
+            text-align: left;
+        }
+        
+        .hero-cta, .cta-bottom {
+            background: var(--primary-blue);
+            color: var(--text-light);
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 0.9rem 2.2rem;
+            border: none;
+            font-size: 1.08rem;
+            box-shadow: 0 4px 16px rgba(0, 78, 152, 0.15);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            min-width: 120px;
+        }
+        
+        .hero-cta:hover, .cta-bottom:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 78, 152, 0.25);
+        }
+        
+        .process-section {
+            background-color: #323336;
+            padding: 4rem 0;
+            color: white;
+        }
+        
+        .process-cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .process-card {
+            background: #323336;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            position: relative;
+            border: 1px solid #b0b0b0;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .process-number {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+            background: #323336;
+            border-radius: 50%;
+            border: 1.5px solid #b0b0b0;
+            color: #fff;
+            font-size: 2.9rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            letter-spacing: -1px;
+        }
+        
+        .process-title {
+            color: #FFFFFF;
+            font-size: 1.18rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            margin-top: 7.5rem;
+            text-align: left;
+            letter-spacing: -0.5px;
+            line-height: 1.3;
+            height: 90px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .process-desc {
+            color: #FFFFFF;
+            opacity: 1;
+            font-size: 1.01rem;
+            text-align: left;
+            line-height: 1.6;
+            margin-bottom: 0;
+            margin-top: 0;
+            font-weight: 400;
+            flex-grow: 1;
+            display: flex;
+            align-items: flex-start;
+            padding-top: 0;
+            height: auto;
+            min-height: 120px;
+        }
+        
+        .process-line {
+            position: absolute;
+            top: 90px;
+            left: 10%;
+            width: 80%;
+            height: 0;
+            border-top: 1.5px solid #b0b0b0;
+            z-index: 1;
+        }
+        
+        @media (max-width: 1100px) {
+            .process-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .process-cards {
+                grid-template-columns: 1fr;
+            }
+            .process-line {
+                display: none;
+            }
+            .process-card {
+                min-height: 350px;
+                padding: 2rem 1.5rem 1.5rem 1.5rem;
+            }
+            .process-title {
+                height: 75px;
+                margin-top: 5rem;
+            }
+            .process-number {
+                top: 25px;
+            }
+            .process-desc {
+                min-height: 80px;
+            }
+        }
+        
+        .stats-section {
+            background-color: #fff;
+            padding: 4rem 0;
+            margin: 3rem 0;
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        .stat-image {
+            margin-bottom: -1rem;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 12px 12px 0 0;
+            overflow: hidden;
+        }
+        
+        .stat-card {
+            background-color: #f5f5f5;
+            border-radius: 0 0 12px 12px;
+            padding: 2.5rem 2rem;
+            text-align: left;
+            box-shadow: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ededed;
+            border-top: none;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+        
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--teal-primary);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .feature-card {
+            display: flex;
+            align-items: flex-start;
+            animation: fadeInUp 0.6s ease forwards;
+            background: var(--light-bg);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: none;
+        }
+        
+        .feature-icon-container {
+            background-color: rgba(0, 128, 128, 0.08);
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon {
+            color: var(--primary-blue) !important;
+            font-size: 1.8rem;
+        }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .section-separator {
+            height: 1px;
+            background: #ededed;
+            margin: 3rem 0;
+            max-width: 1200px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .stat-card:nth-child(2), .feature-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 main-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="nav-link">Home</a>
+                        <div class="relative group">
+                            <button class="nav-link">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+                            <div class="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded-md shadow-lg z-20">
+                                <a href="#solutions" class="block px-4 py-2 text-sm hover:bg-gray-700">Overview</a>
+                                <a href="speedsense.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Speedsense Technology</a>
+                                <a href="rental-leasing.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Rental & Leasing</a>
+                            </div>
+                        </div>
+                        <a href="#technology" class="nav-link">Technology</a>
+                        <a href="#about" class="nav-link">About</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section-new-layout">
+            <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Rental & Leasing Solutions<br>
+                        <span style="color: #004E98;">Complete Rental Fleet Control</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Transform your rental operations with our comprehensive fleet management platform designed specifically for rental and leasing companies. From driver behaviour monitoring to vehicle health protection, iVMS delivers complete visibility and control over every aspect of your rental fleet.
+                    </p>
+                    <button class="hero-cta">Book Demo</button>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="src/images/rental-fleet.png" alt="Rental Fleet Management" class="new-hero-image rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-4xl font-bold mb-6">
+                            The Challenge:<br>
+                            <span style="color: #004E98;">Rental Fleet Operations Are Complex</span>
+                        </h2>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-12 h-12 bg-[#f7f7f9] rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-user-shield text-xl" style="color: #004E98;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Uncontrolled Driver Behaviour</h3>
+                                    <p class="text-gray-600">Rental customers often drive aggressively, leading to excessive wear, accidents, and costly repairs whilst your vehicles are out of your direct control.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-12 h-12 bg-[#f7f7f9] rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-car-crash text-xl" style="color: #004E98;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Vehicle Health Uncertainty</h3>
+                                    <p class="text-gray-600">Without real-time monitoring, vehicle issues go undetected until major breakdowns occur, resulting in costly repairs and lost rental revenue.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-12 h-12 bg-[#f7f7f9] rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-lock text-xl" style="color: #004E98;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Security Vulnerabilities</h3>
+                                    <p class="text-gray-600">Rental vehicles face higher risks of theft, misuse, and unauthorized access, creating significant financial exposure for your business.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-12 h-12 bg-[#f7f7f9] rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-tasks text-xl" style="color: #004E98;"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">Administrative Overload</h3>
+                                    <p class="text-gray-600">Managing rental contracts, vehicle inspections, and post-rental reporting consumes valuable time and resources that could be better spent growing your business.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="relative flex justify-center items-center">
+                            <img src="src/images/rental-challenges.png" alt="Rental Fleet Challenges" class="rounded-lg shadow-xl w-full h-[600px] object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Section -->
+        <section class="py-20 process-section">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16 text-black">
+                    The Solution: iVMS Rental Fleet Management<span style="color:#004E98;">.</span>
+                </h2>
+                <div class="process-cards">
+                    <div class="process-card">
+                        <div class="process-number">1</div>
+                        <h3 class="process-title">Intelligent Driver Management</h3>
+                        <p class="process-desc">Complete oversight of renter behaviour with real-time monitoring and automated intervention capabilities.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">2</div>
+                        <h3 class="process-title">Proactive Vehicle Protection</h3>
+                        <p class="process-desc">Advanced health monitoring and diagnostics ensure vehicles remain in optimal condition.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">3</div>
+                        <h3 class="process-title">Enhanced Security Control</h3>
+                        <p class="process-desc">Multi-layered security features protect against theft, misuse, and unauthorized access.</p>
+                    </div>
+                    <div class="process-card">
+                        <div class="process-number">4</div>
+                        <h3 class="process-title">Streamlined Operations</h3>
+                        <p class="process-desc">Digital management tools automate rental processes and provide actionable insights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features Section -->
+        <section class="py-20 bg-[#f7f7f9]">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16">
+                    Core Features for Rental Success<span style="color:#004E98;">.</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Driver Behaviour Management Card -->
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <div class="relative mb-6">
+                            <img src="src/images/driver-scoring.png" alt="Driver Scoring System" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-4xl mb-4"><i class="fas fa-user-shield" style="color: #004E98;"></i></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Driver Behaviour Management</h3>
+                        <p class="text-gray-600 mb-4">Complete Scoring System for Renters</p>
+                        <ul class="text-gray-600 space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Comprehensive driving behaviour monitoring</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Real-time driver scoring system</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Geofence breach detection</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Speed and RPM limitation</span>
+                            </li>
+                        </ul>
+                        <p class="text-gray-600 italic">Protect your vehicles from aggressive driving whilst encouraging responsible renter behaviour through transparent scoring systems.</p>
+                    </div>
+
+                    <!-- Vehicle Health Protection Card -->
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <div class="relative mb-6">
+                            <img src="src/images/vehicle-health.png" alt="Vehicle Health Monitoring" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-4xl mb-4"><i class="fas fa-heartbeat" style="color: #004E98;"></i></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Vehicle Health Protection</h3>
+                        <p class="text-gray-600 mb-4">Real-Time Diagnostics and Monitoring</p>
+                        <ul class="text-gray-600 space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Continuous fault monitoring</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Preventive maintenance scheduling</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Vehicle rating system</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Parts life expectancy tracking</span>
+                            </li>
+                        </ul>
+                        <p class="text-gray-600 italic">Prevent costly breakdowns and extend vehicle lifespan through proactive health monitoring and maintenance.</p>
+                    </div>
+
+                    <!-- Advanced Tracking System Card -->
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <div class="relative mb-6">
+                            <img src="src/images/fleet-tracking.png" alt="Fleet Tracking System" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-4xl mb-4"><i class="fas fa-map-marked-alt" style="color: #004E98;"></i></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Advanced Tracking System</h3>
+                        <p class="text-gray-600 mb-4">Complete Fleet Visibility</p>
+                        <ul class="text-gray-600 space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Real-time location monitoring</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Complete trip history</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Parameter tracking</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check mr-2" style="color: #004E98;"></i>
+                                <span>Route analysis</span>
+                            </li>
+                        </ul>
+                        <p class="text-gray-600 italic">Maintain complete oversight of your rental fleet with detailed insights into vehicle usage patterns and operational efficiency.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16">
+                    Measurable Results for Rental Operations<span style="color:#004E98;">.</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="text-center">
+                        <div class="relative mb-6">
+                            <img src="src/images/misuse-prevention.png" alt="Misuse Prevention" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-6xl font-bold mb-4" style="color: #004E98;">95%</div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Misuse Prevention Rate</h3>
+                        <p class="text-gray-600">Advanced monitoring systems effectively prevent vehicle abuse and unauthorized use, protecting your valuable rental assets.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="relative mb-6">
+                            <img src="src/images/processing-time.png" alt="Processing Time" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-6xl font-bold mb-4" style="color: #004E98;">80%</div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Processing Time Reduction</h3>
+                        <p class="text-gray-600">Digital rental management systems dramatically reduce administrative workload and accelerate customer service.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="relative mb-6">
+                            <img src="src/images/maintenance-savings.png" alt="Maintenance Savings" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <div class="text-6xl font-bold mb-4" style="color: #004E98;">60%</div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Maintenance Cost Savings</h3>
+                        <p class="text-gray-600">Proactive vehicle health monitoring prevents major breakdowns and reduces unexpected repair expenses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="pt-0 pb-48 bg-gradient-to-r from-[#004E98] to-[#00A3A3]">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center">
+                    <h2 class="text-4xl font-bold mb-6 text-black">Transform Your Rental Operations Today</h2>
+                    <p class="text-xl mb-10 text-black">Ready to revolutionize your rental fleet operations?</p>
+                    <button class="cta-bottom bg-white text-[#004E98] hover:bg-gray-100">Book Demo</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0A0A0A] text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center mb-4">
+                    <img src="src/images/ivms-logo.png" alt="IVMS Logo" class="footer-logo">
+                    <p class="footer-text">Dubai, UAE</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#solutions" class="footer-link">Solutions</a></li>
+                        <li><a href="#technology" class="footer-link">Technology</a></li>
+                        <li><a href="#about" class="footer-link">About</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li><a href="tel:+971585994323" class="footer-link">+971 58 599 4323</a></li>
+                        <li><a href="mailto:info@ivmsgroup.com" class="footer-link">info@ivmsgroup.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
