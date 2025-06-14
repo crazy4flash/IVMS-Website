@@ -45,7 +45,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding: 5rem 0 0rem 0;
+            padding: 8rem 0 0rem 0;
             background-color: var(--white);
             text-align: left;
         }
@@ -315,6 +315,88 @@
         .stat-card:nth-child(2), .feature-card:nth-child(2) {
             animation-delay: 0.2s;
         }
+
+        /* Minimal Navigation Styles */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border: none;
+            box-shadow: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            max-width: 100vw;
+            transition: background 0.2s, backdrop-filter 0.2s;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            background: transparent;
+        }
+
+        .logo {
+            height: 64px;
+            max-width: 220px;
+            width: auto;
+            margin-right: 2rem;
+            transition: height 0.2s, max-width 0.2s;
+        }
+
+        /* Style for navigation links */
+        nav a {
+            color: var(--text-light); /* Default link color set to white */
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+            font-size: 1.1rem; /* Increased font size */
+            padding: 0 15px; /* Added horizontal padding for spacing */
+        }
+
+        .footer-logo {
+            height: 50px;
+            margin-bottom: 1rem;
+            filter: brightness(0) invert(1); /* Makes logo white */
+        }
+        .footer-text, .footer-link {
+            color: #ffffff;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        .footer-link:hover {
+            opacity: 1;
+        }
+        .footer-heading {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+        .footer-social-links a {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #ffffff;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        .footer-social-links a:hover {
+            opacity: 1;
+        }
+        .footer-divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 2rem 0;
+        }
+        .footer-copyright {
+            font-size: 0.9rem;
+            text-align: center;
+            color: #ffffff;
+            opacity: 0.6;
+        }
     </style>
 </head>
 <body>
@@ -329,11 +411,11 @@
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
                         <a href="#" class="nav-link">Home</a>
                         <div class="relative group">
-                            <button class="nav-link">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+                            <button class="nav-link text-white">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
                             <div class="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded-md shadow-lg z-20">
-                                <a href="#solutions" class="block px-4 py-2 text-sm hover:bg-gray-700">Overview</a>
-                                <a href="speedsense.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Speedsense Technology</a>
-                                <a href="rental-leasing.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Rental & Leasing</a>
+                                <a href="#solutions" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Overview</a>
+                                <a href="speedsense.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Speedsense Technology</a>
+                                <a href="rental-leasing.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Rental & Leasing</a>
                             </div>
                         </div>
                         <a href="#technology" class="nav-link">Technology</a>
@@ -341,6 +423,23 @@
                         <a href="#contact" class="nav-link">Contact</a>
                     </div>
                 </div>
+            </div>
+        </div>
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Home</a>
+                <div class="group">
+                    <button class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 w-full text-left">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+                    <div class="hidden group-focus-within:block pl-4 space-y-1">
+                         <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Overview</a>
+                         <a href="speedsense.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Speedsense Technology</a>
+                         <a href="rental-leasing.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Rental & Leasing</a>
+                    </div>
+                </div>
+                <a href="#technology" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Technology</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
             </div>
         </div>
     </nav>
@@ -554,7 +653,145 @@
             </div>
         </section>
 
-        <!-- Results Section -->
+        <!-- Rental-Specific Features Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-10">
+                    Rental & Leasing-Specific Features<span style="color:#004E98;">.</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Digital Contract Management</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-file-contract text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <div>
+                                    <p class="font-semibold">Vehicle Rental Form Management:</p>
+                                    <p>Streamlined digital rental agreements and documentation.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-car-alt text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <div>
+                                    <p class="font-semibold">Test Drive Management:</p>
+                                    <p>Comprehensive test drive forms and monitoring systems.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-chart-bar text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <div>
+                                    <p class="font-semibold">Post-Rental Analytics:</p>
+                                    <p>Detailed reporting on vehicle usage, driver behaviour, and fleet performance.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="relative flex justify-center items-center">
+                        <img src="src/images/digital-rental-form.png" alt="Digital Rental Form Interface" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
+                    <div class="relative flex justify-center items-center order-2 md:order-1">
+                        <img src="src/images/remote-control-panel.png" alt="Remote Vehicle Control Interface" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-l from-[#004E98]/10 to-transparent rounded-lg"></div>
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Advanced Vehicle Protection</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-clone text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <div>
+                                    <p class="font-semibold">Vehicle Clone Protection (VCP):</p>
+                                    <p>Sophisticated anti-theft technology preventing vehicle cloning.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-lock text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <div>
+                                    <p class="font-semibold">Remote Immobilization:</p>
+                                    <p>Multiple scenario-based remote vehicle control for security and compliance.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-clipboard-check text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <div>
+                                    <p class="font-semibold">Rental Compliance Monitoring:</p>
+                                    <p>Ensure vehicles are used within agreed parameters and restrictions.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security & Control Features Section -->
+        <section class="py-20 bg-[#f7f7f9]">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-10">
+                    Security & Control Features<span style="color:#004E98;">.</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <i class="fas fa-fingerprint text-4xl mb-4" style="color: #004E98;"></i>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Unauthorized Access Prevention</h3>
+                        <ul class="text-gray-600 space-y-2 text-left">
+                            <li><i class="fas fa-check-circle mr-2" style="color: #004E98;"></i> Ignition Detection</li>
+                            <li><i class="fas fa-check-circle mr-2" style="color: #004E98;"></i> Battery Tampering Alerts</li>
+                            <li><i class="fas fa-check-circle mr-2" style="color: #004E98;"></i> Access Control</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <i class="fas fa-gamepad text-4xl mb-4" style="color: #004E98;"></i>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Remote Vehicle Control</h3>
+                        <ul class="text-gray-600 space-y-2 text-left">
+                            <li><i class="fas fa-check-circle mr-2" style="color: #004E98;"></i> Engine Control</li>
+                            <li><i class="fas fa-check-circle mr-2" style="color: #004E98;"></i> Door/Window Management</li>
+                            <li><i class="fas fa-check-circle mr-2" style="color: #004E98;"></i> Fleet Manager Access</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <i class="fas fa-eye text-4xl mb-4" style="color: #004E98;"></i>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Comprehensive Security Monitoring</h3>
+                        <ul class="text-gray-600 space-y-2 text-left">
+                            <li><i class="fas fa-check-circle mr-2" style="color: #004E98;"></i> Real-Time Theft Detection</li>
+                            <li><i class="fas fa-check-circle mr-2" style="color: #004E98;"></i> Location-Based Security</li>
+                            <li><i class="fas fa-check-circle mr-2" style="color: #004E98;"></i> Multi-Layer Protection</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results & Statistics Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-16">
+                    Exclusive Benefits for Rental Companies<span style="color:#004E98;">.</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <div class="text-4xl mb-4"><i class="fas fa-shield-alt" style="color: #004E98;"></i></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">95% Reduction in Vehicle Misuse</h3>
+                        <p class="text-gray-600">Advanced monitoring systems effectively prevent vehicle abuse and unauthorized use.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <div class="text-4xl mb-4"><i class="fas fa-tachometer-alt" style="color: #004E98;"></i></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">80% Faster Rental Processing</h3>
+                        <p class="text-gray-600">Digital rental management systems dramatically reduce administrative workload.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <div class="text-4xl mb-4"><i class="fas fa-wrench text-xl" style="color: #004E98;"></i></div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">60% Lower Maintenance Costs</h3>
+                        <p class="text-gray-600">Proactive vehicle health monitoring prevents major breakdowns and reduces repair expenses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Measurable Results Section -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-16">
@@ -592,6 +829,89 @@
             </div>
         </section>
 
+        <!-- Comparison Table Section -->
+        <section class="py-20 bg-[#f7f7f9]">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-10">
+                    Complete Rental Fleet Solution Comparison<span style="color:#004E98;">.</span>
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white rounded-lg shadow-lg overflow-hidden">
+                        <thead>
+                            <tr class="bg-[#f7f7f9]">
+                                <th class="py-4 px-6 text-left text-lg font-semibold text-[#004E98]">Feature</th>
+                                <th class="py-4 px-6 text-left text-lg font-semibold text-[#004E98]">Without iVMS</th>
+                                <th class="py-4 px-6 text-left text-lg font-semibold text-[#004E98]">With iVMS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold">Driver Monitoring</td>
+                                <td class="py-4 px-6 border-b border-gray-200">No visibility during rentals</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]">Complete real-time oversight</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold">Vehicle Health</td>
+                                <td class="py-4 px-6 border-b border-gray-200">React to problems</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]">Proactive monitoring and prevention</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold">Security Control</td>
+                                <td class="py-4 px-6 border-b border-gray-200">Basic alarm systems</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]">Multi-layer protection with remote control</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold">Contract Management</td>
+                                <td class="py-4 px-6 border-b border-gray-200">Paper-based processes</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]">Digital management system</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-semibold">Fleet Analytics</td>
+                                <td class="py-4 px-6">Limited reporting</td>
+                                <td class="py-4 px-6 font-semibold text-[#004E98]">Comprehensive insights and analytics</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-semibold">Emergency Response</td>
+                                <td class="py-4 px-6">Manual intervention required</td>
+                                <td class="py-4 px-6 font-semibold text-[#004E98]">Automated alerts and remote control</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose iVMS Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-4xl font-bold text-center mb-10">
+                    Why Choose iVMS for Rental Fleet Management?<span style="color:#004E98;">.</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                    <div class="flex flex-col items-center text-center p-6 bg-[#f7f7f9] rounded-lg shadow-sm">
+                        <i class="fas fa-award text-4xl mb-4" style="color: #004E98;"></i>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Proven Expertise</h3>
+                        <p class="text-gray-600">Years of experience developing solutions specifically for rental and leasing companies.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-6 bg-[#f7f7f9] rounded-lg shadow-sm">
+                        <i class="fas fa-plug text-4xl mb-4" style="color: #004E98;"></i>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Comprehensive Integration</h3>
+                        <p class="text-gray-600">Seamless integration with existing rental management systems.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-6 bg-[#f7f7f9] rounded-lg shadow-sm">
+                        <i class="fas fa-expand-alt text-4xl mb-4" style="color: #004E98;"></i>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Scalable Solutions</h3>
+                        <p class="text-gray-600">Flexible platform that grows with your business.</p>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-6 bg-[#f7f7f9] rounded-lg shadow-sm">
+                        <i class="fas fa-headset text-4xl mb-4" style="color: #004E98;"></i>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">24/7 Support</h3>
+                        <p class="text-gray-600">Round-the-clock technical support and monitoring.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Call to Action Section -->
         <section class="pt-0 pb-48 bg-gradient-to-r from-[#004E98] to-[#00A3A3]">
             <div class="max-w-7xl mx-auto px-4">
@@ -599,37 +919,63 @@
                     <h2 class="text-4xl font-bold mb-6 text-black">Transform Your Rental Operations Today</h2>
                     <p class="text-xl mb-10 text-black">Ready to revolutionize your rental fleet operations?</p>
                     <button class="cta-bottom bg-white text-[#004E98] hover:bg-gray-100">Book Demo</button>
+                    <p class="text-white mt-4">
+                        <a href="#contact" class="text-white underline hover:no-underline">Contact Our Team</a>
+                    </p>
+                    <div class="mt-8">
+                        <a href="https://wa.me/971585994323" class="whatsapp-button-cta inline-flex items-center bg-[#25D366] text-black px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-[#1DA851] transition-all duration-300">
+                            <i class="fab fa-whatsapp text-2xl mr-3"></i>
+                            Chat Now +971 58 599 4323
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#0A0A0A] text-white py-12">
+    <footer class="bg-black text-white py-12" style="background-color: #000000 !important; color: #ffffff !important; display: block !important; position: relative !important; min-height: 200px !important;">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="flex flex-col items-center mb-4">
+                <div class="flex flex-col items-center mb-4" style="color: #ffffff !important;">
                     <img src="src/images/ivms-logo.png" alt="IVMS Logo" class="footer-logo">
                     <p class="footer-text">Dubai, UAE</p>
                 </div>
-                <div>
+                <div style="color: #ffffff !important;">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#solutions" class="footer-link">Solutions</a></li>
-                        <li><a href="#technology" class="footer-link">Technology</a></li>
-                        <li><a href="#about" class="footer-link">About</a></li>
-                        <li><a href="#contact" class="footer-link">Contact</a></li>
+                        <li><a href="#solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
+                        <li><a href="#technology" class="footer-link" style="color: #ffffff !important;">Technology</a></li>
+                        <li><a href="#about" class="footer-link" style="color: #ffffff !important;">About</a></li>
+                        <li><a href="#contact" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
                     </ul>
                 </div>
-                <div>
+                <div style="color: #ffffff !important;">
                     <h4 class="footer-heading">Contact Us</h4>
                     <ul class="space-y-2">
-                        <li><a href="tel:+971585994323" class="footer-link">+971 58 599 4323</a></li>
-                        <li><a href="mailto:info@ivmsgroup.com" class="footer-link">info@ivmsgroup.com</a></li>
+                        <li class="footer-text">Phone: <a href="tel:+971585994323" class="footer-link" style="color: #ffffff !important;">+971 58 599 4323</a></li>
+                        <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link" style="color: #ffffff !important;">info@ivmsgroup.com</a></li>
                     </ul>
+                    <div class="footer-social-links mt-4">
+                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/YOUR_INSTAGRAM" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copyright" style="color: #ffffff !important; opacity: 0.6;">
+                <p>&copy; 2025 IVMS Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Button (floating) -->
+    <a href="https://wa.me/971585994323" class="whatsapp-button fixed bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-lg z-40 transition-all duration-300">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </body>
 </html> 
