@@ -360,9 +360,58 @@
         /* Style for navigation links */
         nav a {
             color: var(--text-light); /* Default link color set to white */
-            transition: color 0.3s ease; /* Smooth transition for hover effect */
+            transition: all 0.3s ease; /* Smooth transition for hover effect */
             font-size: 1.1rem; /* Increased font size */
             padding: 0 15px; /* Added horizontal padding for spacing */
+            position: relative; /* For the underline effect */
+            text-decoration: none;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: var(--teal-primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover {
+            color: var(--text-light); /* Keep text white on hover */
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-link {
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: var(--teal-primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover {
+            color: var(--text-light); /* Keep text white on hover */
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         .footer-logo {
