@@ -18,8 +18,8 @@
             --teal-dark: #007A7A;         /* Dark teal - Use for active states */
             --dark-bg: #0A0A0A;           /* Dark background - Use for footer, dark sections */
             --light-bg: #FFFFFF;          /* Light background - Use for main background */
-            --text-primary: #1A1A1A;      /* Primary text - Use for main content */
-            --text-secondary: #444444;    /* Secondary text - Use for supporting content */
+            --text-primary: #2F2F2F;      /* Primary text - Use for main content */
+            --text-secondary: rgba(47, 47, 47, 0.8);    /* Secondary text - Use for supporting content */
             --text-light: #FFFFFF;        /* Light text - Use for dark backgrounds */
             --text-muted: #666666;        /* Muted text - Use for less important content */
             --border-light: #EDEDED;      /* Light border - Use for subtle separators */
@@ -32,13 +32,30 @@
             --text-dark: #1A1A1A;
             --text-medium: #333333;
             --overlay-opacity: 0.85;
+            --font-family-primary: "Suisse BP Intl", sans-serif;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+            font-family: var(--font-family-primary);
             background-color: var(--white);
-            color: var(--urban-slate);
+            color: var(--text-primary);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-primary);
+            color: var(--text-primary);
+        }
+        
+        p {
+            font-family: var(--font-family-primary);
+            color: var(--text-primary);
+        }
+        
+        .text-secondary {
+            color: var(--text-secondary);
         }
         
         .hero-section-new-layout {
@@ -1336,7 +1353,7 @@
         <!-- Core Features Section with Timeline -->
         <section class="py-20 process-section">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-16 text-black">
+                <h2 class="text-4xl font-bold text-center mb-16" style="color: #2F2F2F;">
                     Core Features With Every Installation<span style="color:#004E98;">.</span>
                 </h2>
                 <div class="process-cards">
@@ -1367,7 +1384,7 @@
         <!-- Complete Fleet Management Section -->
         <section class="py-20 bg-[#f7f7f9]">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-10 text-black">Beyond Fines: Complete Fleet Management<span style="color:#004E98;">.</span></h2>
+                <h2 class="text-4xl font-bold text-center mb-10" style="color: #2F2F2F;">Beyond Fines: Complete Fleet Management<span style="color:#004E98;">.</span></h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-8">
                         <div class="relative mb-6">
@@ -1516,8 +1533,8 @@
         <section class="pt-0 pb-48 bg-gradient-to-r from-[#004E98] to-[#00A3A3]">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center">
-                    <h2 class="text-4xl font-bold mb-6 text-black">Ready to transform your fleet operations?</h2>
-                    <p class="text-xl mb-10 text-black">Book a demo to see how SpeedSense by iVMS can protect your revenue and streamline your business.</p>
+                    <h2 class="text-4xl font-bold mb-6" style="color: #2F2F2F;">Ready to transform your fleet operations?</h2>
+                    <p class="text-xl mb-10" style="color: #2F2F2F;">Book a demo to see how SpeedSense by iVMS can protect your revenue and streamline your business.</p>
                     <button class="cta-bottom bg-white text-[#004E98] hover:bg-gray-100">Book a Demo</button>
                 </div>
             </div>

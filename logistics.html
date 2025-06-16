@@ -18,8 +18,8 @@
             --teal-dark: #007A7A;         /* Dark teal - Use for active states */
             --dark-bg: #0A0A0A;           /* Dark background - Use for footer, dark sections */
             --light-bg: #FFFFFF;          /* Light background - Use for main background */
-            --text-primary: #1A1A1A;      /* Primary text - Use for main content */
-            --text-secondary: #444444;    /* Secondary text - Use for supporting content */
+            --text-primary: #2F2F2F;      /* Primary text - Use for main content */
+            --text-secondary: rgba(47, 47, 47, 0.8);    /* Secondary text - Use for supporting content */
             --text-light: #FFFFFF;        /* Light text - Use for dark backgrounds */
             --text-muted: #666666;        /* Muted text - Use for less important content */
             --border-light: #EDEDED;      /* Light border - Use for subtle separators */
@@ -32,13 +32,30 @@
             --text-dark: #1A1A1A;
             --text-medium: #333333;
             --overlay-opacity: 0.85;
+            --font-family-primary: "Suisse BP Intl", sans-serif;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+            font-family: var(--font-family-primary);
             background-color: var(--white);
-            color: var(--urban-slate);
+            color: var(--text-primary);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-primary);
+            color: var(--text-primary);
+        }
+        
+        p {
+            font-family: var(--font-family-primary);
+            color: var(--text-primary);
+        }
+
+        .text-secondary {
+            color: var(--text-secondary);
         }
 
         /* Minimal Navigation Styles */
@@ -281,7 +298,7 @@
         <section class="py-20 bg-[#f7f7f9]">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-10">
-                    <span style="color:#004E98;">The Challenges of Modern Logistics</span>
+                    <span style="color:#2F2F2F;">The Challenges of Modern Logistics</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
                     <div>
@@ -344,7 +361,7 @@
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-10">
-                    <span style="color:#004E98;">The Solution: iVMS Intelligent Logistics Platform</span>
+                    <span style="color:#2F2F2F;">The Solution: iVMS Intelligent Logistics Platform</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
@@ -383,7 +400,7 @@
         <section class="py-20 bg-[#f7f7f9]">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-10">
-                    <span style="color:#004E98;">Core Features</span>
+                    <span style="color:#2F2F2F;">Core Features</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
@@ -457,7 +474,7 @@
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-10">
-                    <span style="color:#004E98;">Advanced Logistics Capabilities</span>
+                    <span style="color:#2F2F2F;">Advanced Logistics Capabilities</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
                     <div>
@@ -531,7 +548,7 @@
         <section class="py-20 bg-[#f7f7f9]">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-10">
-                    <span style="color:#004E98;">Complete Logistics Support Services</span>
+                    <span style="color:#2F2F2F;">Complete Logistics Support Services</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
                     <div class="bg-white rounded-lg shadow-lg p-8">
@@ -562,7 +579,7 @@
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-16">
-                    <span style="color:#004E98;">Proven Results for Logistics Operations</span>
+                    <span style="color:#2F2F2F;">Proven Results for Logistics Operations</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
@@ -593,7 +610,7 @@
         <section class="py-20 bg-[#f7f7f9]">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-10">
-                    <span style="color:#004E98;">Calculate Your Logistics ROI</span>
+                    <span style="color:#2F2F2F;">Calculate Your Logistics ROI</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div>
@@ -638,7 +655,7 @@
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-10">
-                    <span style="color:#004E98;">Sustainable Logistics Operations</span>
+                    <span style="color:#2F2F2F;">Sustainable Logistics Operations</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div class="relative">
@@ -680,7 +697,7 @@
         <section class="py-20 bg-[#f7f7f9]">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-10">
-                    <span style="color:#004E98;">Seamless Integration with Your Systems</span>
+                    <span style="color:#2F2F2F;">Seamless Integration with Your Systems</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div>
@@ -722,7 +739,7 @@
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-10">
-                    <span style="color:#004E98;">Simple Implementation Process</span>
+                    <span style="color:#2F2F2F;">Simple Implementation Process</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
@@ -761,7 +778,7 @@
         <section class="py-20 bg-[#f7f7f9]">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-10">
-                    <span style="color:#004E98;">Why Choose iVMS for Logistics?</span>
+                    <span style="color:#2F2F2F;">Why Choose iVMS for Logistics?</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
                     <div>

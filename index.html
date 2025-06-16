@@ -18,27 +18,44 @@
             --teal-dark: #007A7A;         /* Dark teal - Use for active states */
             --dark-bg: #0A0A0A;           /* Dark background - Use for footer, dark sections */
             --light-bg: #FFFFFF;          /* Light background - Use for main background */
-            --text-primary: #1A1A1A;      /* Primary text - Use for main content */
-            --text-secondary: #444444;    /* Secondary text - Use for supporting content */
+            --text-primary: #2F2F2F;      /* Primary text - Use for main content */
+            --text-secondary: rgba(47, 47, 47, 0.8);    /* Secondary text - Use for supporting content */
             --text-light: #FFFFFF;        /* Light text - Use for dark backgrounds */
-            --text-muted: #666666;        /* Muted text - Use for less important content */
+            --text-muted: rgba(47, 47, 47, 0.6);        /* Muted text - Use for less important content */
             --border-light: #EDEDED;      /* Light border - Use for subtle separators */
             --overlay-dark: rgba(30, 30, 30, 0.65); /* Dark overlay - Use for hero section */
             --card-bg: rgba(255, 255, 255, 0.05);
             --fleet-blue: #0057A0;
             --urban-slate: #3A3F45;
             --white: #FFFFFF;
-            --black: #000000;
-            --text-dark: #1A1A1A;
-            --text-medium: #333333;
+            --black: #2F2F2F;
+            --text-dark: #2F2F2F;
+            --text-medium: #2F2F2F;
             --overlay-opacity: 0.85;
+            --font-family-primary: "Suisse BP Intl", sans-serif;
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro', sans-serif;
+            font-family: var(--font-family-primary);
             background-color: var(--white);
-            color: var(--urban-slate);
+            color: var(--text-primary);
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-primary);
+            color: var(--text-primary);
+        }
+        
+        p {
+            font-family: var(--font-family-primary);
+            color: var(--text-primary);
+        }
+        
+        .text-secondary {
+            color: var(--text-secondary);
         }
         
         .hero-section {
@@ -1438,7 +1455,7 @@
     <!-- Client Logo Section -->
     <section class="py-10 bg-[#f7f7f9] overflow-hidden">
         <div class="max-w-7xl mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10 text-black">Trusted by industry leaders<span style="color:#0066cc;">.</span></h2>
+            <h2 class="text-4xl font-bold text-center mb-10" style="color: #2F2F2F;">Trusted by industry leaders<span style="color:#0066cc;">.</span></h2>
             <div class="client-logos-container">
                 <div class="client-logos-track">
                     <div class="client-logo-wrapper">
@@ -1471,8 +1488,8 @@
     <!-- Call to Action Section -->
     <section class="py-20 bg-gradient-to-r from-[#00A3A3] to-[#00D1D1]">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-6 text-black">Ready to transform your fleet management?</h2>
-            <p class="text-xl mb-8 text-black">Book a 30-minute consultation with our team</p>
+            <h2 class="text-4xl font-bold mb-6" style="color: #2F2F2F;">Ready to transform your fleet management?</h2>
+            <p class="text-xl mb-8" style="color: #2F2F2F;">Book a 30-minute consultation with our team</p>
             <button class="cta-bottom">
                 Book a Demo
             </button>
