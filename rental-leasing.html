@@ -71,9 +71,9 @@
         }
         
         .process-section {
-            background-color: #323336;
+            background-color: #fff !important;
             padding: 4rem 0;
-            color: white;
+            color: #232323;
         }
         
         .process-cards {
@@ -86,14 +86,22 @@
         }
         
         .process-card {
-            background: #323336;
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            position: relative;
-            border: 1px solid #b0b0b0;
-            min-height: 400px;
+            background: #232323;
+            border-radius: 1.5rem;
+            padding: 2.5rem 2rem 2rem 2rem;
             display: flex;
             flex-direction: column;
+            justify-content: flex-start;
+            min-height: 400px;
+            position: relative;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+            border: 1px solid #232323;
+            transition: all 0.3s ease;
+        }
+        
+        .process-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
         }
         
         .process-number {
@@ -103,9 +111,9 @@
             transform: translateX(-50%);
             width: 80px;
             height: 80px;
-            background: #323336;
+            background: #232323;
             border-radius: 50%;
-            border: 1.5px solid #b0b0b0;
+            border: 1.5px solid #fff;
             color: #fff;
             font-size: 2.9rem;
             font-weight: 700;
@@ -117,7 +125,7 @@
         }
         
         .process-title {
-            color: #FFFFFF;
+            color: #fff;
             font-size: 1.18rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
@@ -131,7 +139,7 @@
         }
         
         .process-desc {
-            color: #FFFFFF;
+            color: #fff;
             opacity: 1;
             font-size: 1.01rem;
             text-align: left;
@@ -773,57 +781,28 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="text-4xl mb-4"><i class="fas fa-shield-alt" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">95% Reduction in Vehicle Misuse</h3>
-                        <p class="text-gray-600">Advanced monitoring systems effectively prevent vehicle abuse and unauthorized use.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="text-4xl mb-4"><i class="fas fa-tachometer-alt" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">80% Faster Rental Processing</h3>
-                        <p class="text-gray-600">Digital rental management systems dramatically reduce administrative workload.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="text-4xl mb-4"><i class="fas fa-wrench text-xl" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">60% Lower Maintenance Costs</h3>
-                        <p class="text-gray-600">Proactive vehicle health monitoring prevents major breakdowns and reduces repair expenses.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Measurable Results Section -->
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-16">
-                    Measurable Results for Rental Operations<span style="color:#004E98;">.</span>
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div class="text-center">
-                        <div class="relative mb-6">
-                            <img src="src/images/misuse-prevention.png" alt="Misuse Prevention" class="w-full h-48 object-cover rounded-lg">
-                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
-                        </div>
-                        <div class="text-6xl font-bold mb-4" style="color: #004E98;">95%</div>
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Misuse Prevention Rate</h3>
-                        <p class="text-gray-600">Advanced monitoring systems effectively prevent vehicle abuse and unauthorized use, protecting your valuable rental assets.</p>
-                    </div>
-                    <div class="text-center">
                         <div class="relative mb-6">
                             <img src="src/images/processing-time.png" alt="Processing Time" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
-                        <div class="text-6xl font-bold mb-4" style="color: #004E98;">80%</div>
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Processing Time Reduction</h3>
-                        <p class="text-gray-600">Digital rental management systems dramatically reduce administrative workload and accelerate customer service.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">95% Reduction in Vehicle Misuse</h3>
+                        <p class="text-gray-600">Advanced monitoring systems effectively prevent vehicle abuse and unauthorized use.</p>
                     </div>
-                    <div class="text-center">
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <div class="relative mb-6">
+                            <img src="src/images/misuse-prevention.png" alt="Misuse Prevention" class="w-full h-48 object-cover rounded-lg">
+                            <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">80% Faster Rental Processing</h3>
+                        <p class="text-gray-600">Digital rental management systems dramatically reduce administrative workload.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
                         <div class="relative mb-6">
                             <img src="src/images/maintenance-savings.png" alt="Maintenance Savings" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
-                        <div class="text-6xl font-bold mb-4" style="color: #004E98;">60%</div>
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Maintenance Cost Savings</h3>
-                        <p class="text-gray-600">Proactive vehicle health monitoring prevents major breakdowns and reduces unexpected repair expenses.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">60% Lower Maintenance Costs</h3>
+                        <p class="text-gray-600">Proactive vehicle health monitoring prevents major breakdowns and reduces repair expenses.</p>
                     </div>
                 </div>
             </div>
@@ -835,7 +814,7 @@
                 <h2 class="text-4xl font-bold text-center mb-10">
                     Complete Rental Fleet Solution Comparison<span style="color:#004E98;">.</span>
                 </h2>
-                <div class="overflow-x-auto">
+                <div class="overflow-x-auto pl-16">
                     <table class="min-w-full bg-white rounded-lg shadow-lg overflow-hidden">
                         <thead>
                             <tr class="bg-[#f7f7f9]">
