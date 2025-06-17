@@ -6,7 +6,7 @@
     <meta name="description" content="IVMS - Complete logistics fleet management solutions. Advanced telematics and fleet management platform for logistics companies.">
     <title>Logistics Solutions | IVMS - Intelligent Vehicle Management System</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/png" href="src/images/ivms-logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -33,6 +33,11 @@
             --text-medium: #333333;
             --overlay-opacity: 0.85;
             --font-family-primary: "Suisse BP Intl", sans-serif;
+        }
+        
+        .material-icons {
+            color: var(--primary-blue) !important;
+            font-family: 'Material Icons' !important;
         }
         
         body {
@@ -305,21 +310,21 @@
                         <h3 class="text-2xl font-semibold mb-4 text-gray-800">Rising Operational Costs</h3>
                         <ul class="space-y-4 text-gray-600">
                             <li class="flex items-start">
-                                <i class="fas fa-pound-sign text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">payments</span>
                                 <div>
                                     <p class="font-semibold">Increasing Fuel Prices</p>
                                     <p>Fluctuating fuel costs impacting profit margins and operational budgets</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-tools text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">build</span>
                                 <div>
                                     <p class="font-semibold">Maintenance Expenses</p>
                                     <p>Unplanned vehicle repairs and maintenance disrupting operations</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-clock text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">schedule</span>
                                 <div>
                                     <p class="font-semibold">Labour Costs</p>
                                     <p>Rising wages and training expenses affecting operational efficiency</p>
@@ -331,21 +336,21 @@
                         <h3 class="text-2xl font-semibold mb-4 text-gray-800">Operational Inefficiencies</h3>
                         <ul class="space-y-4 text-gray-600">
                             <li class="flex items-start">
-                                <i class="fas fa-route text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">route</span>
                                 <div>
                                     <p class="font-semibold">Suboptimal Route Planning</p>
                                     <p>Inefficient routes leading to wasted time and increased fuel consumption</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-truck text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">local_shipping</span>
                                 <div>
                                     <p class="font-semibold">Vehicle Utilisation</p>
                                     <p>Poor fleet utilisation resulting in unnecessary vehicle deployment</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-calendar-alt text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">calendar_today</span>
                                 <div>
                                     <p class="font-semibold">Scheduling Challenges</p>
                                     <p>Complex delivery schedules causing delays and customer dissatisfaction</p>
@@ -365,30 +370,22 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="w-16 h-16 bg-[#004E98] rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-map-marked-alt text-2xl text-white"></i>
-                        </div>
+                        <span class="material-icons" style="font-size: 48px !important; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto; font-family: 'Material Icons' !important;">location_on</span>
                         <h3 class="text-xl font-semibold mb-3 text-gray-800">Track</h3>
                         <p class="text-gray-600">Real-time monitoring of your entire fleet with precise location tracking and status updates.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="w-16 h-16 bg-[#004E98] rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-route text-2xl text-white"></i>
-                        </div>
+                        <span class="material-icons" style="font-size: 48px !important; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto; font-family: 'Material Icons' !important;">insights</span>
                         <h3 class="text-xl font-semibold mb-3 text-gray-800">Optimise</h3>
                         <p class="text-gray-600">AI-powered route planning and resource allocation for maximum efficiency.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="w-16 h-16 bg-[#004E98] rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-chart-line text-2xl text-white"></i>
-                        </div>
+                        <span class="material-icons" style="font-size: 48px !important; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto; font-family: 'Material Icons' !important;">analytics</span>
                         <h3 class="text-xl font-semibold mb-3 text-gray-800">Analyse</h3>
                         <p class="text-gray-600">Advanced analytics providing actionable insights for continuous improvement.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="w-16 h-16 bg-[#004E98] rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-check-circle text-2xl text-white"></i>
-                        </div>
+                        <span class="material-icons" style="font-size: 48px !important; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto; font-family: 'Material Icons' !important;">local_shipping</span>
                         <h3 class="text-xl font-semibold mb-3 text-gray-800">Deliver</h3>
                         <p class="text-gray-600">Enhanced customer satisfaction through reliable and efficient delivery operations.</p>
                     </div>
@@ -410,15 +407,15 @@
                             <p class="text-gray-600 mb-4">Monitor and improve driver performance with real-time feedback and training tools.</p>
                             <ul class="space-y-2 text-gray-600">
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-sm mr-2 mt-1" style="color: #004E98;"></i>
+                                    <span class="material-icons text-sm mr-2 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">check</span>
                                     <span>Real-time driver scoring</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-sm mr-2 mt-1" style="color: #004E98;"></i>
+                                    <span class="material-icons text-sm mr-2 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">insights</span>
                                     <span>Behavioural analytics</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-sm mr-2 mt-1" style="color: #004E98;"></i>
+                                    <span class="material-icons text-sm mr-2 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">school</span>
                                     <span>Training recommendations</span>
                                 </li>
                             </ul>
@@ -431,15 +428,15 @@
                             <p class="text-gray-600 mb-4">Predictive maintenance and real-time vehicle diagnostics to prevent breakdowns.</p>
                             <ul class="space-y-2 text-gray-600">
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-sm mr-2 mt-1" style="color: #004E98;"></i>
+                                    <span class="material-icons text-sm mr-2 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">check</span>
                                     <span>Predictive maintenance alerts</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-sm mr-2 mt-1" style="color: #004E98;"></i>
+                                    <span class="material-icons text-sm mr-2 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">insights</span>
                                     <span>Real-time diagnostics</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-sm mr-2 mt-1" style="color: #004E98;"></i>
+                                    <span class="material-icons text-sm mr-2 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">schedule</span>
                                     <span>Maintenance scheduling</span>
                                 </li>
                             </ul>
@@ -452,15 +449,15 @@
                             <p class="text-gray-600 mb-4">Comprehensive tracking and monitoring capabilities for your entire fleet.</p>
                             <ul class="space-y-2 text-gray-600">
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-sm mr-2 mt-1" style="color: #004E98;"></i>
+                                    <span class="material-icons text-sm mr-2 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">location_on</span>
                                     <span>Real-time location tracking</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-sm mr-2 mt-1" style="color: #004E98;"></i>
+                                    <span class="material-icons text-sm mr-2 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">route</span>
                                     <span>Route optimisation</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-check text-sm mr-2 mt-1" style="color: #004E98;"></i>
+                                    <span class="material-icons text-sm mr-2 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">schedule</span>
                                     <span>Delivery status updates</span>
                                 </li>
                             </ul>
@@ -481,21 +478,21 @@
                         <h3 class="text-2xl font-semibold mb-4 text-gray-800">Intelligent Route Management</h3>
                         <ul class="space-y-4 text-gray-600">
                             <li class="flex items-start">
-                                <i class="fas fa-route text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">route</span>
                                 <div>
                                     <p class="font-semibold"><span style="color: #004E98;">Eco-friendly, time-based, and distance-based</span> optimisation algorithms</p>
                                     <p>Advanced routing that considers multiple factors for maximum efficiency</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-random text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">shuffle</span>
                                 <div>
                                     <p class="font-semibold">Dynamic Route Adjustment</p>
                                     <p>Real-time modifications based on traffic, weather, and delivery priorities</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">place</span>
                                 <div>
                                     <p class="font-semibold">Multi-Stop Optimisation</p>
                                     <p>Efficient sequencing of multiple delivery points for maximum efficiency</p>
@@ -518,21 +515,21 @@
                         <h3 class="text-2xl font-semibold mb-4 text-gray-800">Delivery Excellence</h3>
                         <ul class="space-y-4 text-gray-600">
                             <li class="flex items-start">
-                                <i class="fas fa-signature text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">edit_document</span>
                                 <div>
                                     <p class="font-semibold"><span style="color: #004E98;">Customer signatures and photos</span> with timestamp and location verification</p>
                                     <p>Complete digital proof of delivery system</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-file-alt text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">file_copy</span>
                                 <div>
                                     <p class="font-semibold">Digital Documentation</p>
                                     <p>Paperless delivery confirmation with instant notifications</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-redo text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">redo</span>
                                 <div>
                                     <p class="font-semibold">Failed Delivery Management</p>
                                     <p>Automated rescheduling and customer communication systems</p>
@@ -552,22 +549,22 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <i class="fas fa-chart-line text-4xl mb-4" style="color: #004E98;"></i>
+                        <span class="material-icons text-4xl mb-4" style="color: #004E98; font-family: 'Material Icons' !important;">insights</span>
                         <h3 class="text-xl font-semibold mb-3 text-gray-800">Advanced Analytics & Reporting</h3>
                         <p class="text-gray-600">Comprehensive analytics providing deep insights into fleet performance, cost optimisation opportunities, and operational efficiency trends.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <i class="fas fa-gas-pump text-4xl mb-4" style="color: #004E98;"></i>
+                        <span class="material-icons text-4xl mb-4" style="color: #004E98; font-family: 'Material Icons' !important;">local_gas_station</span>
                         <h3 class="text-xl font-semibold mb-3 text-gray-800">Fuel Management Excellence</h3>
                         <p class="text-gray-600"><span style="color: #004E98;">Intelligent fuel station finder</span> with real-time pricing and route integration for maximum cost savings.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <i class="fas fa-gamepad text-4xl mb-4" style="color: #004E98;"></i>
+                        <span class="material-icons text-4xl mb-4" style="color: #004E98; font-family: 'Material Icons' !important;">settings_remote</span>
                         <h3 class="text-xl font-semibold mb-3 text-gray-800">Remote Fleet Control</h3>
                         <p class="text-gray-600">Complete remote control capabilities including engine management, security systems, and emergency response coordination.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8">
-                        <i class="fas fa-comments text-4xl mb-4" style="color: #004E98;"></i>
+                        <span class="material-icons text-4xl mb-4" style="color: #004E98; font-family: 'Material Icons' !important;">chat</span>
                         <h3 class="text-xl font-semibold mb-3 text-gray-800">Communication Systems</h3>
                         <p class="text-gray-600"><span style="color: #004E98;">Seamless communication</span> between fleet managers and drivers with delivery updates, route changes, and emergency notifications.</p>
                     </div>
@@ -618,21 +615,21 @@
                         <p class="text-gray-600 mb-6">Our advanced ROI calculator helps you understand the potential cost savings and efficiency improvements for your logistics operations. Get a detailed breakdown of:</p>
                         <ul class="space-y-4 text-gray-600">
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">check_circle</span>
                                 <div>
                                     <p class="font-semibold">Fuel Cost Savings</p>
                                     <p>Based on your current consumption and route patterns</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">check_circle</span>
                                 <div>
                                     <p class="font-semibold">Maintenance Cost Reduction</p>
                                     <p>From predictive maintenance and better vehicle care</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check-circle text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">check_circle</span>
                                 <div>
                                     <p class="font-semibold">Operational Efficiency Gains</p>
                                     <p>Through optimised routes and better resource utilisation</p>
@@ -667,21 +664,21 @@
                         <p class="text-gray-600 mb-6">Our platform helps you achieve your sustainability goals whilst improving operational efficiency. Monitor and reduce your environmental impact with:</p>
                         <ul class="space-y-4 text-gray-600">
                             <li class="flex items-start">
-                                <i class="fas fa-leaf text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">eco</span>
                                 <div>
                                     <p class="font-semibold">Carbon Emissions Tracking</p>
                                     <p>Real-time monitoring and reporting of fleet emissions</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-chart-pie text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">pie_chart</span>
                                 <div>
                                     <p class="font-semibold">Environmental Analytics</p>
                                     <p>Detailed insights into your fleet's environmental performance</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-bullseye text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">target</span>
                                 <div>
                                     <p class="font-semibold">Sustainability Goals</p>
                                     <p>Set and track progress towards environmental targets</p>
@@ -705,21 +702,21 @@
                         <p class="text-gray-600 mb-6">Our platform integrates with your existing systems to create a unified logistics management solution. Connect with:</p>
                         <ul class="space-y-4 text-gray-600">
                             <li class="flex items-start">
-                                <i class="fas fa-truck text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">local_shipping</span>
                                 <div>
                                     <p class="font-semibold">Fleet Management Systems</p>
                                     <p>Seamless integration with your existing fleet management software</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-warehouse text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">warehouse</span>
                                 <div>
                                     <p class="font-semibold">Warehouse Management</p>
                                     <p>Connect with WMS for end-to-end logistics visibility</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-exchange-alt text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3 mt-1" style="color: #004E98; font-family: 'Material Icons' !important;">sync_alt</span>
                                 <div>
                                     <p class="font-semibold">ERP Systems</p>
                                     <p>Bi-directional data flow with your enterprise resource planning</p>
@@ -743,32 +740,34 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="w-16 h-16 bg-[#004E98] rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-clipboard-list text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Assessment</h3>
-                        <p class="text-gray-600">We analyse your current logistics operations and identify optimisation opportunities.</p>
+                        <span class="material-icons" style="font-size: 48px !important; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto; font-family: 'Material Icons' !important;">location_on</span>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">GPS Device Installation</h3>
+                        <p class="text-gray-600">Professional installation of discreet GPS tracking devices in your vehicles.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="w-16 h-16 bg-[#004E98] rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-cogs text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Setup</h3>
-                        <p class="text-gray-600">Our team handles the technical setup and integration with your existing systems.</p>
+                        <span class="material-icons" style="font-size: 48px !important; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto; font-family: 'Material Icons' !important;">cloud_upload</span>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Platform Integration</h3>
+                        <p class="text-gray-600">Seamless integration with your existing logistics and business management systems.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="w-16 h-16 bg-[#004E98] rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-graduation-cap text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Training</h3>
-                        <p class="text-gray-600">Comprehensive training for your team to ensure smooth adoption of the platform.</p>
+                        <span class="material-icons" style="font-size: 48px !important; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto; font-family: 'Material Icons' !important;">person</span>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Staff Training</h3>
+                        <p class="text-gray-600">Comprehensive training for your team on using the iVMS Intelligent Logistics Platform.</p>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
-                        <div class="w-16 h-16 bg-[#004E98] rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-chart-line text-2xl text-white"></i>
-                        </div>
-                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Optimisation</h3>
-                        <p class="text-gray-600">Continuous monitoring and optimisation to maximise your logistics efficiency.</p>
+                        <span class="material-icons" style="font-size: 48px !important; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto; font-family: 'Material Icons' !important;">support</span>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Dedicated Support</h3>
+                        <p class="text-gray-600">Ongoing technical support and assistance to ensure smooth operations.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <span class="material-icons" style="font-size: 48px !important; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto; font-family: 'Material Icons' !important;">insights</span>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Performance Monitoring</h3>
+                        <p class="text-gray-600">Continuous monitoring and reporting on fleet performance and efficiency.</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                        <span class="material-icons" style="font-size: 48px !important; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto; font-family: 'Material Icons' !important;">edit_document</span>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Customisation & Expansion</h3>
+                        <p class="text-gray-600">Flexible options for customisation and future expansion of the platform.</p>
                     </div>
                 </div>
             </div>
@@ -785,21 +784,21 @@
                         <h3 class="text-2xl font-semibold mb-4 text-gray-800">Industry-Leading Technology</h3>
                         <ul class="space-y-4 text-gray-600">
                             <li class="flex items-start">
-                                <i class="fas fa-microchip text-xl mr-3 mt-1" style="color: #004E98;"></i>
-                                <div>
-                                    <p class="font-semibold">Advanced AI & Machine Learning</p>
-                                    <p>Cutting-edge algorithms for optimal route planning and resource allocation</p>
+                                <span class="material-icons text-xl" style="color: #004E98; font-family: 'Material Icons' !important; margin-top: 2px;">mic</span>
+                                <div class="ml-2">
+                                    <span class="block font-semibold">Advanced AI & Machine Learning</span>
+                                    <span class="block">Cutting-edge algorithms for optimal route planning and resource allocation</span>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-shield-alt text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3" style="color: #004E98; font-family: 'Material Icons' !important;">shield</span>
                                 <div>
                                     <p class="font-semibold">Enterprise-Grade Security</p>
                                     <p>Bank-level encryption and security protocols to protect your data</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-sync text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3" style="color: #004E98; font-family: 'Material Icons' !important;">sync</span>
                                 <div>
                                     <p class="font-semibold">Real-Time Updates</p>
                                     <p>Instant synchronisation across all devices and platforms</p>
@@ -811,21 +810,21 @@
                         <h3 class="text-2xl font-semibold mb-4 text-gray-800">Proven Track Record</h3>
                         <ul class="space-y-4 text-gray-600">
                             <li class="flex items-start">
-                                <i class="fas fa-trophy text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3" style="color: #004E98; font-family: 'Material Icons' !important;">star</span>
                                 <div>
                                     <p class="font-semibold">Industry Recognition</p>
                                     <p>Multiple awards for innovation and excellence in fleet management</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-users text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3" style="color: #004E98; font-family: 'Material Icons' !important;">group</span>
                                 <div>
                                     <p class="font-semibold">Global Customer Base</p>
                                     <p>Trusted by leading logistics companies worldwide</p>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-headset text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                <span class="material-icons text-xl mr-3" style="color: #004E98; font-family: 'Material Icons' !important;">headset</span>
                                 <div>
                                     <p class="font-semibold">24/7 Support</p>
                                     <p>Round-the-clock technical support and customer service</p>
@@ -878,6 +877,7 @@
                         <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link" style="color: #ffffff !important;">info@ivmsgroup.com</a></li>
                     </ul>
                     <div class="footer-social-links mt-4">
+                        <a href="https://wa.me/971585994323" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-whatsapp"></i></a>
                         <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
                         <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
