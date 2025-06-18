@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact IVMS - Get in touch with our team for fleet management solutions, demos, and support. Advanced telematics solutions for rental companies, logistics fleets, and transport operators.">
+    <title>Contact Us - IVMS | Intelligent Vehicle Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="src/images/ivms-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #004E98;      /* Main brand blue - Use for primary CTAs, headings */
+            --secondary-blue: #3A6EA5;    /* Secondary blue - Use for hover states */
+            --teal-primary: #00A3A3;      /* Primary teal - Use for accents, icons */
+            --teal-light: #00D1D1;        /* Light teal - Use for hover states */
+            --teal-dark: #007A7A;         /* Dark teal - Use for active states */
+            --dark-bg: #0A0A0A;           /* Dark background - Use for footer, dark sections */
+            --light-bg: #FFFFFF;          /* Light background - Use for main background */
+            --text-primary: #2F2F2F;      /* Primary text - Use for main content */
+            --text-secondary: rgba(47, 47, 47, 0.8);    /* Secondary text - Use for supporting content */
+            --text-light: #FFFFFF;        /* Light text - Use for dark backgrounds */
+            --text-muted: rgba(47, 47, 47, 0.6);        /* Muted text - Use for less important content */
+            --border-light: #EDEDED;      /* Light border - Use for subtle separators */
+            --overlay-dark: rgba(30, 30, 30, 0.65); /* Dark overlay - Use for hero section */
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --fleet-blue: #0057A0;
+            --urban-slate: #3A3F45;
+            --white: #FFFFFF;
+            --black: #2F2F2F;
+            --text-dark: #2F2F2F;
+            --text-medium: #2F2F2F;
+            --overlay-opacity: 0.85;
+            --font-family-primary: "Suisse BP Intl", sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-family-primary);
+            background-color: var(--white);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-primary);
+            color: var(--text-dark);
+        }
+        
+        p, span, div, li, ul, ol, a, label, th, td {
+            font-family: var(--font-family-primary);
+            color: var(--text-dark);
+        }
+        
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+        
+        /* Minimal Navigation Styles */
+        .main-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border: none;
+            box-shadow: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            max-width: 100vw;
+            transition: background 0.2s, backdrop-filter 0.2s;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            background: transparent;
+            /* The logo container inherits the nav blur */
+        }
+        .logo {
+            height: 64px;
+            max-width: 220px;
+            width: auto;
+            margin-right: 2rem;
+            transition: height 0.2s, max-width 0.2s;
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-link {
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 0.5rem 1.2rem;
+            background: none;
+            border: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        .nav-link:hover, .nav-link:focus {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #00A3A3;
+            transition: width 0.3s ease;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+        }
+        .nav-link:hover::after, .nav-link:focus::after {
+            width: 70%;
+        }
+        @media (max-width: 900px) {
+            .logo {
+                height: 48px;
+                max-width: 150px;
+            }
+            .nav-link {
+                font-size: 0.95rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .main-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.5rem 1rem;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+                width: 100%;
+            }
+            .logo {
+                height: 40px;
+                max-width: 120px;
+            }
+        }
+        
+        .cta-bottom {
+            background: var(--primary-blue);
+            color: var(--text-light);
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 0.9rem 2.2rem;
+            border: none;
+            font-size: 1.08rem;
+            box-shadow: 0 4px 16px rgba(0, 78, 152, 0.15);
+            transition: all 0.2s ease;
+            outline: none;
+            display: inline-block;
+        }
+        .cta-bottom:hover, .cta-bottom:focus {
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(0, 78, 152, 0.25);
+        }
+        
+        /* Footer Styles */
+        .footer-heading {
+            color: #fff !important;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 1;
+        }
+        .footer-text {
+            color: #fff !important;
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+        .footer-link {
+            color: #fff !important;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            color: #00A3A3 !important;
+            opacity: 1;
+        }
+        .footer-logo {
+            height: 80px;
+            width: auto;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+        .footer-social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .footer-social-links a {
+            color: #fff;
+            opacity: 0.8;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .footer-social-links a:hover {
+            color: #00A3A3;
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+        .footer-divider {
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 3rem 0 2rem 0;
+        }
+        .footer-copyright {
+            color: #fff;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        /* Contact Page Specific Styles */
+        .contact-hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--teal-primary) 100%);
+            color: white;
+            padding: 120px 0 80px 0;
+            text-align: center;
+        }
+        
+        .contact-content {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .contact-form-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: var(--primary-blue);
+            color: white;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 main-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo" style="filter: invert(1);">
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="nav-link">Home</a>
+                        <div class="relative group">
+                            <button class="nav-link">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+                            <div class="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded-md shadow-lg z-20">
+                                <a href="index.html#solutions" class="block px-4 py-2 text-sm hover:bg-gray-700">Overview</a>
+                                <a href="speedsense.html" class="block px-4 py-2 text-sm hover:bg-gray-700">SpeedSense Technology</a>
+                                <a href="logistics.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Logistics Solutions</a>
+                                <a href="rental-leasing.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Rental & Leasing</a>
+                            </div>
+                        </div>
+                        <a href="index.html#technology" class="nav-link">Technology</a>
+                        <a href="index.html#about" class="nav-link">About</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-200 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Home</a>
+                <div class="group">
+                    <button class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 w-full text-left">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+                    <div class="hidden group-focus-within:block pl-4 space-y-1">
+                         <a href="index.html#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Overview</a>
+                         <a href="speedsense.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">SpeedSense Technology</a>
+                         <a href="logistics.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Logistics Solutions</a>
+                         <a href="rental-leasing.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Rental & Leasing</a>
+                    </div>
+                </div>
+                <a href="index.html#technology" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Technology</a>
+                <a href="index.html#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Form Section (copied from index.html) -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="flex items-start">
+                    <h2 class="text-5xl font-bold text-gray-900 leading-tight">Let's talk<span style="color:#0066cc;">.</span></h2>
+                </div>
+                <div class="flex items-center">
+                    <div class="text-xl text-gray-700">Book a personalised demonstration of our platform.</div>
+                </div>
+                <div class="flex items-center">
+                    <div class="text-sm text-gray-600">Discover how IVMS can help your organisation optimise fleet operations, reduce costs, and enhance safety. Leave your details and our team will contact you within 24 hours.</div>
+                </div>
+            </div>
+            <!-- Image Placeholder and Enquiry Form Side by Side -->
+            <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+                <div class="flex flex-col md:flex-row gap-8 items-stretch min-h-[650px]">
+                    <div class="flex-1 flex flex-col h-full">
+                        <form class="w-full max-w-lg space-y-4 h-full flex flex-col justify-between">
+                            <input type="text" name="first_name" placeholder="First name*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                            <input type="text" name="last_name" placeholder="Last name*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                            <input type="text" name="company" placeholder="Company*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                            <input type="email" name="email" placeholder="E-Mail*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                            <input type="tel" name="phone" placeholder="Phone*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                            <input type="text" name="job_title" placeholder="Job title*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                            <textarea name="message" placeholder="Message*" required rows="8" class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]"></textarea>
+                            <button type="submit" class="cta-bottom w-full md:w-auto mt-2">Submit enquiry</button>
+                        </form>
+                    </div>
+                    <div class="flex-1 flex flex-col h-full">
+                        <div class="w-full h-full bg-gray-100 rounded-xl border border-gray-200 flex items-center justify-center overflow-hidden">
+                            <img src="src/images/ivms-dubai-office.png" alt="IVMS Dubai Office" class="object-cover w-full h-full rounded-xl shadow" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Details Card at the Bottom -->
+    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8 flex flex-col justify-center min-w-[260px] border border-gray-100 mb-12">
+        <h3 class="text-2xl font-bold mb-2 text-[#004E98]">iVMS Group</h3>
+        <div class="text-gray-700 mb-1 flex items-center"><i class="fas fa-map-marker-alt mr-2 text-[#00A3A3]"></i>Dubai, UAE</div>
+        <div class="text-gray-700 mb-1 flex items-center"><i class="fas fa-phone-alt mr-2 text-[#00A3A3]"></i>+971 (0) 58 599 4323</div>
+        <div class="text-gray-700 mb-1 flex items-center"><i class="fas fa-envelope mr-2 text-[#00A3A3]"></i><a href="mailto:info@ivmsgroup.com" class="hover:underline">info@ivmsgroup.com</a></div>
+        <div class="text-gray-700 flex items-center"><i class="fas fa-globe mr-2 text-[#00A3A3]"></i><a href="https://www.ivmsgroup.com" target="_blank" class="hover:underline">www.ivmsgroup.com</a></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0A0A0A] text-white py-12" style="background-color: #0A0A0A !important; color: #ffffff !important; display: block !important; position: relative !important; min-height: 200px !important;">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="flex flex-col items-center mb-4" style="color: #ffffff !important;">
+                    <img src="src/images/ivms-logo.png" alt="IVMS Logo" class="footer-logo">
+                    <p class="footer-text">Dubai, UAE</p>
+                </div>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html#solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
+                        <li><a href="index.html#technology" class="footer-link" style="color: #ffffff !important;">Technology</a></li>
+                        <li><a href="index.html#about" class="footer-link" style="color: #ffffff !important;">About</a></li>
+                        <li><a href="contact.html" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
+                    </ul>
+                </div>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="footer-text">Phone: <a href="tel:+971585994323" class="footer-link" style="color: #ffffff !important;">+971 58 599 4323</a></li>
+                        <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link" style="color: #ffffff !important;">info@ivmsgroup.com</a></li>
+                    </ul>
+                    <div class="footer-social-links">
+                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://instagram.com/YOUR_INSTAGRAM" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copyright" style="color: #ffffff !important; opacity: 0.6;">
+                <p>&copy; 2025 IVMS Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/971585994323" class="whatsapp-button">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="src/js/main.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+                    mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
