@@ -29,7 +29,7 @@
             --urban-slate: #3A3F45;
             --white: #FFFFFF;
             --black: #000000;
-            --text-dark: #1A1A1A;
+            --text-dark: #2F2F2F;
             --text-medium: #333333;
             --overlay-opacity: 0.85;
             --font-family-primary: "Suisse BP Intl", sans-serif;
@@ -46,12 +46,12 @@
         
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-family-primary);
-            color: var(--text-primary);
+            color: var(--text-dark);
         }
         
-        p {
+        p, span, div, li, ul, ol, a, label, th, td {
             font-family: var(--font-family-primary);
-            color: var(--text-primary);
+            color: var(--text-dark);
         }
         
         .text-secondary {
@@ -68,7 +68,7 @@
         }
 
         .new-hero-headline {
-            color: var(--text-primary);
+            color: var(--text-dark);
             font-size: 3.8rem;
             font-weight: 700;
             line-height: 1.1;
@@ -368,7 +368,7 @@
         }
         
         .section-heading {
-            color: var(--text-primary);
+            color: var(--text-dark);
             font-size: 2.5rem;
             font-weight: 700;
             text-align: center;
@@ -786,7 +786,7 @@
         .platform-title {
             font-size: 2.5rem;
             font-weight: 700;
-            color: var(--text-primary);
+            color: var(--text-dark);
             margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
@@ -863,7 +863,7 @@
         .feature-title {
             font-size: 1.3rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--text-dark);
             margin-bottom: 1rem;
         }
         .feature-description {
@@ -1241,15 +1241,17 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-section-new-layout">
-            <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2">
-                    <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        SpeedSense™ by iVMS<br>
-                        <span style="color: #004E98;">Rental Fleet Protection Reimagined.</span>
-                    </h1>
-                </div>
-                <div class="lg:w-1/2">
-                    <img src="src/images/speedsense-dashboard.png" alt="SpeedSense Dashboard" class="new-hero-image rounded-lg shadow-xl w-full">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2 w-full">
+                        <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                            SpeedSense™ by iVMS<br>
+                            <span style="color: #004E98;">Rental Fleet Protection Reimagined.</span>
+                        </h1>
+                    </div>
+                    <div class="lg:w-1/2 w-full flex justify-center">
+                        <img src="src/images/speedsense-dashboard.png" alt="SpeedSense Dashboard" class="new-hero-image rounded-lg shadow-xl w-full max-w-xl">
+                    </div>
                 </div>
             </div>
         </section>
@@ -1257,13 +1259,11 @@
         <!-- Problem Section with Split Layout -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
-                <div class="flex flex-col lg:flex-row gap-12 items-center">
-                    <div class="lg:w-1/2">
-                        <h2 class="text-4xl font-bold mb-6">
-                            The Problem:<br>
-                            <span style="color: #004E98;">Speed Cameras Are Costing You Millions</span>
-                        </h2>
-                        <p class="text-lg text-gray-600 mb-8">
+                <h2 class="text-4xl font-bold mb-8">The Problem:</h2>
+                <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2 w-full">
+                        <h2 class="text-4xl font-bold mb-6">Speed Cameras Are Costing You Millions</h2>
+                        <p class="text-lg mb-8">
                             Speed cameras worldwide have severe penalties that can reach thousands in local currency per violation. International visitors frequently depart before settling their traffic violations, leaving rental companies legally responsible for ALL unpaid violations.
                         </p>
                         <div class="space-y-6">
@@ -1273,7 +1273,7 @@
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-semibold mb-2">Caught in the Flash</h3>
-                                    <p class="text-gray-600">Speed cameras worldwide have severe penalties that can reach thousands in local currency per violation</p>
+                                    <p>Speed cameras worldwide have severe penalties that can reach thousands in local currency per violation</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -1282,7 +1282,7 @@
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-semibold mb-2">Tourists Vanish</h3>
-                                    <p class="text-gray-600">International visitors frequently depart before settling their traffic violations</p>
+                                    <p>International visitors frequently depart before settling their traffic violations</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -1291,14 +1291,14 @@
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-semibold mb-2">Your Bottom Line Suffers</h3>
-                                    <p class="text-gray-600">Rental companies become legally responsible for ALL unpaid violations</p>
+                                    <p>Rental companies become legally responsible for ALL unpaid violations</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-1/2">
-                        <div class="relative flex justify-center items-center">
-                            <img src="src/images/speed-camera-problem.png" alt="Speed Camera Problem" class="rounded-lg shadow-xl w-full h-[600px] object-cover">
+                    <div class="lg:w-1/2 w-full flex justify-center">
+                        <div class="relative flex justify-center items-center w-full">
+                            <img src="src/images/speed-camera-problem.png" alt="Speed Camera Problem" class="rounded-lg shadow-xl w-full h-[600px] object-cover max-w-xl">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
                         </div>
                     </div>

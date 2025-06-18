@@ -29,7 +29,7 @@
             --urban-slate: #3A3F45;
             --white: #FFFFFF;
             --black: #000000;
-            --text-dark: #1A1A1A;
+            --text-dark: #2F2F2F;
             --text-medium: #333333;
             --overlay-opacity: 0.85;
             --font-family-primary: "Suisse BP Intl", sans-serif;
@@ -46,12 +46,12 @@
         
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-family-primary);
-            color: var(--text-primary);
+            color: var(--text-dark);
         }
         
-        p {
+        p, span, div, li, ul, ol, a, label, th, td {
             font-family: var(--font-family-primary);
-            color: var(--text-primary);
+            color: var(--text-dark);
         }
         
         .text-secondary {
@@ -521,19 +521,21 @@
     <main>
         <!-- Hero Section -->
         <section class="hero-section-new-layout">
-            <div class="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
-                <div class="lg:w-1/2">
-                    <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Rental & Leasing Solutions<br>
-                        <span style="color: #004E98;">Complete Rental Fleet Control</span>
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8">
-                        Transform your rental operations with our comprehensive fleet management platform designed specifically for rental and leasing companies. From driver behaviour monitoring to vehicle health protection, iVMS delivers complete visibility and control over every aspect of your rental fleet.
-                    </p>
-                    <button class="hero-cta">Book Demo</button>
-                </div>
-                <div class="lg:w-1/2">
-                    <img src="src/images/rental-fleet.png" alt="Rental Fleet Management" class="new-hero-image rounded-lg shadow-xl w-full">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2 w-full">
+                        <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                            Rental & Leasing Solutions<br>
+                            <span style="color: #004E98;">Complete Rental Fleet Control</span>
+                        </h1>
+                        <p class="text-lg mb-8">
+                            Transform your rental operations with our comprehensive fleet management platform designed specifically for rental and leasing companies. From driver behaviour monitoring to vehicle health protection, iVMS delivers complete visibility and control over every aspect of your rental fleet.
+                        </p>
+                        <button class="hero-cta">Book Demo</button>
+                    </div>
+                    <div class="lg:w-1/2 w-full flex justify-center">
+                        <img src="src/images/rental-fleet.png" alt="Rental Fleet Management" class="new-hero-image rounded-lg shadow-xl w-full max-w-xl">
+                    </div>
                 </div>
             </div>
         </section>
@@ -541,12 +543,10 @@
         <!-- Problem Section -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
-                <div class="flex flex-col lg:flex-row gap-12 items-center">
-                    <div class="lg:w-1/2">
-                        <h2 class="text-4xl font-bold mb-6">
-                            The Challenge:<br>
-                            <span style="color: #004E98;">Rental Fleet Operations Are Complex</span>
-                        </h2>
+                <h2 class="text-4xl font-bold mb-8">The Challenge:</h2>
+                <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2 w-full">
+                        <h2 class="text-4xl font-bold mb-6">Rental Fleet Operations Are Complex</h2>
                         <div class="space-y-6">
                             <div class="flex items-start">
                                 <div class="flex-shrink-0 w-12 h-12 bg-[#f7f7f9] rounded-full flex items-center justify-center mr-4">
@@ -554,7 +554,7 @@
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-semibold mb-2">Uncontrolled Driver Behaviour</h3>
-                                    <p class="text-gray-600">Rental customers often drive aggressively, leading to excessive wear, accidents, and costly repairs whilst your vehicles are out of your direct control.</p>
+                                    <p>Rental customers often drive aggressively, leading to excessive wear, accidents, and costly repairs whilst your vehicles are out of your direct control.</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -563,7 +563,7 @@
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-semibold mb-2">Vehicle Health Uncertainty</h3>
-                                    <p class="text-gray-600">Without real-time monitoring, vehicle issues go undetected until major breakdowns occur, resulting in costly repairs and lost rental revenue.</p>
+                                    <p>Without real-time monitoring, vehicle issues go undetected until major breakdowns occur, resulting in costly repairs and lost rental revenue.</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -572,7 +572,7 @@
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-semibold mb-2">Security Vulnerabilities</h3>
-                                    <p class="text-gray-600">Rental vehicles face higher risks of theft, misuse, and unauthorized access, creating significant financial exposure for your business.</p>
+                                    <p>Rental vehicles face higher risks of theft, misuse, and unauthorized access, creating significant financial exposure for your business.</p>
                                 </div>
                             </div>
                             <div class="flex items-start">
@@ -581,14 +581,14 @@
                                 </div>
                                 <div>
                                     <h3 class="text-xl font-semibold mb-2">Administrative Overload</h3>
-                                    <p class="text-gray-600">Managing rental contracts, vehicle inspections, and post-rental reporting consumes valuable time and resources that could be better spent growing your business.</p>
+                                    <p>Managing rental contracts, vehicle inspections, and post-rental reporting consumes valuable time and resources that could be better spent growing your business.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-1/2">
-                        <div class="relative flex justify-center items-center">
-                            <img src="src/images/rental-challenges.png" alt="Rental Fleet Challenges" class="rounded-lg shadow-xl w-full h-[600px] object-cover">
+                    <div class="lg:w-1/2 w-full flex justify-center">
+                        <div class="relative flex justify-center items-center w-full">
+                            <img src="src/images/rental-challenges.png" alt="Rental Fleet Challenges" class="rounded-lg shadow-xl w-full h-[600px] object-cover max-w-xl">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
                         </div>
                     </div>
@@ -733,69 +733,74 @@
                 <h2 class="text-4xl font-bold text-center mb-10">
                     Rental & Leasing-Specific Features<span style="color:#004E98;">.</span>
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
-                    <div>
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Digital Contract Management</h3>
-                        <ul class="space-y-4 text-gray-600">
-                            <li class="flex items-start">
-                                <i class="fas fa-file-contract text-xl mr-3 mt-1" style="color: #004E98;"></i>
-                                <div>
-                                    <p class="font-semibold">Vehicle Rental Form Management:</p>
-                                    <p>Streamlined digital rental agreements and documentation.</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-car-alt text-xl mr-3 mt-1" style="color: #004E98;"></i>
-                                <div>
-                                    <p class="font-semibold">Test Drive Management:</p>
-                                    <p>Comprehensive test drive forms and monitoring systems.</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-chart-bar text-xl mr-3 mt-1" style="color: #004E98;"></i>
-                                <div>
-                                    <p class="font-semibold">Post-Rental Analytics:</p>
-                                    <p>Detailed reporting on vehicle usage, driver behaviour, and fleet performance.</p>
-                                </div>
-                            </li>
-                        </ul>
+                <div class="space-y-16">
+                    <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 flex flex-col md:flex-row items-center gap-12">
+                        <div class="md:w-1/2 w-full">
+                            <h3 class="text-2xl font-semibold mb-4">Digital Contract Management</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-file-contract text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                    <div>
+                                        <p class="font-semibold">Vehicle Rental Form Management:</p>
+                                        <p>Streamlined digital rental agreements and documentation.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-car-alt text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                    <div>
+                                        <p class="font-semibold">Test Drive Management:</p>
+                                        <p>Comprehensive test drive forms and monitoring systems.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chart-bar text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                    <div>
+                                        <p class="font-semibold">Post-Rental Analytics:</p>
+                                        <p>Detailed reporting on vehicle usage, driver behaviour, and fleet performance.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2 w-full flex justify-center">
+                            <div class="relative flex justify-center items-center w-full">
+                                <img src="src/images/digital-rental-form.png" alt="Digital Rental Form Interface" class="rounded-lg shadow-xl w-full h-[400px] object-cover max-w-xl">
+                                <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="relative flex justify-center items-center">
-                        <img src="src/images/digital-rental-form.png" alt="Digital Rental Form Interface" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
-                    <div class="relative flex justify-center items-center order-2 md:order-1">
-                        <img src="src/images/remote-control-panel.png" alt="Remote Vehicle Control Interface" class="rounded-lg shadow-xl w-full h-[400px] object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-l from-[#004E98]/10 to-transparent rounded-lg"></div>
-                    </div>
-                    <div class="order-1 md:order-2">
-                        <h3 class="text-2xl font-semibold mb-4 text-gray-800">Advanced Vehicle Protection</h3>
-                        <ul class="space-y-4 text-gray-600">
-                            <li class="flex items-start">
-                                <i class="fas fa-clone text-xl mr-3 mt-1" style="color: #004E98;"></i>
-                                <div>
-                                    <p class="font-semibold">Vehicle Clone Protection (VCP):</p>
-                                    <p>Sophisticated anti-theft technology preventing vehicle cloning.</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-lock text-xl mr-3 mt-1" style="color: #004E98;"></i>
-                                <div>
-                                    <p class="font-semibold">Remote Immobilization:</p>
-                                    <p>Multiple scenario-based remote vehicle control for security and compliance.</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-clipboard-check text-xl mr-3 mt-1" style="color: #004E98;"></i>
-                                <div>
-                                    <p class="font-semibold">Rental Compliance Monitoring:</p>
-                                    <p>Ensure vehicles are used within agreed parameters and restrictions.</p>
-                                </div>
-                            </li>
-                        </ul>
+                    <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 flex flex-col md:flex-row items-center gap-12">
+                        <div class="md:w-1/2 w-full order-2 md:order-1 flex justify-center">
+                            <div class="relative flex justify-center items-center w-full">
+                                <img src="src/images/remote-control-panel.png" alt="Remote Vehicle Control Interface" class="rounded-lg shadow-xl w-full h-[400px] object-cover max-w-xl">
+                                <div class="absolute inset-0 bg-gradient-to-l from-[#004E98]/10 to-transparent rounded-lg"></div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 w-full order-1 md:order-2">
+                            <h3 class="text-2xl font-semibold mb-4">Advanced Vehicle Protection</h3>
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <i class="fas fa-clone text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                    <div>
+                                        <p class="font-semibold">Vehicle Clone Protection (VCP):</p>
+                                        <p>Sophisticated anti-theft technology preventing vehicle cloning.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-lock text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                    <div>
+                                        <p class="font-semibold">Remote Immobilization:</p>
+                                        <p>Multiple scenario-based remote vehicle control for security and compliance.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-clipboard-check text-xl mr-3 mt-1" style="color: #004E98;"></i>
+                                    <div>
+                                        <p class="font-semibold">Rental Compliance Monitoring:</p>
+                                        <p>Ensure vehicles are used within agreed parameters and restrictions.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
