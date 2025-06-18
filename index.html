@@ -42,6 +42,18 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+        
+        /* Smooth scrolling for anchor links with offset for fixed header */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Adjust based on your header height */
+        }
+        
+        /* Ensure sections with IDs have proper spacing */
+        section[id] {
+            scroll-margin-top: 80px; /* Alternative for older browsers */
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -493,6 +505,23 @@
             align-items: center;
             background: transparent;
             /* The logo container inherits the nav blur */
+        }
+        .nav-logo a {
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+            padding: 4px;
+        }
+        .nav-logo a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            transform: scale(1.05);
+        }
+        .nav-logo img {
+            transition: all 0.3s ease;
+        }
+        .nav-logo a:hover img {
+            filter: brightness(1.1);
         }
         .logo {
             height: 64px;
@@ -1149,30 +1178,40 @@
             font-size: 1.1rem; /* Increased font size */
             padding: 0 15px; /* Added horizontal padding for spacing */
         }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; margin-top: 0; }
+        .dropdown-menu.show { display: block !important; }
+        @media (min-width: 640px) {
+            .dropdown-parent:hover .dropdown-menu,
+            .dropdown-parent:focus-within .dropdown-menu {
+                display: block !important;
+            }
+        }
     </style>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="fixed w-full z-50 main-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
+            <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo" style="filter: invert(1);">
+                    <div class="flex-shrink-0 nav-logo">
+                        <a href="index.html">
+                            <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
+                        </a>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="#" class="nav-link">Home</a>
-                        <div class="relative group">
-                            <button class="nav-link">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
-                            <div class="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded-md shadow-lg z-20">
-                                <a href="#solutions" class="block px-4 py-2 text-sm hover:bg-gray-700">Overview</a>
-                                <a href="speedsense.html" class="block px-4 py-2 text-sm hover:bg-gray-700">SpeedSense Technology</a>
-                                <!-- Add other solutions here -->
+                        <a href="index.html" class="nav-link">Home</a>
+                        <div class="relative group dropdown-parent">
+                            <button class="nav-link dropdown-toggle">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+                            <div class="dropdown-menu absolute left-0 bg-gray-800 text-white mt-2 rounded-md shadow-lg z-20 min-w-[180px]">
+                                <a href="speedsense.html" class="block px-4 py-2 text-sm hover:bg-gray-700">SpeedSense</a>
+                                <a href="rental-leasing.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Rental & Leasing</a>
+                                <a href="logistics.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Logistics</a>
                             </div>
                         </div>
-                        <a href="#technology" class="nav-link">Technology</a>
-                        <a href="#about" class="nav-link">About</a>
-                        <a href="#contact" class="nav-link">Contact</a>
+                        <a href="index.html#technology" class="nav-link">Technology</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
                     </div>
                 </div>
                 <div class="-mr-2 flex items-center sm:hidden">
@@ -1188,22 +1227,21 @@
                 </div>
             </div>
         </div>
-
         <!-- Mobile menu -->
         <div class="sm:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Home</a>
-                <div class="group">
-                    <button class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 w-full text-left">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
-                    <div class="hidden group-focus-within:block pl-4 space-y-1">
-                         <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Overview</a>
-                         <a href="speedsense.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">SpeedSense Technology</a>
-                         <!-- Add other solutions here -->
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Home</a>
+                <div class="group dropdown-parent">
+                    <button class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 w-full text-left dropdown-toggle">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+                    <div class="dropdown-menu hidden pl-4 space-y-1">
+                        <a href="speedsense.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">SpeedSense</a>
+                        <a href="rental-leasing.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Rental & Leasing</a>
+                        <a href="logistics.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Logistics</a>
                     </div>
                 </div>
-                <a href="#technology" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Technology</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
+                <a href="index.html#technology" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Technology</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
             </div>
         </div>
     </nav>
@@ -1226,7 +1264,7 @@
                     <div class="hero-support" style="text-align:left; margin-bottom: 20px;">
                         Transform your fleet operations with real-time monitoring, predictive analytics, and automated optimisation
                     </div>
-                    <a href="#" class="hero-cta">Book a Demo</a>
+                    <a href="contact.html" class="hero-cta">Book a Demo</a>
                 </div>
             </div>
         </div>
@@ -1264,7 +1302,7 @@
     </section>
 
     <!-- Solutions Section -->
-    <section id="solutions" class="pt-8 bg-white">
+    <section id="solutions" class="pt-0 bg-white">
         <div class="max-w-7xl mx-auto px-4">
             <div class="mb-12">
                 <h2 class="text-4xl font-bold text-left mb-2" style="letter-spacing:-1px;">Enterprise Solutions<span style="color:var(--primary-blue);">.</span></h2>
@@ -1492,7 +1530,7 @@
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-6" style="color: #2F2F2F;">Ready to transform your fleet management?</h2>
             <p class="text-xl mb-8" style="color: #2F2F2F;">Book a 30-minute consultation with our team</p>
-            <button class="cta-bottom">
+            <button class="cta-bottom" onclick="window.location.href='contact.html'">
                 Book a Demo
             </button>
         </div>
@@ -1541,7 +1579,7 @@
                         <li><a href="#solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
                         <li><a href="#technology" class="footer-link" style="color: #ffffff !important;">Technology</a></li>
                         <li><a href="#about" class="footer-link" style="color: #ffffff !important;">About</a></li>
-                        <li><a href="#contact" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
+                        <li><a href="contact.html" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
                     </ul>
                 </div>
                 <div style="color: #ffffff !important;">
@@ -1606,6 +1644,34 @@
                 });
             }, { threshold: 0.3 });
             observer.observe(video);
+        });
+
+        // Dropdown for mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.dropdown-parent').forEach(function(parent) {
+                var btn = parent.querySelector('.dropdown-toggle');
+                var menu = parent.querySelector('.dropdown-menu');
+                // Toggle on click
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var isOpen = menu.classList.contains('show');
+                    document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
+                    if (!isOpen) menu.classList.add('show');
+                });
+                // Close on mouseleave (desktop)
+                parent.addEventListener('mouseleave', function() {
+                    menu.classList.remove('show');
+                });
+                menu.addEventListener('mouseleave', function() {
+                    menu.classList.remove('show');
+                });
+            });
+            // Hide all dropdowns on document click (except when clicking inside)
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown-parent')) {
+                    document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
+                }
+            });
         });
     </script>
 </body>

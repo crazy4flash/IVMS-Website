@@ -42,6 +42,18 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+        
+        /* Smooth scrolling for anchor links with offset for fixed header */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Adjust based on your header height */
+        }
+        
+        /* Ensure sections with IDs have proper spacing */
+        section[id] {
+            scroll-margin-top: 80px; /* Alternative for older browsers */
         }
         
         h1, h2, h3, h4, h5, h6 {
@@ -366,6 +378,27 @@
             background: transparent;
         }
 
+        .nav-logo a {
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+            padding: 4px;
+        }
+
+        .nav-logo a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            transform: scale(1.05);
+        }
+
+        .nav-logo img {
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo a:hover img {
+            filter: brightness(1.1);
+        }
+
         .logo {
             height: 64px;
             max-width: 220px;
@@ -374,61 +407,76 @@
             transition: height 0.2s, max-width 0.2s;
         }
 
-        /* Style for navigation links */
-        nav a {
-            color: var(--text-light); /* Default link color set to white */
-            transition: all 0.3s ease; /* Smooth transition for hover effect */
-            font-size: 1.1rem; /* Increased font size */
-            padding: 0 15px; /* Added horizontal padding for spacing */
-            position: relative; /* For the underline effect */
-            text-decoration: none;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 50%;
-            background-color: var(--teal-primary);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        nav a:hover {
-            color: var(--text-light); /* Keep text white on hover */
-        }
-
-        nav a:hover::after {
-            width: 100%;
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .nav-link {
-            color: var(--text-light);
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 0.5rem 1.2rem;
+            background: none;
+            border: none;
+            border-radius: 6px;
             transition: all 0.3s ease;
             position: relative;
-            text-decoration: none;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
         }
 
         .nav-link::after {
             content: '';
-            position: absolute;
+            display: block;
             width: 0;
             height: 2px;
-            bottom: -4px;
+            background: #00A3A3;
+            transition: width 0.3s ease;
+            position: absolute;
             left: 50%;
-            background-color: var(--teal-primary);
-            transition: all 0.3s ease;
             transform: translateX(-50%);
+            bottom: 0;
         }
 
-        .nav-link:hover {
-            color: var(--text-light); /* Keep text white on hover */
+        .nav-link:hover::after, .nav-link:focus::after {
+            width: 70%;
         }
 
-        .nav-link:hover::after {
-            width: 100%;
+        @media (max-width: 900px) {
+            .logo {
+                height: 48px;
+                max-width: 150px;
+            }
+            .nav-link {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .main-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.5rem 1rem;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+                width: 100%;
+            }
+            .logo {
+                height: 40px;
+                max-width: 120px;
+            }
         }
 
         .footer-logo {
@@ -471,6 +519,15 @@
             color: #ffffff;
             opacity: 0.6;
         }
+        .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; margin-top: 0; }
+        .dropdown-menu.show { display: block !important; }
+        @media (min-width: 640px) {
+          .dropdown-parent:hover .dropdown-menu,
+          .dropdown-parent:focus-within .dropdown-menu {
+            display: block !important;
+          }
+        }
+        .dropdown-menu a { color: #fff !important; }
     </style>
 </head>
 <body>
@@ -479,44 +536,82 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0">
-                        <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
+                    <div class="flex-shrink-0 nav-logo">
+                        <a href="index.html">
+                            <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
+                        </a>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
-                        <a href="#" class="nav-link">Home</a>
-                        <div class="relative group">
-                            <button class="nav-link text-white">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
-                            <div class="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded-md shadow-lg z-20">
-                                <a href="#solutions" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Overview</a>
-                                <a href="speedsense.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Speedsense Technology</a>
-                                <a href="rental-leasing.html" class="block px-4 py-2 text-sm text-white hover:bg-gray-700">Rental & Leasing</a>
+                        <a href="index.html" class="nav-link">Home</a>
+                        <div class="relative group dropdown-parent">
+                            <button class="nav-link dropdown-toggle">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+                            <div class="dropdown-menu absolute left-0 bg-gray-800 text-white mt-2 rounded-md shadow-lg z-20 min-w-[180px]">
+                                <a href="speedsense.html" class="block px-4 py-2 text-sm hover:bg-gray-700">SpeedSense</a>
+                                <a href="rental-leasing.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Rental & Leasing</a>
+                                <a href="logistics.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Logistics</a>
                             </div>
                         </div>
-                        <a href="#technology" class="nav-link">Technology</a>
-                        <a href="#about" class="nav-link">About</a>
-                        <a href="#contact" class="nav-link">Contact</a>
+                        <a href="index.html#technology" class="nav-link">Technology</a>
+                        <a href="about.html" class="nav-link">About</a>
+                        <a href="contact.html" class="nav-link">Contact</a>
                     </div>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-200 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
             </div>
         </div>
-        <!-- Mobile menu, show/hide based on menu state. -->
+        <!-- Mobile menu -->
         <div class="sm:hidden hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Home</a>
-                <div class="group">
-                    <button class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 w-full text-left">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
-                    <div class="hidden group-focus-within:block pl-4 space-y-1">
-                         <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Overview</a>
-                         <a href="speedsense.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Speedsense Technology</a>
-                         <a href="rental-leasing.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Rental & Leasing</a>
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Home</a>
+                <div class="group dropdown-parent">
+                    <button class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 w-full text-left dropdown-toggle">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+                    <div class="dropdown-menu hidden pl-4 space-y-1">
+                        <a href="speedsense.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">SpeedSense</a>
+                        <a href="rental-leasing.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Rental & Leasing</a>
+                        <a href="logistics.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Logistics</a>
                     </div>
                 </div>
-                <a href="#technology" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Technology</a>
-                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
-                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
+                <a href="index.html#technology" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Technology</a>
+                <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
+                <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
             </div>
         </div>
     </nav>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.dropdown-parent').forEach(function(parent) {
+        var btn = parent.querySelector('.dropdown-toggle');
+        var menu = parent.querySelector('.dropdown-menu');
+        // Toggle on click
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          var isOpen = menu.classList.contains('show');
+          document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
+          if (!isOpen) menu.classList.add('show');
+        });
+        // Close on mouseleave (desktop)
+        parent.addEventListener('mouseleave', function() {
+          menu.classList.remove('show');
+        });
+      });
+      // Hide all dropdowns on document click (except when clicking inside)
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown-parent')) {
+          document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
+        }
+      });
+    });
+    </script>
 
     <main>
         <!-- Hero Section -->
@@ -968,7 +1063,7 @@
                 <div class="text-center">
                     <h2 class="text-4xl font-bold mb-6" style="color: #2F2F2F;">Transform Your Rental Operations Today</h2>
                     <p class="text-xl mb-10" style="color: #2F2F2F;">Ready to revolutionize your rental fleet operations?</p>
-                    <button class="cta-bottom bg-white text-[#004E98] hover:bg-gray-100">Book Demo</button>
+                    <button class="cta-bottom bg-white text-[#004E98] hover:bg-gray-100" onclick="window.location.href='contact.html'">Book Demo</button>
                     <p class="text-white mt-4">
                         <a href="#contact" class="text-white underline hover:no-underline">Contact Our Team</a>
                     </p>
@@ -994,10 +1089,10 @@
                 <div style="color: #ffffff !important;">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
-                        <li><a href="#technology" class="footer-link" style="color: #ffffff !important;">Technology</a></li>
-                        <li><a href="#about" class="footer-link" style="color: #ffffff !important;">About</a></li>
-                        <li><a href="#contact" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
+                        <li><a href="index.html#solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
+                        <li><a href="index.html#technology" class="footer-link" style="color: #ffffff !important;">Technology</a></li>
+                        <li><a href="about.html" class="footer-link" style="color: #ffffff !important;">About</a></li>
+                        <li><a href="contact.html" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
                     </ul>
                 </div>
                 <div style="color: #ffffff !important;">
