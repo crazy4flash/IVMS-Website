@@ -1208,6 +1208,30 @@
             padding: 0 15px; /* Added horizontal padding for spacing */
         }
         .dropdown-menu a { color: #fff !important; }
+        /* Hide dropdown by default */
+        .dropdown-menu {
+            display: none;
+        }
+        /* Show dropdown when .show is present */
+        .dropdown-menu.show {
+            display: block;
+        }
+        /* Desktop: Show dropdown on hover using CSS only */
+        @media (min-width: 640px) {
+            .dropdown-parent:hover .dropdown-menu {
+                display: block;
+            }
+        }
+        .dropdown-parent {
+            position: relative;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0;
+            z-index: 20;
+        }
     </style>
 </head>
 <body>
@@ -1621,21 +1645,16 @@
       document.querySelectorAll('.dropdown-parent').forEach(function(parent) {
         var btn = parent.querySelector('.dropdown-toggle');
         var menu = parent.querySelector('.dropdown-menu');
-        // Toggle on click
+
+        // Mobile: Toggle on click
         btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          var isOpen = menu.classList.contains('show');
-          document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
-          if (!isOpen) menu.classList.add('show');
-        });
-        // Close on mouseleave (desktop)
-        parent.addEventListener('mouseleave', function() {
-          menu.classList.remove('show');
-        });
-        menu.addEventListener('mouseleave', function() {
-          menu.classList.remove('show');
+          if (window.innerWidth < 640) {
+            e.preventDefault();
+            menu.classList.toggle('show');
+          }
         });
       });
+
       // Hide all dropdowns on document click (except when clicking inside)
       document.addEventListener('click', function(e) {
         if (!e.target.closest('.dropdown-parent')) {
