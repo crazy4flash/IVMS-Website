@@ -3,37 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="iVMS Government Solutions: Intelligent vehicle management for public sector, traffic enforcement, and smart city infrastructure. Reduce costs, improve safety, and ensure compliance for government fleets worldwide.">
-    <title>Governments | iVMS Group - Government Vehicle Management Solutions</title>
+    <meta name="description" content="IVMS - Government Fleet Compliance and Solutions">
+    <title>Governments | IVMS Group</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/png" href="src/images/ivms-logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/css/styles.css">
     <style>
         :root {
-            --primary-blue: #004E98;
-            --secondary-blue: #3A6EA5;
-            --teal-primary: #00A3A3;
-            --teal-light: #00D1D1;
-            --teal-dark: #007A7A;
-            --dark-bg: #0A0A0A;
-            --light-bg: #FFFFFF;
-            --text-primary: #2F2F2F;
-            --text-secondary: rgba(47, 47, 47, 0.8);
-            --text-light: #FFFFFF;
-            --text-muted: #666666;
-            --border-light: #EDEDED;
-            --overlay-dark: rgba(30, 30, 30, 0.65);
+            --primary-blue: #004E98;      /* Main brand blue - Use for primary CTAs, headings */
+            --secondary-blue: #3A6EA5;    /* Secondary blue - Use for hover states */
+            --teal-primary: #00A3A3;      /* Primary teal - Use for accents, icons */
+            --teal-light: #00D1D1;        /* Light teal - Use for hover states */
+            --teal-dark: #007A7A;         /* Dark teal - Use for active states */
+            --dark-bg: #0A0A0A;           /* Dark background - Use for footer, dark sections */
+            --light-bg: #FFFFFF;          /* Light background - Use for main background */
+            --text-primary: #2F2F2F;      /* Primary text - Use for main content */
+            --text-secondary: rgba(47, 47, 47, 0.8);    /* Secondary text - Use for supporting content */
+            --text-light: #FFFFFF;        /* Light text - Use for dark backgrounds */
+            --text-muted: rgba(47, 47, 47, 0.6);        /* Muted text - Use for less important content */
+            --border-light: #EDEDED;      /* Light border - Use for subtle separators */
+            --overlay-dark: rgba(30, 30, 30, 0.65); /* Dark overlay - Use for hero section */
             --card-bg: rgba(255, 255, 255, 0.05);
-            --fleet-blue: var(--primary-blue);
+            --fleet-blue: #0057A0;
             --urban-slate: #3A3F45;
             --white: #FFFFFF;
-            --black: #000000;
+            --black: #2F2F2F;
             --text-dark: #2F2F2F;
-            --text-medium: #333333;
+            --text-medium: #2F2F2F;
             --overlay-opacity: 0.85;
             --font-family-primary: "Suisse BP Intl", sans-serif;
+            
+            /* Design System Colors */
+            --ds-primary-blue: #3B82F6;
+            --ds-dark-blue: #1E40AF;
+            --ds-light-blue: #DBEAFE;
+            --ds-white: #FFFFFF;
+            --ds-light-gray: #F8FAFC;
+            --ds-medium-gray: #E2E8F0;
+            --ds-dark-gray: #64748B;
+            --ds-charcoal: #1E293B;
+            --ds-black: #000000;
         }
         body {
             font-family: var(--font-family-primary);
@@ -44,8 +54,13 @@
             -moz-osx-font-smoothing: grayscale;
             scroll-behavior: smooth;
         }
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-        section[id] { scroll-margin-top: 80px; }
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        section[id] {
+            scroll-margin-top: 80px;
+        }
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-family-primary);
             color: var(--text-dark);
@@ -54,51 +69,440 @@
             font-family: var(--font-family-primary);
             color: var(--text-dark);
         }
-        .text-secondary { color: var(--text-secondary); }
-        .hero-section-new-layout { display: flex; flex-direction: column; align-items: flex-start; padding: 8rem 0 0rem 0; background-color: var(--white); text-align: left; }
-        .new-hero-headline { color: var(--text-dark); font-size: 2rem; font-weight: 700; line-height: 1.15; margin-bottom: 0.4rem; text-align: left; max-width: 900px; margin-left: 0; margin-right: auto; }
-        .new-hero-support { color: var(--text-secondary); font-size: 1rem; line-height: 1.5; margin-bottom: 0.5rem; max-width: 800px; text-align: left; margin-left: 0; margin-right: auto; }
-        .new-hero-image { display: block; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); margin-top: 2rem; transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; }
-        .new-hero-image:hover { transform: scale(1.02); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); }
-        @media (min-width: 768px) { .new-hero-headline { font-size: 2.5rem; max-width: 1000px; margin-left: 0; } .new-hero-support { font-size: 1.15rem; max-width: 900px; margin-left: 0; } .hero-section-new-layout { padding: 8rem 0 1rem 0; } }
-        .hero-cta, .cta-bottom { background: var(--primary-blue); color: var(--text-light); font-weight: 600; border-radius: 6px; padding: 0.9rem 2.2rem; border: none; font-size: 1.08rem; box-shadow: 0 4px 16px rgba(0, 78, 152, 0.15); transition: all 0.2s ease; white-space: nowrap; min-width: 120px; }
-        .hero-cta:hover, .cta-bottom:hover { background: var(--secondary-blue); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0, 78, 152, 0.25); }
-        .logo { height: 64px; max-width: 220px; width: auto; margin-right: 2rem; transition: height 0.2s, max-width 0.2s; }
-        .footer-logo { height: 100px; width: auto; }
-        .whatsapp-button { position: fixed; bottom: 2rem; right: 2rem; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); color: white; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); transition: all 0.3s ease; z-index: 100; animation: pulse 2s infinite; }
-        .whatsapp-button:hover { transform: scale(1.1); box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4); }
-        .whatsapp-button i { font-size: 28px; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
-        .main-nav { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); border: none; box-shadow: none; position: fixed; top: 0; left: 0; width: 100%; z-index: 100; max-width: 100vw; transition: background 0.2s, backdrop-filter 0.2s; }
-        .nav-logo { display: flex; align-items: center; background: transparent; }
-        .nav-logo a { display: block; transition: all 0.3s ease; border-radius: 6px; padding: 4px; }
-        .nav-logo a:hover { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); transform: scale(1.05); }
-        .nav-logo img { transition: all 0.3s ease; }
-        .nav-logo a:hover img { filter: brightness(1.1); }
-        .nav-links { display: flex; align-items: center; gap: 0.5rem; }
-        .nav-link { color: #fff; font-weight: 500; font-size: 1.05rem; padding: 0.5rem 1.2rem; background: none; border: none; border-radius: 6px; transition: all 0.3s ease; position: relative; letter-spacing: 0.3px; text-transform: uppercase; font-size: 0.85rem; }
-        .nav-link:hover, .nav-link:focus { color: #fff; background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); }
-        .nav-link::after { content: ''; display: block; width: 0; height: 2px; background: #00A3A3; transition: width 0.3s ease; position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; }
-        .nav-link:hover::after, .nav-link:focus::after { width: 70%; }
-        @media (max-width: 900px) { .logo { height: 48px; max-width: 150px; } .nav-link { font-size: 0.95rem; } }
-        @media (max-width: 600px) { .main-nav { flex-direction: column; align-items: flex-start; padding: 0.5rem 1rem; } .nav-links { flex-direction: column; align-items: flex-start; gap: 0.2rem; width: 100%; } .logo { height: 40px; max-width: 120px; } }
-        .cta-bottom { background: var(--primary-blue); color: var(--text-light); font-weight: 600; border-radius: 6px; padding: 0.9rem 2.2rem; border: none; font-size: 1.08rem; box-shadow: 0 4px 16px rgba(0, 78, 152, 0.15); transition: all 0.2s ease; outline: none; display: inline-block; }
-        .cta-bottom:hover, .cta-bottom:focus { background: var(--secondary-blue); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0, 78, 152, 0.25); }
-        .footer-heading { color: #fff !important; font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; opacity: 1; }
-        .footer-text { color: #fff !important; font-size: 1rem; line-height: 1.6; opacity: 0.8; }
-        .footer-link { color: #fff !important; opacity: 0.8; transition: all 0.3s ease; text-decoration: none; }
-        .footer-link:hover { color: #00A3A3 !important; opacity: 1; }
-        .footer-logo { height: 80px; width: auto; margin-bottom: 1.5rem; filter: brightness(0) invert(1); }
-        .footer-social-links { display: flex; gap: 1rem; margin-top: 1.5rem; }
-        .footer-social-links a { color: #fff; opacity: 0.8; font-size: 1.2rem; transition: all 0.3s ease; }
-        .footer-social-links a:hover { color: #00A3A3; opacity: 1; transform: translateY(-2px); }
-        .footer-divider { border-color: rgba(255, 255, 255, 0.2); margin: 3rem 0 2rem 0; }
-        .footer-copyright { color: #fff; opacity: 0.6; font-size: 0.9rem; text-align: center; }
-        nav a { color: var(--text-light); transition: color 0.3s ease; font-size: 1.1rem; padding: 0 15px; }
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+        nav a {
+            color: var(--text-light);
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            padding: 0 15px;
+        }
         .dropdown-menu { display: none; position: absolute; top: 100%; left: 0; margin-top: 0; }
         .dropdown-menu.show { display: block !important; }
-        @media (min-width: 640px) { .dropdown-parent:hover .dropdown-menu, .dropdown-parent:focus-within .dropdown-menu { display: block !important; } }
+        @media (min-width: 640px) {
+            .dropdown-parent:hover .dropdown-menu,
+            .dropdown-parent:focus-within .dropdown-menu {
+                display: block !important;
+            }
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border: none;
+            box-shadow: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            max-width: 100vw;
+            transition: background 0.2s, backdrop-filter 0.2s;
+        }
+        .footer-logo {
+            height: 80px;
+            width: auto;
+            margin-bottom: 1.5rem;
+            filter: brightness(0) invert(1);
+        }
+        .footer-heading {
+            color: #fff !important;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            opacity: 1;
+        }
+        .footer-text {
+            color: #fff !important;
+            font-size: 1rem;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+        .footer-link {
+            color: #fff !important;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .footer-link:hover {
+            color: #00A3A3 !important;
+            opacity: 1;
+        }
+        .footer-social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .footer-social-links a {
+            color: #fff;
+            opacity: 0.8;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        .footer-social-links a:hover {
+            color: #00A3A3;
+            opacity: 1;
+            transform: translateY(-2px);
+        }
+        .footer-divider {
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 3rem 0 2rem 0;
+        }
+        .footer-copyright {
+            color: #fff;
+            opacity: 0.6;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            background: transparent;
+        }
+        .nav-logo a {
+            display: block;
+            transition: all 0.3s ease;
+            border-radius: 6px;
+            padding: 4px;
+        }
+        .nav-logo a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            transform: scale(1.05);
+        }
+        .nav-logo img {
+            transition: all 0.3s ease;
+        }
+        .nav-logo a:hover img {
+            filter: brightness(1.1);
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-link {
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 0.5rem 1.2rem;
+            background: none;
+            border: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+        .nav-link:hover, .nav-link:focus {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+        }
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #00A3A3;
+            transition: width 0.3s ease;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0;
+        }
+        .nav-link:hover::after, .nav-link:focus::after {
+            width: 70%;
+        }
         .dropdown-menu a { color: #fff !important; }
+        
+        /* Government Page Specific Styles */
+        .hero-headline {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            line-height: 1.6;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out 0.6s forwards;
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .btn-primary {
+            background-color: var(--ds-primary-blue);
+            color: var(--ds-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-size: 1rem;
+            font-weight: 500;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--ds-dark-blue);
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-padding {
+            padding: 5rem 1.5rem;
+        }
+        
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .container-medium {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .container-wide {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .bg-light-gray {
+            background-color: var(--ds-light-gray);
+        }
+        
+        .card-elevated {
+            background-color: var(--ds-white);
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .card-elevated:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-feature {
+            background-color: var(--ds-charcoal);
+            color: var(--ds-white);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            /* Ensure all text inside is readable */
+            color: #fff;
+        }
+        .card-feature h3,
+        .card-feature p,
+        .card-feature .step-number {
+            color: #fff;
+            text-shadow: 0 1px 4px rgba(0,0,0,0.18);
+        }
+        .card-feature .step-number {
+            background-color: #22304a;
+        }
+        .card-feature p {
+            color: #e5e7eb;
+        }
+        
+        .card-feature:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--ds-primary-blue);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--ds-dark-gray);
+            font-weight: 500;
+        }
+        
+        .step-number {
+            background-color: var(--ds-charcoal);
+            color: var(--ds-white);
+            border-radius: 50%;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .form-input {
+            background-color: var(--ds-light-gray);
+            border: 1px solid var(--ds-medium-gray);
+            border-radius: 0.375rem;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: var(--ds-primary-blue);
+            outline: 2px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--ds-charcoal);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .tilt-on-hover {
+            transition: transform 0.3s ease;
+        }
+        
+        .tilt-on-hover:hover {
+            transform: rotate(2deg) scale(1.02);
+        }
+        
+        /* Glitch Effect */
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        .glitch-effect {
+            animation: glitch 0.3s ease-in-out;
+        }
+        
+        @media (max-width: 900px) {
+            .logo {
+                height: 48px;
+                max-width: 150px;
+            }
+            .nav-link {
+                font-size: 0.95rem;
+            }
+            .hero-headline {
+                font-size: 2.5rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .main-nav {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0.5rem 1rem;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.2rem;
+                width: 100%;
+            }
+            .logo {
+                height: 40px;
+                max-width: 120px;
+            }
+            .hero-headline {
+                font-size: 2rem;
+            }
+            .section-padding {
+                padding: 3rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -109,7 +513,7 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0 nav-logo">
                         <a href="index.html">
-                        <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
+                            <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
                         </a>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -119,7 +523,7 @@
                             <div class="dropdown-menu absolute left-0 bg-gray-800 text-white mt-2 rounded-md shadow-lg z-20 min-w-[180px]">
                                 <a href="speedsense.html" class="block px-4 py-2 text-sm hover:bg-gray-700">SpeedSense</a>
                                 <a href="rental-leasing.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Rental & Leasing</a>
-                                <a href="logistics.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Logistics</a>
+                                <a href="logistics.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Transport & Logistics</a>
                             </div>
                         </div>
                         <a href="governments.html" class="nav-link">Governments</a>
@@ -149,7 +553,7 @@
                     <div class="dropdown-menu hidden pl-4 space-y-1">
                         <a href="speedsense.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">SpeedSense</a>
                         <a href="rental-leasing.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Rental & Leasing</a>
-                        <a href="logistics.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Logistics</a>
+                        <a href="logistics.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Transport & Logistics</a>
                     </div>
                 </div>
                 <a href="governments.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Governments</a>
@@ -158,342 +562,380 @@
             </div>
         </div>
     </nav>
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section-new-layout">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-6 md:p-8 flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/2 w-full">
-                        <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                            Transforming Government Transportation Infrastructure Worldwide<br>
-                            <span style="color: #004E98;">iVMS Government Solutions</span>
-                        </h1>
-                        <p class="new-hero-support text-lg text-gray-600 mb-8">
-                            iVMS delivers intelligent vehicle management solutions that reduce costs, enhance safety, and improve service delivery for government agencies globally.<br>
-                            <span class="block mt-2 font-semibold">Complete fleet management. Complete peace of mind.</span>
-                        </p>
-                        <div class="flex gap-4 flex-wrap">
-                            <a href="#cta" class="cta-bottom">Schedule Government Demo</a>
-                            <a href="#case-studies" class="cta-bottom bg-white text-[#004E98] border-2 border-[#004E98] hover:bg-gray-100">View Case Studies</a>
+
+    <main class="pt-24">
+        <!-- SECTION 1: HERO SECTION -->
+        <section class="section-padding text-center">
+            <div class="container-narrow">
+                <h1 class="hero-headline glitch-effect">Transforming Government Transportation Infrastructure Worldwide</h1>
+                <p class="hero-subtitle">Comprehensive fleet management, compliance, and smart city solutions for government agencies. Reduce costs, enhance safety, and deliver measurable public value with iVMS's secure, integrated platform.</p>
+                <img src="src/images/ivms-skyline.png" alt="Modern Government Transportation Infrastructure" class="hero-image tilt-on-hover">
+                <a href="#contact" class="btn-primary">Schedule Government Demo</a>
+            </div>
+        </section>
+
+        <!-- SECTION 2: COMPREHENSIVE GOVERNMENT SERVICES -->
+        <section class="section-padding bg-light-gray">
+            <div class="container-wide">
+                <!-- HERO INTRODUCTION -->
+                <div class="text-center mb-16">
+                    <h2 class="hero-headline" style="font-size:3.5rem;font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1.5rem;">Comprehensive Government Solutions</h2>
+                    <p class="hero-subtitle" style="font-size:1.25rem;line-height:1.6;font-weight:400;max-width:800px;margin:0 auto;color:var(--text-secondary);">Transforming public sector operations through intelligent fleet management, advanced compliance systems, and smart city infrastructure. Delivering measurable value with secure, integrated platforms designed for government scale.</p>
+                </div>
+
+                <!-- FEATURED SERVICES SHOWCASE -->
+                
+                <!-- LARGE FEATURE BLOCK 1: Real-Time Traffic Enforcement -->
+                <div class="mb-20">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="animate-on-scroll">
+                            <img src="src/images/speedsense-dashboard.png" alt="Real-Time Traffic Enforcement Dashboard" class="w-full rounded-xl shadow-2xl tilt-on-hover">
                         </div>
-                        <div class="flex gap-8 mt-8 text-gray-700 text-sm">
-                            <div><i class="fas fa-briefcase mr-2"></i>15+ Years Experience</div>
-                            <div><i class="fas fa-globe mr-2"></i>30+ Countries Served</div>
-                            <div><i class="fas fa-clock mr-2"></i>2.5M+ Testing Hours</div>
+                        <div class="animate-on-scroll">
+                            <h3 class="mb-6" style="font-size:2.25rem;font-weight:600;line-height:1.2;color:var(--ds-primary-blue);">Real-Time Traffic Enforcement & Violation Detection</h3>
+                            <p class="mb-6 text-lg" style="font-size:1.125rem;line-height:1.6;color:var(--text-secondary);">Advanced AI-powered monitoring systems that capture court-admissible evidence and automate enforcement processes across government jurisdictions.</p>
+                            <ul class="space-y-3" style="font-size:1.125rem;line-height:1.6;">
+                                <li class="flex items-start">
+                                    <i class="fas fa-shield-alt text-blue-500 mr-3 mt-1"></i>
+                                    <span>Court-admissible evidence capture with AI monitoring</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-gavel text-blue-500 mr-3 mt-1"></i>
+                                    <span>Automated fine processing and appeals management</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-mobile-alt text-blue-500 mr-3 mt-1"></i>
+                                    <span>Mobile enforcement optimization</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chart-line text-blue-500 mr-3 mt-1"></i>
+                                    <span>Real-time analytics and reporting</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="lg:w-1/2 w-full flex justify-center">
-                        <img src="src/images/ivms-skyline.png" alt="[HERO_IMAGE]" class="new-hero-image rounded-lg shadow-xl w-full max-w-xl">
+                </div>
+
+                <!-- LARGE FEATURE BLOCK 2: Emergency Response Optimization -->
+                <div class="mb-20">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="animate-on-scroll lg:order-2">
+                            <img src="src/images/ai-analytics-dashboard.png" alt="Emergency Response Optimization Dashboard" class="w-full rounded-xl shadow-2xl tilt-on-hover">
+                        </div>
+                        <div class="animate-on-scroll lg:order-1">
+                            <h3 class="mb-6" style="font-size:2.25rem;font-weight:600;line-height:1.2;color:var(--ds-primary-blue);">Emergency Response Optimization</h3>
+                            <p class="mb-6 text-lg" style="font-size:1.125rem;line-height:1.6;color:var(--text-secondary);">Intelligent dispatch systems that reduce response times by 50% through predictive analytics and real-time coordination across emergency services.</p>
+                            <ul class="space-y-3" style="font-size:1.125rem;line-height:1.6;">
+                                <li class="flex items-start">
+                                    <i class="fas fa-ambulance text-blue-500 mr-3 mt-1"></i>
+                                    <span>50% reduction in emergency response times</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-exclamation-triangle text-blue-500 mr-3 mt-1"></i>
+                                    <span>Predictive risk identification</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-globe text-blue-500 mr-3 mt-1"></i>
+                                    <span>Cross-border incident coordination</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-route text-blue-500 mr-3 mt-1"></i>
+                                    <span>Real-time dispatch optimization</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LARGE FEATURE BLOCK 3: Government Fleet Operations -->
+                <div class="mb-20">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="animate-on-scroll">
+                            <img src="src/images/telematics-connectivity.png" alt="Government Fleet Operations Dashboard" class="w-full rounded-xl shadow-2xl tilt-on-hover">
+                        </div>
+                        <div class="animate-on-scroll">
+                            <h3 class="mb-6" style="font-size:2.25rem;font-weight:600;line-height:1.2;color:var(--ds-primary-blue);">Government Fleet Operations Management</h3>
+                            <p class="mb-6 text-lg" style="font-size:1.125rem;line-height:1.6;color:var(--text-secondary);">Comprehensive fleet management solutions that deliver 25% fuel cost reduction through intelligent monitoring and predictive maintenance.</p>
+                            <ul class="space-y-3" style="font-size:1.125rem;line-height:1.6;">
+                                <li class="flex items-start">
+                                    <i class="fas fa-truck text-blue-500 mr-3 mt-1"></i>
+                                    <span>25% fuel cost reduction through smart monitoring</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-satellite text-blue-500 mr-3 mt-1"></i>
+                                    <span>Real-time vehicle tracking and driver behavior analysis</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-tools text-blue-500 mr-3 mt-1"></i>
+                                    <span>Predictive maintenance scheduling</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-chart-pie text-blue-500 mr-3 mt-1"></i>
+                                    <span>Asset utilization optimization</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GROUPED SERVICE CATEGORIES -->
+                
+                <!-- GROUP 1: Smart Transportation & Safety -->
+                <div class="mb-16">
+                    <h3 class="mb-8 text-center" style="font-size:2rem;font-weight:600;color:var(--ds-primary-blue);">Smart Transportation & Safety</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-xl p-8 shadow-lg animate-on-scroll">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-bus text-3xl text-blue-500 mr-4"></i>
+                                <h4 class="text-xl font-semibold">School Transport Safety (iBUS)</h4>
+                            </div>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>Advanced student identification and boarding systems</li>
+                                <li>Real-time parent notifications and school coordination</li>
+                                <li>Driver and service quality monitoring</li>
+                                <li>Enhanced student safety protocols</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-xl p-8 shadow-lg animate-on-scroll">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-subway text-3xl text-blue-500 mr-4"></i>
+                                <h4 class="text-xl font-semibold">Public Transportation System Optimization</h4>
+                            </div>
+                            <ul class="space-y-2 text-gray-700">
+                                <li>Real-time passenger information systems</li>
+                                <li>Driver performance monitoring and safety systems</li>
+                                <li>Predictive maintenance for extended vehicle lifespan</li>
+                                <li>Mobile payment integration and fare collection</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GROUP 2: Fleet & Environmental Management -->
+                <div class="mb-16">
+                    <h3 class="mb-8 text-center" style="font-size:2rem;font-weight:600;color:var(--ds-primary-blue);">Fleet & Environmental Management</h3>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="animate-on-scroll">
+                            <img src="src/images/co2-emissions-reduction.png" alt="Environmental Compliance Dashboard" class="w-full rounded-xl shadow-lg">
+                        </div>
+                        <div class="animate-on-scroll">
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-3 flex items-center">
+                                        <i class="fas fa-leaf text-blue-500 mr-3"></i>
+                                        Environmental Compliance & Carbon Monitoring
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li>Real-time emissions tracking and air quality monitoring</li>
+                                        <li>Carbon footprint calculation and sustainability reporting</li>
+                                        <li>Environmental protection zone violation detection</li>
+                                        <li>Net Zero initiative support</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-semibold mb-3 flex items-center">
+                                        <i class="fas fa-credit-card text-blue-500 mr-3"></i>
+                                        Smart Payment Systems (iPAY)
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li>Accessible tap-to-pay solutions with biometric verification</li>
+                                        <li>Efficient revenue management and reduced cash handling</li>
+                                        <li>Smart urban planning data integration</li>
+                                        <li>Multi-modal payment system integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GROUP 3: Digital Government Services -->
+                <div class="mb-16">
+                    <h3 class="mb-8 text-center" style="font-size:2rem;font-weight:600;color:var(--ds-primary-blue);">Digital Government Services</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-globe text-3xl text-blue-500 mb-3"></i>
+                                <h4 class="font-semibold">Cross-Border Coordination</h4>
+                            </div>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>Standardized frameworks for regional cooperation</li>
+                                <li>International data protection compliance</li>
+                                <li>Multi-jurisdictional incident coordination</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-lock text-3xl text-blue-500 mb-3"></i>
+                                <h4 class="font-semibold">Data Security & GDPR</h4>
+                            </div>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>Full compliance with international regulations</li>
+                                <li>Secure government database integration</li>
+                                <li>Comprehensive audit trails</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-network-wired text-3xl text-blue-500 mb-3"></i>
+                                <h4 class="font-semibold">Smart Government Integration</h4>
+                            </div>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>Seamless integration with existing databases</li>
+                                <li>Custom interfaces for national systems</li>
+                                <li>Scalable implementation</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-headset text-3xl text-blue-500 mb-3"></i>
+                                <h4 class="font-semibold">24/7 Technical Support</h4>
+                            </div>
+                            <ul class="text-sm space-y-1 text-gray-700">
+                                <li>Dedicated government support teams</li>
+                                <li>Emergency protocols and response</li>
+                                <li>Ongoing system optimization</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- 2. Government Challenges Section -->
-        <section class="py-20 bg-white text-center">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold mb-8">Current Challenges Facing Public Administration</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mt-12">
-                    <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-2xl transition">
-                        <div class="text-4xl mb-4"><i class="fas fa-coins" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Revenue Collection Issues</h3>
-                        <p>Significant amounts in uncollected traffic fines annually, creating substantial budget shortfalls that impact public service delivery and infrastructure maintenance.</p>
-                        <div class="mt-4 text-[#004E98] font-bold">Millions lost per city</div>
+
+        <!-- SECTION 3: KEY STATISTICS & BENEFITS -->
+        <section class="section-padding bg-light-gray">
+            <div class="container-wide">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="stat-card animate-on-scroll">
+                        <span class="stat-number" data-target="50" data-metric="%">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">%</span>
+                        <div class="stat-label mt-2">Emergency Response Time Reduction</div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-2xl transition">
-                        <div class="text-4xl mb-4"><i class="fas fa-ambulance" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Emergency Response Gaps</h3>
-                        <p>Extended response times averaging well above international best practices of 8-10 minutes for urban areas, compromising public safety and emergency care effectiveness.</p>
-                        <div class="mt-4 text-[#004E98] font-bold">Avg: 15+ min</div>
+                    <div class="stat-card animate-on-scroll">
+                        <span class="stat-number" data-target="25" data-metric="%">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">%</span>
+                        <div class="stat-label mt-2">Government Fleet Cost Savings</div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-2xl transition">
-                        <div class="text-4xl mb-4"><i class="fas fa-traffic-light" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Traffic Management Problems</h3>
-                        <p>Billions in annual economic losses due to congestion, inefficient traffic flow systems, and inadequate infrastructure planning, reducing productivity and quality of life.</p>
-                        <div class="mt-4 text-[#004E98] font-bold">2% GDP lost</div>
+                    <div class="stat-card animate-on-scroll">
+                        <span class="stat-number" data-target="45" data-metric="%">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">%</span>
+                        <div class="stat-label mt-2">Infrastructure Cost Reduction</div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-2xl transition">
-                        <div class="text-4xl mb-4"><i class="fas fa-smog" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Environmental Compliance Failures</h3>
-                        <p>Substantial portions of urban areas consistently exceed air quality and emissions standards, threatening public health and international sustainability commitments.</p>
-                        <div class="mt-4 text-[#004E98] font-bold">40% cities exceed WHO</div>
+                    <div class="stat-card animate-on-scroll">
+                        <span class="stat-number" data-target="58" data-metric="%">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">%</span>
+                        <div class="stat-label mt-2">Fine Collection Improvement</div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-2xl transition">
-                        <div class="text-4xl mb-4"><i class="fas fa-bus-alt" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Inefficient Fleet Operations</h3>
-                        <p>Low vehicle utilization rates across government and municipal fleets, typically below 40% optimal capacity, resulting in wasted resources and increased costs.</p>
-                        <div class="mt-4 text-[#004E98] font-bold">Utilization: 28%</div>
+                    <div class="stat-card animate-on-scroll">
+                        <span class="stat-number" data-target="85" data-metric="%">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">%</span>
+                        <div class="stat-label mt-2">Reduction in Compliance Violations</div>
+                    </div>
+                    <div class="stat-card animate-on-scroll">
+                        <span class="stat-number" data-target="2.3" data-metric="£B">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">£B</span>
+                        <div class="stat-label mt-2">Annual Operational Savings Potential</div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- 3. Global Impact Statistics Section -->
-        <section class="py-20 bg-[#f7f7f9] text-center">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold mb-4">Global Traffic Enforcement & Revenue Collection</h2>
-                <div class="text-lg mb-12">The Challenge: Disparate enforcement infrastructures across nations, varied digital fine processing systems, and uneven integration with emerging autonomous vehicles</div>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">$12.4B</div>
-                        <div class="text-lg font-semibold mb-1">Global Annual Infrastructure Cost</div>
-                        <div class="text-gray-600">Worldwide smart traffic systems</div>
+
+        <!-- SECTION 4: TECHNOLOGY SHOWCASE -->
+        <section class="section-padding bg-light-gray">
+            <div class="container-wide">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="animate-on-scroll">
+                        <img src="src/images/data-analytics-interface.png" alt="Real-Time Monitoring & Analytics" class="w-full rounded-lg shadow-lg tilt-on-hover">
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">45%</div>
-                        <div class="text-lg font-semibold mb-1">Average Coverage Variance</div>
-                        <div class="text-gray-600">Between developed and developing regions</div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">14 days</div>
-                        <div class="text-lg font-semibold mb-1">Processing Days (Average)</div>
-                        <div class="text-gray-600">International traffic violation systems</div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">15%</div>
-                        <div class="text-lg font-semibold mb-1">Global Collection Rate Loss</div>
-                        <div class="text-gray-600">Cross-border enforcement challenges</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 4. iVMS Solutions Overview -->
-        <section class="py-20 bg-white text-center">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold mb-8">The iVMS Way: Our Comprehensive Solution</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8 hover:shadow-2xl transition">
-                        <div class="text-4xl mb-4"><i class="fas fa-video" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Real-Time Violation Detection</h3>
-                        <p>Court-admissible evidence capture with advanced AI monitoring technology optimized for expanding road networks.</p>
-                        <div class="mt-4 text-[#004E98] font-bold">Automated, legal compliance</div>
-                    </div>
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8 hover:shadow-2xl transition">
-                        <div class="text-4xl mb-4"><i class="fas fa-link" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Automated Processing</h3>
-                        <p>Fully digital fine processing with blockchain-secured payment and appeals management aligned with modern legal frameworks.</p>
-                        <div class="mt-4 text-[#004E98] font-bold">Streamlined workflow</div>
-                    </div>
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8 hover:shadow-2xl transition">
-                        <div class="text-4xl mb-4"><i class="fas fa-mobile-alt" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Mobile Enforcement</h3>
-                        <p>Officer dispatch optimization reducing response times by 62% across police operations in both urban centers and remote areas.</p>
-                        <div class="mt-4 text-[#004E98] font-bold">Faster response</div>
-                    </div>
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8 hover:shadow-2xl transition">
-                        <div class="text-4xl mb-4"><i class="fas fa-map-marked-alt" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Real-Time Fleet Monitoring</h3>
-                        <p>AI-powered vehicle tracking reducing fuel consumption by 25% to meet international sustainability targets.</p>
-                        <div class="mt-4 text-[#004E98] font-bold">Optimized efficiency</div>
-                    </div>
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8 hover:shadow-2xl transition">
-                        <div class="text-4xl mb-4"><i class="fas fa-chart-bar" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Performance Analytics</h3>
-                        <p>Predictive enforcement strategy optimization projected to deliver significant cost savings annually.</p>
-                        <div class="mt-4 text-[#004E98] font-bold">Data-driven insights</div>
-                    </div>
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8 hover:shadow-2xl transition">
-                        <div class="text-4xl mb-4"><i class="fas fa-plug" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold mb-2">Seamless Integration</h3>
-                        <p>Enhanced compatibility with Smart Government Initiatives and national infrastructure systems.</p>
-                        <div class="mt-4 text-[#004E98] font-bold">Future-proof tech</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 5. Success Metrics Section -->
-        <section class="py-20 bg-[#f7f7f9] text-center">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold mb-8">Smart Traffic Enforcement: Global Solutions</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">45%</div>
-                        <div class="text-lg font-semibold mb-1">Infrastructure Cost Reduction</div>
-                        <div class="text-gray-600">Projected savings vs traditional systems</div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">220%</div>
-                        <div class="text-lg font-semibold mb-1">Road Coverage Increase</div>
-                        <div class="text-gray-600">Target expansion for major highways</div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">58%</div>
-                        <div class="text-lg font-semibold mb-1">Fine Collection Improvement</div>
-                        <div class="text-gray-600">Projected through AI processing</div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">$3.5B</div>
-                        <div class="text-lg font-semibold mb-1">Annual Savings</div>
-                        <div class="text-gray-600">Projected through digital enforcement</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 6. Product Showcase -->
-        <section class="py-20 bg-white text-center">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold mb-8">Comprehensive Government Solutions Portfolio</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <h3 class="text-2xl font-bold mb-4">iVMS Core Platform</h3>
-                        <div class="text-lg mb-2 font-semibold text-[#004E98]">Intelligent Vehicle Management & Traffic Enforcement</div>
-                        <ul class="text-left text-gray-700 mb-4 list-disc pl-5">
-                            <li>Real-time fleet monitoring and analytics with 24/7 dashboard access</li>
-                            <li>Comprehensive violation detection system with court-admissible evidence</li>
-                            <li>Government database integration with secure API connections</li>
-                            <li>Multi-jurisdiction coordination and cross-border enforcement capabilities</li>
-                            <li>Advanced reporting and compliance management tools</li>
+                    <div class="animate-on-scroll">
+                        <h2 class="mb-6" style="font-size:2.25rem;font-weight:600;line-height:1.2;letter-spacing:-0.01em;">Technology for Real-Time Government Operations</h2>
+                        <p class="mb-4 text-lg" style="font-size:1.125rem;line-height:1.6;">iVMS delivers real-time monitoring, compliance tracking, and AI-powered analytics for government fleets and infrastructure. Our dashboards provide actionable insights, automated reporting, and predictive analytics to optimize operations and ensure regulatory compliance.</p>
+                        <ul class="text-base" style="font-size:1.125rem;line-height:1.6;">
+                            <li>Live compliance dashboards and violation tracking</li>
+                            <li>Predictive analytics for maintenance and risk</li>
+                            <li>Automated reporting for audit and transparency</li>
+                            <li>Secure, scalable cloud infrastructure</li>
                         </ul>
-                        <div class="text-sm text-gray-600 mb-2">Key Metrics: Response time improvements, violation detection accuracy, system uptime</div>
-                        <img src="src/images/ai-analytics-dashboard.png" alt="[IVMS_CORE_DASHBOARD]" class="rounded-lg shadow-xl w-full max-w-xs mx-auto">
-                    </div>
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <h3 class="text-2xl font-bold mb-4">iPAY Digital Solutions</h3>
-                        <div class="text-lg mb-2 font-semibold text-[#004E98]">Smart Payments & Revenue Management</div>
-                        <ul class="text-left text-gray-700 mb-4 list-disc pl-5">
-                            <li>Tap-to-pay accessibility compliance with international standards</li>
-                            <li>Biometric verification compatibility with leading banks</li>
-                            <li>Offline payment capability for remote and underserved areas</li>
-                            <li>Multi-billion infrastructure savings potential through reduced cash handling</li>
-                            <li>Real-time transaction monitoring across metropolitan areas</li>
-                        </ul>
-                        <div class="text-sm text-gray-600 mb-2">Key Metrics: 40% increase in tax compliance globally, 85% reduction in cash handling</div>
-                        <img src="src/images/digital-contracts.png" alt="[IPAY_INTERFACE]" class="rounded-lg shadow-xl w-full max-w-xs mx-auto">
-                    </div>
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <h3 class="text-2xl font-bold mb-4">iBUS School Safety</h3>
-                        <div class="text-lg mb-2 font-semibold text-[#004E98]">Advanced School Transportation Management</div>
-                        <ul class="text-left text-gray-700 mb-4 list-disc pl-5">
-                            <li>75% improved student safety tracking with real-time monitoring</li>
-                            <li>Advanced biometric identification systems for secure boarding</li>
-                            <li>28% attendance rate improvement through optimized routing</li>
-                            <li>Instant parent/school notifications and communication systems</li>
-                            <li>AI-powered predictive maintenance reducing breakdown costs by 40%</li>
-                        </ul>
-                        <div class="text-sm text-gray-600 mb-2">Key Metrics: Safety incident reduction, on-time performance, maintenance savings</div>
-                        <img src="src/images/vehicle-health.png" alt="[IBUS_SAFETY_SYSTEM]" class="rounded-lg shadow-xl w-full max-w-xs mx-auto">
                     </div>
                 </div>
             </div>
         </section>
-        <!-- 7. ROI Demonstration -->
-        <section class="py-20 bg-[#f7f7f9] text-center">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold mb-8">Projected Investment Returns & Financial Impact</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">14 mo</div>
-                        <div class="text-lg font-semibold mb-1">Payback Period</div>
-                        <div class="text-gray-600">Average with timeline visualization</div>
+
+        <!-- SECTION 5: IMPLEMENTATION PROCESS -->
+        <section class="section-padding">
+            <div class="container-wide">
+                <h2 class="text-center mb-12" style="font-size:2.25rem;font-weight:600;line-height:1.2;letter-spacing:-0.01em;">Government Implementation Process</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card-feature animate-on-scroll">
+                        <div class="step-number">1</div>
+                        <h3 class="mb-4" style="font-size:1.5rem;font-weight:600;">Security Assessment & System Integration</h3>
+                        <p style="font-size:1.125rem;line-height:1.6;">Comprehensive security audit and seamless integration with existing government databases and national infrastructure systems. Our platform meets the highest security standards including ISO 27001, SOC 2, and government-specific compliance requirements.</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">900%</div>
-                        <div class="text-lg font-semibold mb-1">5-Year ROI</div>
-                        <div class="text-gray-600">Return on investment with growth projection</div>
+                    <div class="card-feature animate-on-scroll">
+                        <div class="step-number">2</div>
+                        <h3 class="mb-4" style="font-size:1.5rem;font-weight:600;">Pilot Deployment & Testing</h3>
+                        <p style="font-size:1.125rem;line-height:1.6;">Showcase efficacy across transport, infrastructure, law enforcement, and education departments with controlled pilot programs. Real-world testing validates system performance and user acceptance before full deployment.</p>
                     </div>
-                </div>
-                <div class="mt-12">
-                    <div class="bg-white rounded-lg shadow-lg p-8 inline-block">
-                        <div class="text-lg font-semibold mb-1">Germany Case Study Example</div>
-                        <div class="text-gray-600">Total Investment: €890M over 5 years<br>Total Savings: €8.9B over 5 years</div>
+                    <div class="card-feature animate-on-scroll">
+                        <div class="step-number">3</div>
+                        <h3 class="mb-4" style="font-size:1.5rem;font-weight:600;">Staff Training & Certification</h3>
+                        <p style="font-size:1.125rem;line-height:1.6;">Multi-level training programmes for government personnel with 24/7 technical support and ongoing education. Comprehensive certification ensures proper system utilization and maximizes return on investment.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-        <!-- 8. Implementation Models -->
-        <section class="py-20 bg-white text-center">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold mb-8">Tailored Implementation Models</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <h3 class="text-xl font-bold mb-2">Federal/National Level Integration</h3>
-                        <ul class="text-left text-gray-700 mb-4 list-disc pl-5">
-                            <li>Coordination with national agencies serving 5-350 million citizens</li>
-                            <li>Centralized command and control, multi-agency coordination</li>
-                            <li>National database integration</li>
-                            <li>18-36 month phased rollout</li>
-                        </ul>
-                        <div class="text-sm text-gray-600 mb-2">International standards, cross-border protocols</div>
-                    </div>
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <h3 class="text-xl font-bold mb-2">Regional/State-Level Deployment</h3>
-                        <ul class="text-left text-gray-700 mb-4 list-disc pl-5">
-                            <li>Customized solutions for 10-50 administrative divisions per country</li>
-                            <li>Regional coordination hubs, state-specific compliance modules</li>
-                            <li>12-24 month implementation</li>
-                        </ul>
-                        <div class="text-sm text-gray-600 mb-2">State-specific legal framework adaptation</div>
-                    </div>
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <h3 class="text-xl font-bold mb-2">Municipal Integration</h3>
-                        <ul class="text-left text-gray-700 mb-4 list-disc pl-5">
-                            <li>Customized solutions for major municipalities with 200K-10M+ residents</li>
-                            <li>City-specific dashboards, local fleet management</li>
-                            <li>6-18 month deployment</li>
-                        </ul>
-                        <div class="text-sm text-gray-600 mb-2">Direct citizen impact, local revenue optimization</div>
-                    </div>
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <h3 class="text-xl font-bold mb-2">International/Regional Bloc Coordination</h3>
-                        <ul class="text-left text-gray-700 mb-4 list-disc pl-5">
-                            <li>Cross-border integration using standardized currency frameworks</li>
-                            <li>Multi-national enforcement coordination, standardized protocols</li>
-                            <li>24-48 month coordination framework</li>
-                        </ul>
-                        <div class="text-sm text-gray-600 mb-2">Regional commerce facilitation, unified governance standards</div>
+                    <div class="card-feature animate-on-scroll">
+                        <div class="step-number">4</div>
+                        <h3 class="mb-4" style="font-size:1.5rem;font-weight:600;">Full Deployment & Monitoring</h3>
+                        <p style="font-size:1.125rem;line-height:1.6;">Scalable implementation from municipal to federal level with continuous improvement and performance monitoring. Ongoing optimization ensures maximum efficiency and cost savings across all government operations.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- 9. Environmental Impact & Sustainability -->
-        <section class="py-20 bg-[#f7f7f9] text-center">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold mb-8">Environmental Monitoring & Carbon Reduction</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">$2.8T</div>
-                        <div class="text-lg font-semibold mb-1">Projected Climate Damage Prevention</div>
-                        <div class="text-gray-600">From transport CO2 emissions annually by 2030</div>
+
+        <!-- SECTION 6: PARTNERSHIP & CONTACT -->
+        <section id="contact" class="section-padding bg-light-gray">
+            <div class="container-medium">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="animate-on-scroll">
+                        <h2 class="mb-6" style="font-size:2.25rem;font-weight:600;line-height:1.2;letter-spacing:-0.01em;">Partner with Government Fleet Experts</h2>
+                        <p class="mb-4 text-lg" style="font-size:1.125rem;line-height:1.6;">Collaborate with iVMS for pilot deployments, technical support, and ongoing digital transformation. Our team provides 24/7 support and tailored solutions for every level of government.</p>
+                        <ul class="text-base" style="font-size:1.125rem;line-height:1.6;">
+                            <li>Pilot deployment and proof-of-concept programs</li>
+                            <li>Dedicated government technical support</li>
+                            <li>Custom integration and onboarding</li>
+                        </ul>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">40%</div>
-                        <div class="text-lg font-semibold mb-1">Urban Areas Exceeding WHO</div>
-                        <div class="text-gray-600">Air quality guidelines</div>
+                    <div class="animate-on-scroll">
+                        <form class="space-y-6">
+                            <div>
+                                <label class="form-label">Government Department</label>
+                                <input type="text" class="form-input" placeholder="e.g., Transport, Law Enforcement, Emergency Services">
+                            </div>
+                            <div>
+                                <label class="form-label">Fleet Size</label>
+                                <select class="form-input">
+                                    <option>Select fleet size</option>
+                                    <option>1-50 vehicles</option>
+                                    <option>51-200 vehicles</option>
+                                    <option>201-500 vehicles</option>
+                                    <option>500+ vehicles</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="form-label">Current Challenges</label>
+                                <textarea class="form-input" rows="3" placeholder="Describe your current transportation management challenges"></textarea>
+                            </div>
+                            <div>
+                                <label class="form-label">Implementation Timeline</label>
+                                <select class="form-input">
+                                    <option>Select timeline</option>
+                                    <option>Immediate (0-3 months)</option>
+                                    <option>Short-term (3-6 months)</option>
+                                    <option>Medium-term (6-12 months)</option>
+                                    <option>Long-term (12+ months)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-primary w-full">Schedule Government Demo</button>
+                        </form>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">25%</div>
-                        <div class="text-lg font-semibold mb-1">Fuel Consumption Reduction</div>
-                        <div class="text-gray-600">Through optimized fleet management</div>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-5xl font-bold mb-2" style="color: #004E98;">58%</div>
-                        <div class="text-lg font-semibold mb-1">Effective Enforcement</div>
-                        <div class="text-gray-600">Of environmental regulations worldwide by 2030</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- 10. Call-to-Action Section -->
-        <section id="cta" class="py-20 bg-gradient-to-r from-[#004E98] to-[#00A3A3] text-center">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold mb-6" style="color: #fff;">Future-Proof Your Government Transportation Infrastructure</h2>
-                <p class="text-xl mb-8" style="color: #fff;">Book a government demo, request a pilot, or download our government brief</p>
-                <div class="flex flex-col md:flex-row gap-4 justify-center mb-8">
-                    <a href="#" class="cta-bottom">Schedule Government Demo</a>
-                    <a href="#" class="cta-bottom bg-white text-[#004E98] border-2 border-[#004E98] hover:bg-gray-100">Request Pilot Program</a>
-                    <a href="#" class="cta-bottom bg-white text-[#004E98] border-2 border-[#004E98] hover:bg-gray-100">Download Government Brief</a>
-                </div>
-                <div class="flex flex-col md:flex-row gap-4 justify-center">
-                    <a href="#case-studies" class="footer-link">View Case Studies</a>
-                    <a href="#" class="footer-link">Contact Sales Team</a>
-                    <a href="#" class="footer-link">Request ROI Analysis</a>
-                </div>
-                <div class="mt-8 text-white text-sm">
-                    <div class="mb-2">iVMS Group | Dubai, UAE | Phone: <a href="tel:+971585994323" class="underline">+971 (0) 58 599 4323</a> | Email: <a href="mailto:info@ivmsgroup.com" class="underline">info@ivmsgroup.com</a></div>
-                    <div>Complete Fleet Management. Complete Peace of Mind.</div>
                 </div>
             </div>
         </section>
     </main>
-    <!-- Footer -->
+
+    <!-- Footer (from index.html) -->
     <footer class="bg-[#0A0A0A] text-white py-12" style="background-color: #0A0A0A !important; color: #ffffff !important; display: block !important; position: relative !important; min-height: 200px !important;">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -504,9 +946,9 @@
                 <div style="color: #ffffff !important;">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html#solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
-                        <li><a href="governments.html" class="footer-link" style="color: #ffffff !important;">Governments</a></li>
-                        <li><a href="about.html" class="footer-link" style="color: #ffffff !important;">About</a></li>
+                        <li><a href="#solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
+                        <li><a href="#technology" class="footer-link" style="color: #ffffff !important;">Technology</a></li>
+                        <li><a href="#about" class="footer-link" style="color: #ffffff !important;">About</a></li>
                         <li><a href="contact.html" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
                     </ul>
                 </div>
@@ -525,40 +967,187 @@
                 </div>
             </div>
             <hr class="footer-divider">
-            <div class="footer-copyright" style="color: #ffffff !important; opacity: 0.6;">
+            <div class="footer-copyright" style="color: #ffffff !important; opacity: 0.6; text-align: center;">
                 <p>&copy; 2025 IVMS Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/971585994323" class="whatsapp-button">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.dropdown-parent').forEach(function(parent) {
-        var btn = parent.querySelector('.dropdown-toggle');
-        var menu = parent.querySelector('.dropdown-menu');
-        // Toggle on click
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          var isOpen = menu.classList.contains('show');
-          document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
-          if (!isOpen) menu.classList.add('show');
+        // Dropdown for mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.dropdown-parent').forEach(function(parent) {
+                var btn = parent.querySelector('.dropdown-toggle');
+                var menu = parent.querySelector('.dropdown-menu');
+                // Toggle on click
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var isOpen = menu.classList.contains('show');
+                    document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
+                    if (!isOpen) menu.classList.add('show');
+                });
+                // Close on mouseleave (desktop)
+                parent.addEventListener('mouseleave', function() {
+                    menu.classList.remove('show');
+                });
+                menu.addEventListener('mouseleave', function() {
+                    menu.classList.remove('show');
+                });
+            });
+            // Hide all dropdowns on document click (except when clicking inside)
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.dropdown-parent')) {
+                    document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
+                }
+            });
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with animate-on-scroll class
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Animated number counting
+            function animateNumbers() {
+                const statNumbers = document.querySelectorAll('.stat-number');
+                
+                statNumbers.forEach(stat => {
+                    const target = parseFloat(stat.getAttribute('data-target'));
+                    const metric = stat.getAttribute('data-metric') || '';
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16); // 60fps
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = target % 1 === 0 ? Math.floor(current) : current.toFixed(1);
+                    }, 16);
+                });
+            }
+
+            // Trigger number animation when stats section is visible
+            const statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumbers();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsSection = document.querySelector('.section-padding:nth-child(4)');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Form submission handling
+            document.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // Simulate form submission
+                setTimeout(() => {
+                    submitBtn.textContent = 'Demo Scheduled!';
+                    submitBtn.style.backgroundColor = '#10B981';
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.backgroundColor = '';
+                        this.reset();
+                    }, 3000);
+                }, 1500);
+            });
+
+            // Enhanced hover effects
+            document.querySelectorAll('.card-elevated, .card-feature').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Glitch effect on page load
+            setTimeout(() => {
+                const headline = document.querySelector('.hero-headline');
+                if (headline) {
+                    headline.classList.add('glitch-effect');
+                    setTimeout(() => {
+                        headline.classList.remove('glitch-effect');
+                    }, 300);
+                }
+            }, 1000);
+
+            // Parallax effect for hero image
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const heroImage = document.querySelector('.hero-image');
+                if (heroImage) {
+                    const rate = scrolled * -0.5;
+                    heroImage.style.transform = `translateY(${rate}px)`;
+                }
+            });
+
+            // Add tilt effect to images
+            document.querySelectorAll('.tilt-on-hover').forEach(img => {
+                img.addEventListener('mousemove', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+                });
+                
+                img.addEventListener('mouseleave', function() {
+                    this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+                });
+            });
         });
-        // Close on mouseleave (desktop)
-        parent.addEventListener('mouseleave', function() {
-          menu.classList.remove('show');
-        });
-      });
-      // Hide all dropdowns on document click (except when clicking inside)
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown-parent')) {
-          document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
-        }
-      });
-    });
     </script>
 </body>
 </html> 

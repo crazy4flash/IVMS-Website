@@ -148,33 +148,96 @@ function calculateAndDisplay() {
   const annualROI = annualCost > 0 ? ((annualSavings - annualCost) / annualCost) * 100 : 0;
   const paybackPeriod = ssNetSavings > 0 ? (ssPackageCost / ssNetSavings) : 0;
 
-  // Animate Results
-  animateCounter(document.getElementById('current-losses'), 0, Math.round(currentMonthlyLoss), 700, 'AED ');
-  animateCounter(document.getElementById('speedsense-protection'), 0, Math.round(ssMonthlyProtection), 700, 'AED ');
-  animateCounter(document.getElementById('net-savings'), 0, Math.round(ssNetSavings), 700, 'AED ');
-  animateCounter(document.getElementById('annual-roi'), 0, Math.round(annualROI), 700, '', '%');
+  // Per vehicle cost
+  const perVehicleCost = fleetSize > 0 ? Math.round(ssPackageCost / fleetSize) : 0;
 
-  // Breakdown Texts
-  document.getElementById('current-losses-breakdown').innerHTML =
-    `<b>Total Violations:</b> ${current.totalViolations.toLocaleString()}<br>` +
-    `<b>Uncovered Amount:</b> AED ${current.uncoveredAmount.toLocaleString()}<br>` +
-    `<b>Admin Costs:</b> AED ${admin.currentMonthlyAdminCost.toLocaleString()}`;
+  // Format numbers
+  function addCommas(num) {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  function formatK(num) {
+    if (num >= 1000000) {
+      return 'AED ' + (num / 1000000).toFixed(2).replace(/\.00$/, '') + 'M';
+    } else if (num >= 1000) {
+      return 'AED ' + (num / 1000).toFixed(0) + 'k';
+    }
+    return 'AED ' + addCommas(Math.round(num));
+  }
+  function formatM(num) {
+    if (num >= 1000000) {
+      return 'AED ' + (num / 1000000).toFixed(2).replace(/\.00$/, '') + 'M';
+    }
+    return 'AED ' + addCommas(Math.round(num));
+  }
+  function formatAED(num) {
+    return 'AED ' + addCommas(Math.round(num));
+  }
+  function formatPercent(num) {
+    return Math.round(num) + '%';
+  }
 
-  document.getElementById('speedsense-protection-breakdown').innerHTML =
-    `<b>Violations Prevented:</b> ${ss.violationsPrevented.toLocaleString()}<br>` +
-    `<b>Protected Amount:</b> AED ${ss.protectedAmount.toLocaleString()}<br>` +
-    `<b>Package Cost:</b> AED ${ssPackageCost.toLocaleString()}<br>` +
-    `<b>Admin Time Saved:</b> AED ${admin.currentMonthlyAdminCost - ssAdmin.currentMonthlyAdminCost >= 0 ? (admin.currentMonthlyAdminCost - ssAdmin.currentMonthlyAdminCost).toLocaleString() : 0}`;
+  // Update new horizontal cards with improved formatting and typography
+  var netSavingsElem = document.getElementById('net-savings');
+  var currentLossesElem = document.getElementById('current-losses');
+  var annualSavingsElem = document.getElementById('annual-savings');
+  var annualRoiElem = document.getElementById('annual-roi');
+  var paybackElem = document.getElementById('payback-period');
+  var packageCostElem = document.getElementById('package-cost');
+  var perVehicleElem = document.getElementById('per-vehicle-cost');
 
-  document.getElementById('net-savings-breakdown').innerHTML =
-    `<b>Current Losses:</b> AED ${currentMonthlyLoss.toLocaleString()}<br>` +
-    `<b>SpeedSense Cost:</b> AED ${ssTotalCost.toLocaleString()}<br>` +
-    `<b>Net Savings:</b> AED ${ssNetSavings.toLocaleString()}`;
+  // Monthly Net Savings: k notation
+  netSavingsElem.textContent = formatK(ssNetSavings);
+  netSavingsElem.style.fontWeight = '700';
+  netSavingsElem.style.fontSize = '32px';
+  netSavingsElem.style.letterSpacing = '0.5px';
+  netSavingsElem.style.lineHeight = '1.2';
+  netSavingsElem.style.color = '#1db954';
+  netSavingsElem.style.textAlign = 'right';
 
-  document.getElementById('annual-roi-breakdown').innerHTML =
-    `<b>Annual Savings:</b> AED ${annualSavings.toLocaleString()}<br>` +
-    `<b>Annual Cost:</b> AED ${annualCost.toLocaleString()}<br>` +
-    `<b>Payback Period:</b> ${paybackPeriod > 0 ? paybackPeriod.toFixed(2) : 'N/A'} months`;
+  // Current Losses: comma separated
+  currentLossesElem.textContent = formatAED(currentMonthlyLoss);
+  currentLossesElem.style.fontWeight = '600';
+  currentLossesElem.style.letterSpacing = '0.5px';
+  currentLossesElem.style.color = '#1db954';
+  currentLossesElem.style.textAlign = 'right';
+
+  // Annual Return: M notation
+  annualSavingsElem.textContent = formatM(annualSavings);
+  annualSavingsElem.style.fontWeight = '700';
+  annualSavingsElem.style.fontSize = '32px';
+  annualSavingsElem.style.letterSpacing = '0.5px';
+  annualSavingsElem.style.lineHeight = '1.2';
+  annualSavingsElem.style.color = 'var(--primary-blue)';
+  annualSavingsElem.style.textAlign = 'right';
+
+  // ROI and Payback
+  annualRoiElem.textContent = formatPercent(annualROI);
+  paybackElem.textContent = paybackPeriod > 0 ? paybackPeriod.toFixed(1) : '0';
+
+  // Monthly Investment: comma separated
+  packageCostElem.textContent = formatAED(ssPackageCost);
+  packageCostElem.style.fontWeight = '700';
+  packageCostElem.style.fontSize = '32px';
+  packageCostElem.style.letterSpacing = '0.5px';
+  packageCostElem.style.lineHeight = '1.2';
+  packageCostElem.style.color = '#444';
+  packageCostElem.style.textAlign = 'right';
+
+  // Per vehicle: comma separated
+  perVehicleElem.textContent = formatAED(perVehicleCost);
+  perVehicleElem.style.fontWeight = '600';
+  perVehicleElem.style.letterSpacing = '0.5px';
+  perVehicleElem.style.color = '#444';
+  perVehicleElem.style.textAlign = 'right';
+
+  // Progress bar (protection level)
+  const currentProtection = currentRecovery * 100;
+  const speedsenseProtection = 90;
+  const bar = document.getElementById('protection-bar');
+  bar.style.width = speedsenseProtection + '%';
+
+  // Summary section
+  document.getElementById('violations-prevented').textContent = Math.round(ss.violationsPrevented);
 }
 
 const debouncedCalculate = debounce(calculateAndDisplay, 300);

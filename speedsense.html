@@ -1236,6 +1236,7 @@
     </style>
 </head>
 <body>
+    <div id="site-header"></div>
     <!-- Navigation Bar -->
     <nav class="fixed w-full z-50 main-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1587,84 +1588,108 @@
 
         <!-- ROI Calculator Section -->
         <section id="roi-calculator" class="py-20 bg-white">
-          <div class="max-w-7xl mx-auto px-4">
+          <div class="max-w-xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-4" style="color: var(--primary-blue);">Calculate Your Fleet Savings with SpeedSense</h2>
             <p class="text-lg text-center mb-12" style="color: var(--accent-teal);">
               See how much your rental company can save with our comprehensive traffic violation protection system
             </p>
-            <div class="flex flex-col lg:flex-row gap-12">
-              <!-- Left: Inputs -->
-              <div class="flex-1 bg-white rounded-2xl shadow-xl p-8 border border-[var(--primary-blue)]" id="roi-inputs">
-                <!-- Fleet Size Slider -->
-                <label for="fleet-size" class="block font-semibold mb-2 text-[var(--primary-blue)]">Fleet Size</label>
-                <div class="flex items-center gap-4 mb-6">
-                  <input type="range" id="fleet-size" min="10" max="1000" step="10" value="100" class="w-full" style="accent-color: var(--accent-teal);">
-                  <span id="fleet-size-value" class="font-bold text-xl text-[var(--primary-blue)]">100</span>
-                </div>
-                <!-- Violations per Vehicle -->
-                <label for="violations-per-vehicle" class="block font-semibold mb-2 text-[var(--primary-blue)]">Current Monthly Violations per Vehicle</label>
-                <div class="flex items-center gap-4 mb-6">
-                  <input type="range" id="violations-per-vehicle" min="1" max="8" step="0.1" value="3.6" class="w-full" style="accent-color: var(--accent-teal);">
-                  <span id="violations-per-vehicle-value" class="font-bold text-xl text-[var(--primary-blue)]">3.6</span>
-                </div>
-                <!-- Average Fine Amount -->
-                <label for="avg-fine" class="block font-semibold mb-2 text-[var(--primary-blue)]">Average Fine Amount (AED)</label>
-                <div class="flex items-center gap-4 mb-1">
-                  <input type="range" id="avg-fine" min="300" max="3000" step="50" value="750" class="w-full" style="accent-color: var(--accent-teal);">
-                  <span id="avg-fine-value" class="font-bold text-xl text-[var(--primary-blue)]">750</span>
-                </div>
-                <div class="text-xs mb-6" style="color: var(--accent-teal);">UAE fines range from 300-30K AED</div>
-                <!-- Current Recovery Rate -->
-                <label for="recovery-rate" class="block font-semibold mb-2 text-[var(--primary-blue)]">Current Recovery Rate (%)</label>
-                <div class="flex items-center gap-4 mb-1">
-                  <input type="range" id="recovery-rate" min="0" max="70" step="5" value="30" class="w-full" style="accent-color: var(--accent-teal);">
-                  <span id="recovery-rate-value" class="font-bold text-xl text-[var(--primary-blue)]">30%</span>
-                </div>
-                <div class="text-xs mb-6" style="color: var(--accent-teal);">What percentage of fines you currently recover from customers</div>
-                <!-- Admin Cost per Hour -->
-                <label for="admin-cost" class="block font-semibold mb-2 text-[var(--primary-blue)]">Administrative Cost per Hour (AED)</label>
-                <div class="flex items-center gap-4 mb-1">
-                  <input type="range" id="admin-cost" min="50" max="300" step="25" value="150" class="w-full" style="accent-color: var(--accent-teal);">
-                  <span id="admin-cost-value" class="font-bold text-xl text-[var(--primary-blue)]">150</span>
-                </div>
-                <div class="text-xs mb-6" style="color: var(--accent-teal);">Staff cost for processing violations</div>
+            <div class="bg-white rounded-2xl shadow-xl p-8 border border-[var(--primary-blue)]" id="roi-inputs">
+              <!-- Fleet Size Slider -->
+              <label for="fleet-size" class="block font-semibold mb-2 text-[var(--primary-blue)]">Fleet Size</label>
+              <div class="flex items-center gap-4 mb-6">
+                <input type="range" id="fleet-size" min="10" max="1000" step="10" value="100" class="w-full" style="accent-color: var(--accent-teal);">
+                <span id="fleet-size-value" class="font-bold text-xl text-[var(--primary-blue)]">100</span>
               </div>
-              <!-- Right: Results -->
-              <div class="flex-1 bg-white rounded-2xl shadow-xl p-8" id="roi-results">
-                <!-- Results Cards -->
-                <div class="mb-8 p-6 rounded-xl border-l-8 border-[var(--primary-blue)] border border-[var(--primary-blue)] shadow-none bg-white">
-                  <div class="text-lg font-semibold mb-2" style="color: var(--primary-blue);">Current Monthly Losses</div>
-                  <div class="text-3xl font-bold" id="current-losses" style="color: var(--primary-blue);">AED 0</div>
-                  <div class="text-sm mt-2" id="current-losses-breakdown" style="color: var(--text-dark);"></div>
+              <!-- Violations per Vehicle -->
+              <label for="violations-per-vehicle" class="block font-semibold mb-2 text-[var(--primary-blue)]">Current Monthly Violations per Vehicle</label>
+              <div class="flex items-center gap-4 mb-6">
+                <input type="range" id="violations-per-vehicle" min="1" max="8" step="0.1" value="3.6" class="w-full" style="accent-color: var(--accent-teal);">
+                <span id="violations-per-vehicle-value" class="font-bold text-xl text-[var(--primary-blue)]">3.6</span>
+              </div>
+              <!-- Average Fine Amount -->
+              <label for="avg-fine" class="block font-semibold mb-2 text-[var(--primary-blue)]">Average Fine Amount (AED)</label>
+              <div class="flex items-center gap-4 mb-1">
+                <input type="range" id="avg-fine" min="300" max="3000" step="50" value="750" class="w-full" style="accent-color: var(--accent-teal);">
+                <span id="avg-fine-value" class="font-bold text-xl text-[var(--primary-blue)]">750</span>
+              </div>
+              <div class="text-xs mb-6" style="color: var(--accent-teal);">UAE fines range from 300-30K AED</div>
+              <!-- Current Recovery Rate -->
+              <label for="recovery-rate" class="block font-semibold mb-2 text-[var(--primary-blue)]">Current Recovery Rate (%)</label>
+              <div class="flex items-center gap-4 mb-1">
+                <input type="range" id="recovery-rate" min="0" max="70" step="5" value="30" class="w-full" style="accent-color: var(--accent-teal);">
+                <span id="recovery-rate-value" class="font-bold text-xl text-[var(--primary-blue)]">30%</span>
+              </div>
+              <div class="text-xs mb-6" style="color: var(--accent-teal);">What percentage of fines you currently recover from customers</div>
+              <!-- Admin Cost per Hour -->
+              <label for="admin-cost" class="block font-semibold mb-2 text-[var(--primary-blue)]">Administrative Cost per Hour (AED)</label>
+              <div class="flex items-center gap-4 mb-1">
+                <input type="range" id="admin-cost" min="50" max="300" step="25" value="150" class="w-full" style="accent-color: var(--accent-teal);">
+                <span id="admin-cost-value" class="font-bold text-xl text-[var(--primary-blue)]">150</span>
+              </div>
+              <div class="text-xs mb-6" style="color: var(--accent-teal);">Staff cost for processing violations</div>
+            </div>
+            <!-- Simplified Results Section -->
+            <div class="mt-12 flex flex-col gap-5" id="roi-results">
+              <!-- Monthly Net Savings Card -->
+              <div class="w-full flex items-center rounded-2xl shadow-md bg-green-50 border border-green-400" style="height:120px; min-height:120px;">
+                <div class="flex flex-col justify-center pl-7 pr-4" style="width:40%; min-width:120px;">
+                  <div class="flex items-center gap-2 mb-1"><span style="font-size:1.7em; color:#1db954;">💰</span><span class="font-medium text-[18px]" style="color:#1db954;">Monthly Net Savings</span></div>
+                  <div class="text-[14px] text-green-900">Immediate protection</div>
+                  <div class="text-[14px] text-green-900">vs <span id="current-losses" class="font-bold">AED 0</span> losses</div>
                 </div>
-                <div class="mb-8 p-6 rounded-xl border-l-8 border-[var(--accent-teal)] border border-[var(--accent-teal)] shadow-none bg-white">
-                  <div class="text-lg font-semibold mb-2" style="color: var(--accent-teal);">SpeedSense Monthly Protection</div>
-                  <div class="text-3xl font-bold" id="speedsense-protection" style="color: var(--accent-teal);">AED 0</div>
-                  <div class="text-sm mt-2" id="speedsense-protection-breakdown" style="color: var(--text-dark);"></div>
-                </div>
-                <div class="mb-8 p-6 rounded-xl border-l-8 border-[var(--primary-blue)] border border-[var(--primary-blue)] shadow-none bg-white">
-                  <div class="text-lg font-semibold mb-2" style="color: var(--primary-blue);">Monthly Net Savings</div>
-                  <div class="text-3xl font-bold" id="net-savings" style="color: var(--primary-blue);">AED 0</div>
-                  <div class="text-sm mt-2" id="net-savings-breakdown" style="color: var(--text-dark);"></div>
-                </div>
-                <div class="mb-8 p-6 rounded-xl border-l-8 border-[var(--accent-teal)] border border-[var(--accent-teal)] shadow-none bg-white">
-                  <div class="text-lg font-semibold mb-2" style="color: var(--accent-teal);">Annual ROI</div>
-                  <div class="text-3xl font-bold" id="annual-roi" style="color: var(--accent-teal);">0%</div>
-                  <div class="text-sm mt-2" id="annual-roi-breakdown" style="color: var(--text-dark);"></div>
-                </div>
-                <!-- Placeholder for charts (to be implemented later) -->
-                <div id="roi-charts" class="mt-8"></div>
-                <!-- CTA Buttons -->
-                <div class="flex flex-col md:flex-row gap-4 mt-8">
-                  <button class="btn w-full md:w-auto" style="background: var(--primary-blue); color: var(--text-light); border: 1.5px solid var(--primary-blue);" id="book-demo-btn">Book Your SpeedSense Demonstration</button>
-                  <button class="btn w-full md:w-auto" style="background: var(--accent-teal); color: var(--primary-blue); border: 1.5px solid var(--accent-teal);" id="download-guide-btn">Download Implementation Guide</button>
-                </div>
-                <!-- Trust Elements -->
-                <div class="mt-8 text-center text-sm" style="color: var(--primary-blue);">
-                  <div>Join 150+ UAE rental companies saving millions annually</div>
-                  <div>100% UAE regulation compliant &nbsp;|&nbsp; Average implementation: 2-3 weeks</div>
+                <div class="flex-1 flex flex-col justify-center items-end pr-8">
+                  <div id="net-savings" class="font-extrabold" style="font-size:32px; color:#1db954;">AED 0</div>
                 </div>
               </div>
+              <!-- Annual Impact Card -->
+              <div class="w-full flex items-center rounded-2xl shadow-md bg-blue-50 border border-blue-400" style="height:120px; min-height:120px;">
+                <div class="flex flex-col justify-center pl-7 pr-4" style="width:40%; min-width:120px;">
+                  <div class="flex items-center gap-2 mb-1"><span style="font-size:1.7em; color:var(--primary-blue);">📈</span><span class="font-medium text-[18px]" style="color:var(--primary-blue);">Annual Return</span></div>
+                  <div class="text-[14px] text-blue-900">Complete protection</div>
+                  <div class="text-[14px] text-blue-900">ROI: <span id="annual-roi" class="font-bold">0%</span> | Payback: <span id="payback-period" class="font-bold">0</span> mo</div>
+                </div>
+                <div class="flex-1 flex flex-col justify-center items-end pr-8">
+                  <div id="annual-savings" class="font-extrabold" style="font-size:32px; color:var(--primary-blue);">AED 0</div>
+                </div>
+              </div>
+              <!-- Investment Cost Card -->
+              <div class="w-full flex items-center rounded-2xl shadow-md bg-gray-100 border border-gray-300" style="height:120px; min-height:120px;">
+                <div class="flex flex-col justify-center pl-7 pr-4" style="width:40%; min-width:120px;">
+                  <div class="flex items-center gap-2 mb-1"><span style="font-size:1.7em; color:#444;">💳</span><span class="font-medium text-[18px]" style="color:#444;">Monthly Investment</span></div>
+                  <div class="text-[14px] text-gray-700">Per vehicle: <span id="per-vehicle-cost" class="font-bold">AED 0</span></div>
+                  <div class="text-[14px] text-green-700 font-semibold">15% volume discount applied</div>
+                </div>
+                <div class="flex-1 flex flex-col justify-center items-end pr-8">
+                  <div id="package-cost" class="font-extrabold" style="font-size:32px; color:#444;">AED 0</div>
+                </div>
+              </div>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full max-w-lg mx-auto mt-10 mb-8">
+              <div class="flex justify-between text-xs mb-1">
+                <span style="color:var(--primary-blue);">Current Protection</span>
+                <span style="color:#1db954;">With SpeedSense</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div id="protection-bar" class="h-3 rounded-full" style="background: linear-gradient(90deg, var(--primary-blue) 0%, #1db954 100%); width: 0%; transition: width 0.5s;"></div>
+              </div>
+            </div>
+            <!-- Summary Section -->
+            <div class="bg-white rounded-xl shadow p-6 max-w-lg mx-auto mb-10">
+              <div class="text-xl font-bold mb-4" style="color: var(--primary-blue);">What This Means for Your Business</div>
+              <ul class="space-y-3 text-lg">
+                <li class="flex items-center"><span style="color:#1db954;font-size:1.5em;">✅</span><span class="ml-3">Protect <span id="violations-prevented" class="font-bold">0</span> violations monthly (90% of traffic violations)</span></li>
+                <li class="flex items-center"><span style="color:#1db954;font-size:1.5em;">✅</span><span class="ml-3">Recover 100% of remaining fines automatically</span></li>
+                <li class="flex items-center"><span style="color:#1db954;font-size:1.5em;">✅</span><span class="ml-3">Save 85% on admin processing time</span></li>
+                <li class="flex items-center"><span style="color:#1db954;font-size:1.5em;">✅</span><span class="ml-3">Eliminate risk of vehicle impoundment</span></li>
+              </ul>
+            </div>
+            <!-- CTA Section -->
+            <div class="text-center mt-8">
+              <div class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">Ready to protect your fleet and boost profits?</div>
+              <div class="mb-6 text-lg">Book a demo to see how SpeedSense by iVMS can transform your business</div>
+              <button class="btn text-xl font-bold px-10 py-4 rounded-lg" style="background: var(--primary-blue); color: var(--text-light); border: none;">Book a Demo</button>
+              <div class="mt-6 text-base text-gray-600">Trusted by 150+ UAE rental companies</div>
             </div>
           </div>
         </section>
@@ -1724,6 +1749,16 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Cookie Consent Popup -->
+    <div id="cookie-consent" style="display:none; position:fixed; bottom:0; left:0; width:100vw; background:#222; color:#fff; z-index:9999; padding:1.2rem 1rem; box-shadow:0 -2px 8px rgba(0,0,0,0.12); font-size:1rem;">
+      <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
+        <span style="color:#fff;">
+          We use <a href="/cookies-policy.html" style="color:#6ec1a6; text-decoration:underline;">cookies</a> to provide you with a better experience and to help our website run effectively.
+        </span>
+        <button id="cookie-consent-btn" style="background:#1666a9; color:#fff; border:none; border-radius:4px; padding:0.5em 1.5em; font-weight:600; font-size:1rem; cursor:pointer; transition:background 0.2s;">Okay</button>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <script src="src/js/roi-calculator.js"></script>
     <script>
@@ -1748,6 +1783,23 @@
         }
       });
     });
+
+    // Cookie Consent Logic
+    (function() {
+      function showConsent() {
+        document.getElementById('cookie-consent').style.display = 'block';
+      }
+      function hideConsent() {
+        document.getElementById('cookie-consent').style.display = 'none';
+      }
+      if (!localStorage.getItem('ivms_cookie_consent')) {
+        window.addEventListener('DOMContentLoaded', showConsent);
+      }
+      document.getElementById('cookie-consent-btn').onclick = function() {
+        localStorage.setItem('ivms_cookie_consent', 'accepted');
+        hideConsent();
+      };
+    })();
     </script>
 </body>
 </html> 

@@ -1,0 +1,216 @@
+<nav class="fixed w-full z-50 main-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+            <div class="flex items-center">
+                <div class="flex-shrink-0 nav-logo">
+                    <a href="index.html">
+                        <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
+                    </a>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <div class="relative group dropdown-parent">
+                        <button class="nav-link dropdown-toggle">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+                        <div class="dropdown-menu absolute left-0 bg-gray-800 text-white mt-2 rounded-md shadow-lg z-20 min-w-[180px]">
+                            <a href="speedsense.html" class="block px-4 py-2 text-sm hover:bg-[#00A3A3]">SpeedSense</a>
+                            <a href="rental-leasing.html" class="block px-4 py-2 text-sm hover:bg-[#00A3A3]">Rental & Leasing</a>
+                            <a href="logistics.html" class="block px-4 py-2 text-sm hover:bg-[#00A3A3]">Logistics</a>
+                        </div>
+                    </div>
+                    <a href="governments.html" class="nav-link">Governments</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </div>
+            <div class="-mr-2 flex items-center sm:hidden">
+                <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-200 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile menu -->
+    <div class="sm:hidden hidden" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#00A3A3]">Home</a>
+            <div class="group dropdown-parent">
+                <button class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#00A3A3] w-full text-left dropdown-toggle">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
+                <div class="dropdown-menu hidden pl-4 space-y-1">
+                    <a href="speedsense.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#00A3A3]">SpeedSense</a>
+                    <a href="rental-leasing.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#00A3A3]">Rental & Leasing</a>
+                    <a href="logistics.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#00A3A3]">Logistics</a>
+                </div>
+            </div>
+            <a href="governments.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#00A3A3]">Governments</a>
+            <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#00A3A3]">About</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-[#00A3A3]">Contact</a>
+        </div>
+    </div>
+</nav>
+<style>
+:root {
+    --primary-blue: #004E98;
+    --secondary-blue: #3A6EA5;
+    --teal-primary: #00A3A3;
+    --teal-light: #00D1D1;
+    --teal-dark: #007A7A;
+    --dark-bg: #0A0A0A;
+    --light-bg: #FFFFFF;
+    --text-primary: #2F2F2F;
+    --text-secondary: rgba(47, 47, 47, 0.8);
+    --text-light: #FFFFFF;
+    --text-muted: #666666;
+    --border-light: #EDEDED;
+    --overlay-dark: rgba(30, 30, 30, 0.65);
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --fleet-blue: var(--primary-blue);
+    --urban-slate: #3A3F45;
+    --white: #FFFFFF;
+    --black: #000000;
+    --text-dark: #2F2F2F;
+    --text-medium: #333333;
+    --overlay-opacity: 0.85;
+    --font-family-primary: "Suisse BP Intl", sans-serif;
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    border: none;
+    box-shadow: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    max-width: 100vw;
+    transition: background 0.2s, backdrop-filter 0.2s;
+}
+.nav-logo {
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+.nav-logo a {
+    display: block;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+    padding: 4px;
+}
+.nav-logo a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    transform: scale(1.05);
+}
+.nav-logo img {
+    transition: all 0.3s ease;
+}
+.nav-logo a:hover img {
+    filter: brightness(1.1);
+}
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.nav-link {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.05rem;
+    padding: 0.5rem 1.2rem;
+    background: none;
+    border: none;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    position: relative;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+.nav-link:hover, .nav-link:focus {
+    color: #fff;
+    background: #00A3A3;
+    backdrop-filter: blur(8px);
+}
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #00A3A3;
+    transition: width 0.3s ease;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+.nav-link:hover::after, .nav-link:focus::after {
+    width: 70%;
+}
+.dropdown-menu { display: none; position: absolute; top: 100%; left: 0; margin-top: 0; }
+.dropdown-menu.show { display: block !important; }
+@media (min-width: 640px) {
+  .dropdown-parent:hover .dropdown-menu,
+  .dropdown-parent:focus-within .dropdown-menu {
+    display: block !important;
+  }
+}
+.dropdown-menu a { color: #fff !important; }
+</style>
+<script>
+// Dropdown logic for desktop
+(function() {
+  var dropdownParents = document.querySelectorAll('.dropdown-parent');
+  dropdownParents.forEach(function(parent) {
+    var btn = parent.querySelector('.dropdown-toggle');
+    var menu = parent.querySelector('.dropdown-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      menu.classList.toggle('show');
+    });
+    parent.addEventListener('mouseleave', function() {
+      menu.classList.remove('show');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    dropdownParents.forEach(function(parent) {
+      var btn = parent.querySelector('.dropdown-toggle');
+      var menu = parent.querySelector('.dropdown-menu');
+      if (!btn || !menu) return;
+      if (!parent.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  });
+})();
+// Mobile menu logic
+(function() {
+  var mobileMenuBtn = document.getElementById('mobile-menu-button');
+  var mobileMenu = document.getElementById('mobile-menu');
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+  // Mobile dropdown
+  var mobileDropdownToggles = document.querySelectorAll('#mobile-menu .dropdown-toggle');
+  mobileDropdownToggles.forEach(function(toggle) {
+    var menu = toggle.parentElement.querySelector('.dropdown-menu');
+    if (!menu) return;
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      menu.classList.toggle('hidden');
+    });
+  });
+})();
+</script> 
