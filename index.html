@@ -89,6 +89,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
+            animation: floating 4s ease-in-out infinite;
         }
         
         .hero-overlay-bar {
@@ -124,6 +125,9 @@
             line-height: 1.15;
             max-width: 520px;
             margin-right: 2vw;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroHeadlineEntrance 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards;
         }
         
         .hero-support {
@@ -131,6 +135,9 @@
             font-size: 1.1rem;
             max-width: 340px;
             margin-bottom: 1.2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: heroSupportEntrance 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s forwards;
         }
         
         .hero-cta, .cta-bottom {
@@ -145,12 +152,100 @@
             transition: all 0.2s ease;
             white-space: nowrap;
             min-width: 120px;
+            opacity: 0;
+            transform: translateY(15px) scale(0.95);
+            animation: heroCTAEntrance 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1.6s forwards;
         }
         
         .hero-cta:hover, .cta-bottom:hover {
             background: var(--secondary-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(0, 78, 152, 0.25);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 28px rgba(0, 78, 152, 0.3);
+        }
+        
+        .hero-cta:active, .cta-bottom:active {
+            transform: translateY(-1px) scale(0.98);
+            transition: all 0.1s ease;
+        }
+        
+        /* Ripple Effect */
+        .hero-cta, .cta-bottom {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-cta::after, .cta-bottom::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .hero-cta:active::after, .cta-bottom:active::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        @keyframes heroHeadlineEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes heroSupportEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes heroCTAEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* Typewriter Effect */
+        .typewriter-text {
+            overflow: hidden;
+            border-right: 2px solid #fff;
+            white-space: nowrap;
+            animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #fff; }
+        }
+        
+        /* Floating Animation for Hero Background */
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Parallax Effect */
+        .parallax-element {
+            will-change: transform;
+            transform: translateZ(0);
+        }
+        
+        /* Mouse Parallax Effect */
+        .mouse-parallax {
+            transition: transform 0.1s ease-out;
         }
         
         @media (max-width: 900px) {
@@ -261,11 +356,39 @@
             background: var(--light-bg);
             border: 1px solid var(--border-light);
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateZ(0);
+            will-change: transform;
+            opacity: 0;
+            transform: translateY(30px);
         }
         
         .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-8px) rotate(1deg) scale(1.02);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+        
+        .solution-card.animate-in {
+            animation: cardEntrance 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+        
+        .solution-card:nth-child(1).animate-in {
+            animation-delay: 0.2s;
+        }
+        
+        .solution-card:nth-child(2).animate-in {
+            animation-delay: 0.4s;
+        }
+        
+        .solution-card:nth-child(3).animate-in {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes cardEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .solution-card h3 {
@@ -334,13 +457,40 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             padding: 2rem;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             height: 100%;
+            transform: translateZ(0);
+            will-change: transform;
+            opacity: 0;
+            transform: translateY(30px);
         }
         
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+        
+        .stat-card.animate-in {
+            animation: statCardEntrance 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+        
+        .stat-card:nth-child(1).animate-in {
+            animation-delay: 0.1s;
+        }
+        
+        .stat-card:nth-child(2).animate-in {
+            animation-delay: 0.3s;
+        }
+        
+        .stat-card:nth-child(3).animate-in {
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes statCardEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .stat-card i {
@@ -1186,6 +1336,138 @@
                 display: block !important;
             }
         }
+        
+        /* Advanced Scroll Animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .scroll-animate.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Parallax Elements */
+        .parallax-slow {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .parallax-medium {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .parallax-fast {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        /* Counter Animation */
+        .counter-animate {
+            transition: all 0.3s ease;
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--teal-primary));
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+        
+        /* Form Animations */
+        .form-input {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+        
+        .form-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 78, 152, 0.15);
+        }
+        
+        /* Floating Labels */
+        .floating-label {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            color: #666;
+        }
+        
+        .form-input:focus + .floating-label,
+        .form-input:not(:placeholder-shown) + .floating-label {
+            top: 0;
+            left: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--primary-blue);
+        }
+        
+        /* Magnetic Effect */
+        .magnetic {
+            transition: transform 0.1s ease-out;
+        }
+        
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.1s infinite;
+            color: #ff0000;
+            z-index: -1;
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.1s infinite;
+            color: #00ff00;
+            z-index: -2;
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(2px, -2px); }
+            40% { transform: translate(2px, 2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(-2px, 2px); }
+        }
+        
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1255,16 +1537,16 @@
             <div class="max-w-7xl mx-auto px-4 w-full flex flex-col md:flex-row items-start md:items-center justify-between">
                 <!-- Left column for main headline -->
                 <div>
-                    <div class="hero-headline" style="text-align:left;">
+                    <div class="hero-headline mouse-parallax" style="text-align:left;" data-speed="0.02">
                         Intelligent Fleet Management<br>Powered by Advanced AI
                     </div>
                 </div>
                 <!-- Right column for support text and button -->
                 <div class="flex flex-col items-start md:items-end">
-                    <div class="hero-support" style="text-align:left; margin-bottom: 20px;">
+                    <div class="hero-support mouse-parallax" style="text-align:left; margin-bottom: 20px;" data-speed="0.03">
                         Transform your fleet operations with real-time monitoring, predictive analytics, and automated optimisation
                     </div>
-                    <a href="contact.html" class="hero-cta">Government Demo</a>
+                    <a href="contact.html" class="hero-cta magnetic">Government Demo</a>
                 </div>
             </div>
         </div>
@@ -1293,21 +1575,21 @@
                 </h2>
             </div>
             <div class="flex flex-col md:flex-row md:items-start md:justify-start gap-8">
-                <div class="stat-london flex-1 flex flex-col items-start">
+                <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
                     <img src="src/images/stat1.png" alt="Stat 1" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
-                    <div class="stat-london-percent-below mt-4">35%</div>
+                    <div class="stat-london-percent-below mt-4 stat-number">35%</div>
                     <div class="stat-london-desc-below">reduction in fuel costs achieved through advanced route optimisation.</div>
                     <div class="stat-london-source-below">Fleet News</div>
                 </div>
-                <div class="stat-london flex-1 flex flex-col items-start">
+                <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
                     <img src="src/images/stat2.png" alt="Stat 2" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
-                    <div class="stat-london-percent-below mt-4">50%</div>
+                    <div class="stat-london-percent-below mt-4 stat-number">50%</div>
                     <div class="stat-london-desc-below">fewer maintenance incidents with predictive analytics and real-time monitoring.</div>
                     <div class="stat-london-source-below">Telematics Today</div>
                 </div>
-                <div class="stat-london flex-1 flex flex-col items-start">
+                <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
                     <img src="src/images/stat3.png" alt="Stat 3" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
-                    <div class="stat-london-percent-below mt-4">70%</div>
+                    <div class="stat-london-percent-below mt-4 stat-number">70%</div>
                     <div class="stat-london-desc-below">improvement in on-time deliveries after implementing fleet management solutions.</div>
                     <div class="stat-london-source-below">Logistics Insights</div>
                 </div>
@@ -1323,7 +1605,7 @@
                 <div class="text-lg text-gray-600 mb-8">Comprehensive fleet management solutions designed for modern enterprises</div>
             </div>
             <!-- Solution Card 1 -->
-            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden">
+            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden scroll-animate">
                 <div class="md:w-1/2 p-8 flex flex-col justify-center">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900">SpeedSense™ Technology</h3>
                     <p class="text-gray-700 mb-4">Reduce speeding violations by up to 90% with our advanced AI-powered detection system</p>
@@ -1347,7 +1629,7 @@
                 </div>
             </div>
             <!-- Solution Card 2 -->
-            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden">
+            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden scroll-animate">
                 <div class="md:w-1/2 p-8 flex flex-col justify-center">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900">Transport & Logistics</h3>
                     <p class="text-gray-700 mb-4">Optimize routes, reduce fuel costs, and improve delivery efficiency with AI-powered fleet intelligence for logistics operations</p>
@@ -1371,7 +1653,7 @@
                 </div>
             </div>
             <!-- Solution Card 3 -->
-            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden">
+            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden scroll-animate">
                 <div class="md:w-1/2 p-8 flex flex-col justify-center">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900">Rental Fleet Management</h3>
                     <p class="text-gray-700 mb-4">Complete rental fleet control with driver behavior monitoring, vehicle protection, and streamlined rental management operations</p>
@@ -1408,7 +1690,7 @@
                 <video id="platform-overview-video" class="platform-demo-video" src="src/videos/fleet-platform-overview.mov" autoplay muted playsinline loop></video>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <div class="feature-icon-container">
                         <i class="fas fa-brain feature-icon"></i>
                     </div>
@@ -1417,7 +1699,7 @@
                         <p class="feature-description">Leverage machine learning algorithms to predict maintenance needs and optimise routes in real-time</p>
                     </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <div class="feature-icon-container">
                         <i class="fas fa-bell feature-icon"></i>
                     </div>
@@ -1426,7 +1708,7 @@
                         <p class="feature-description">Receive instant notifications for critical events and performance metrics across your fleet</p>
                     </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <div class="feature-icon-container">
                         <i class="fas fa-database feature-icon"></i>
                     </div>
@@ -1479,25 +1761,25 @@
             <div class="process-cards">
                 <div class="process-line"></div>
                 <!-- Step 1 -->
-                <div class="process-card">
+                <div class="process-card scroll-animate">
                     <div class="process-number">1</div>
                     <div class="process-title">Install</div>
                     <div class="process-desc">Quick device installation in vehicles by certified technicians. Minimal downtime, maximum reliability.</div>
                 </div>
                 <!-- Step 2 -->
-                <div class="process-card">
+                <div class="process-card scroll-animate">
                     <div class="process-number">2</div>
                     <div class="process-title">Connect</div>
                     <div class="process-desc">Securely connect your fleet to our cloud platform. Encrypted data transfer ensures privacy and compliance.</div>
                 </div>
                 <!-- Step 3 -->
-                <div class="process-card">
+                <div class="process-card scroll-animate">
                     <div class="process-number">3</div>
                     <div class="process-title">Monitor</div>
                     <div class="process-desc">Access real-time insights and analytics via web or mobile. Monitor vehicle health, driver behaviour, and more.</div>
                 </div>
                 <!-- Step 4 -->
-                <div class="process-card">
+                <div class="process-card scroll-animate">
                     <div class="process-number">4</div>
                     <div class="process-title">Optimise</div>
                     <div class="process-desc">Leverage AI-driven recommendations to optimise routes, reduce costs, and improve safety across your fleet.</div>
@@ -1544,7 +1826,7 @@
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-6" style="color: #2F2F2F;">Ready to transform your fleet management?</h2>
             <p class="text-xl mb-8" style="color: #2F2F2F;">Book a 30-minute consultation with our team</p>
-            <button class="cta-bottom" onclick="window.location.href='contact.html'">
+            <button class="cta-bottom magnetic" onclick="window.location.href='contact.html'">
                 Book a Demo
             </button>
         </div>
@@ -1624,12 +1906,154 @@
 
     <script src="src/js/main.js"></script>
     <script>
-        // Video pause on scroll for better performance
+        // Advanced Animation System
         document.addEventListener('DOMContentLoaded', function() {
+            
+            // Progress Bar
+            const progressBar = document.createElement('div');
+            progressBar.className = 'progress-bar';
+            document.body.appendChild(progressBar);
+            
+            window.addEventListener('scroll', () => {
+                const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+            
+            // Intersection Observer for Scroll Animations
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        
+                        // Trigger card animations
+                        if (entry.target.classList.contains('solution-card') || entry.target.classList.contains('stat-card')) {
+                            entry.target.classList.add('animate-in');
+                        }
+                        
+                        // Counter animations for stats
+                        if (entry.target.classList.contains('stat-number')) {
+                            animateCounter(entry.target);
+                        }
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            
+            // Observe all elements that need scroll animations
+            document.querySelectorAll('.solution-card, .stat-card, .scroll-animate, .stat-number').forEach(el => {
+                scrollObserver.observe(el);
+            });
+            
+            // Counter Animation Function
+            function animateCounter(element) {
+                const target = parseInt(element.textContent.replace(/\D/g, ''));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.floor(current) + '%';
+                }, 16);
+            }
+            
+            // Parallax Effect
+            let ticking = false;
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.parallax-slow, .parallax-medium, .parallax-fast');
+                
+                parallaxElements.forEach(element => {
+                    const speed = element.classList.contains('parallax-slow') ? 0.5 : 
+                                element.classList.contains('parallax-medium') ? 0.7 : 1.2;
+                    const yPos = -(scrolled * speed);
+                    element.style.transform = `translateY(${yPos}px)`;
+                });
+                
+                ticking = false;
+            }
+            
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', requestTick);
+            
+            // Mouse Parallax Effect
+            document.addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+                
+                document.querySelectorAll('.mouse-parallax').forEach(element => {
+                    const speed = element.dataset.speed || 0.05;
+                    const x = (mouseX - 0.5) * speed * 10;
+                    const y = (mouseY - 0.5) * speed * 10;
+                    element.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            });
+            
+            // Magnetic Effect for Buttons
+            document.querySelectorAll('.hero-cta, .cta-bottom, .magnetic').forEach(button => {
+                button.addEventListener('mousemove', (e) => {
+                    const rect = button.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    
+                    button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = '';
+                });
+            });
+            
+            // Form Input Animations
+            document.querySelectorAll('input, textarea').forEach(input => {
+                input.classList.add('form-input');
+                
+                input.addEventListener('focus', () => {
+                    input.parentElement.classList.add('focused');
+                });
+                
+                input.addEventListener('blur', () => {
+                    if (!input.value) {
+                        input.parentElement.classList.remove('focused');
+                    }
+                });
+            });
+            
+            // 3D Card Tilt Effect
+            document.querySelectorAll('.solution-card, .stat-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
+            });
+            
+            // Video pause on scroll for better performance
             const heroVideo = document.querySelector('.hero-video-bg');
             const heroSection = document.querySelector('.hero-section');
             
-            const observer = new IntersectionObserver((entries) => {
+            const videoObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         heroVideo.play();
@@ -1640,28 +2064,25 @@
             }, { threshold: 0.1 });
             
             if (heroSection) {
-                observer.observe(heroSection);
+                videoObserver.observe(heroSection);
             }
-        });
 
-        // Autoplay platform overview video when in view
-        window.addEventListener('DOMContentLoaded', function() {
+            // Autoplay platform overview video when in view
             const video = document.getElementById('platform-overview-video');
-            if (!video) return;
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        video.play();
-                    } else {
-                        video.pause();
-                    }
-                });
-            }, { threshold: 0.3 });
-            observer.observe(video);
-        });
+            if (video) {
+                const platformVideoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            video.play();
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }, { threshold: 0.3 });
+                platformVideoObserver.observe(video);
+            }
 
-        // Dropdown for mobile
-        document.addEventListener('DOMContentLoaded', function() {
+            // Dropdown for mobile
             document.querySelectorAll('.dropdown-parent').forEach(function(parent) {
                 var btn = parent.querySelector('.dropdown-toggle');
                 var menu = parent.querySelector('.dropdown-menu');
@@ -1685,6 +2106,20 @@
                 if (!e.target.closest('.dropdown-parent')) {
                     document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
                 }
+            });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
             });
         });
     </script>
