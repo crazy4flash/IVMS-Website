@@ -1,0 +1,23 @@
+name: Deploy to IONOS
+
+on:
+  push:
+    branches:
+      - main  # or your default branch
+
+jobs:
+  ftp-deploy:
+    name: 📂 Deploy to FTP Server
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Deploy to IONOS via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./   # Root of your repo
+          server-dir: /   # Path on IONOS, e.g. / or /htdocs/ or /yourdomain.com/
