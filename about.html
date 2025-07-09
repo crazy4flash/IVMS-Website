@@ -424,6 +424,374 @@
         }
 
         .dropdown-menu a { color: #fff !important; }
+        
+        /* Enhanced Interactive Elements */
+        .mission-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border: 1px solid #e9ecef;
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #004E98, #00A3A3);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 78, 152, 0.15);
+        }
+        
+        .mission-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .mission-card .expand-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .mission-card:hover .expand-content {
+            max-height: 200px;
+        }
+        
+        /* Technology Capabilities Enhanced */
+        .tech-block {
+            background: linear-gradient(135deg, #f7f7f9 0%, #ffffff 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 30%, rgba(0, 78, 152, 0.03) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .tech-block:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 10px;
+            height: 8px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #004E98, #00A3A3);
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1.5s ease;
+            width: 0;
+        }
+        
+        .progress-fill.animate {
+            width: var(--progress-width);
+        }
+        
+        /* Global Presence Interactive */
+        .office-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .office-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #004E98, #00A3A3);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .office-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 78, 152, 0.15);
+        }
+        
+        .office-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .office-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+        
+        .office-card:hover .office-details {
+            max-height: 200px;
+        }
+        
+        /* Timeline Enhanced */
+        .timeline-container {
+            position: relative;
+            padding: 2rem 0;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #004E98, #00A3A3);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            margin-right: 50%;
+            padding-right: 3rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            margin-right: 0;
+            padding-left: 3rem;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: #004E98;
+            border: 4px solid white;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 12px rgba(0, 78, 152, 0.3);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-dot {
+            left: auto;
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+        
+        /* Stats Dashboard */
+        .stats-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #004E98, #00A3A3);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 78, 152, 0.15);
+        }
+        
+        .stats-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #004E98;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Recognition Cards */
+        .recognition-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .recognition-card:hover {
+            border-color: #004E98;
+            transform: translateY(-4px);
+            box-shadow: 0 16px 48px rgba(0, 78, 152, 0.15);
+        }
+        
+        .certification-badge {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #004E98, #00A3A3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        /* Impact Section */
+        .impact-section {
+            background: linear-gradient(135deg, #f7f7f9 0%, #ffffff 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 2rem 0;
+        }
+        
+        .impact-metric {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .impact-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #004E98;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Future Vision */
+        .roadmap-item {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #004E98, #00A3A3);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .roadmap-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 16px 48px rgba(0, 78, 152, 0.15);
+        }
+        
+        .roadmap-item:hover::before {
+            transform: scaleY(1);
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+        
+        .slide-in-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+        }
+        
+        .slide-in-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Responsive Enhancements */
+        @media (max-width: 768px) {
+            .timeline-line {
+                left: 2rem;
+            }
+            
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                margin-right: 0;
+                padding-left: 4rem;
+                padding-right: 1rem;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-dot,
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: -10px;
+                right: auto;
+            }
+        }
     </style>
 </head>
 <body>
@@ -497,322 +865,377 @@
             </div>
         </section>
 
-        <!-- Company Vision Section -->
-        <section class="py-20 bg-white">
+        <!-- Mission & Vision Cards Section -->
+        <section class="py-20 bg-gradient-to-br from-white to-gray-50">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold mb-8">Our Vision for the Future of Fleet Management<span style="color:#004E98;">.</span></h2>
-                <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 mb-12">
-                    <h3 class="text-2xl font-bold mb-6" style="color: #004E98;">Our Mission</h3>
-                    <p class="text-lg text-gray-600">
-                        To revolutionize transportation through intelligent AI systems that make fleet operations safer, more efficient, and environmentally sustainable while bridging the gap between traditional fleet management and next-generation technology.
-                    </p>
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold mb-6">Our Vision for the Future of Fleet Management<span style="color:#004E98;">.</span></h2>
+                    <div class="w-full bg-gradient-to-r from-[#004E98] to-[#00A3A3] rounded-2xl shadow-xl p-10 mb-12 text-white">
+                        <h3 class="text-2xl font-bold mb-6">Our Mission</h3>
+                        <p class="text-lg opacity-90">
+                            To revolutionize transportation through intelligent AI systems that make fleet operations safer, more efficient, and environmentally sustainable while bridging the gap between traditional fleet management and next-generation technology.
+                        </p>
+                    </div>
                 </div>
+                
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="mission-card fade-in">
                         <div class="text-4xl mb-4"><i class="fas fa-lightbulb" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Innovation</h3>
-                        <p class="text-gray-600">Continuous advancement in AI and machine learning technologies to solve real-world fleet management challenges.</p>
+                        <p class="text-gray-600 mb-4">Continuous advancement in AI and machine learning technologies to solve real-world fleet management challenges.</p>
+                        <div class="expand-content">
+                            <div class="border-t border-gray-200 pt-4">
+                                <h4 class="font-semibold text-gray-800 mb-2">Key Focus Areas:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• Predictive Analytics Development</li>
+                                    <li>• Machine Learning Algorithms</li>
+                                    <li>• Real-time Data Processing</li>
+                                    <li>• Autonomous Vehicle Integration</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+                    
+                    <div class="mission-card fade-in">
                         <div class="text-4xl mb-4"><i class="fas fa-star" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Excellence</h3>
-                        <p class="text-gray-600">Delivering superior technology solutions with measurable results and exceptional customer service.</p>
+                        <p class="text-gray-600 mb-4">Delivering superior technology solutions with measurable results and exceptional customer service.</p>
+                        <div class="expand-content">
+                            <div class="border-t border-gray-200 pt-4">
+                                <h4 class="font-semibold text-gray-800 mb-2">Performance Metrics:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• 99.9% Platform Uptime</li>
+                                    <li>• 24/7 Technical Support</li>
+                                    <li>• Real-time Performance Monitoring</li>
+                                    <li>• Continuous Improvement Cycles</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+                    
+                    <div class="mission-card fade-in">
                         <div class="text-4xl mb-4"><i class="fas fa-shield-alt" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Reliability</h3>
-                        <p class="text-gray-600">Building robust, secure platforms that businesses can depend on for their critical operations.</p>
+                        <p class="text-gray-600 mb-4">Building robust, secure platforms that businesses can depend on for their critical operations.</p>
+                        <div class="expand-content">
+                            <div class="border-t border-gray-200 pt-4">
+                                <h4 class="font-semibold text-gray-800 mb-2">Security Standards:</h4>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• ISO 27001 Certified</li>
+                                    <li>• End-to-End Encryption</li>
+                                    <li>• GDPR Compliance</li>
+                                    <li>• Regular Security Audits</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Technology Leadership Section -->
-        <section class="py-20 bg-[#f7f7f9]">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-16">
-                    Leading Through Innovation<span style="color:#004E98;">.</span>
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-4xl mb-4"><i class="fas fa-microscope" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Research</h3>
-                        <p class="text-gray-600">Continuous AI research and development with dedicated teams focused on advancing fleet intelligence capabilities.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-4xl mb-4"><i class="fas fa-rocket" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Innovation</h3>
-                        <p class="text-gray-600">Cutting-edge machine learning algorithms and predictive analytics that anticipate and solve operational challenges.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-4xl mb-4"><i class="fas fa-cogs" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Implementation</h3>
-                        <p class="text-gray-600">Real-world application of advanced technology through scalable, user-friendly platforms and seamless integration.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <div class="text-4xl mb-4"><i class="fas fa-chart-line" style="color: #004E98;"></i></div>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Evolution</h3>
-                        <p class="text-gray-600">Constant improvement and feature enhancement based on customer feedback and emerging industry requirements.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Core Technology Capabilities Section -->
+
+        <!-- Technology Capabilities Showcase -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-16">
                     Advanced Technology Capabilities<span style="color:#004E98;">.</span>
                 </h2>
-                <div class="space-y-12">
-                    <div class="bg-[#f7f7f9] rounded-2xl shadow-xl p-10">
-                        <div class="flex flex-col lg:flex-row items-start gap-8">
-                            <div class="lg:w-1/2">
-                                <div class="flex items-center mb-6">
-                                    <div class="text-4xl mr-4"><i class="fas fa-brain" style="color: #004E98;"></i></div>
-                                    <h3 class="text-2xl font-bold text-gray-800">Artificial Intelligence & Machine Learning</h3>
-                                </div>
-                                <ul class="text-gray-600 space-y-3">
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Predictive analytics for maintenance and route optimization</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Real-time pattern recognition and anomaly detection</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Adaptive algorithms that learn from fleet behavior</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Advanced data processing and intelligent insights</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="lg:w-1/2">
-                                <div class="bg-white rounded-lg p-6 h-64 flex items-center justify-center">
-                                    <img src="src/images/ai-analytics-dashboard.png" alt="AI Analytics Dashboard" class="rounded-lg shadow-xl w-full h-64 object-cover">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-[#f7f7f9] rounded-2xl shadow-xl p-10">
-                        <div class="flex flex-col lg:flex-row items-start gap-8">
-                            <div class="lg:w-1/2">
-                                <div class="flex items-center mb-6">
-                                    <div class="text-4xl mr-4"><i class="fas fa-chart-bar" style="color: #004E98;"></i></div>
-                                    <h3 class="text-2xl font-bold text-gray-800">Data Analytics Platform</h3>
-                                </div>
-                                <ul class="text-gray-600 space-y-3">
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Real-time data processing from millions of data points</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Custom dashboard creation and visualization</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Comprehensive reporting and business intelligence</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Integration with existing enterprise systems</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="lg:w-1/2">
-                                <div class="bg-white rounded-lg p-6 h-64 flex items-center justify-center">
-                                    <img src="src/images/data-analytics-interface.png" alt="Data Analytics Interface" class="rounded-lg shadow-xl w-full h-64 object-cover">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="bg-[#f7f7f9] rounded-2xl shadow-xl p-10">
-                        <div class="flex flex-col lg:flex-row items-start gap-8">
-                            <div class="lg:w-1/2">
-                                <div class="flex items-center mb-6">
-                                    <div class="text-4xl mr-4"><i class="fas fa-wifi" style="color: #004E98;"></i></div>
-                                    <h3 class="text-2xl font-bold text-gray-800">IoT & Connectivity Solutions</h3>
-                                </div>
-                                <ul class="text-gray-600 space-y-3">
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Advanced telematics hardware design and deployment</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Secure cloud infrastructure and data transmission</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Multi-protocol connectivity (4G, 5G, satellite)</span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check mr-2 mt-1" style="color: #004E98;"></i>
-                                        <span>Edge computing capabilities for real-time processing</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="lg:w-1/2">
-                                <div class="bg-white rounded-lg p-6 h-64 flex items-center justify-center">
-                                    <img src="src/images/telematics-connectivity.png" alt="Telematics Connectivity" class="rounded-lg shadow-xl w-full h-64 object-cover">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Global Presence Section -->
-        <section class="py-20 bg-[#f7f7f9]">
-            <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-16">
-                    Global Technology Centers<span style="color:#004E98;">.</span>
-                </h2>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-                    <div class="bg-white rounded-lg shadow-lg p-8 border-l-4 border-[#004E98]">
-                        <h4 class="text-xl font-bold mb-4" style="color: #004E98;">Dubai Headquarters</h4>
-                        <p class="font-semibold mb-3">Middle East Operations & SpeedSense Development</p>
-                        <p class="text-gray-600 mb-4">
-                            Salem Ahmad Abdulla bin Dasmal Al Suwaidi Building<br>
-                            Office 2 – B 29, Al Qouz 1, Dubai, UAE<br>
-                            P.O. BOX 213683
-                        </p>
-                        <p class="text-gray-600">
-                            <strong>Phone:</strong> +971 58 599 4323<br>
-                            <strong>Email:</strong> info@ivmsgroup.com
-                        </p>
-                    </div>
-                    
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <h4 class="text-xl font-bold mb-4" style="color: #004E98;">UK Technology Center</h4>
-                        <p class="font-semibold mb-3">European Operations & AI Research</p>
-                        <p class="text-gray-600">Advanced artificial intelligence research and development with focus on European market requirements and regulations.</p>
-                    </div>
-                    
-                    <div class="bg-white rounded-lg shadow-lg p-8">
-                        <h4 class="text-xl font-bold mb-4" style="color: #004E98;">Germany Engineering Hub</h4>
-                        <p class="font-semibold mb-3">Automotive Technology Integration</p>
-                        <p class="text-gray-600">Specialized automotive technology integration and advanced engineering for European vehicle manufacturers and fleet operators.</p>
-                    </div>
-                </div>
                 
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <h4 class="text-2xl font-bold mb-8 text-center">Global Impact</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="text-center">
-                            <div class="text-6xl font-bold mb-4" style="color: #004E98;">20+</div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Industries Served</h3>
+                <!-- AI & Machine Learning Block -->
+                <div class="tech-block slide-in-left mb-16">
+                    <div class="flex flex-col lg:flex-row items-center gap-12">
+                        <div class="lg:w-1/2">
+                            <div class="bg-white rounded-2xl p-8 shadow-xl">
+                                <img src="src/images/ai-analytics-dashboard.png" alt="AI Analytics Dashboard" class="rounded-lg shadow-xl w-full h-80 object-cover">
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <div class="text-6xl font-bold mb-4" style="color: #004E98;">10+</div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Countries</h3>
+                        <div class="lg:w-1/2">
+                            <div class="flex items-center mb-6">
+                                <div class="text-5xl mr-6"><i class="fas fa-brain" style="color: #004E98;"></i></div>
+                                <h3 class="text-3xl font-bold text-gray-800">Artificial Intelligence & Machine Learning</h3>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-[#004E98] to-[#00A3A3] rounded-full flex items-center justify-center">
+                                        <i class="fas fa-chart-line text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Predictive Analytics</h4>
+                                        <p class="text-gray-600 text-sm">Advanced algorithms for maintenance and route optimization</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-[#004E98] to-[#00A3A3] rounded-full flex items-center justify-center">
+                                        <i class="fas fa-eye text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Pattern Recognition</h4>
+                                        <p class="text-gray-600 text-sm">Real-time anomaly detection and behavior analysis</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-[#004E98] to-[#00A3A3] rounded-full flex items-center justify-center">
+                                        <i class="fas fa-cogs text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Adaptive Learning</h4>
+                                        <p class="text-gray-600 text-sm">Self-improving algorithms that learn from fleet behavior</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-gradient-to-r from-[#004E98] to-[#00A3A3] rounded-full flex items-center justify-center">
+                                        <i class="fas fa-lightbulb text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Intelligent Insights</h4>
+                                        <p class="text-gray-600 text-sm">Advanced data processing for actionable intelligence</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <div class="text-6xl font-bold mb-4" style="color: #004E98;">1M+</div>
-                            <h3 class="text-xl font-semibold text-gray-800 mb-2">Miles Analyzed Daily</h3>
+                    </div>
+                </div>
+
+                <!-- Data Analytics Platform Block -->
+                <div class="tech-block slide-in-right mb-16">
+                    <div class="flex flex-col lg:flex-row-reverse items-center gap-12">
+                        <div class="lg:w-1/2">
+                            <div class="bg-white rounded-2xl p-8 shadow-xl">
+                                <img src="src/images/data-analytics-interface.png" alt="Data Analytics Interface" class="rounded-lg shadow-xl w-full h-80 object-cover">
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <div class="flex items-center mb-6">
+                                <div class="text-5xl mr-6"><i class="fas fa-chart-bar" style="color: #004E98;"></i></div>
+                                <h3 class="text-3xl font-bold text-gray-800">Data Analytics Platform</h3>
+                            </div>
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-semibold text-gray-800">Real-time Processing</span>
+                                        <span class="text-sm text-gray-600">95%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="--progress-width: 95%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-semibold text-gray-800">Data Accuracy</span>
+                                        <span class="text-sm text-gray-600">99.9%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="--progress-width: 99.9%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-semibold text-gray-800">System Integration</span>
+                                        <span class="text-sm text-gray-600">100%</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="--progress-width: 100%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between items-center mb-2">
+                                        <span class="font-semibold text-gray-800">Custom Dashboards</span>
+                                        <span class="text-sm text-gray-600">Unlimited</span>
+                                    </div>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="--progress-width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IoT & Connectivity Block -->
+                <div class="tech-block slide-in-left">
+                    <div class="flex flex-col lg:flex-row items-center gap-12">
+                        <div class="lg:w-1/2">
+                            <div class="bg-white rounded-2xl p-8 shadow-xl">
+                                <img src="src/images/telematics-connectivity.png" alt="Telematics Connectivity" class="rounded-lg shadow-xl w-full h-80 object-cover">
+                            </div>
+                        </div>
+                        <div class="lg:w-1/2">
+                            <div class="flex items-center mb-6">
+                                <div class="text-5xl mr-6"><i class="fas fa-wifi" style="color: #004E98;"></i></div>
+                                <h3 class="text-3xl font-bold text-gray-800">IoT & Connectivity Solutions</h3>
+                            </div>
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="bg-white rounded-lg p-4 shadow-md">
+                                    <div class="text-2xl mb-2" style="color: #004E98;"><i class="fas fa-satellite"></i></div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Multi-Protocol</h4>
+                                    <p class="text-xs text-gray-600">4G, 5G, Satellite connectivity</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-4 shadow-md">
+                                    <div class="text-2xl mb-2" style="color: #004E98;"><i class="fas fa-shield-alt"></i></div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Secure Cloud</h4>
+                                    <p class="text-xs text-gray-600">End-to-end encrypted transmission</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-4 shadow-md">
+                                    <div class="text-2xl mb-2" style="color: #004E98;"><i class="fas fa-microchip"></i></div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Edge Computing</h4>
+                                    <p class="text-xs text-gray-600">Real-time processing capabilities</p>
+                                </div>
+                                <div class="bg-white rounded-lg p-4 shadow-md">
+                                    <div class="text-2xl mb-2" style="color: #004E98;"><i class="fas fa-cogs"></i></div>
+                                    <h4 class="font-semibold text-gray-800 mb-1">Hardware Design</h4>
+                                    <p class="text-xs text-gray-600">Advanced telematics deployment</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Company Milestones Section -->
+
+        <!-- Technology for Good Impact Section -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-16">
-                    Innovation Timeline<span style="color:#004E98;">.</span>
+                    Technology for Good<span style="color:#004E98;">.</span>
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <div class="text-3xl font-bold mb-4" style="color: #004E98;">2018</div>
-                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Company Foundation</h4>
-                        <p class="text-gray-600">iVMS established with vision to revolutionize fleet management through AI technology.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="impact-section slide-in-left">
+                        <h3 class="text-2xl font-bold mb-6" style="color: #004E98;">Environmental Impact</h3>
+                        <div class="space-y-6">
+                            <div class="impact-metric">
+                                <div class="impact-number" data-target="60">0</div>
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">CO2 Reduction</h4>
+                                <p class="text-gray-600">Up to 60% reduction in carbon emissions through intelligent route optimization and efficiency monitoring.</p>
+                            </div>
+                            <div class="impact-metric">
+                                <div class="impact-number" data-target="40">0</div>
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">Fuel Savings</h4>
+                                <p class="text-gray-600">Average 40% improvement in fuel efficiency through smart driving analytics and route planning.</p>
+                            </div>
+                        </div>
                     </div>
                     
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <div class="text-3xl font-bold mb-4" style="color: #004E98;">2020</div>
-                        <h4 class="text-xl font-semibold text-gray-800 mb-3">AI Platform Launch</h4>
-                        <p class="text-gray-600">First AI-powered fleet management system deployed with predictive analytics capabilities.</p>
-                    </div>
-                    
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <div class="text-3xl font-bold mb-4" style="color: #004E98;">2022</div>
-                        <h4 class="text-xl font-semibold text-gray-800 mb-3">SpeedSense Technology</h4>
-                        <p class="text-gray-600">Revolutionary UAE-specific camera detection technology developed and launched.</p>
-                    </div>
-                    
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <div class="text-3xl font-bold mb-4" style="color: #004E98;">2023</div>
-                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Thatcham Approval</h4>
-                        <p class="text-gray-600">Achieved Thatcham Research approval, validating our technology security and effectiveness.</p>
-                    </div>
-                    
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <div class="text-3xl font-bold mb-4" style="color: #004E98;">2024</div>
-                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Global Expansion</h4>
-                        <p class="text-gray-600">International operations established across UK, Germany, and expanded Middle East presence.</p>
-                    </div>
-                    
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <div class="text-3xl font-bold mb-4" style="color: #004E98;">2025</div>
-                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Next-Gen AI</h4>
-                        <p class="text-gray-600">Advanced AI research initiatives and autonomous vehicle preparation technologies in development.</p>
+                    <div class="impact-section slide-in-right">
+                        <h3 class="text-2xl font-bold mb-6" style="color: #004E98;">Safety Improvements</h3>
+                        <div class="space-y-6">
+                            <div class="impact-metric">
+                                <div class="impact-number" data-target="70">0</div>
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">Accident Reduction</h4>
+                                <p class="text-gray-600">70% improvement in driver behavior and accident prevention through AI-powered monitoring systems.</p>
+                            </div>
+                            <div class="impact-metric">
+                                <div class="impact-number" data-target="50">0</div>
+                                <h4 class="text-lg font-semibold text-gray-800 mb-2">Maintenance Incidents</h4>
+                                <p class="text-gray-600">50% fewer maintenance incidents through predictive analytics and proactive vehicle health monitoring.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Research & Development Section -->
-        <section class="py-20 bg-white">
+        <!-- Future Vision Roadmap -->
+        <section class="py-20 bg-gradient-to-br from-[#f7f7f9] to-white">
             <div class="max-w-7xl mx-auto px-4">
                 <h2 class="text-4xl font-bold text-center mb-16">
-                    Advancing Fleet Intelligence Through R&D<span style="color:#004E98;">.</span>
+                    The Future of Fleet Intelligence<span style="color:#004E98;">.</span>
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Next-Generation AI Algorithms</h4>
-                        <p class="text-gray-600">Developing advanced machine learning models for predictive maintenance, route optimization, and autonomous vehicle preparation.</p>
-                    </div>
-                    
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Advanced Driver Assistance Integration</h4>
-                        <p class="text-gray-600">ADAS integration research for enhanced safety and autonomous driving preparation.</p>
-                    </div>
-                    
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Environmental Impact Reduction</h4>
-                        <p class="text-gray-600">Smart routing and efficiency algorithms focused on reducing carbon footprint and supporting sustainability goals.</p>
-                    </div>
-                    
-                    <div class="bg-[#f7f7f9] rounded-lg shadow-lg p-8">
-                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Autonomous Vehicle Connectivity</h4>
-                        <p class="text-gray-600">Preparing infrastructure and systems for the future of autonomous and connected vehicle operations.</p>
-                    </div>
-                </div>
-                
-                <div class="bg-[#f7f7f9] rounded-2xl shadow-xl p-10">
-                    <h4 class="text-2xl font-bold mb-6 text-center">R&D Investment</h4>
-                    <p class="text-lg text-gray-600 text-center mb-8">25% of annual revenue invested in research and development to maintain technology leadership and drive continuous innovation.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="text-center">
-                            <div class="text-4xl font-bold mb-2" style="color: #004E98;">15+</div>
-                            <div class="text-lg font-semibold text-gray-800">Patents Pending</div>
+                <div class="space-y-8">
+                    <div class="roadmap-item slide-in-left">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#004E98] to-[#00A3A3] rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-brain text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Advanced AI Capabilities</h3>
                         </div>
-                        <div class="text-center">
-                            <div class="text-4xl font-bold mb-2" style="color: #004E98;">50+</div>
-                            <div class="text-lg font-semibold text-gray-800">Research Projects</div>
+                        <p class="text-gray-600 mb-4">Next-generation artificial intelligence features including autonomous decision-making and predictive analytics for complex operational scenarios.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Autonomous Decision-Making</h4>
+                                <p class="text-sm text-gray-600">AI systems that make operational decisions without human intervention</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Predictive Analytics</h4>
+                                <p class="text-sm text-gray-600">Advanced forecasting for maintenance, routes, and operational efficiency</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Complex Scenario Analysis</h4>
+                                <p class="text-sm text-gray-600">Multi-factor analysis for optimal fleet management decisions</p>
+                            </div>
                         </div>
-                        <div class="text-center">
-                            <div class="text-4xl font-bold mb-2" style="color: #004E98;">3</div>
-                            <div class="text-lg font-semibold text-gray-800">Research Centers</div>
+                    </div>
+                    
+                    <div class="roadmap-item slide-in-right">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#004E98] to-[#00A3A3] rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-microchip text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Next-Generation Hardware</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Development of advanced connectivity solutions and edge computing devices for real-time processing and enhanced vehicle integration.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Edge Computing</h4>
+                                <p class="text-sm text-gray-600">Local processing capabilities for faster response times</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Advanced Connectivity</h4>
+                                <p class="text-sm text-gray-600">5G and satellite integration for global coverage</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Vehicle Integration</h4>
+                                <p class="text-sm text-gray-600">Seamless integration with modern vehicle systems</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item slide-in-left">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#004E98] to-[#00A3A3] rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-car text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Emerging Automotive Technologies</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Integration with electric vehicles, autonomous driving systems, and connected vehicle ecosystems of the future.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Electric Vehicle Support</h4>
+                                <p class="text-sm text-gray-600">Optimized charging and battery management systems</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Autonomous Integration</h4>
+                                <p class="text-sm text-gray-600">Preparation for autonomous vehicle operations</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Connected Ecosystems</h4>
+                                <p class="text-sm text-gray-600">Integration with smart city infrastructure</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="roadmap-item slide-in-right">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-r from-[#004E98] to-[#00A3A3] rounded-full flex items-center justify-center mr-4">
+                                <i class="fas fa-leaf text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">Sustainability Initiatives</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">Advanced environmental monitoring and carbon offset integration to support global sustainability goals and regulations.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Carbon Monitoring</h4>
+                                <p class="text-sm text-gray-600">Real-time carbon footprint tracking and reporting</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Offset Integration</h4>
+                                <p class="text-sm text-gray-600">Automatic carbon offset calculations and recommendations</p>
+                            </div>
+                            <div class="bg-white rounded-lg p-4 shadow-md">
+                                <h4 class="font-semibold text-gray-800 mb-2">Regulatory Compliance</h4>
+                                <p class="text-sm text-gray-600">Support for global environmental regulations</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -924,8 +1347,7 @@
                     <h2 class="text-4xl font-bold mb-6" style="color: #2F2F2F;">Ready to Experience Next-Generation Fleet Intelligence?</h2>
                     <p class="text-xl mb-4" style="color: #2F2F2F;">Partner with iVMS to transform your fleet operations</p>
                     <p class="text-lg mb-10" style="color: #2F2F2F;">Discover how our advanced AI technology can optimize your business operations and drive measurable results.</p>
-                    <a href="contact.html" class="cta-bottom bg-white text-[#004E98] hover:bg-gray-100 mr-4">Book Consultation</a>
-                    <a href="#technology" class="cta-bottom bg-transparent border-2 border-white text-white hover:bg-white hover:text-[#004E98]">View Our Technology</a>
+                    <a href="contact.html" class="cta-bottom bg-white text-[#004E98] hover:bg-gray-100 mx-auto block w-max">Book Consultation</a>
                 </div>
             </div>
         </section>
@@ -955,10 +1377,10 @@
                         <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link" style="color: #ffffff !important;">info@ivmsgroup.com</a></li>
                     </ul>
                     <div class="footer-social-links">
-                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/company/ivms-global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
                         <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
-                        <a href="https://instagram.com/YOUR_INSTAGRAM" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61577934701953" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ivms_global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -977,6 +1399,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+      // Dropdown functionality
       document.querySelectorAll('.dropdown-parent').forEach(function(parent) {
         var btn = parent.querySelector('.dropdown-toggle');
         var menu = parent.querySelector('.dropdown-menu');
@@ -996,6 +1419,90 @@
       document.addEventListener('click', function(e) {
         if (!e.target.closest('.dropdown-parent')) {
           document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
+        }
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate');
+            
+            // Animate counters
+            const counters = entry.target.querySelectorAll('.counter, .impact-number');
+            counters.forEach(counter => {
+              const target = parseInt(counter.getAttribute('data-target'));
+              const duration = 2000;
+              const increment = target / (duration / 16);
+              let current = 0;
+              
+              const updateCounter = () => {
+                current += increment;
+                if (current < target) {
+                  counter.textContent = Math.floor(current).toLocaleString();
+                  requestAnimationFrame(updateCounter);
+                } else {
+                  counter.textContent = target.toLocaleString();
+                }
+              };
+              
+              updateCounter();
+            });
+
+            // Animate progress bars
+            const progressBars = entry.target.querySelectorAll('.progress-fill');
+            progressBars.forEach(bar => {
+              setTimeout(() => {
+                bar.classList.add('animate');
+              }, 500);
+            });
+          }
+        });
+      }, observerOptions);
+
+      // Observe all animated elements
+      document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right, .timeline-item, .stats-card, .recognition-card, .impact-section, .roadmap-item').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', !expanded);
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Parallax effect for hero section
+      window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector('.hero-section-new-layout');
+        if (parallax) {
+          const speed = scrolled * 0.5;
+          parallax.style.transform = `translateY(${speed}px)`;
         }
       });
     });
