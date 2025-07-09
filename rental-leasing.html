@@ -528,6 +528,13 @@
           }
         }
         .dropdown-menu a { color: #fff !important; }
+        .tilt-on-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .tilt-on-hover:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+        }
     </style>
 </head>
 <body>
@@ -613,25 +620,14 @@
     });
     </script>
 
-    <main>
+    <main class="pt-24">
         <!-- Hero Section -->
-        <section class="hero-section-new-layout">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/2 w-full">
-                        <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                            Rental & Leasing Solutions<br>
-                            <span style="color: #004E98;">Complete Rental Fleet Control</span>
-                        </h1>
-                        <p class="text-lg mb-8">
-                            Transform your rental operations with our comprehensive fleet management platform designed specifically for rental and leasing companies. From driver behaviour monitoring to vehicle health protection, iVMS delivers complete visibility and control over every aspect of your rental fleet.
-                        </p>
-                        <button class="hero-cta">Book Demo</button>
-                    </div>
-                    <div class="lg:w-1/2 w-full flex justify-center">
-                        <img src="src/images/rental-fleet.png" alt="Rental Fleet Management" class="new-hero-image rounded-lg shadow-xl w-full max-w-xl">
-                    </div>
-                </div>
+        <section class="section-padding text-center" style="padding-top:6rem;">
+            <div class="container-narrow">
+                <h1 class="hero-headline glitch-effect" style="font-size:3.5rem;font-weight:700;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1.5rem;">Rental & Leasing Solutions<br><span style='color:#004E98;'>Complete Rental Fleet Control</span></h1>
+                <img src="src/images/rental-fleet.png" alt="Rental Fleet Management" class="hero-image tilt-on-hover" style="width:100%;max-width:800px;height:auto;border-radius:0.75rem;box-shadow:0 4px 6px rgba(0,0,0,0.05);margin-bottom:2rem;display:block;margin-left:auto;margin-right:auto;transition:transform 0.3s ease;">
+                <p class="hero-subtitle" style="font-size:1.125rem;line-height:1.6;font-weight:400;max-width:800px;margin:0 auto 3rem auto;text-align:center;">Transform your rental operations with our comprehensive fleet management platform designed specifically for rental and leasing companies. From driver behaviour monitoring to vehicle health protection, iVMS delivers complete visibility and control over every aspect of your rental fleet.</p>
+                <a href="#contact" style="display:inline-block;background:#004E98;color:#fff;font-weight:600;font-size:1.1rem;padding:0.85rem 2.2rem;border-radius:0.375rem;box-shadow:0 4px 16px rgba(0,78,152,0.15);margin-bottom:2rem;text-align:center;transition:background 0.2s,box-shadow 0.2s;">Book Demo</a>
             </div>
         </section>
 

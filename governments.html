@@ -35,8 +35,8 @@
             --font-family-primary: "Suisse BP Intl", sans-serif;
             
             /* Design System Colors */
-            --ds-primary-blue: #3B82F6;
-            --ds-dark-blue: #1E40AF;
+            --ds-primary-blue: #004E98;
+            --ds-dark-blue: #003366;
             --ds-light-blue: #DBEAFE;
             --ds-white: #FFFFFF;
             --ds-light-gray: #F8FAFC;
@@ -157,6 +157,11 @@
             opacity: 0.6;
             font-size: 0.9rem;
             text-align: center;
+        }
+        
+        /* Custom blue color override */
+        .text-custom-blue {
+            color: #004E98 !important;
         }
         .nav-logo {
             display: flex;
@@ -568,8 +573,8 @@
         <section class="section-padding text-center">
             <div class="container-narrow">
                 <h1 class="hero-headline glitch-effect">Transforming Government Transportation Infrastructure Worldwide</h1>
-                <p class="hero-subtitle">Comprehensive fleet management, compliance, and smart city solutions for government agencies. Reduce costs, enhance safety, and deliver measurable public value with iVMS's secure, integrated platform.</p>
                 <img src="src/images/ivms-skyline.png" alt="Modern Government Transportation Infrastructure" class="hero-image tilt-on-hover">
+                <p class="hero-subtitle">Comprehensive fleet management, compliance, and smart city solutions for government agencies. Reduce costs, enhance safety, and deliver measurable public value with iVMS's secure, integrated platform.</p>
                 <a href="#contact" class="btn-primary">Schedule Government Demo</a>
             </div>
         </section>
@@ -596,19 +601,19 @@
                             <p class="mb-6 text-lg" style="font-size:1.125rem;line-height:1.6;color:var(--text-secondary);">Advanced AI-powered monitoring systems that capture court-admissible evidence and automate enforcement processes across government jurisdictions.</p>
                             <ul class="space-y-3" style="font-size:1.125rem;line-height:1.6;">
                                 <li class="flex items-start">
-                                    <i class="fas fa-shield-alt text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-shield-alt text-custom-blue mr-3 mt-1"></i>
                                     <span>Court-admissible evidence capture with AI monitoring</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-gavel text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-gavel text-custom-blue mr-3 mt-1"></i>
                                     <span>Automated fine processing and appeals management</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-mobile-alt text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-mobile-alt text-custom-blue mr-3 mt-1"></i>
                                     <span>Mobile enforcement optimization</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-chart-line text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-chart-line text-custom-blue mr-3 mt-1"></i>
                                     <span>Real-time analytics and reporting</span>
                                 </li>
                             </ul>
@@ -627,19 +632,19 @@
                             <p class="mb-6 text-lg" style="font-size:1.125rem;line-height:1.6;color:var(--text-secondary);">Intelligent dispatch systems that reduce response times by 50% through predictive analytics and real-time coordination across emergency services.</p>
                             <ul class="space-y-3" style="font-size:1.125rem;line-height:1.6;">
                                 <li class="flex items-start">
-                                    <i class="fas fa-ambulance text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-ambulance text-custom-blue mr-3 mt-1"></i>
                                     <span>50% reduction in emergency response times</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-exclamation-triangle text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-exclamation-triangle text-custom-blue mr-3 mt-1"></i>
                                     <span>Predictive risk identification</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-globe text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-globe text-custom-blue mr-3 mt-1"></i>
                                     <span>Cross-border incident coordination</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-route text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-route text-custom-blue mr-3 mt-1"></i>
                                     <span>Real-time dispatch optimization</span>
                                 </li>
                             </ul>
@@ -658,19 +663,19 @@
                             <p class="mb-6 text-lg" style="font-size:1.125rem;line-height:1.6;color:var(--text-secondary);">Comprehensive fleet management solutions that deliver 25% fuel cost reduction through intelligent monitoring and predictive maintenance.</p>
                             <ul class="space-y-3" style="font-size:1.125rem;line-height:1.6;">
                                 <li class="flex items-start">
-                                    <i class="fas fa-truck text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-truck text-custom-blue mr-3 mt-1"></i>
                                     <span>25% fuel cost reduction through smart monitoring</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-satellite text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-satellite text-custom-blue mr-3 mt-1"></i>
                                     <span>Real-time vehicle tracking and driver behavior analysis</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-tools text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-tools text-custom-blue mr-3 mt-1"></i>
                                     <span>Predictive maintenance scheduling</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <i class="fas fa-chart-pie text-blue-500 mr-3 mt-1"></i>
+                                    <i class="fas fa-chart-pie text-custom-blue mr-3 mt-1"></i>
                                     <span>Asset utilization optimization</span>
                                 </li>
                             </ul>
@@ -686,7 +691,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="bg-white rounded-xl p-8 shadow-lg animate-on-scroll">
                             <div class="flex items-center mb-4">
-                                <i class="fas fa-bus text-3xl text-blue-500 mr-4"></i>
+                                <i class="fas fa-bus text-3xl text-custom-blue mr-4"></i>
                                 <h4 class="text-xl font-semibold">School Transport Safety (iBUS)</h4>
                             </div>
                             <ul class="space-y-2 text-gray-700">
@@ -698,7 +703,7 @@
                         </div>
                         <div class="bg-white rounded-xl p-8 shadow-lg animate-on-scroll">
                             <div class="flex items-center mb-4">
-                                <i class="fas fa-subway text-3xl text-blue-500 mr-4"></i>
+                                <i class="fas fa-subway text-3xl text-custom-blue mr-4"></i>
                                 <h4 class="text-xl font-semibold">Public Transportation System Optimization</h4>
                             </div>
                             <ul class="space-y-2 text-gray-700">
@@ -722,7 +727,7 @@
                             <div class="space-y-6">
                                 <div>
                                     <h4 class="text-xl font-semibold mb-3 flex items-center">
-                                        <i class="fas fa-leaf text-blue-500 mr-3"></i>
+                                        <i class="fas fa-leaf text-custom-blue mr-3"></i>
                                         Environmental Compliance & Carbon Monitoring
                                     </h4>
                                     <ul class="space-y-2 text-gray-700">
@@ -734,7 +739,7 @@
                                 </div>
                                 <div>
                                     <h4 class="text-xl font-semibold mb-3 flex items-center">
-                                        <i class="fas fa-credit-card text-blue-500 mr-3"></i>
+                                        <i class="fas fa-credit-card text-custom-blue mr-3"></i>
                                         Smart Payment Systems (iPAY)
                                     </h4>
                                     <ul class="space-y-2 text-gray-700">
@@ -755,7 +760,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll">
                             <div class="text-center mb-4">
-                                <i class="fas fa-globe text-3xl text-blue-500 mb-3"></i>
+                                <i class="fas fa-globe text-3xl text-custom-blue mb-3"></i>
                                 <h4 class="font-semibold">Cross-Border Coordination</h4>
                             </div>
                             <ul class="text-sm space-y-1 text-gray-700">
@@ -766,7 +771,7 @@
                         </div>
                         <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll">
                             <div class="text-center mb-4">
-                                <i class="fas fa-lock text-3xl text-blue-500 mb-3"></i>
+                                <i class="fas fa-lock text-3xl text-custom-blue mb-3"></i>
                                 <h4 class="font-semibold">Data Security & GDPR</h4>
                             </div>
                             <ul class="text-sm space-y-1 text-gray-700">
@@ -777,7 +782,7 @@
                         </div>
                         <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll">
                             <div class="text-center mb-4">
-                                <i class="fas fa-network-wired text-3xl text-blue-500 mb-3"></i>
+                                <i class="fas fa-network-wired text-3xl text-custom-blue mb-3"></i>
                                 <h4 class="font-semibold">Smart Government Integration</h4>
                             </div>
                             <ul class="text-sm space-y-1 text-gray-700">
@@ -788,7 +793,7 @@
                         </div>
                         <div class="bg-white rounded-xl p-6 shadow-lg animate-on-scroll">
                             <div class="text-center mb-4">
-                                <i class="fas fa-headset text-3xl text-blue-500 mb-3"></i>
+                                <i class="fas fa-headset text-3xl text-custom-blue mb-3"></i>
                                 <h4 class="font-semibold">24/7 Technical Support</h4>
                             </div>
                             <ul class="text-sm space-y-1 text-gray-700">
@@ -807,27 +812,27 @@
             <div class="container-wide">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
                     <div class="stat-card animate-on-scroll">
-                        <span class="stat-number" data-target="50" data-metric="%">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">%</span>
+                        <span class="stat-number" data-target="50" data-metric="%">0</span><span class="stat-metric align-super text-custom-blue text-2xl ml-1">%</span>
                         <div class="stat-label mt-2">Emergency Response Time Reduction</div>
                     </div>
                     <div class="stat-card animate-on-scroll">
-                        <span class="stat-number" data-target="25" data-metric="%">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">%</span>
+                        <span class="stat-number" data-target="25" data-metric="%">0</span><span class="stat-metric align-super text-custom-blue text-2xl ml-1">%</span>
                         <div class="stat-label mt-2">Government Fleet Cost Savings</div>
                     </div>
                     <div class="stat-card animate-on-scroll">
-                        <span class="stat-number" data-target="45" data-metric="%">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">%</span>
+                        <span class="stat-number" data-target="45" data-metric="%">0</span><span class="stat-metric align-super text-custom-blue text-2xl ml-1">%</span>
                         <div class="stat-label mt-2">Infrastructure Cost Reduction</div>
                     </div>
                     <div class="stat-card animate-on-scroll">
-                        <span class="stat-number" data-target="58" data-metric="%">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">%</span>
+                        <span class="stat-number" data-target="58" data-metric="%">0</span><span class="stat-metric align-super text-custom-blue text-2xl ml-1">%</span>
                         <div class="stat-label mt-2">Fine Collection Improvement</div>
                     </div>
                     <div class="stat-card animate-on-scroll">
-                        <span class="stat-number" data-target="85" data-metric="%">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">%</span>
+                        <span class="stat-number" data-target="85" data-metric="%">0</span><span class="stat-metric align-super text-custom-blue text-2xl ml-1">%</span>
                         <div class="stat-label mt-2">Reduction in Compliance Violations</div>
                     </div>
                     <div class="stat-card animate-on-scroll">
-                        <span class="stat-number" data-target="2.3" data-metric="£B">0</span><span class="stat-metric align-super text-blue-500 text-2xl ml-1">£B</span>
+                        <span class="stat-number" data-target="2.3" data-metric="£B">0</span><span class="stat-metric align-super text-custom-blue text-2xl ml-1">£B</span>
                         <div class="stat-label mt-2">Annual Operational Savings Potential</div>
                     </div>
                 </div>
@@ -898,34 +903,46 @@
                         </ul>
                     </div>
                     <div class="animate-on-scroll">
-                        <form class="space-y-6">
+                        <form action="/submit-government" method="POST" class="space-y-6">
                             <div>
                                 <label class="form-label">Government Department</label>
-                                <input type="text" class="form-input" placeholder="e.g., Transport, Law Enforcement, Emergency Services">
+                                <input type="text" name="department" class="form-input" placeholder="e.g., Transport, Law Enforcement, Emergency Services" required>
                             </div>
                             <div>
                                 <label class="form-label">Fleet Size</label>
-                                <select class="form-input">
-                                    <option>Select fleet size</option>
-                                    <option>1-50 vehicles</option>
-                                    <option>51-200 vehicles</option>
-                                    <option>201-500 vehicles</option>
-                                    <option>500+ vehicles</option>
+                                <select name="fleet_size" class="form-input" required>
+                                    <option value="">Select fleet size</option>
+                                    <option value="1-50 vehicles">1-50 vehicles</option>
+                                    <option value="51-200 vehicles">51-200 vehicles</option>
+                                    <option value="201-500 vehicles">201-500 vehicles</option>
+                                    <option value="500+ vehicles">500+ vehicles</option>
                                 </select>
                             </div>
                             <div>
                                 <label class="form-label">Current Challenges</label>
-                                <textarea class="form-input" rows="3" placeholder="Describe your current transportation management challenges"></textarea>
+                                <textarea name="challenges" class="form-input" rows="3" placeholder="Describe your current transportation management challenges" required></textarea>
                             </div>
                             <div>
                                 <label class="form-label">Implementation Timeline</label>
-                                <select class="form-input">
-                                    <option>Select timeline</option>
-                                    <option>Immediate (0-3 months)</option>
-                                    <option>Short-term (3-6 months)</option>
-                                    <option>Medium-term (6-12 months)</option>
-                                    <option>Long-term (12+ months)</option>
+                                <select name="timeline" class="form-input" required>
+                                    <option value="">Select timeline</option>
+                                    <option value="Immediate (0-3 months)">Immediate (0-3 months)</option>
+                                    <option value="Short-term (3-6 months)">Short-term (3-6 months)</option>
+                                    <option value="Medium-term (6-12 months)">Medium-term (6-12 months)</option>
+                                    <option value="Long-term (12+ months)">Long-term (12+ months)</option>
                                 </select>
+                            </div>
+                            <div>
+                                <label class="form-label">Contact Name</label>
+                                <input type="text" name="contact_name" class="form-input" placeholder="Your full name" required>
+                            </div>
+                            <div>
+                                <label class="form-label">Email</label>
+                                <input type="email" name="email" class="form-input" placeholder="Your email address" required>
+                            </div>
+                            <div>
+                                <label class="form-label">Phone</label>
+                                <input type="tel" name="phone" class="form-input" placeholder="Your phone number" required>
                             </div>
                             <button type="submit" class="btn-primary w-full">Schedule Government Demo</button>
                         </form>
@@ -974,6 +991,7 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="src/js/main.js"></script>
     <script>
         // Dropdown for mobile
         document.addEventListener('DOMContentLoaded', function() {
@@ -1072,28 +1090,7 @@
                 });
             });
 
-            // Form submission handling
-            document.querySelector('form').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                
-                submitBtn.textContent = 'Sending...';
-                submitBtn.disabled = true;
-                
-                // Simulate form submission
-                setTimeout(() => {
-                    submitBtn.textContent = 'Demo Scheduled!';
-                    submitBtn.style.backgroundColor = '#10B981';
-                    
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                        submitBtn.style.backgroundColor = '';
-                        this.reset();
-                    }, 3000);
-                }, 1500);
-            });
+
 
             // Enhanced hover effects
             document.querySelectorAll('.card-elevated, .card-feature').forEach(card => {

@@ -424,53 +424,55 @@
         </div>
     </nav>
 
-    <!-- Contact Form Section (copied from index.html) -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div class="flex items-start">
-                    <h2 class="text-5xl font-bold text-gray-900 leading-tight">Let's talk<span style="color:#0066cc;">.</span></h2>
-                </div>
-                <div class="flex items-center">
-                    <div class="text-xl text-gray-700">Book a personalised demonstration of our platform.</div>
-                </div>
-                <div class="flex items-center">
-                    <div class="text-sm text-gray-600">Discover how IVMS can help your organisation optimise fleet operations, reduce costs, and enhance safety. Leave your details and our team will contact you within 24 hours.</div>
-                </div>
-            </div>
-            <!-- Image Placeholder and Enquiry Form Side by Side -->
-            <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
-                <div class="flex flex-col md:flex-row gap-8 items-stretch min-h-[650px]">
-                    <div class="flex-1 flex flex-col h-full">
-                        <form class="w-full max-w-lg space-y-4 h-full flex flex-col justify-between">
-                            <input type="text" name="first_name" placeholder="First name*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
-                            <input type="text" name="last_name" placeholder="Last name*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
-                            <input type="text" name="company" placeholder="Company*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
-                            <input type="email" name="email" placeholder="E-Mail*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
-                            <input type="tel" name="phone" placeholder="Phone*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
-                            <input type="text" name="job_title" placeholder="Job title*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
-                            <textarea name="message" placeholder="Message*" required rows="8" class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]"></textarea>
-                            <button type="submit" class="cta-bottom w-full md:w-auto mt-2">Submit enquiry</button>
-                        </form>
+    <main class="pt-24">
+        <!-- Contact Form Section (copied from index.html) -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    <div class="flex items-start">
+                        <h2 class="text-5xl font-bold text-gray-900 leading-tight">Let's talk<span style="color:#0066cc;">.</span></h2>
                     </div>
-                    <div class="flex-1 flex flex-col h-full">
-                        <div class="w-full h-full bg-gray-100 rounded-xl border border-gray-200 flex items-center justify-center overflow-hidden">
-                            <img src="src/images/ivms-dubai-office.png" alt="IVMS Dubai Office" class="object-cover w-full h-full rounded-xl shadow" />
+                    <div class="flex items-center">
+                        <div class="text-xl text-gray-700">Book a personalised demonstration of our platform.</div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="text-sm text-gray-600">Discover how IVMS can help your organisation optimise fleet operations, reduce costs, and enhance safety. Leave your details and our team will contact you within 24 hours.</div>
+                    </div>
+                </div>
+                <!-- Image Placeholder and Enquiry Form Side by Side -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 mb-12">
+                    <div class="flex flex-col md:flex-row gap-8 items-stretch min-h-[650px]">
+                        <div class="flex-1 flex flex-col h-full">
+                            <form action="/submit-contact" method="POST" class="w-full max-w-lg space-y-4 h-full flex flex-col justify-between">
+                                <input type="text" name="first_name" placeholder="First name*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                                <input type="text" name="last_name" placeholder="Last name*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                                <input type="text" name="company" placeholder="Company*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                                <input type="email" name="email" placeholder="E-Mail*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                                <input type="tel" name="phone" placeholder="Phone*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                                <input type="text" name="job_title" placeholder="Job title*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
+                                <textarea name="message" placeholder="Message*" required rows="8" class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]"></textarea>
+                                <button type="submit" class="cta-bottom w-full md:w-auto mt-2">Submit enquiry</button>
+                            </form>
+                        </div>
+                        <div class="flex-1 flex flex-col h-full">
+                            <div class="w-full h-full bg-gray-100 rounded-xl border border-gray-200 flex items-center justify-center overflow-hidden">
+                                <img src="src/images/ivms-dubai-office.png" alt="IVMS Dubai Office" class="object-cover w-full h-full rounded-xl shadow" />
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Company Details Card at the Bottom -->
-    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8 flex flex-col justify-center min-w-[260px] border border-gray-100 mb-12">
-        <h3 class="text-2xl font-bold mb-2 text-[#004E98]">iVMS Group</h3>
-        <div class="text-gray-700 mb-1 flex items-center"><i class="fas fa-map-marker-alt mr-2 text-[#00A3A3]"></i>Dubai, UAE</div>
-        <div class="text-gray-700 mb-1 flex items-center"><i class="fas fa-phone-alt mr-2 text-[#00A3A3]"></i>+971 (0) 58 599 4323</div>
-        <div class="text-gray-700 mb-1 flex items-center"><i class="fas fa-envelope mr-2 text-[#00A3A3]"></i><a href="mailto:info@ivmsgroup.com" class="hover:underline">info@ivmsgroup.com</a></div>
-        <div class="text-gray-700 flex items-center"><i class="fas fa-globe mr-2 text-[#00A3A3]"></i><a href="https://www.ivmsgroup.com" target="_blank" class="hover:underline">www.ivmsgroup.com</a></div>
-    </div>
+        <!-- Company Details Card at the Bottom -->
+        <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8 flex flex-col justify-center min-w-[260px] border border-gray-100 mb-12">
+            <h3 class="text-2xl font-bold mb-2 text-[#004E98]">iVMS Group</h3>
+            <div class="text-gray-700 mb-1 flex items-center"><i class="fas fa-map-marker-alt mr-2 text-[#00A3A3]"></i>Dubai, UAE</div>
+            <div class="text-gray-700 mb-1 flex items-center"><i class="fas fa-phone-alt mr-2 text-[#00A3A3]"></i>+971 (0) 58 599 4323</div>
+            <div class="text-gray-700 mb-1 flex items-center"><i class="fas fa-envelope mr-2 text-[#00A3A3]"></i><a href="mailto:info@ivmsgroup.com" class="hover:underline">info@ivmsgroup.com</a></div>
+            <div class="text-gray-700 flex items-center"><i class="fas fa-globe mr-2 text-[#00A3A3]"></i><a href="https://www.ivmsgroup.com" target="_blank" class="hover:underline">www.ivmsgroup.com</a></div>
+        </div>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-[#0A0A0A] text-white py-12" style="background-color: #0A0A0A !important; color: #ffffff !important; display: block !important; position: relative !important; min-height: 200px !important;">
