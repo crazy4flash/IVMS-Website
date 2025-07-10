@@ -214,3 +214,74 @@
   });
 })();
 </script> 
+
+<!-- Mobile Navigation Only - Add this AFTER your existing nav -->
+<div class="mobile-nav-only" style="display: none;">
+    <div style="background: #1a1a1a; padding: 15px 20px; position: relative;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="index.html" style="color: #3182ce; font-size: 24px; text-decoration: none; font-weight: bold;">IVMS</a>
+            <button id="mobileOnlyToggle" style="background: none; border: 2px solid white; color: white; padding: 8px 12px; font-size: 18px; cursor: pointer; border-radius: 4px;">☰</button>
+        </div>
+        
+        <div id="mobileOnlyMenu" style="display: none; background: #2a2a2a; margin-top: 15px; border-radius: 5px; overflow: hidden;">
+            <a href="index.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Home</a>
+            <a href="rental-leasing.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Rental & Leasing</a>
+            <a href="logistics.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Logistics</a>
+            <a href="governments.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Governments</a>
+            <a href="about.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">About</a>
+            <a href="contact.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Contact</a>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Mobile-only styles - won't affect desktop navigation */
+@media (max-width: 768px) {
+    /* Hide your existing navigation on mobile */
+    .navbar, .nav, nav:not(.mobile-nav-only) {
+        display: none !important;
+    }
+    
+    /* Show mobile navigation */
+    .mobile-nav-only {
+        display: block !important;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Hide mobile navigation on desktop */
+    .mobile-nav-only {
+        display: none !important;
+    }
+}
+
+.mobile-nav-only a:hover {
+    background: #444 !important;
+}
+</style>
+
+<script>
+// Mobile navigation JavaScript - won't interfere with desktop
+// (kept separate from existing nav logic)
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.getElementById('mobileOnlyToggle');
+    const mobileMenu = document.getElementById('mobileOnlyMenu');
+    
+    if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', function() {
+            if (mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
+        });
+        // Close menu when clicking links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.style.display = 'none';
+            });
+        });
+    }
+});
+</script> 
