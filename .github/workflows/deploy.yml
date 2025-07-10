@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Upload files via SFTP
-        uses: appleboy/sftp-action@v0.1.4
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -23,3 +23,4 @@ jobs:
           port: 22
           source: "./"
           target: "/"
+          protocol: "sftp"
