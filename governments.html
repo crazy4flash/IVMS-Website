@@ -227,6 +227,73 @@
         .dropdown-menu a { color: #fff !important; }
         
         /* Government Page Specific Styles */
+        .government-hero {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .government-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 2rem;
+        }
+        
+        .government-hero-title {
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+        
+        .government-hero-title .highlight {
+            background: linear-gradient(135deg, #004E98, #00A3A3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+        
+        .government-hero-title .line-1 {
+            animation: slideInFromLeft 0.8s ease-out;
+        }
+        
+        .government-hero-title .line-2 {
+            animation: slideInFromLeft 0.8s ease-out 0.2s both;
+        }
+        
+        .government-hero-title .line-3 {
+            animation: slideInFromLeft 0.8s ease-out 0.4s both;
+        }
+        
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Legacy hero-headline for backward compatibility */
         .hero-headline {
             font-size: 3.5rem;
             font-weight: 700;
@@ -484,6 +551,9 @@
             .hero-headline {
                 font-size: 2.5rem;
             }
+            .government-hero-title {
+                font-size: clamp(2.2rem, 5vw, 3.5rem);
+            }
         }
         @media (max-width: 600px) {
             .main-nav {
@@ -503,6 +573,14 @@
             }
             .hero-headline {
                 font-size: 2rem;
+            }
+            .government-hero-title {
+                font-size: 2.2rem;
+                line-height: 1.2;
+                text-align: center;
+            }
+            .government-hero-title br {
+                display: block; /* Keep line breaks on mobile for better readability */
             }
             .section-padding {
                 padding: 3rem 1rem;
@@ -570,9 +648,15 @@
 
     <main class="pt-24">
         <!-- SECTION 1: HERO SECTION -->
-        <section class="section-padding text-center">
+        <section class="section-padding text-center government-hero">
             <div class="container-narrow">
-                <h1 class="hero-headline glitch-effect">Transforming Government Transportation Infrastructure Worldwide</h1>
+                <div class="hero-content">
+                    <h1 class="government-hero-title">
+                        <span class="line-1">Transforming Government</span><br>
+                        <span class="line-2 highlight">Transportation Infrastructure</span><br>
+                        <span class="line-3">Worldwide</span>
+                    </h1>
+                </div>
                 <img src="src/images/ivms-skyline.png" alt="Modern Government Transportation Infrastructure" class="hero-image tilt-on-hover">
                 <p class="hero-subtitle">Comprehensive fleet management, compliance, and smart city solutions for government agencies. Reduce costs, enhance safety, and deliver measurable public value with iVMS's secure, integrated platform.</p>
                 <a href="#contact" class="btn-primary">Schedule Government Demo</a>

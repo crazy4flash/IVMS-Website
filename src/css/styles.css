@@ -388,3 +388,100 @@ html, body {
 }
 
 /* --- End Responsive Overhaul --- */
+
+/* Hero Section Centering Styles */
+.rental-hero .heading-container,
+.logistics-hero .heading-container {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure headings remain centered */
+.rental-hero h1,
+.logistics-hero h1 {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+    text-align: center;
+    width: 100%;
+}
+
+.rental-hero h2,
+.logistics-hero h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.3;
+    color: #3182ce;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+/* Mobile Optimization for Centering */
+@media (max-width: 768px) {
+    .rental-hero h1,
+    .logistics-hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+        text-align: center;
+    }
+    
+    .rental-hero h2,
+    .logistics-hero h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    
+    .rental-hero .heading-container,
+    .logistics-hero .heading-container {
+        padding: 0 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .rental-hero h1,
+    .logistics-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .rental-hero h2,
+    .logistics-hero h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Force centering with overrides if needed */
+.rental-hero h1,
+.logistics-hero h1 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+.rental-hero h2,
+.logistics-hero h2 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+/* Ensure containers don't cause centering problems */
+.heading-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
