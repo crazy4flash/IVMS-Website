@@ -7,9 +7,13 @@ app = Flask(__name__)
 def serve_index():
     return send_from_directory('.', 'index.html')
 
+@app.route('/privacy-policy')
+def privacy_policy():
+    return send_from_directory('.', 'privacy-policy.html')
+
 @app.route('/<path:path>')
 def serve_static(path):
     return send_from_directory('.', path)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True) 
+    app.run(host='0.0.0.0', port=5001, debug=True) 

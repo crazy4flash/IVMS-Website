@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.ivmsgroup.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /config/
+
+# Allow important pages
+Allow: /
+Allow: /speedsense
+Allow: /rental-leasing
+Allow: /governments
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms-of-service
+Allow: /cookie-policy
+Allow: /accessibility-statement
+
+# Crawl delay (optional)
+Crawl-delay: 1 

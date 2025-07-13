@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IVMS Cookie Policy - Learn how we use cookies and similar technologies on our website to improve your experience.">
+    <title>Cookie Policy - IVMS | Cookie Usage & Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="src/images/ivms-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #004E98;
+            --secondary-blue: #3A6EA5;
+            --teal-primary: #00A3A3;
+            --teal-light: #00D1D1;
+            --teal-dark: #007A7A;
+            --dark-bg: #0A0A0A;
+            --light-bg: #FFFFFF;
+            --text-primary: #2F2F2F;
+            --text-secondary: rgba(47, 47, 47, 0.8);
+            --text-light: #FFFFFF;
+            --text-muted: rgba(47, 47, 47, 0.6);
+            --border-light: #EDEDED;
+            --overlay-dark: rgba(30, 30, 30, 0.65);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --fleet-blue: #0057A0;
+            --urban-slate: #3A3F45;
+            --white: #FFFFFF;
+            --black: #2F2F2F;
+            --text-dark: #2F2F2F;
+            --text-medium: #2F2F2F;
+            --overlay-opacity: 0.85;
+            --font-family-primary: "Suisse BP Intl", sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-family-primary);
+            background-color: var(--white);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-primary);
+            color: var(--text-dark);
+        }
+        
+        p, span, div, li, ul, ol, a, label, th, td {
+            font-family: var(--font-family-primary);
+            color: var(--text-dark);
+        }
+        
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 120px 0 80px 0;
+            text-align: center;
+        }
+        
+        .hero-heading {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content-section {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        
+        .section-heading {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .subsection-heading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 2rem 0 1rem 0;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 1rem;
+        }
+        
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .contact-info {
+            background: var(--primary-blue);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info a {
+            color: var(--teal-light);
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cookie-table th {
+            background: var(--primary-blue);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .cookie-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .cookie-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            color: white;
+            padding: 1rem;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .cookie-banner.show {
+            display: block;
+        }
+        
+        .cookie-banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        
+        .cookie-banner-text {
+            flex: 1;
+        }
+        
+        .cookie-banner-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn-accept {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .btn-decline {
+            background: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .btn-accept:hover {
+            background: var(--secondary-blue);
+        }
+        
+        .btn-decline:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .last-updated {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-heading {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-heading {
+                font-size: 1.75rem;
+            }
+            
+            .content-section {
+                padding: 60px 0;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            
+            .cookie-banner-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cookie-table {
+                font-size: 0.9rem;
+            }
+            
+            .cookie-table th,
+            .cookie-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="site-header">
+        <!-- Header content will be loaded dynamically -->
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container mx-auto px-4">
+            <h1 class="hero-heading">Cookie Policy</h1>
+            <p class="hero-subtitle">How we use cookies and similar technologies on our website</p>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container mx-auto">
+            <div class="last-updated">
+                <strong>Last Updated:</strong> December 2024
+            </div>
+
+            <div id="what-are-cookies">
+                <h2 class="subsection-heading">What Are Cookies?</h2>
+                <p class="content-text">
+                    Cookies are small text files that are stored on your device (computer, tablet, or mobile) when you visit a website. They help websites remember information about your visit, such as your preferred language and other settings, which can make your next visit easier and the site more useful to you.
+                </p>
+                <p class="content-text">
+                    Cookies can be either "session cookies" (which are deleted when you close your browser) or "persistent cookies" (which remain on your device for a set period of time or until you delete them).
+                </p>
+            </div>
+
+            <div id="how-we-use-cookies">
+                <h2 class="subsection-heading">How We Use Cookies</h2>
+                <p class="content-text">
+                    IVMS uses cookies and similar technologies for the following purposes:
+                </p>
+                <ul class="content-text" style="margin-left: 2rem;">
+                    <li><strong>Essential Cookies:</strong> These cookies are necessary for the website to function properly and cannot be disabled.</li>
+                    <li><strong>Analytics Cookies:</strong> These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</li>
+                    <li><strong>Functional Cookies:</strong> These cookies enable enhanced functionality and personalization, such as remembering your preferences.</li>
+                    <li><strong>Marketing Cookies:</strong> These cookies are used to track visitors across websites to display relevant advertisements.</li>
+                </ul>
+            </div>
+
+            <div id="types-of-cookies">
+                <h2 class="subsection-heading">Types of Cookies We Use</h2>
+                
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th>Cookie Name</th>
+                            <th>Purpose</th>
+                            <th>Duration</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>session_id</strong></td>
+                            <td>Maintains your session while browsing the website</td>
+                            <td>Session</td>
+                            <td>Essential</td>
+                        </tr>
+                        <tr>
+                            <td><strong>csrf_token</strong></td>
+                            <td>Protects against cross-site request forgery attacks</td>
+                            <td>Session</td>
+                            <td>Essential</td>
+                        </tr>
+                        <tr>
+                            <td><strong>_ga</strong></td>
+                            <td>Google Analytics - tracks website usage</td>
+                            <td>2 years</td>
+                            <td>Analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>_gid</strong></td>
+                            <td>Google Analytics - distinguishes users</td>
+                            <td>24 hours</td>
+                            <td>Analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>_gat</strong></td>
+                            <td>Google Analytics - throttles request rate</td>
+                            <td>1 minute</td>
+                            <td>Analytics</td>
+                        </tr>
+                        <tr>
+                            <td><strong>cookie_consent</strong></td>
+                            <td>Remembers your cookie preferences</td>
+                            <td>1 year</td>
+                            <td>Functional</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="third-party-cookies">
+                <h2 class="subsection-heading">Third-Party Cookies</h2>
+                <p class="content-text">
+                    We use the following third-party services that may set cookies on your device:
+                </p>
+                <ul class="content-text" style="margin-left: 2rem;">
+                    <li><strong>Google Analytics:</strong> We use Google Analytics to understand how visitors use our website. Google Analytics uses cookies to collect information about your use of our website.</li>
+                    <li><strong>Google Fonts:</strong> We use Google Fonts to display custom fonts on our website. Google may set cookies to remember your font preferences.</li>
+                    <li><strong>CDN Services:</strong> We use content delivery networks (CDNs) to serve some of our resources. These services may set cookies for performance optimization.</li>
+                </ul>
+            </div>
+
+            <div id="managing-cookies">
+                <h2 class="subsection-heading">Managing Your Cookie Preferences</h2>
+                <p class="content-text">
+                    You can control and manage cookies in several ways:
+                </p>
+                <ul class="content-text" style="margin-left: 2rem;">
+                    <li><strong>Browser Settings:</strong> Most browsers allow you to refuse cookies or delete them. You can usually find these settings in the "Options" or "Preferences" menu of your browser.</li>
+                    <li><strong>Cookie Consent:</strong> When you first visit our website, you'll see a cookie consent banner where you can choose which types of cookies to accept.</li>
+                    <li><strong>Opt-Out Links:</strong> For third-party cookies, you can often opt out directly through the service provider's website.</li>
+                </ul>
+                
+                <div class="highlight-box">
+                    <strong>Important:</strong> Please note that if you disable cookies, some features of our website may not function properly.
+                </div>
+            </div>
+
+            <div id="your-rights">
+                <h2 class="subsection-heading">Your Rights Under GDPR</h2>
+                <p class="content-text">
+                    Under the General Data Protection Regulation (GDPR), you have the following rights regarding cookies and your personal data:
+                </p>
+                <ul class="content-text" style="margin-left: 2rem;">
+                    <li><strong>Right to Information:</strong> You have the right to be informed about how we use cookies and your personal data.</li>
+                    <li><strong>Right to Withdraw Consent:</strong> You can withdraw your consent to non-essential cookies at any time.</li>
+                    <li><strong>Right to Access:</strong> You can request information about what personal data we hold about you.</li>
+                    <li><strong>Right to Erasure:</strong> You can request that we delete your personal data.</li>
+                    <li><strong>Right to Data Portability:</strong> You can request a copy of your personal data in a portable format.</li>
+                </ul>
+            </div>
+
+            <div id="updates">
+                <h2 class="subsection-heading">Updates to This Policy</h2>
+                <p class="content-text">
+                    We may update this Cookie Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new Cookie Policy on this page and updating the "Last Updated" date.
+                </p>
+            </div>
+
+            <div id="contact">
+                <h2 class="subsection-heading">Contact Us</h2>
+                <div class="contact-info">
+                    <h3>Questions about our Cookie Policy?</h3>
+                    <p>If you have any questions about how we use cookies or this Cookie Policy, please contact us:</p>
+                    <p><strong>Email:</strong> <a href="mailto:privacy@ivmsgroup.com">privacy@ivmsgroup.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+971501234567">+971 50 123 4567</a></p>
+                    <p><strong>Address:</strong> IVMS Group, Dubai, United Arab Emirates</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <p>We use cookies to enhance your experience on our website. By continuing to use this site, you consent to our use of cookies. <a href="/cookie-policy" style="color: var(--teal-light);">Learn more</a></p>
+            </div>
+            <div class="cookie-banner-buttons">
+                <button class="btn-decline" onclick="declineCookies()">Decline</button>
+                <button class="btn-accept" onclick="acceptCookies()">Accept All</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#0A0A0A] text-white py-12" style="background-color: #0A0A0A !important; color: #ffffff !important; display: block !important; position: relative !important; min-height: 200px !important;">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center mb-4" style="color: #ffffff !important;">
+                    <img src="src/images/ivms-logo.png" alt="IVMS Logo" class="footer-logo">
+                    <p class="footer-text">Dubai, UAE</p>
+                </div>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
+                        <li><a href="/governments" class="footer-link" style="color: #ffffff !important;">Governments</a></li>
+                        <li><a href="/about" class="footer-link" style="color: #ffffff !important;">About</a></li>
+                        <li><a href="/contact" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
+                    </ul>
+                </div>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy-policy" class="footer-link" style="color: #ffffff !important;">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service" class="footer-link" style="color: #ffffff !important;">Terms of Service</a></li>
+                        <li><a href="/cookie-policy" class="footer-link" style="color: #ffffff !important;">Cookie Policy</a></li>
+                        <li><a href="/accessibility-statement" class="footer-link" style="color: #ffffff !important;">Accessibility Statement</a></li>
+                    </ul>
+                </div>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="footer-text">Phone: <a href="tel:+971585994323" class="footer-link" style="color: #ffffff !important;">+971 58 599 4323</a></li>
+                        <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link" style="color: #ffffff !important;">info@ivmsgroup.com</a></li>
+                    </ul>
+                    <div class="footer-social-links">
+                        <a href="https://www.linkedin.com/company/ivms-global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61577934701953" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ivms_global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copyright" style="color: #ffffff !important; opacity: 0.6;">
+                <p>&copy; 2025 IVMS Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/js/main.js"></script>
+    <script>
+        // Cookie consent management
+        function acceptCookies() {
+            localStorage.setItem('cookie_consent', 'accepted');
+            document.getElementById('cookie-banner').classList.remove('show');
+            // Enable analytics cookies
+            enableAnalytics();
+        }
+        
+        function declineCookies() {
+            localStorage.setItem('cookie_consent', 'declined');
+            document.getElementById('cookie-banner').classList.remove('show');
+            // Disable analytics cookies
+            disableAnalytics();
+        }
+        
+        function enableAnalytics() {
+            // Enable Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
+        }
+        
+        function disableAnalytics() {
+            // Disable Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'denied'
+                });
+            }
+        }
+        
+        // Check cookie consent on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const consent = localStorage.getItem('cookie_consent');
+            if (!consent) {
+                document.getElementById('cookie-banner').classList.add('show');
+            } else if (consent === 'accepted') {
+                enableAnalytics();
+            } else {
+                disableAnalytics();
+            }
+        });
+    </script>
+</body>
+</html> 

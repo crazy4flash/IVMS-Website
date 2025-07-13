@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IVMS Privacy Policy - Learn how we collect, use, and protect your personal information in compliance with GDPR, CCPA, and app store requirements.">
+    <title>Privacy Policy - IVMS | Data Protection & Privacy Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="src/images/ivms-logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #004E98;      /* Main brand blue - Use for primary CTAs, headings */
+            --secondary-blue: #3A6EA5;    /* Secondary blue - Use for hover states */
+            --teal-primary: #00A3A3;      /* Primary teal - Use for accents, icons */
+            --teal-light: #00D1D1;        /* Light teal - Use for hover states */
+            --teal-dark: #007A7A;         /* Dark teal - Use for active states */
+            --dark-bg: #0A0A0A;           /* Dark background - Use for footer, dark sections */
+            --light-bg: #FFFFFF;          /* Light background - Use for main background */
+            --text-primary: #2F2F2F;      /* Primary text - Use for main content */
+            --text-secondary: rgba(47, 47, 47, 0.8);    /* Secondary text - Use for supporting content */
+            --text-light: #FFFFFF;        /* Light text - Use for dark backgrounds */
+            --text-muted: rgba(47, 47, 47, 0.6);        /* Muted text - Use for less important content */
+            --border-light: #EDEDED;      /* Light border - Use for subtle separators */
+            --overlay-dark: rgba(30, 30, 30, 0.65); /* Dark overlay - Use for hero section */
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --fleet-blue: #0057A0;
+            --urban-slate: #3A3F45;
+            --white: #FFFFFF;
+            --black: #2F2F2F;
+            --text-dark: #2F2F2F;
+            --text-medium: #2F2F2F;
+            --overlay-opacity: 0.85;
+            --font-family-primary: "Suisse BP Intl", sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-family-primary);
+            background-color: var(--white);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
+        }
+        
+        /* Smooth scrolling for anchor links with offset for fixed header */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+        
+        /* Ensure sections with IDs have proper spacing */
+        section[id] {
+            scroll-margin-top: 80px;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-primary);
+            color: var(--text-dark);
+        }
+        
+        p, span, div, li, ul, ol, a, label, th, td {
+            font-family: var(--font-family-primary);
+            color: var(--text-dark);
+        }
+        
+        .text-secondary {
+            color: var(--text-secondary);
+        }
+        
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-link {
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 120px 0 80px 0;
+            text-align: center;
+        }
+        
+        .hero-heading {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Content Styles */
+        .content-section {
+            padding: 80px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+        
+        .section-heading {
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .subsection-heading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin: 2rem 0 1rem 0;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 1rem;
+        }
+        
+        .content-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8f2ff 100%);
+            border-left: 4px solid var(--primary-blue);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .contact-info {
+            background: var(--primary-blue);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info a {
+            color: var(--teal-light);
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border-light);
+        }
+        
+        .toc h3 {
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .toc a:hover {
+            color: var(--primary-blue);
+        }
+        
+        /* Footer Styles */
+        .footer-heading {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #ffffff !important;
+        }
+        
+        .footer-text {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.8) !important;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .footer-link:hover {
+            color: #ffffff !important;
+        }
+        
+        .footer-logo {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-social-links a {
+            color: rgba(255, 255, 255, 0.8) !important;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-social-links a:hover {
+            color: #ffffff !important;
+        }
+        
+        .footer-divider {
+            border: none;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 2rem 0 1rem 0;
+        }
+        
+        .footer-copyright {
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6) !important;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-heading {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-heading {
+                font-size: 1.75rem;
+            }
+            
+            .content-section {
+                padding: 60px 1rem;
+            }
+            
+            .subsection-heading {
+                font-size: 1.25rem;
+            }
+        }
+        
+        /* Animation for page load */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+        .fade-in:nth-child(5) { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <img src="src/images/ivms-logo.png" alt="IVMS Logo" class="h-8 w-auto">
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#solutions" class="nav-link">Solutions</a>
+                    <a href="governments.html" class="nav-link">Governments</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="hero-heading fade-in">Privacy Policy</h1>
+            <p class="hero-subtitle fade-in">Your privacy is important to us. Learn how we collect, use, and protect your personal information in compliance with international data protection regulations.</p>
+            <div class="mt-8 text-sm opacity-75 fade-in">
+                <p>Last updated: July 13, 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Table of Contents -->
+            <div class="toc fade-in">
+                <h3>Table of Contents</h3>
+                <ul>
+                    <li><a href="#introduction">1. Introduction</a></li>
+                    <li><a href="#company-information">2. Company Information</a></li>
+                    <li><a href="#data-collection">3. Information We Collect</a></li>
+                    <li><a href="#data-usage">4. How We Use Your Information</a></li>
+                    <li><a href="#data-sharing">5. Information Sharing and Disclosure</a></li>
+                    <li><a href="#data-security">6. Data Security and Protection</a></li>
+                    <li><a href="#user-rights">7. Your Rights and Choices</a></li>
+                    <li><a href="#international-transfers">8. International Data Transfers</a></li>
+                    <li><a href="#data-retention">9. Data Retention</a></li>
+                    <li><a href="#children-privacy">10. Children's Privacy</a></li>
+                    <li><a href="#cookies-tracking">11. Cookies and Tracking Technologies</a></li>
+                    <li><a href="#mobile-app">12. Mobile App Specific Information</a></li>
+                    <li><a href="#policy-updates">13. Changes to This Policy</a></li>
+                    <li><a href="#contact-us">14. Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Introduction -->
+            <div id="introduction" class="fade-in">
+                <h2 class="section-heading">1. Introduction</h2>
+                <p class="content-text">
+                    iVMS Group ("we," "our," or "us") is committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our website, mobile applications, and services.
+                </p>
+                <p class="content-text">
+                    This policy applies to all users of our services, including fleet management solutions, vehicle tracking systems, and related technologies. By using our services, you agree to the collection and use of information in accordance with this policy.
+                </p>
+                <div class="highlight-box">
+                    <strong>Scope:</strong> This policy covers our website (www.ivmsgroup.com), mobile applications, and all related services provided by iVMS Group.
+                </div>
+            </div>
+
+            <!-- Company Information -->
+            <div id="company-information" class="fade-in">
+                <h2 class="section-heading">2. Company Information</h2>
+                <p class="content-text">
+                    iVMS Group is a leading provider of intelligent vehicle management systems and fleet tracking solutions. We serve government agencies, logistics companies, and commercial fleet operators worldwide.
+                </p>
+                <div class="contact-info">
+                    <h3>Company Details</h3>
+                    <p><strong>Company Name:</strong> iVMS Group</p>
+                    <p><strong>Website:</strong> <a href="https://www.ivmsgroup.com">www.ivmsgroup.com</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@ivmsgroup.com">info@ivmsgroup.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+971585994323">+971 58 599 4323</a></p>
+                    <p><strong>Location:</strong> Dubai, United Arab Emirates</p>
+                </div>
+            </div>
+
+            <!-- Data Collection -->
+            <div id="data-collection" class="fade-in">
+                <h2 class="section-heading">3. Information We Collect</h2>
+                
+                <h3 class="subsection-heading">Personal Information</h3>
+                <p class="content-text">
+                    We collect personal information that you provide directly to us, including:
+                </p>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Name, email address, and phone number</li>
+                    <li>• Company name and job title</li>
+                    <li>• Fleet size and vehicle information</li>
+                    <li>• Account credentials and preferences</li>
+                    <li>• Communication records and support requests</li>
+                </ul>
+
+                <h3 class="subsection-heading">Vehicle and Fleet Data</h3>
+                <p class="content-text">
+                    Through our tracking systems, we collect:
+                </p>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• GPS location data and route information</li>
+                    <li>• Vehicle performance and diagnostic data</li>
+                    <li>• Driver behavior and safety metrics</li>
+                    <li>• Fuel consumption and efficiency data</li>
+                    <li>• Maintenance and service records</li>
+                </ul>
+
+                <h3 class="subsection-heading">Technical Information</h3>
+                <p class="content-text">
+                    We automatically collect technical information including:
+                </p>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Device information (IP address, browser type, operating system)</li>
+                    <li>• Usage analytics and performance data</li>
+                    <li>• App crash reports and error logs</li>
+                    <li>• Network connectivity and telemetry data</li>
+                </ul>
+            </div>
+
+            <!-- Data Usage -->
+            <div id="data-usage" class="fade-in">
+                <h2 class="section-heading">4. How We Use Your Information</h2>
+                
+                <h3 class="subsection-heading">Service Provision</h3>
+                <p class="content-text">
+                    We use your information to provide and improve our services:
+                </p>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Deliver fleet management and tracking solutions</li>
+                    <li>• Process transactions and manage accounts</li>
+                    <li>• Provide customer support and technical assistance</li>
+                    <li>• Send important service notifications and updates</li>
+                </ul>
+
+                <h3 class="subsection-heading">Analytics and Improvement</h3>
+                <p class="content-text">
+                    We analyze data to improve our services:
+                </p>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Enhance system performance and reliability</li>
+                    <li>• Develop new features and capabilities</li>
+                    <li>• Optimize user experience and interface design</li>
+                    <li>• Conduct research and development activities</li>
+                </ul>
+
+                <h3 class="subsection-heading">Legal and Compliance</h3>
+                <p class="content-text">
+                    We use data for legal and regulatory purposes:
+                </p>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Comply with applicable laws and regulations</li>
+                    <li>• Respond to legal requests and court orders</li>
+                    <li>• Protect against fraud and security threats</li>
+                    <li>• Enforce our terms of service and policies</li>
+                </ul>
+            </div>
+
+            <!-- Data Sharing -->
+            <div id="data-sharing" class="fade-in">
+                <h2 class="section-heading">5. Information Sharing and Disclosure</h2>
+                
+                <p class="content-text">
+                    We do not sell, trade, or rent your personal information to third parties. We may share your information in the following circumstances:
+                </p>
+
+                <h3 class="subsection-heading">Service Providers</h3>
+                <p class="content-text">
+                    We work with trusted third-party service providers who assist us in operating our services:
+                </p>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Cloud hosting and infrastructure providers</li>
+                    <li>• Analytics and monitoring services</li>
+                    <li>• Customer support and communication tools</li>
+                    <li>• Payment processing services</li>
+                </ul>
+
+                <h3 class="subsection-heading">Legal Requirements</h3>
+                <p class="content-text">
+                    We may disclose information when required by law or to protect our rights:
+                </p>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• To comply with legal obligations and court orders</li>
+                    <li>• To protect against fraud, security threats, or illegal activities</li>
+                    <li>• To enforce our terms of service and policies</li>
+                    <li>• In emergency situations to protect public safety</li>
+                </ul>
+
+                <h3 class="subsection-heading">Business Transfers</h3>
+                <p class="content-text">
+                    In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of the business transaction. We will notify you of any such changes.
+                </p>
+            </div>
+
+            <!-- Data Security -->
+            <div id="data-security" class="fade-in">
+                <h2 class="section-heading">6. Data Security and Protection</h2>
+                
+                <p class="content-text">
+                    We implement comprehensive security measures to protect your information:
+                </p>
+
+                <h3 class="subsection-heading">Technical Safeguards</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Encryption of data in transit and at rest</li>
+                    <li>• Secure cloud infrastructure with industry-standard security</li>
+                    <li>• Regular security audits and vulnerability assessments</li>
+                    <li>• Access controls and authentication mechanisms</li>
+                    <li>• Intrusion detection and prevention systems</li>
+                </ul>
+
+                <h3 class="subsection-heading">Organizational Measures</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Employee training on data protection and privacy</li>
+                    <li>• Regular security awareness programs</li>
+                    <li>• Incident response and breach notification procedures</li>
+                    <li>• Vendor security assessments and monitoring</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Data Breach Response:</strong> In the unlikely event of a data breach, we will notify affected users and relevant authorities within 72 hours, as required by GDPR.
+                </div>
+            </div>
+
+            <!-- User Rights -->
+            <div id="user-rights" class="fade-in">
+                <h2 class="section-heading">7. Your Rights and Choices</h2>
+                
+                <p class="content-text">
+                    Depending on your location, you have certain rights regarding your personal information:
+                </p>
+
+                <h3 class="subsection-heading">Access and Portability</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Request access to your personal information</li>
+                    <li>• Receive a copy of your data in a portable format</li>
+                    <li>• Verify the accuracy of your information</li>
+                </ul>
+
+                <h3 class="subsection-heading">Correction and Deletion</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Request correction of inaccurate information</li>
+                    <li>• Request deletion of your personal data</li>
+                    <li>• Object to processing of your information</li>
+                </ul>
+
+                <h3 class="subsection-heading">Marketing and Communications</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Opt out of marketing communications</li>
+                    <li>• Control email preferences and frequency</li>
+                    <li>• Unsubscribe from promotional messages</li>
+                </ul>
+
+                <h3 class="subsection-heading">App Permissions</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Control location access and tracking</li>
+                    <li>• Manage camera and microphone permissions</li>
+                    <li>• Adjust notification settings</li>
+                    <li>• Revoke app permissions through device settings</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Exercise Your Rights:</strong> To exercise any of these rights, please contact us at <a href="mailto:privacy@ivmsgroup.com">privacy@ivmsgroup.com</a>. We will respond to your request within 30 days.
+                </div>
+            </div>
+
+            <!-- International Transfers -->
+            <div id="international-transfers" class="fade-in">
+                <h2 class="section-heading">8. International Data Transfers</h2>
+                
+                <p class="content-text">
+                    Your information may be transferred to and processed in countries other than your own. We ensure appropriate safeguards are in place:
+                </p>
+
+                <h3 class="subsection-heading">Transfer Mechanisms</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Adequacy decisions by relevant authorities</li>
+                    <li>• Standard contractual clauses (SCCs)</li>
+                    <li>• Binding corporate rules (BCRs)</li>
+                    <li>• Other approved transfer mechanisms</li>
+                </ul>
+
+                <h3 class="subsection-heading">Data Processing Locations</h3>
+                <p class="content-text">
+                    Our data is primarily processed in the United Arab Emirates and may be stored in secure cloud facilities worldwide. We ensure all transfers comply with applicable data protection laws.
+                </p>
+            </div>
+
+            <!-- Data Retention -->
+            <div id="data-retention" class="fade-in">
+                <h2 class="section-heading">9. Data Retention</h2>
+                
+                <p class="content-text">
+                    We retain your information for as long as necessary to provide our services and comply with legal obligations:
+                </p>
+
+                <h3 class="subsection-heading">Retention Periods</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Account information: Until account deletion or 7 years after last activity</li>
+                    <li>• Vehicle tracking data: 2 years from collection date</li>
+                    <li>• Communication records: 3 years from last contact</li>
+                    <li>• Analytics data: 2 years from collection</li>
+                    <li>• Legal records: As required by applicable laws</li>
+                </ul>
+
+                <h3 class="subsection-heading">Deletion Process</h3>
+                <p class="content-text">
+                    When you request deletion of your data, we will securely delete or anonymize your information within 30 days, except where retention is required by law.
+                </p>
+            </div>
+
+            <!-- Children's Privacy -->
+            <div id="children-privacy" class="fade-in">
+                <h2 class="section-heading">10. Children's Privacy</h2>
+                
+                <p class="content-text">
+                    Our services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13.
+                </p>
+
+                <h3 class="subsection-heading">COPPA Compliance</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• We do not target children under 13</li>
+                    <li>• We do not knowingly collect personal information from children under 13</li>
+                    <li>• If we become aware of collecting information from a child under 13, we will delete it immediately</li>
+                    <li>• Parents can contact us to review or delete their child's information</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>Parental Rights:</strong> If you believe we have collected information from a child under 13, please contact us immediately at <a href="mailto:privacy@ivmsgroup.com">privacy@ivmsgroup.com</a>.
+                </div>
+            </div>
+
+            <!-- Cookies and Tracking -->
+            <div id="cookies-tracking" class="fade-in">
+                <h2 class="section-heading">11. Cookies and Tracking Technologies</h2>
+                
+                <p class="content-text">
+                    We use cookies and similar technologies to enhance your experience and analyze usage patterns:
+                </p>
+
+                <h3 class="subsection-heading">Types of Cookies</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Essential cookies: Required for basic website functionality</li>
+                    <li>• Analytics cookies: Help us understand how visitors use our site</li>
+                    <li>• Preference cookies: Remember your settings and preferences</li>
+                    <li>• Marketing cookies: Used for targeted advertising (with consent)</li>
+                </ul>
+
+                <h3 class="subsection-heading">Third-Party Services</h3>
+                <p class="content-text">
+                    We use third-party services that may set cookies:
+                </p>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Google Analytics for website analytics</li>
+                    <li>• Google Tag Manager for marketing tracking</li>
+                    <li>• Social media platforms for sharing features</li>
+                    <li>• Customer support tools for assistance</li>
+                </ul>
+
+                <h3 class="subsection-heading">Cookie Management</h3>
+                <p class="content-text">
+                    You can control cookies through your browser settings. However, disabling certain cookies may affect website functionality.
+                </p>
+            </div>
+
+            <!-- Mobile App Specific -->
+            <div id="mobile-app" class="fade-in">
+                <h2 class="section-heading">12. Mobile App Specific Information</h2>
+                
+                <p class="content-text">
+                    Our mobile applications collect and process additional information specific to mobile devices:
+                </p>
+
+                <h3 class="subsection-heading">App Permissions</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Location access: For vehicle tracking and fleet management</li>
+                    <li>• Camera access: For document scanning and photo capture</li>
+                    <li>• Storage access: For offline data and file management</li>
+                    <li>• Network access: For real-time communication and updates</li>
+                    <li>• Push notifications: For alerts and important updates</li>
+                </ul>
+
+                <h3 class="subsection-heading">Device Information</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Device model and operating system version</li>
+                    <li>• App version and installation information</li>
+                    <li>• Network connectivity and performance data</li>
+                    <li>• Crash reports and error logs</li>
+                    <li>• Usage patterns and feature interactions</li>
+                </ul>
+
+                <h3 class="subsection-heading">Offline Functionality</h3>
+                <p class="content-text">
+                    Our apps can function offline and store data locally on your device. This data is synchronized when connectivity is restored.
+                </p>
+
+                <h3 class="subsection-heading">App Store Compliance</h3>
+                <p class="content-text">
+                    Our mobile applications comply with Google Play Store and Apple App Store privacy requirements, including:
+                </p>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• Clear disclosure of data collection practices</li>
+                    <li>• User consent for data processing</li>
+                    <li>• Secure data transmission and storage</li>
+                    <li>• Regular privacy policy updates</li>
+                </ul>
+            </div>
+
+            <!-- Policy Updates -->
+            <div id="policy-updates" class="fade-in">
+                <h2 class="section-heading">13. Changes to This Policy</h2>
+                
+                <p class="content-text">
+                    We may update this Privacy Policy from time to time to reflect changes in our practices or applicable laws:
+                </p>
+
+                <h3 class="subsection-heading">Update Process</h3>
+                <ul class="content-text ml-6 mb-4">
+                    <li>• We will notify you of significant changes via email or app notification</li>
+                    <li>• Updated policies will be posted on our website with a new effective date</li>
+                    <li>• Continued use of our services after changes constitutes acceptance</li>
+                    <li>• You can review the current policy at any time on our website</li>
+                </ul>
+
+                <h3 class="subsection-heading">Version History</h3>
+                <p class="content-text">
+                    This policy was last updated on July 13, 2025. Previous versions are available upon request.
+                </p>
+            </div>
+
+            <!-- Contact Us -->
+            <div id="contact-us" class="fade-in">
+                <h2 class="section-heading">14. Contact Us</h2>
+                
+                <p class="content-text">
+                    If you have any questions about this Privacy Policy or our data practices, please contact us:
+                </p>
+
+                <div class="contact-info">
+                    <h3>Privacy Contact Information</h3>
+                    <p><strong>Email:</strong> <a href="mailto:privacy@ivmsgroup.com">privacy@ivmsgroup.com</a></p>
+                    <p><strong>General Contact:</strong> <a href="mailto:info@ivmsgroup.com">info@ivmsgroup.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:+971585994323">+971 58 599 4323</a></p>
+                    <p><strong>Address:</strong> Dubai, United Arab Emirates</p>
+                    <p><strong>Website:</strong> <a href="https://www.ivmsgroup.com">www.ivmsgroup.com</a></p>
+                </div>
+
+                <h3 class="subsection-heading">Data Protection Officer</h3>
+                <p class="content-text">
+                    For GDPR-related inquiries, you may also contact our Data Protection Officer at the same email addresses above.
+                </p>
+
+                <h3 class="subsection-heading">Complaints</h3>
+                <p class="content-text">
+                    If you believe we have not addressed your privacy concerns adequately, you have the right to lodge a complaint with your local data protection authority.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0A0A0A] text-white py-12" style="background-color: #0A0A0A !important; color: #ffffff !important; display: block !important; position: relative !important; min-height: 200px !important;">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="flex flex-col items-center mb-4" style="color: #ffffff !important;">
+                    <img src="src/images/ivms-logo.png" alt="IVMS Logo" class="footer-logo">
+                    <p class="footer-text">Dubai, UAE</p>
+                </div>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
+                        <li><a href="/governments" class="footer-link" style="color: #ffffff !important;">Governments</a></li>
+                        <li><a href="/about" class="footer-link" style="color: #ffffff !important;">About</a></li>
+                        <li><a href="/contact" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
+                    </ul>
+                </div>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy-policy" class="footer-link" style="color: #ffffff !important;">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service" class="footer-link" style="color: #ffffff !important;">Terms of Service</a></li>
+                        <li><a href="/cookie-policy" class="footer-link" style="color: #ffffff !important;">Cookie Policy</a></li>
+                        <li><a href="/accessibility-statement" class="footer-link" style="color: #ffffff !important;">Accessibility Statement</a></li>
+                    </ul>
+                </div>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="footer-text">Phone: <a href="tel:+971585994323" class="footer-link" style="color: #ffffff !important;">+971 58 599 4323</a></li>
+                        <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link" style="color: #ffffff !important;">info@ivmsgroup.com</a></li>
+                    </ul>
+                    <div class="footer-social-links">
+                        <a href="https://www.linkedin.com/company/ivms-global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61577934701953" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ivms_global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-copyright" style="color: #ffffff !important; opacity: 0.6;">
+                <p>&copy; 2025 IVMS Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add fade-in animation to elements as they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html> 
