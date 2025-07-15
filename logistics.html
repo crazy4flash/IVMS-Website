@@ -7,7 +7,7 @@
     <title>Logistics | IVMS - Intelligent Vehicle Management System</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="icon" type="image/png" href="src/images/ivms-logo.png">
+    <link rel="icon" type="image/png" href="src/images/optimized/ivms-logo.webp">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -364,7 +364,7 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0 nav-logo">
                         <a href="index.html">
-                            <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
+                            <img class="h-12 w-auto" src="src/images/optimized/ivms-logo.webp" alt="IVMS Logo">
                         </a>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -417,7 +417,7 @@
 <div class="mobile-nav-only" style="display: none;">
     <div style="background: #1a1a1a; padding: 15px 20px; position: relative;">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-            <a href="index.html" style="display: flex; align-items: center;"><img src="src/images/ivms-logo.png" alt="IVMS Logo" style="height: 38px; width: auto; display: block;"> </a>
+            <a href="index.html" style="display: flex; align-items: center;"><img src="src/images/optimized/ivms-logo.webp" alt="IVMS Logo" style="height: 38px; width: auto; display: block;"> </a>
             <button id="mobileOnlyToggle" style="background: none; border: 2px solid white; color: white; padding: 8px 12px; font-size: 18px; cursor: pointer; border-radius: 4px;">☰</button>
         </div>
         <div id="mobileOnlyMenu" style="display: none; background: #2a2a2a; margin-top: 15px; border-radius: 5px; overflow: hidden;">
@@ -464,6 +464,46 @@
   #hero-section {
     padding-top: 2.5rem !important;
   }
+}
+
+/* WhatsApp Button Styles */
+.whatsapp-button {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    z-index: 100;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.whatsapp-button i {
+    font-size: 28px;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
 }
 </style>
 
@@ -518,7 +558,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h1>Logistics</h1>
                     <h2>AI-Driven Fleet Management Technology</h2>
                 </div>
-                <img src="src/images/logistics-hero.png" alt="Logistics Operations Dashboard" class="hero-image tilt-on-hover" style="width:100%;max-width:800px;height:auto;border-radius:0.75rem;box-shadow:0 4px 6px rgba(0,0,0,0.05);margin-bottom:2rem;display:block;margin-left:auto;margin-right:auto;transition:transform 0.3s ease;">
+                <img src="src/images/optimized/logistics-hero.webp" alt="Logistics Operations Dashboard" class="hero-image tilt-on-hover" style="width:100%;max-width:800px;height:auto;border-radius:0.75rem;box-shadow:0 4px 6px rgba(0,0,0,0.05);margin-bottom:2rem;display:block;margin-left:auto;margin-right:auto;transition:transform 0.3s ease;">
                 <p class="hero-subtitle" style="font-size:1.125rem;line-height:1.6;font-weight:400;max-width:800px;margin:0 auto 3rem auto;text-align:center;">Transform your logistics operations with our comprehensive fleet management platform designed specifically for logistics companies. From driver behaviour monitoring to vehicle health protection, iVMS delivers complete visibility and control over every aspect of your logistics fleet.</p>
                 <a href="#contact" class="cta-bottom animate-on-scroll" style="display:block;margin:0 auto 2rem auto;background:var(--primary-blue);color:var(--text-light);font-weight:600;font-size:1.08rem;padding:0.9rem 2.2rem;border-radius:0.375rem;box-shadow:0 4px 16px rgba(0,78,152,0.15);text-align:center;transition:background 0.2s,box-shadow 0.2s;">Book a Demo</a>
             </div>
@@ -606,7 +646,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </h2>
                 <div class="flex justify-center mb-12">
                     <div class="w-full max-w-4xl h-[300px] bg-gray-200 rounded-xl flex items-center justify-center">
-                        <img src="src/images/logistics-platform-overview.png" alt="Platform Overview" class="w-full h-full object-cover rounded-xl" />
+                        <img src="src/images/optimized/logistics-platform-overview.webp" alt="Platform Overview" class="w-full h-full object-cover rounded-xl" />
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
@@ -642,7 +682,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="src/images/logistics-driver-behaviour.png" alt="Driver Behaviour Management" class="w-full h-48 object-cover">
+                        <img src="src/images/optimized/logistics-driver-behaviour.webp" alt="Driver Behaviour Management" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold mb-3">Driver Behaviour Management</h3>
                             <p class="text-gray-600 mb-4">Monitor and improve driver performance with real-time feedback and training tools.</p>
@@ -663,7 +703,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="src/images/logistics-vehicle-health.png" alt="Vehicle Health Monitoring" class="w-full h-48 object-cover">
+                        <img src="src/images/optimized/logistics-vehicle-health.webp" alt="Vehicle Health Monitoring" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold mb-3">Vehicle Health Monitoring</h3>
                             <p class="text-gray-600 mb-4">Predictive maintenance and real-time vehicle diagnostics to prevent breakdowns.</p>
@@ -684,7 +724,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                        <img src="src/images/logistics-live-tracking.png" alt="Live Tracking Solutions" class="w-full h-48 object-cover">
+                        <img src="src/images/optimized/logistics-live-tracking.webp" alt="Live Tracking Solutions" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h3 class="text-xl font-semibold mb-3">Live Tracking Solutions</h3>
                             <p class="text-gray-600 mb-4">Comprehensive tracking and monitoring capabilities for your entire fleet.</p>
@@ -744,13 +784,13 @@ document.addEventListener('DOMContentLoaded', function() {
                             </ul>
                         </div>
                         <div class="flex-1 flex items-center justify-center p-8 order-1 md:order-2 bg-transparent">
-                            <img src="src/images/logistics-route-optimization.png" alt="Route Optimisation Interface" class="rounded-xl shadow-lg w-full h-[300px] object-cover">
+                            <img src="src/images/optimized/logistics-route-optimization.webp" alt="Route Optimisation Interface" class="rounded-xl shadow-lg w-full h-[300px] object-cover">
                         </div>
                     </div>
                     <!-- Card 2 -->
                     <div class="bg-[#f7f7f9] rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:items-stretch overflow-hidden">
                         <div class="flex-1 flex items-center justify-center p-8 order-1 md:order-1 bg-transparent">
-                            <img src="src/images/logistics-delivery-proof.png" alt="Delivery Proof System" class="rounded-xl shadow-lg w-full h-[300px] object-cover">
+                            <img src="src/images/optimized/logistics-delivery-proof.webp" alt="Delivery Proof System" class="rounded-xl shadow-lg w-full h-[300px] object-cover">
                         </div>
                         <div class="flex-1 flex flex-col justify-center p-8 order-2 md:order-2">
                             <h3 class="text-2xl font-semibold mb-4">Delivery Excellence</h3>
@@ -823,7 +863,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
                         <div class="relative mb-6">
-                            <img src="src/images/fuel-cost-reduction.png" alt="Fuel Cost Reduction" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/optimized/fuel-cost-reduction.webp" alt="Fuel Cost Reduction" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl font-bold mb-2">25%</div>
@@ -832,7 +872,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
                         <div class="relative mb-6">
-                            <img src="src/images/delivery-time-improvement.png" alt="Delivery Time Improvement" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/optimized/delivery-time-improvement.webp" alt="Delivery Time Improvement" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl font-bold mb-2">35%</div>
@@ -841,7 +881,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
                         <div class="relative mb-6">
-                            <img src="src/images/maintenance-cost-decrease.png" alt="Maintenance Cost Decrease" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/optimized/maintenance-cost-decrease.webp" alt="Maintenance Cost Decrease" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl font-bold mb-2">40%</div>
@@ -850,7 +890,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
                         <div class="relative mb-6">
-                            <img src="src/images/co2-emissions-reduction.png" alt="CO2 Emissions Reduction" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/optimized/co2-emissions-reduction.webp" alt="CO2 Emissions Reduction" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl font-bold mb-2">60%</div>
@@ -899,7 +939,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </a>
                     </div>
                     <div class="flex-1 flex items-center justify-center p-8 bg-transparent">
-                        <img src="src/images/logistics-roi-calculator.png" alt="ROI Calculator Preview" class="rounded-xl shadow-lg w-full h-[300px] object-cover">
+                        <img src="src/images/optimized/logistics-roi-calculator.webp" alt="ROI Calculator Preview" class="rounded-xl shadow-lg w-full h-[300px] object-cover">
                     </div>
                 </div>
             </div>
@@ -913,7 +953,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </h2>
                 <div class="bg-[#f7f7f9] rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:items-center overflow-hidden mb-12">
                     <div class="flex-1 flex items-center justify-center p-8 bg-transparent">
-                        <img src="src/images/logistics-environmental-impact.png" alt="Environmental Impact Dashboard" class="rounded-xl shadow-lg w-full h-[300px] object-cover">
+                        <img src="src/images/optimized/logistics-environmental-impact.webp" alt="Environmental Impact Dashboard" class="rounded-xl shadow-lg w-full h-[300px] object-cover">
                     </div>
                     <div class="flex-1 flex flex-col justify-center p-8">
                         <h3 class="text-2xl font-semibold mb-4">Reduce Your Carbon Footprint</h3>
@@ -981,7 +1021,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </ul>
                     </div>
                     <div class="flex-1 flex items-center justify-center p-8 bg-transparent">
-                        <img src="src/images/logistics-integration.png" alt="System Integration Diagram" class="rounded-xl shadow-lg w-full h-[300px] object-cover">
+                        <img src="src/images/optimized/logistics-integration.webp" alt="System Integration Diagram" class="rounded-xl shadow-lg w-full h-[300px] object-cover">
                     </div>
                 </div>
             </div>
@@ -1103,7 +1143,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="flex flex-col items-center mb-4" style="color: #ffffff !important;">
-                    <img src="src/images/ivms-logo.png" alt="IVMS Logo" class="footer-logo">
+                    <img src="src/images/optimized/ivms-logo.webp" alt="IVMS Logo" class="footer-logo">
                     <p class="footer-text">Dubai, UAE</p>
                 </div>
                 <div style="color: #ffffff !important;">

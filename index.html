@@ -7,7 +7,7 @@
     <title>IVMS - Intelligent Vehicle Management System | Fleet Technology Solutions</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="src/images/ivms-logo.png">
+    <link rel="icon" type="image/png" href="src/images/optimized/ivms-logo.webp">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -1487,6 +1487,51 @@
         .mobile-dropdown button:focus {
             outline: 2px solid #3182ce;
         }
+        @media (max-width: 768px) {
+          .hero-section {
+            height: 92vh !important;
+            min-height: 92vh !important;
+            padding-top: 80px !important;
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+          }
+          .hero-overlay-bar {
+            padding: 0.75rem 2vw 0.5rem 2vw !important;
+            min-height: auto !important;
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            background: rgba(0, 0, 0, 0.9) !important;
+            margin-bottom: 0 !important;
+          }
+          .hero-headline {
+            font-size: 1.8rem !important;
+            line-height: 1.1 !important;
+            margin-bottom: 0.5rem !important;
+          }
+          .hero-support {
+            font-size: 0.9rem !important;
+            margin-bottom: 0.75rem !important;
+          }
+          .hero-cta {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 1rem !important;
+            margin-bottom: 0 !important;
+          }
+          .stats-section-london {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+          }
+          .footer-text, .footer-link, .footer-heading, .footer-copyright {
+            color: #ffffff !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+          }
+          .footer-copyright {
+            opacity: 0.6 !important;
+          }
+        }
     </style>
 </head>
 <body>
@@ -1497,7 +1542,7 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0 nav-logo">
                         <a href="index.html">
-                            <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
+                            <img class="h-12 w-auto" src="src/images/optimized/ivms-logo.webp" alt="IVMS Logo">
                         </a>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -1551,7 +1596,7 @@
     <div class="mobile-nav-only" style="display: none;">
         <div style="background: #1a1a1a; padding: 15px 20px; position: relative;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="index.html" style="display: flex; align-items: center;"><img src="src/images/ivms-logo.png" alt="IVMS Logo" style="height: 38px; width: auto; display: block;"> </a>
+                <a href="index.html" style="display: flex; align-items: center;"><img src="src/images/optimized/ivms-logo.webp" alt="IVMS Logo" style="height: 38px; width: auto; display: block;"> </a>
                 <button id="mobileOnlyToggle" style="background: none; border: 2px solid white; color: white; padding: 8px 12px; font-size: 18px; cursor: pointer; border-radius: 4px;">☰</button>
             </div>
             <div id="mobileOnlyMenu" style="display: none; background: #2a2a2a; margin-top: 15px; border-radius: 5px; overflow: hidden;">
@@ -1664,7 +1709,7 @@
     <section class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
             <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto mb-6 md:mb-0">
-                <img src="src/images/thatcham-logo.jpg" alt="Thatcham Accredited Logo" style="max-width:220px; width:100%; height:auto; display:block;" class="rounded shadow-md">
+                <img src="src/images/optimized/thatcham-logo.jpg" alt="Thatcham Accredited Logo" style="max-width:220px; width:100%; height:auto; display:block;" class="rounded shadow-md">
             </div>
             <div class="flex-1 text-center md:text-left">
                 <h3 class="text-2xl font-bold mb-2" style="color:#004E98;">Thatcham Accredited Technology</h3>
@@ -1684,19 +1729,19 @@
             </div>
             <div class="flex flex-col md:flex-row md:items-start md:justify-start gap-8">
                 <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
-                    <img src="src/images/stat1.png" alt="Stat 1" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
+                    <img src="src/images/optimized/stat1.webp" alt="Stat 1" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
                     <div class="stat-london-percent-below mt-4 stat-number">35%</div>
                     <div class="stat-london-desc-below">reduction in fuel costs achieved through advanced route optimisation.</div>
                     <div class="stat-london-source-below">Fleet News</div>
                 </div>
                 <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
-                    <img src="src/images/stat2.png" alt="Stat 2" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
+                    <img src="src/images/optimized/stat2.webp" alt="Stat 2" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
                     <div class="stat-london-percent-below mt-4 stat-number">50%</div>
                     <div class="stat-london-desc-below">fewer maintenance incidents with predictive analytics and real-time monitoring.</div>
                     <div class="stat-london-source-below">Telematics Today</div>
                 </div>
                 <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
-                    <img src="src/images/stat3.png" alt="Stat 3" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
+                    <img src="src/images/optimized/stat3.webp" alt="Stat 3" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
                     <div class="stat-london-percent-below mt-4 stat-number">70%</div>
                     <div class="stat-london-desc-below">improvement in on-time deliveries after implementing fleet management solutions.</div>
                     <div class="stat-london-source-below">Logistics Insights</div>
@@ -1903,26 +1948,26 @@
             <div class="client-logos-container">
                 <div class="client-logos-track">
                     <div class="client-logo-wrapper">
-                        <img src="src/images/client1.jpg" alt="Client 1" class="client-logo">
+                        <img src="src/images/optimized/client1.jpg" alt="Client 1" class="client-logo">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client2.jpg" alt="Client 2" class="client-logo">
+                        <img src="src/images/optimized/client2.jpg" alt="Client 2" class="client-logo">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client3.jpg" alt="Client 3" class="client-logo">
+                        <img src="src/images/optimized/client3.jpg" alt="Client 3" class="client-logo">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client4.jpg" alt="Client 4" class="client-logo">
+                        <img src="src/images/optimized/client4.jpg" alt="Client 4" class="client-logo">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client5.jpg" alt="Client 5" class="client-logo">
+                        <img src="src/images/optimized/client5.jpg" alt="Client 5" class="client-logo">
                         <!-- Duplicate logos for seamless loop -->
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client1.jpg" alt="Client 1" class="client-logo">
+                        <img src="src/images/optimized/client1.jpg" alt="Client 1" class="client-logo">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client2.jpg" alt="Client 2" class="client-logo">
+                        <img src="src/images/optimized/client2.jpg" alt="Client 2" class="client-logo">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client3.jpg" alt="Client 3" class="client-logo">
+                        <img src="src/images/optimized/client3.jpg" alt="Client 3" class="client-logo">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client4.jpg" alt="Client 4" class="client-logo">
+                        <img src="src/images/optimized/client4.jpg" alt="Client 4" class="client-logo">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client5.jpg" alt="Client 5" class="client-logo">
+                        <img src="src/images/optimized/client5.jpg" alt="Client 5" class="client-logo">
                     </div>
                 </div>
             </div>
@@ -1975,7 +2020,7 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="flex flex-col items-center mb-4" style="color: #ffffff !important;">
-                    <img src="src/images/ivms-logo.png" alt="IVMS Logo" class="footer-logo">
+                    <img src="src/images/optimized/ivms-logo.webp" alt="IVMS Logo" class="footer-logo">
                     <p class="footer-text">Dubai, UAE</p>
                 </div>
                 <div style="color: #ffffff !important;">

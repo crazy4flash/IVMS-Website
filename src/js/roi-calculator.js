@@ -184,6 +184,12 @@ function calculateAndDisplay() {
   var paybackElem = document.getElementById('payback-period');
   var packageCostElem = document.getElementById('package-cost');
   var perVehicleElem = document.getElementById('per-vehicle-cost');
+  
+  // Debug: Check if all elements are found
+  if (!paybackElem) {
+    console.error('Payback period element not found!');
+    return;
+  }
 
   // Monthly Net Savings: k notation
   netSavingsElem.textContent = formatK(ssNetSavings);
@@ -213,6 +219,9 @@ function calculateAndDisplay() {
   // ROI and Payback
   annualRoiElem.textContent = formatPercent(annualROI);
   paybackElem.textContent = paybackPeriod > 0 ? paybackPeriod.toFixed(1) : '0';
+  
+  // Debug: Log payback period updates
+  console.log('Payback period updated:', paybackPeriod, 'Element:', paybackElem);
 
   // Monthly Investment: comma separated
   packageCostElem.textContent = formatAED(ssPackageCost);
@@ -251,17 +260,29 @@ function setupEventListeners() {
     'recovery-rate',
     'admin-cost'
   ].forEach(id => {
-    document.getElementById(id).addEventListener('input', debouncedCalculate);
+    const element = document.getElementById(id);
+    if (element) {
+      element.addEventListener('input', debouncedCalculate);
+    } else {
+      console.error(`Element with id '${id}' not found`);
+    }
   });
 
-  // CTA buttons
-  document.getElementById('book-demo-btn').addEventListener('click', function() {
-    const fleetSize = document.getElementById('fleet-size').value;
-    window.location.href = `contact.html?fleetSize=${fleetSize}`;
-  });
-  document.getElementById('download-guide-btn').addEventListener('click', function() {
-    window.open('https://ivmsgroup.com/implementation-guide.pdf', '_blank');
-  });
+  // CTA buttons - only add listeners if elements exist
+  const bookDemoBtn = document.getElementById('book-demo-btn');
+  if (bookDemoBtn) {
+    bookDemoBtn.addEventListener('click', function() {
+      const fleetSize = document.getElementById('fleet-size').value;
+      window.location.href = `contact.html?fleetSize=${fleetSize}`;
+    });
+  }
+  
+  const downloadGuideBtn = document.getElementById('download-guide-btn');
+  if (downloadGuideBtn) {
+    downloadGuideBtn.addEventListener('click', function() {
+      window.open('https://ivmsgroup.com/implementation-guide.pdf', '_blank');
+    });
+  }
 }
 
 // --- Init ---
