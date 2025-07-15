@@ -781,3 +781,136 @@ html, body {
         color: red !important;
     }
 }
+
+/* --- How It Works Section: Horizontal Line Fix --- */
+.process-cards.no-line-overlap {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+.process-card {
+  background: #23262b;
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+  flex: 1 1 0;
+  margin: 0 0.75rem;
+  min-width: 220px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.process-number {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #23262b;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
+}
+.process-horizontal-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 90px; /* below the numbers and titles */
+  height: 0;
+  border-top: 2px solid #fff;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .process-cards.no-line-overlap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .process-horizontal-line {
+    display: none;
+  }
+}
+
+/* --- Comparison Table Mobile Fixes --- */
+@media (max-width: 600px) {
+  /* Remove left padding from table container and center it */
+  .comparison-table-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    text-align: center;
+  }
+  /* Table cells: allow wrapping and break long words */
+  table, th, td {
+    word-break: break-word;
+    white-space: normal;
+  }
+  /* Optionally, reduce font size and padding for tight fit */
+  th, td {
+    font-size: 0.92em;
+    padding: 0.4em 0.15em;
+  }
+}
+
+/* --- Responsive Comparison Table: Stack Rows on Mobile --- */
+@media (max-width: 600px) {
+  .responsive-comparison-table thead {
+    display: none;
+  }
+  .responsive-comparison-table, .responsive-comparison-table tbody, .responsive-comparison-table tr {
+    display: block;
+    width: 100%;
+  }
+  .responsive-comparison-table tr {
+    margin-bottom: 1.5em;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    background: #fff;
+    padding: 0.5em 0.7em;
+  }
+  .responsive-comparison-table td {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0.5em 0.2em;
+    font-size: 1em;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    min-height: 2.2em;
+    word-break: break-word;
+    white-space: normal;
+  }
+  .responsive-comparison-table td:last-child {
+    border-bottom: none;
+  }
+  .responsive-comparison-table td:before {
+    content: attr(data-label);
+    flex: 0 0 45%;
+    font-weight: 600;
+    color: #004E98;
+    padding-right: 0.5em;
+    text-align: left;
+    min-width: 110px;
+    display: block;
+  }
+  .responsive-comparison-table td {
+    flex: 1 1 55%;
+    text-align: left;
+  }
+}
