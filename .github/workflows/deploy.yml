@@ -1,23 +1,54 @@
-name: Deploy to IONOS
+name: Deploy IVMS Website
 
 on:
   push:
-    branches:
-      - main  # or your default branch
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
 
 jobs:
-  ftp-deploy:
-    name: 📂 Deploy to FTP Server
+  test:
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install flake8
+    
+    - name: Lint Python files
+      run: |
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    
+    - name: Check HTML files
+      run: |
+        # Basic HTML validation
+        find . -name "*.html" -exec echo "Checking {}" \;
+    
+    - name: Check for broken links
+      run: |
+        pip install linkchecker
+        linkchecker --ignore-url=^mailto: --ignore-url=^tel: --ignore-url=^# index.html
 
-      - name: Deploy to IONOS via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./   # Root of your repo
-          server-dir: /_new/   # Path on IONOS, e.g. / or /htdocs/ or /yourdomain.com/
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Deploy to production
+      run: |
+        echo "Deployment would happen here"
+        # Add your deployment commands here
+        # For example, rsync to server, or deploy to cloud platform

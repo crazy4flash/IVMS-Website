@@ -1,0 +1,27 @@
+{
+  "name": "IVMS - Intelligent Vehicle Management System",
+  "short_name": "IVMS",
+  "description": "AI-powered fleet technology that predicts, optimises, and protects. Advanced telematics solutions for rental companies, logistics fleets, and transport operators.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#004E98",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "src/images/optimized/ivms-logo.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "src/images/optimized/ivms-logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "utilities"],
+  "lang": "en-GB",
+  "dir": "ltr"
+} 

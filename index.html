@@ -2,13 +2,43 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="IVMS - AI-powered fleet technology that predicts, optimises, and protects. Advanced telematics solutions for rental companies, logistics fleets, and transport operators.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#004E98">
+    <link rel="canonical" href="https://www.ivmsglobal.com/index.html">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="src/images/optimized/ivms-logo.webp">
     <title>IVMS - Intelligent Vehicle Management System | Fleet Technology Solutions</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="IVMS - Intelligent Vehicle Management System | Fleet Technology Solutions">
+    <meta property="og:description" content="AI-powered fleet technology that predicts, optimises, and protects. Advanced telematics solutions for rental companies, logistics fleets, and transport operators.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ivmsglobal.com/index.html">
+    <meta property="og:image" content="https://www.ivmsglobal.com/src/images/optimized/ivms-logo.webp">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IVMS - Intelligent Vehicle Management System | Fleet Technology Solutions">
+    <meta name="twitter:description" content="AI-powered fleet technology that predicts, optimises, and protects. Advanced telematics solutions for rental companies, logistics fleets, and transport operators.">
+    <meta name="twitter:image" content="https://www.ivmsglobal.com/src/images/optimized/ivms-logo.webp">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "IVMS",
+      "url": "https://www.ivmsglobal.com/",
+      "logo": "https://www.ivmsglobal.com/src/images/optimized/ivms-logo.webp",
+      "sameAs": [
+        "https://www.linkedin.com/company/ivmsglobal/"
+      ]
+    }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
     <link rel="icon" type="image/png" href="src/images/optimized/ivms-logo.webp">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" as="style" onload="this.rel='stylesheet'">
     <style>
         :root {
             --primary-blue: #004E98;      /* Main brand blue - Use for primary CTAs, headings */
@@ -1534,15 +1564,18 @@
         }
     </style>
 </head>
-<body>
+<body aria-label="IVMS Website" role="document">
     <!-- Navigation Bar -->
-    <nav class="fixed w-full z-50 main-nav">
+    <nav class="fixed w-full z-50 main-nav" aria-label="Main Navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 nav-logo">
-                        <a href="index.html">
-                            <img class="h-12 w-auto" src="src/images/optimized/ivms-logo.webp" alt="IVMS Logo">
+                        <a href="index.html" aria-label="IVMS Home">
+                            <picture>
+                                <source srcset="src/images/optimized/ivms-logo.webp" type="image/webp">
+                                <img class="h-12 w-auto" src="src/images/optimized/ivms-logo.webp" alt="IVMS Logo" aria-label="IVMS Logo" loading="lazy">
+                            </picture>
                         </a>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -1709,7 +1742,7 @@
     <section class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
             <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto mb-6 md:mb-0">
-                <img src="src/images/optimized/thatcham-logo.jpg" alt="Thatcham Accredited Logo" style="max-width:220px; width:100%; height:auto; display:block;" class="rounded shadow-md">
+                <img src="src/images/optimized/thatcham-logo.jpg" alt="Thatcham Accredited Logo" style="max-width:220px; width:100%; height:auto; display:block;" class="rounded shadow-md" loading="lazy" srcset="src/images/optimized/thatcham-logo.jpg 1x, src/images/optimized/thatcham-logo.jpg 2x">
             </div>
             <div class="flex-1 text-center md:text-left">
                 <h3 class="text-2xl font-bold mb-2" style="color:#004E98;">Thatcham Accredited Technology</h3>
@@ -1729,19 +1762,19 @@
             </div>
             <div class="flex flex-col md:flex-row md:items-start md:justify-start gap-8">
                 <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
-                    <img src="src/images/optimized/stat1.webp" alt="Stat 1" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
+                    <img src="src/images/optimized/stat1.webp" alt="Stat 1" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;" loading="lazy" srcset="src/images/optimized/stat1.webp 1x, src/images/optimized/stat1.webp 2x">
                     <div class="stat-london-percent-below mt-4 stat-number">35%</div>
                     <div class="stat-london-desc-below">reduction in fuel costs achieved through advanced route optimisation.</div>
                     <div class="stat-london-source-below">Fleet News</div>
                 </div>
                 <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
-                    <img src="src/images/optimized/stat2.webp" alt="Stat 2" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
+                    <img src="src/images/optimized/stat2.webp" alt="Stat 2" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;" loading="lazy" srcset="src/images/optimized/stat2.webp 1x, src/images/optimized/stat2.webp 2x">
                     <div class="stat-london-percent-below mt-4 stat-number">50%</div>
                     <div class="stat-london-desc-below">fewer maintenance incidents with predictive analytics and real-time monitoring.</div>
                     <div class="stat-london-source-below">Telematics Today</div>
                 </div>
                 <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
-                    <img src="src/images/optimized/stat3.webp" alt="Stat 3" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
+                    <img src="src/images/optimized/stat3.webp" alt="Stat 3" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;" loading="lazy" srcset="src/images/optimized/stat3.webp 1x, src/images/optimized/stat3.webp 2x">
                     <div class="stat-london-percent-below mt-4 stat-number">70%</div>
                     <div class="stat-london-desc-below">improvement in on-time deliveries after implementing fleet management solutions.</div>
                     <div class="stat-london-source-below">Logistics Insights</div>
@@ -1948,26 +1981,26 @@
             <div class="client-logos-container">
                 <div class="client-logos-track">
                     <div class="client-logo-wrapper">
-                        <img src="src/images/optimized/client1.jpg" alt="Client 1" class="client-logo">
+                        <img src="src/images/optimized/client1.jpg" alt="Client 1" class="client-logo" loading="lazy" srcset="src/images/optimized/client1.jpg 1x, src/images/optimized/client1.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/optimized/client2.jpg" alt="Client 2" class="client-logo">
+                        <img src="src/images/optimized/client2.jpg" alt="Client 2" class="client-logo" loading="lazy" srcset="src/images/optimized/client2.jpg 1x, src/images/optimized/client2.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/optimized/client3.jpg" alt="Client 3" class="client-logo">
+                        <img src="src/images/optimized/client3.jpg" alt="Client 3" class="client-logo" loading="lazy" srcset="src/images/optimized/client3.jpg 1x, src/images/optimized/client3.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/optimized/client4.jpg" alt="Client 4" class="client-logo">
+                        <img src="src/images/optimized/client4.jpg" alt="Client 4" class="client-logo" loading="lazy" srcset="src/images/optimized/client4.jpg 1x, src/images/optimized/client4.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/optimized/client5.jpg" alt="Client 5" class="client-logo">
+                        <img src="src/images/optimized/client5.jpg" alt="Client 5" class="client-logo" loading="lazy" srcset="src/images/optimized/client5.jpg 1x, src/images/optimized/client5.jpg 2x">
                         <!-- Duplicate logos for seamless loop -->
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/optimized/client1.jpg" alt="Client 1" class="client-logo">
+                        <img src="src/images/optimized/client1.jpg" alt="Client 1" class="client-logo" loading="lazy" srcset="src/images/optimized/client1.jpg 1x, src/images/optimized/client1.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/optimized/client2.jpg" alt="Client 2" class="client-logo">
+                        <img src="src/images/optimized/client2.jpg" alt="Client 2" class="client-logo" loading="lazy" srcset="src/images/optimized/client2.jpg 1x, src/images/optimized/client2.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/optimized/client3.jpg" alt="Client 3" class="client-logo">
+                        <img src="src/images/optimized/client3.jpg" alt="Client 3" class="client-logo" loading="lazy" srcset="src/images/optimized/client3.jpg 1x, src/images/optimized/client3.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/optimized/client4.jpg" alt="Client 4" class="client-logo">
+                        <img src="src/images/optimized/client4.jpg" alt="Client 4" class="client-logo" loading="lazy" srcset="src/images/optimized/client4.jpg 1x, src/images/optimized/client4.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/optimized/client5.jpg" alt="Client 5" class="client-logo">
+                        <img src="src/images/optimized/client5.jpg" alt="Client 5" class="client-logo" loading="lazy" srcset="src/images/optimized/client5.jpg 1x, src/images/optimized/client5.jpg 2x">
                     </div>
                 </div>
             </div>
@@ -2343,6 +2376,21 @@
                 });
             });
         });
+    </script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
     </script>
 </body>
 </html>

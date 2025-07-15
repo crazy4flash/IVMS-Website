@@ -8,8 +8,13 @@ from datetime import datetime
 from config import EMAIL_CONFIG
 import secrets
 import re
+import logging
 
 app = Flask(__name__)
+
+# Set up logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Security configuration
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', secrets.token_hex(32))
@@ -30,6 +35,19 @@ def validate_email(email):
         return False
     pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     return re.match(pattern, email) is not None
+
+@app.after_request
+def set_security_headers(response):
+    response.headers['X-Frame-Options'] = 'SAMEORIGIN'
+    response.headers['X-Content-Type-Options'] = 'nosniff'
+    response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
+    response.headers['Content-Security-Policy'] = "default-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https://www.ivmsglobal.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self';"
+    return response
+
+@app.after_request
+def log_request(response):
+    logger.info(f"{request.remote_addr} - {request.method} {request.path} - {response.status_code}")
+    return response
 
 @app.route('/')
 def index():
@@ -240,7 +258,13 @@ def send_email(subject, body):
 
 @app.route('/<path:path>')
 def serve_static(path):
-    return send_from_directory('.', path)
+    response = send_from_directory('.', path)
+    # Set cache headers for static assets
+    if any(path.endswith(ext) for ext in ['.js', '.css', '.webp', '.jpg', '.jpeg', '.png', '.svg', '.woff2', '.ico']):
+        response.headers['Cache-Control'] = 'public, max-age=31536000, immutable'
+    else:
+        response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+    return response
 
 # Error handlers
 @app.errorhandler(404)
