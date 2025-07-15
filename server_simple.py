@@ -17,15 +17,6 @@ app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
-# Basic security headers (without Talisman for now)
-@app.after_request
-def add_security_headers(response):
-    response.headers['X-Frame-Options'] = 'DENY'
-    response.headers['X-Content-Type-Options'] = 'nosniff'
-    response.headers['X-XSS-Protection'] = '1; mode=block'
-    response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
-    return response
-
 # Input validation and sanitization
 def sanitize_input(text):
     if not text:
@@ -44,32 +35,76 @@ def validate_email(email):
 def index():
     return send_from_directory('.', 'index.html')
 
+@app.route('/index.html')
+def index_html():
+    return send_from_directory('.', 'index.html')
+
+@app.route('/contact.html')
+def contact():
+    return send_from_directory('.', 'contact.html')
+
+@app.route('/about.html')
+def about():
+    return send_from_directory('.', 'about.html')
+
 @app.route('/speedsense')
 def speedsense():
+    return send_from_directory('.', 'speedsense.html')
+
+@app.route('/speedsense.html')
+def speedsense_html():
     return send_from_directory('.', 'speedsense.html')
 
 @app.route('/rental-leasing')
 def rental_leasing():
     return send_from_directory('.', 'rental-leasing.html')
 
+@app.route('/rental-leasing.html')
+def rental_leasing_html():
+    return send_from_directory('.', 'rental-leasing.html')
+
 @app.route('/governments')
 def governments():
     return send_from_directory('.', 'governments.html')
 
+@app.route('/governments.html')
+def governments_html():
+    return send_from_directory('.', 'governments.html')
+
+@app.route('/logistics.html')
+def logistics():
+    return send_from_directory('.', 'logistics.html')
+
 @app.route('/privacy-policy')
 def privacy_policy():
+    return send_from_directory('.', 'privacy-policy.html')
+
+@app.route('/privacy-policy.html')
+def privacy_policy_html():
     return send_from_directory('.', 'privacy-policy.html')
 
 @app.route('/terms-of-service')
 def terms_of_service():
     return send_from_directory('.', 'terms-of-service.html')
 
+@app.route('/terms-of-service.html')
+def terms_of_service_html():
+    return send_from_directory('.', 'terms-of-service.html')
+
 @app.route('/cookie-policy')
 def cookie_policy():
     return send_from_directory('.', 'cookie-policy.html')
 
+@app.route('/cookie-policy.html')
+def cookie_policy_html():
+    return send_from_directory('.', 'cookie-policy.html')
+
 @app.route('/accessibility-statement')
 def accessibility_statement():
+    return send_from_directory('.', 'accessibility-statement.html')
+
+@app.route('/accessibility-statement.html')
+def accessibility_statement_html():
     return send_from_directory('.', 'accessibility-statement.html')
 
 @app.route('/submit-contact', methods=['POST'])

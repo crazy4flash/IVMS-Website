@@ -470,6 +470,11 @@
     outline: 2px solid #3182ce;
 }
 .mobile-dropdown span { color: #fff !important; }
+@media (max-width: 768px) {
+  #hero-section {
+    padding-top: 2.5rem !important;
+  }
+}
 </style>
 
 <script>
@@ -515,9 +520,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-    <main class="pt-24">
+    <main class="pt-3 md:pt-24">
         <!-- Contact Form Section (copied from index.html) -->
-        <section class="py-24 bg-white">
+        <section class="section-padding text-center contact-hero" style="padding-top:2.5rem;background:none;" id="hero-section">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                     <div class="flex items-start">

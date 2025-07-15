@@ -1,7 +1,4 @@
 from flask import Flask, send_from_directory, request, jsonify, render_template_string
-from flask_limiter import Limiter
-from flask_limiter.util import get_remote_address
-from flask_talisman import Talisman
 import os
 import argparse
 import smtplib
@@ -19,44 +16,6 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', secrets.token_hex(32))
 app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
-
-# Initialize security extensions
-Talisman(app, 
-    content_security_policy={
-        'default-src': ["'self'"],
-        'script-src': ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net", "https://cdnjs.cloudflare.com", "https://www.googletagmanager.com", "https://www.google-analytics.com"],
-        'style-src': ["'self'", "'unsafe-inline'", "https://cdn.jsdelivr.net", "https://cdnjs.cloudflare.com", "https://fonts.googleapis.com"],
-        'font-src': ["'self'", "https://fonts.gstatic.com", "https://cdnjs.cloudflare.com"],
-        'img-src': ["'self'", "data:", "https:"],
-        'connect-src': ["'self'", "https://www.google-analytics.com"],
-        'frame-src': ["'none'"],
-        'object-src': ["'none'"],
-        'base-uri': ["'self'"],
-        'form-action': ["'self'"]
-    },
-    force_https=True,
-    strict_transport_security=True,
-    strict_transport_security_max_age=31536000,
-    frame_options='DENY',
-    content_type_nosniff=True,
-    x_xss_protection=True
-)
-
-# Rate limiting
-limiter = Limiter(
-    app=app,
-    key_func=get_remote_address,
-    default_limits=["200 per day", "50 per hour"]
-)
-
-# CSRF protection
-def generate_csrf_token():
-    if 'csrf_token' not in request.form:
-        return secrets.token_hex(32)
-    return request.form['csrf_token']
-
-def validate_csrf_token(token):
-    return token and len(token) == 64
 
 # Input validation and sanitization
 def sanitize_input(text):
@@ -76,43 +35,81 @@ def validate_email(email):
 def index():
     return send_from_directory('.', 'index.html')
 
+@app.route('/index.html')
+def index_html():
+    return send_from_directory('.', 'index.html')
+
+@app.route('/contact.html')
+def contact():
+    return send_from_directory('.', 'contact.html')
+
+@app.route('/about.html')
+def about():
+    return send_from_directory('.', 'about.html')
+
 @app.route('/speedsense')
 def speedsense():
+    return send_from_directory('.', 'speedsense.html')
+
+@app.route('/speedsense.html')
+def speedsense_html():
     return send_from_directory('.', 'speedsense.html')
 
 @app.route('/rental-leasing')
 def rental_leasing():
     return send_from_directory('.', 'rental-leasing.html')
 
+@app.route('/rental-leasing.html')
+def rental_leasing_html():
+    return send_from_directory('.', 'rental-leasing.html')
+
 @app.route('/governments')
 def governments():
     return send_from_directory('.', 'governments.html')
 
+@app.route('/governments.html')
+def governments_html():
+    return send_from_directory('.', 'governments.html')
+
+@app.route('/logistics.html')
+def logistics():
+    return send_from_directory('.', 'logistics.html')
+
 @app.route('/privacy-policy')
 def privacy_policy():
+    return send_from_directory('.', 'privacy-policy.html')
+
+@app.route('/privacy-policy.html')
+def privacy_policy_html():
     return send_from_directory('.', 'privacy-policy.html')
 
 @app.route('/terms-of-service')
 def terms_of_service():
     return send_from_directory('.', 'terms-of-service.html')
 
+@app.route('/terms-of-service.html')
+def terms_of_service_html():
+    return send_from_directory('.', 'terms-of-service.html')
+
 @app.route('/cookie-policy')
 def cookie_policy():
+    return send_from_directory('.', 'cookie-policy.html')
+
+@app.route('/cookie-policy.html')
+def cookie_policy_html():
     return send_from_directory('.', 'cookie-policy.html')
 
 @app.route('/accessibility-statement')
 def accessibility_statement():
     return send_from_directory('.', 'accessibility-statement.html')
 
+@app.route('/accessibility-statement.html')
+def accessibility_statement_html():
+    return send_from_directory('.', 'accessibility-statement.html')
+
 @app.route('/submit-contact', methods=['POST'])
-@limiter.limit("5 per minute")
 def submit_contact():
     try:
-        # CSRF protection
-        csrf_token = request.form.get('csrf_token')
-        if not validate_csrf_token(csrf_token):
-            return jsonify({'success': False, 'message': 'Invalid request.'}), 400
-        
         # Get and sanitize form data
         first_name = sanitize_input(request.form.get('first_name', ''))
         last_name = sanitize_input(request.form.get('last_name', ''))
@@ -158,14 +155,8 @@ def submit_contact():
         return jsonify({'success': False, 'message': 'An error occurred. Please try again.'}), 500
 
 @app.route('/submit-government', methods=['POST'])
-@limiter.limit("3 per minute")
 def submit_government():
     try:
-        # CSRF protection
-        csrf_token = request.form.get('csrf_token')
-        if not validate_csrf_token(csrf_token):
-            return jsonify({'success': False, 'message': 'Invalid request.'}), 400
-        
         # Get and sanitize form data
         department = sanitize_input(request.form.get('department', ''))
         fleet_size = sanitize_input(request.form.get('fleet_size', ''))

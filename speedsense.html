@@ -1409,6 +1409,17 @@
             background: #444 !important;
         }
         .mobile-dropdown span { color: #fff !important; }
+
+        @media (max-width: 768px) {
+            main.pt-3, main.pt-6, main.pt-24 {
+                padding-top: 0.375rem !important; /* 0.375rem = 6px, 50% of previous 0.75rem */
+            }
+        }
+        @media (min-width: 769px) {
+          #hero-section {
+            padding-top: 6rem !important;
+          }
+        }
     </style>
 </head>
 <body>
@@ -1561,9 +1572,9 @@
     });
     </script>
 
-    <main class="pt-24">
+    <main class="pt-3 md:pt-24">
         <!-- Hero Section -->
-        <section class="section-padding text-center" style="padding-top:6rem;">
+        <section class="section-padding text-center" style="padding-top:2.5rem;" id="hero-section">
             <div class="container-narrow">
                 <div class="heading-container">
                     <h1 style="font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 0.5rem; color: #2d3748; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; animation: slideInFromTop 0.8s ease-out;">SpeedSense™ by iVMS</h1>
