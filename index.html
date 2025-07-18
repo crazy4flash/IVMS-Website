@@ -2,13 +2,43 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="IVMS - AI-powered fleet technology that predicts, optimises, and protects. Advanced telematics solutions for rental companies, logistics fleets, and transport operators.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#004E98">
+    <link rel="canonical" href="https://www.ivmsglobal.com/index.html">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="src/images/optimized/ivms-logo.webp">
     <title>IVMS - Intelligent Vehicle Management System | Fleet Technology Solutions</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="src/images/ivms-logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="IVMS - Intelligent Vehicle Management System | Fleet Technology Solutions">
+    <meta property="og:description" content="AI-powered fleet technology that predicts, optimises, and protects. Advanced telematics solutions for rental companies, logistics fleets, and transport operators.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ivmsglobal.com/index.html">
+    <meta property="og:image" content="https://www.ivmsglobal.com/src/images/optimized/ivms-logo.webp">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IVMS - Intelligent Vehicle Management System | Fleet Technology Solutions">
+    <meta name="twitter:description" content="AI-powered fleet technology that predicts, optimises, and protects. Advanced telematics solutions for rental companies, logistics fleets, and transport operators.">
+    <meta name="twitter:image" content="https://www.ivmsglobal.com/src/images/optimized/ivms-logo.webp">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "IVMS",
+      "url": "https://www.ivmsglobal.com/",
+      "logo": "https://www.ivmsglobal.com/src/images/optimized/ivms-logo.webp",
+      "sameAs": [
+        "https://www.linkedin.com/company/ivmsglobal/"
+      ]
+    }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="icon" type="image/png" href="src/images/optimized/ivms-logo.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" as="style" onload="this.rel='stylesheet'">
     <style>
         :root {
             --primary-blue: #004E98;      /* Main brand blue - Use for primary CTAs, headings */
@@ -89,6 +119,7 @@
             height: 100%;
             object-fit: cover;
             z-index: 1;
+            animation: floating 4s ease-in-out infinite;
         }
         
         .hero-overlay-bar {
@@ -124,6 +155,9 @@
             line-height: 1.15;
             max-width: 520px;
             margin-right: 2vw;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroHeadlineEntrance 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards;
         }
         
         .hero-support {
@@ -131,6 +165,9 @@
             font-size: 1.1rem;
             max-width: 340px;
             margin-bottom: 1.2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: heroSupportEntrance 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s forwards;
         }
         
         .hero-cta, .cta-bottom {
@@ -145,12 +182,100 @@
             transition: all 0.2s ease;
             white-space: nowrap;
             min-width: 120px;
+            opacity: 0;
+            transform: translateY(15px) scale(0.95);
+            animation: heroCTAEntrance 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1.6s forwards;
         }
         
         .hero-cta:hover, .cta-bottom:hover {
             background: var(--secondary-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 24px rgba(0, 78, 152, 0.25);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 28px rgba(0, 78, 152, 0.3);
+        }
+        
+        .hero-cta:active, .cta-bottom:active {
+            transform: translateY(-1px) scale(0.98);
+            transition: all 0.1s ease;
+        }
+        
+        /* Ripple Effect */
+        .hero-cta, .cta-bottom {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-cta::after, .cta-bottom::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .hero-cta:active::after, .cta-bottom:active::after {
+            width: 300px;
+            height: 300px;
+        }
+        
+        @keyframes heroHeadlineEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes heroSupportEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes heroCTAEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* Typewriter Effect */
+        .typewriter-text {
+            overflow: hidden;
+            border-right: 2px solid #fff;
+            white-space: nowrap;
+            animation: typing 2s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #fff; }
+        }
+        
+        /* Floating Animation for Hero Background */
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Parallax Effect */
+        .parallax-element {
+            will-change: transform;
+            transform: translateZ(0);
+        }
+        
+        /* Mouse Parallax Effect */
+        .mouse-parallax {
+            transition: transform 0.1s ease-out;
         }
         
         @media (max-width: 900px) {
@@ -261,11 +386,39 @@
             background: var(--light-bg);
             border: 1px solid var(--border-light);
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateZ(0);
+            will-change: transform;
+            opacity: 0;
+            transform: translateY(30px);
         }
         
         .solution-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            transform: translateY(-8px) rotate(1deg) scale(1.02);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+        }
+        
+        .solution-card.animate-in {
+            animation: cardEntrance 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+        
+        .solution-card:nth-child(1).animate-in {
+            animation-delay: 0.2s;
+        }
+        
+        .solution-card:nth-child(2).animate-in {
+            animation-delay: 0.4s;
+        }
+        
+        .solution-card:nth-child(3).animate-in {
+            animation-delay: 0.6s;
+        }
+        
+        @keyframes cardEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .solution-card h3 {
@@ -334,13 +487,40 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
             padding: 2rem;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             height: 100%;
+            transform: translateZ(0);
+            will-change: transform;
+            opacity: 0;
+            transform: translateY(30px);
         }
         
         .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+        }
+        
+        .stat-card.animate-in {
+            animation: statCardEntrance 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+        }
+        
+        .stat-card:nth-child(1).animate-in {
+            animation-delay: 0.1s;
+        }
+        
+        .stat-card:nth-child(2).animate-in {
+            animation-delay: 0.3s;
+        }
+        
+        .stat-card:nth-child(3).animate-in {
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes statCardEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
         .stat-card i {
@@ -1186,17 +1366,213 @@
                 display: block !important;
             }
         }
+        
+        /* Advanced Scroll Animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .scroll-animate.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Parallax Elements */
+        .parallax-slow {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .parallax-medium {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        .parallax-fast {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+        
+        /* Counter Animation */
+        .counter-animate {
+            transition: all 0.3s ease;
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--teal-primary));
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+        
+        /* Form Animations */
+        .form-input {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+        
+        .form-input:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 78, 152, 0.15);
+        }
+        
+        /* Floating Labels */
+        .floating-label {
+            position: absolute;
+            top: 50%;
+            left: 1rem;
+            transform: translateY(-50%);
+            transition: all 0.3s ease;
+            pointer-events: none;
+            color: #666;
+        }
+        
+        .form-input:focus + .floating-label,
+        .form-input:not(:placeholder-shown) + .floating-label {
+            top: 0;
+            left: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--primary-blue);
+        }
+        
+        /* Magnetic Effect */
+        .magnetic {
+            transition: transform 0.1s ease-out;
+        }
+        
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.1s infinite;
+            color: #ff0000;
+            z-index: -1;
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.1s infinite;
+            color: #00ff00;
+            z-index: -2;
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(2px, -2px); }
+            40% { transform: translate(2px, 2px); }
+            60% { transform: translate(-2px, -2px); }
+            80% { transform: translate(-2px, 2px); }
+        }
+        
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        @media (max-width: 768px) {
+            .navbar, .nav, nav:not(.mobile-nav-only) {
+                display: none !important;
+            }
+            .mobile-nav-only {
+                display: block !important;
+            }
+        }
+        @media (min-width: 769px) {
+            .mobile-nav-only {
+                display: none !important;
+            }
+        }
+        .mobile-nav-only a:hover, .mobile-dropdown a:hover {
+            background: #444 !important;
+        }
+        .mobile-dropdown button:focus {
+            outline: 2px solid #3182ce;
+        }
+        @media (max-width: 768px) {
+          .hero-section {
+            height: 92vh !important;
+            min-height: 92vh !important;
+            padding-top: 80px !important;
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+          }
+          .hero-overlay-bar {
+            padding: 0.75rem 2vw 0.5rem 2vw !important;
+            min-height: auto !important;
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            background: rgba(0, 0, 0, 0.9) !important;
+            margin-bottom: 0 !important;
+          }
+          .hero-headline {
+            font-size: 1.8rem !important;
+            line-height: 1.1 !important;
+            margin-bottom: 0.5rem !important;
+          }
+          .hero-support {
+            font-size: 0.9rem !important;
+            margin-bottom: 0.75rem !important;
+          }
+          .hero-cta {
+            font-size: 0.9rem !important;
+            padding: 0.5rem 1rem !important;
+            margin-bottom: 0 !important;
+          }
+          .stats-section-london {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+          }
+          .footer-text, .footer-link, .footer-heading, .footer-copyright {
+            color: #ffffff !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+          }
+          .footer-copyright {
+            opacity: 0.6 !important;
+          }
+        }
     </style>
 </head>
-<body>
+<body aria-label="IVMS Website" role="document">
     <!-- Navigation Bar -->
-    <nav class="fixed w-full z-50 main-nav">
+    <nav class="fixed w-full z-50 main-nav" aria-label="Main Navigation">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 nav-logo">
-                        <a href="index.html">
-                            <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
+                        <a href="index.html" aria-label="IVMS Home">
+                            <img class="h-12 w-auto" src="src/images/logo ivms-02.png" alt="IVMS Logo" aria-label="IVMS Logo" loading="lazy">
                         </a>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -1209,7 +1585,7 @@
                                 <a href="logistics.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Transport & Logistics</a>
                             </div>
                         </div>
-                        <a href="index.html#technology" class="nav-link">Technology</a>
+                        <a href="governments.html" class="nav-link">Governments</a>
                         <a href="about.html" class="nav-link">About</a>
                         <a href="contact.html" class="nav-link">Contact</a>
                     </div>
@@ -1239,12 +1615,101 @@
                         <a href="logistics.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Transport & Logistics</a>
                     </div>
                 </div>
-                <a href="index.html#technology" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Technology</a>
+                <a href="governments.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Governments</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Navigation Only -->
+    <div class="mobile-nav-only" style="display: none;">
+        <div style="background: #1a1a1a; padding: 15px 20px; position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" style="display: flex; align-items: center;"><img src="src/images/logo ivms-02.png" alt="IVMS Logo" style="height: 38px; width: auto; display: block;"> </a>
+                <button id="mobileOnlyToggle" style="background: none; border: 2px solid white; color: white; padding: 8px 12px; font-size: 18px; cursor: pointer; border-radius: 4px;">☰</button>
+            </div>
+            <div id="mobileOnlyMenu" style="display: none; background: #2a2a2a; margin-top: 15px; border-radius: 5px; overflow: hidden;">
+                <a href="index.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Home</a>
+                <div class="mobile-dropdown" style="border-bottom: 1px solid #444;">
+                    <button id="mobileSolutionsToggle" style="width: 100%; background: none; border: none; color: white; padding: 15px 20px; text-align: left; font-size: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        Solutions <span id="mobileSolutionsIcon" style="color: #fff;">▼</span>
+                    </button>
+                    <div id="mobileSolutionsMenu" style="display: none; background: #232323;">
+                        <a href="speedsense.html" style="display: block; color: white; padding: 15px 32px; text-decoration: none; border-bottom: 1px solid #444;">SpeedSense</a>
+                        <a href="rental-leasing.html" style="display: block; color: white; padding: 15px 32px; text-decoration: none; border-bottom: 1px solid #444;">Rental & Leasing</a>
+                        <a href="logistics.html" style="display: block; color: white; padding: 15px 32px; text-decoration: none; border-bottom: 1px solid #444;">Logistics</a>
+                    </div>
+                </div>
+                <a href="governments.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Governments</a>
+                <a href="about.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">About</a>
+                <a href="contact.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    @media (max-width: 768px) {
+        .navbar, .nav, nav:not(.mobile-nav-only) {
+            display: none !important;
+        }
+        .mobile-nav-only {
+            display: block !important;
+        }
+    }
+    @media (min-width: 769px) {
+        .mobile-nav-only {
+            display: none !important;
+        }
+    }
+    .mobile-nav-only a:hover, .mobile-dropdown a:hover {
+        background: #444 !important;
+    }
+    .mobile-dropdown button:focus {
+        outline: 2px solid #3182ce;
+    }
+    </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileToggle = document.getElementById('mobileOnlyToggle');
+        const mobileMenu = document.getElementById('mobileOnlyMenu');
+        const solutionsToggle = document.getElementById('mobileSolutionsToggle');
+        const solutionsMenu = document.getElementById('mobileSolutionsMenu');
+        const solutionsIcon = document.getElementById('mobileSolutionsIcon');
+        
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', function() {
+                if (mobileMenu.style.display === 'block') {
+                    mobileMenu.style.display = 'none';
+                } else {
+                    mobileMenu.style.display = 'block';
+                }
+            });
+            // Close menu when clicking links (except dropdown toggle)
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.style.display = 'none';
+                });
+            });
+        }
+        if (solutionsToggle && solutionsMenu && solutionsIcon) {
+            solutionsToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (solutionsMenu.style.display === 'block') {
+                    solutionsMenu.style.display = 'none';
+                    solutionsIcon.textContent = '▼';
+                    solutionsIcon.style.color = '#fff';
+                } else {
+                    solutionsMenu.style.display = 'block';
+                    solutionsIcon.textContent = '▲';
+                    solutionsIcon.style.color = '#fff';
+                }
+            });
+        }
+    });
+    </script>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -1255,16 +1720,16 @@
             <div class="max-w-7xl mx-auto px-4 w-full flex flex-col md:flex-row items-start md:items-center justify-between">
                 <!-- Left column for main headline -->
                 <div>
-                    <div class="hero-headline" style="text-align:left;">
+                    <div class="hero-headline mouse-parallax" style="text-align:left;" data-speed="0.02">
                         Intelligent Fleet Management<br>Powered by Advanced AI
                     </div>
                 </div>
                 <!-- Right column for support text and button -->
                 <div class="flex flex-col items-start md:items-end">
-                    <div class="hero-support" style="text-align:left; margin-bottom: 20px;">
+                    <div class="hero-support mouse-parallax" style="text-align:left; margin-bottom: 20px;" data-speed="0.03">
                         Transform your fleet operations with real-time monitoring, predictive analytics, and automated optimisation
                     </div>
-                    <a href="contact.html" class="hero-cta">Book a Demo</a>
+                    <a href="contact.html" class="hero-cta magnetic" style="align-self: flex-start;">Book a Demo</a>
                 </div>
             </div>
         </div>
@@ -1274,7 +1739,7 @@
     <section class="py-16 bg-white">
         <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center gap-8">
             <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto mb-6 md:mb-0">
-                <img src="src/images/thatcham-logo.jpg" alt="Thatcham Accredited Logo" style="max-width:220px; width:100%; height:auto; display:block;" class="rounded shadow-md">
+                <img src="src/images/optimized/thatcham-logo.jpg" alt="Thatcham Accredited Logo" style="max-width:220px; width:100%; height:auto; display:block;" class="rounded shadow-md" loading="lazy" srcset="src/images/optimized/thatcham-logo.jpg 1x, src/images/optimized/thatcham-logo.jpg 2x">
             </div>
             <div class="flex-1 text-center md:text-left">
                 <h3 class="text-2xl font-bold mb-2" style="color:#004E98;">Thatcham Accredited Technology</h3>
@@ -1293,21 +1758,21 @@
                 </h2>
             </div>
             <div class="flex flex-col md:flex-row md:items-start md:justify-start gap-8">
-                <div class="stat-london flex-1 flex flex-col items-start">
-                    <img src="src/images/stat1.png" alt="Stat 1" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
-                    <div class="stat-london-percent-below mt-4">35%</div>
+                <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
+                    <img src="src/images/optimized/stat1.webp" alt="Stat 1" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;" loading="lazy" srcset="src/images/optimized/stat1.webp 1x, src/images/optimized/stat1.webp 2x">
+                    <div class="stat-london-percent-below mt-4 stat-number">35%</div>
                     <div class="stat-london-desc-below">reduction in fuel costs achieved through advanced route optimisation.</div>
                     <div class="stat-london-source-below">Fleet News</div>
                 </div>
-                <div class="stat-london flex-1 flex flex-col items-start">
-                    <img src="src/images/stat2.png" alt="Stat 2" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
-                    <div class="stat-london-percent-below mt-4">50%</div>
+                <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
+                    <img src="src/images/optimized/stat2.webp" alt="Stat 2" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;" loading="lazy" srcset="src/images/optimized/stat2.webp 1x, src/images/optimized/stat2.webp 2x">
+                    <div class="stat-london-percent-below mt-4 stat-number">50%</div>
                     <div class="stat-london-desc-below">fewer maintenance incidents with predictive analytics and real-time monitoring.</div>
                     <div class="stat-london-source-below">Telematics Today</div>
                 </div>
-                <div class="stat-london flex-1 flex flex-col items-start">
-                    <img src="src/images/stat3.png" alt="Stat 3" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;">
-                    <div class="stat-london-percent-below mt-4">70%</div>
+                <div class="stat-london flex-1 flex flex-col items-start scroll-animate">
+                    <img src="src/images/optimized/stat3.webp" alt="Stat 3" class="stat-london-img" style="width:320px; height:220px; object-fit:cover; border-radius:18px;" loading="lazy" srcset="src/images/optimized/stat3.webp 1x, src/images/optimized/stat3.webp 2x">
+                    <div class="stat-london-percent-below mt-4 stat-number">70%</div>
                     <div class="stat-london-desc-below">improvement in on-time deliveries after implementing fleet management solutions.</div>
                     <div class="stat-london-source-below">Logistics Insights</div>
                 </div>
@@ -1323,7 +1788,7 @@
                 <div class="text-lg text-gray-600 mb-8">Comprehensive fleet management solutions designed for modern enterprises</div>
             </div>
             <!-- Solution Card 1 -->
-            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden">
+            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden scroll-animate">
                 <div class="md:w-1/2 p-8 flex flex-col justify-center">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900">SpeedSense™ Technology</h3>
                     <p class="text-gray-700 mb-4">Reduce speeding violations by up to 90% with our advanced AI-powered detection system</p>
@@ -1336,7 +1801,7 @@
                 </div>
                 <div class="md:w-1/2 flex items-center justify-center bg-gray-50" style="min-height:260px;">
                     <video
-                        src="src/videos/speedsense-demo.mov"
+                        src="src/videos/speedsense-demo.mp4"
                         class="rounded-xl shadow"
                         style="width:90%;height:200px;object-fit:cover;background:#e5e7eb;"
                         autoplay
@@ -1347,7 +1812,7 @@
                 </div>
             </div>
             <!-- Solution Card 2 -->
-            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden">
+            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden scroll-animate">
                 <div class="md:w-1/2 p-8 flex flex-col justify-center">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900">Transport & Logistics</h3>
                     <p class="text-gray-700 mb-4">Optimize routes, reduce fuel costs, and improve delivery efficiency with AI-powered fleet intelligence for logistics operations</p>
@@ -1360,7 +1825,7 @@
                 </div>
                 <div class="md:w-1/2 flex items-center justify-center bg-gray-50" style="min-height:260px;">
                     <video
-                        src="src/videos/fleet-intelligence-demo.mov"
+                        src="src/videos/fleet-intelligence-demo.mp4"
                         class="rounded-xl shadow"
                         style="width:90%;height:200px;object-fit:cover;background:#e5e7eb;"
                         autoplay
@@ -1371,7 +1836,7 @@
                 </div>
             </div>
             <!-- Solution Card 3 -->
-            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden">
+            <div class="flex flex-col md:flex-row items-stretch mb-12 solution-card overflow-hidden scroll-animate">
                 <div class="md:w-1/2 p-8 flex flex-col justify-center">
                     <h3 class="text-2xl font-semibold mb-3 text-gray-900">Rental Fleet Management</h3>
                     <p class="text-gray-700 mb-4">Complete rental fleet control with driver behavior monitoring, vehicle protection, and streamlined rental management operations</p>
@@ -1384,7 +1849,7 @@
                 </div>
                 <div class="md:w-1/2 flex items-center justify-center bg-gray-50" style="min-height:260px;">
                     <video
-                        src="src/videos/vehicle-health-demo.mov"
+                        src="src/videos/vehicle-health-demo.mp4"
                         class="rounded-xl shadow"
                         style="width:90%;height:200px;object-fit:cover;background:#e5e7eb;"
                         autoplay
@@ -1405,10 +1870,10 @@
                 <p class="platform-description">Our comprehensive platform combines cutting-edge AI technology with powerful analytics to deliver complete visibility and control over your fleet operations.</p>
             </div>
             <div class="platform-video-box">
-                <video id="platform-overview-video" class="platform-demo-video" src="src/videos/fleet-platform-overview.mov" autoplay muted playsinline loop></video>
+                <video id="platform-overview-video" class="platform-demo-video" src="src/videos/fleet-platform-overview.mp4" autoplay muted playsinline loop></video>
             </div>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <div class="feature-icon-container">
                         <i class="fas fa-brain feature-icon"></i>
                     </div>
@@ -1417,7 +1882,7 @@
                         <p class="feature-description">Leverage machine learning algorithms to predict maintenance needs and optimise routes in real-time</p>
                     </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <div class="feature-icon-container">
                         <i class="fas fa-bell feature-icon"></i>
                     </div>
@@ -1426,7 +1891,7 @@
                         <p class="feature-description">Receive instant notifications for critical events and performance metrics across your fleet</p>
                     </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card scroll-animate">
                     <div class="feature-icon-container">
                         <i class="fas fa-database feature-icon"></i>
                     </div>
@@ -1476,32 +1941,32 @@
         <div class="max-w-7xl mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-4" style="letter-spacing:-1px;">How It Works<span style="color:#0066cc;">.</span></h2>
             <div class="text-center text-lg text-gray-600 mb-14">Seamless onboarding and intelligent fleet management in four simple steps.</div>
-            <div class="process-cards">
-                <div class="process-line"></div>
+            <div class="process-cards no-line-overlap">
                 <!-- Step 1 -->
-                <div class="process-card">
+                <div class="process-card scroll-animate">
                     <div class="process-number">1</div>
                     <div class="process-title">Install</div>
                     <div class="process-desc">Quick device installation in vehicles by certified technicians. Minimal downtime, maximum reliability.</div>
                 </div>
                 <!-- Step 2 -->
-                <div class="process-card">
+                <div class="process-card scroll-animate">
                     <div class="process-number">2</div>
                     <div class="process-title">Connect</div>
                     <div class="process-desc">Securely connect your fleet to our cloud platform. Encrypted data transfer ensures privacy and compliance.</div>
                 </div>
                 <!-- Step 3 -->
-                <div class="process-card">
+                <div class="process-card scroll-animate">
                     <div class="process-number">3</div>
                     <div class="process-title">Monitor</div>
                     <div class="process-desc">Access real-time insights and analytics via web or mobile. Monitor vehicle health, driver behaviour, and more.</div>
                 </div>
                 <!-- Step 4 -->
-                <div class="process-card">
+                <div class="process-card scroll-animate">
                     <div class="process-number">4</div>
                     <div class="process-title">Optimise</div>
                     <div class="process-desc">Leverage AI-driven recommendations to optimise routes, reduce costs, and improve safety across your fleet.</div>
                 </div>
+                <div class="process-horizontal-line"></div>
             </div>
         </div>
     </section>
@@ -1513,26 +1978,26 @@
             <div class="client-logos-container">
                 <div class="client-logos-track">
                     <div class="client-logo-wrapper">
-                        <img src="src/images/client1.jpg" alt="Client 1" class="client-logo">
+                        <img src="src/images/optimized/client1.jpg" alt="Client 1" class="client-logo" loading="lazy" srcset="src/images/optimized/client1.jpg 1x, src/images/optimized/client1.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client2.jpg" alt="Client 2" class="client-logo">
+                        <img src="src/images/optimized/client2.jpg" alt="Client 2" class="client-logo" loading="lazy" srcset="src/images/optimized/client2.jpg 1x, src/images/optimized/client2.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client3.jpg" alt="Client 3" class="client-logo">
+                        <img src="src/images/optimized/client3.jpg" alt="Client 3" class="client-logo" loading="lazy" srcset="src/images/optimized/client3.jpg 1x, src/images/optimized/client3.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client4.jpg" alt="Client 4" class="client-logo">
+                        <img src="src/images/optimized/client4.jpg" alt="Client 4" class="client-logo" loading="lazy" srcset="src/images/optimized/client4.jpg 1x, src/images/optimized/client4.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client5.jpg" alt="Client 5" class="client-logo">
+                        <img src="src/images/optimized/client5.jpg" alt="Client 5" class="client-logo" loading="lazy" srcset="src/images/optimized/client5.jpg 1x, src/images/optimized/client5.jpg 2x">
                         <!-- Duplicate logos for seamless loop -->
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client1.jpg" alt="Client 1" class="client-logo">
+                        <img src="src/images/optimized/client1.jpg" alt="Client 1" class="client-logo" loading="lazy" srcset="src/images/optimized/client1.jpg 1x, src/images/optimized/client1.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client2.jpg" alt="Client 2" class="client-logo">
+                        <img src="src/images/optimized/client2.jpg" alt="Client 2" class="client-logo" loading="lazy" srcset="src/images/optimized/client2.jpg 1x, src/images/optimized/client2.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client3.jpg" alt="Client 3" class="client-logo">
+                        <img src="src/images/optimized/client3.jpg" alt="Client 3" class="client-logo" loading="lazy" srcset="src/images/optimized/client3.jpg 1x, src/images/optimized/client3.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client4.jpg" alt="Client 4" class="client-logo">
+                        <img src="src/images/optimized/client4.jpg" alt="Client 4" class="client-logo" loading="lazy" srcset="src/images/optimized/client4.jpg 1x, src/images/optimized/client4.jpg 2x">
                         <div class="client-logo-separator"></div>
-                        <img src="src/images/client5.jpg" alt="Client 5" class="client-logo">
+                        <img src="src/images/optimized/client5.jpg" alt="Client 5" class="client-logo" loading="lazy" srcset="src/images/optimized/client5.jpg 1x, src/images/optimized/client5.jpg 2x">
                     </div>
                 </div>
             </div>
@@ -1544,7 +2009,7 @@
         <div class="max-w-7xl mx-auto px-4 text-center">
             <h2 class="text-4xl font-bold mb-6" style="color: #2F2F2F;">Ready to transform your fleet management?</h2>
             <p class="text-xl mb-8" style="color: #2F2F2F;">Book a 30-minute consultation with our team</p>
-            <button class="cta-bottom" onclick="window.location.href='contact.html'">
+            <button class="cta-bottom magnetic" onclick="window.location.href='contact.html'">
                 Book a Demo
             </button>
         </div>
@@ -1565,7 +2030,8 @@
                 </div>
             </div>
             <div class="flex flex-col md:flex-row md:justify-end">
-                <form class="w-full md:w-2/3 lg:w-1/2 space-y-4">
+                <form action="/submit-contact" method="POST" class="w-full md:w-2/3 lg:w-1/2 space-y-4">
+                    <input type="hidden" name="csrf_token" value="">
                     <input type="text" name="first_name" placeholder="First name*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
                     <input type="text" name="last_name" placeholder="Last name*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
                     <input type="text" name="company" placeholder="Company*" required class="w-full bg-gray-200 rounded-lg px-5 py-4 text-gray-900 text-base focus:outline-none focus:ring-2 focus:ring-[#0066cc]">
@@ -1582,18 +2048,27 @@
     <!-- Footer -->
     <footer class="bg-[#0A0A0A] text-white py-12" style="background-color: #0A0A0A !important; color: #ffffff !important; display: block !important; position: relative !important; min-height: 200px !important;">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="flex flex-col items-center mb-4" style="color: #ffffff !important;">
-                    <img src="src/images/ivms-logo.png" alt="IVMS Logo" class="footer-logo">
+                    <img src="src/images/optimized/ivms-logo.webp" alt="IVMS Logo" class="footer-logo">
                     <p class="footer-text">Dubai, UAE</p>
                 </div>
                 <div style="color: #ffffff !important;">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="#solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
-                        <li><a href="#technology" class="footer-link" style="color: #ffffff !important;">Technology</a></li>
+                        <li><a href="governments.html" class="footer-link" style="color: #ffffff !important;">Governments</a></li>
                         <li><a href="#about" class="footer-link" style="color: #ffffff !important;">About</a></li>
                         <li><a href="contact.html" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
+                    </ul>
+                </div>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/privacy-policy" class="footer-link" style="color: #ffffff !important;">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service" class="footer-link" style="color: #ffffff !important;">Terms of Service</a></li>
+                        <li><a href="/cookie-policy" class="footer-link" style="color: #ffffff !important;">Cookie Policy</a></li>
+                        <li><a href="/accessibility-statement" class="footer-link" style="color: #ffffff !important;">Accessibility Statement</a></li>
                     </ul>
                 </div>
                 <div style="color: #ffffff !important;">
@@ -1603,10 +2078,9 @@
                         <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link" style="color: #ffffff !important;">info@ivmsgroup.com</a></li>
                     </ul>
                     <div class="footer-social-links">
-                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
-                        <a href="https://instagram.com/YOUR_INSTAGRAM" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/ivms-global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61577934701953" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ivms_global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -1622,14 +2096,215 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-black bg-opacity-95 text-white p-4 z-50 hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex-1">
+                <p class="text-sm">We use cookies to enhance your experience on our website. By continuing to use this site, you consent to our use of cookies. <a href="/cookie-policy" class="text-blue-300 underline">Learn more</a></p>
+            </div>
+            <div class="flex gap-2">
+                <button onclick="declineCookies()" class="px-4 py-2 border border-white text-white rounded hover:bg-white hover:text-black transition-colors">Decline</button>
+                <button onclick="acceptCookies()" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors">Accept All</button>
+            </div>
+        </div>
+    </div>
+
     <script src="src/js/main.js"></script>
     <script>
-        // Video pause on scroll for better performance
+        // CSRF Token Generation
+        function generateCSRFToken() {
+            return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        }
+        
+        // Set CSRF tokens for all forms
         document.addEventListener('DOMContentLoaded', function() {
+            const forms = document.querySelectorAll('form[action="/submit-contact"], form[action="/submit-government"]');
+            forms.forEach(form => {
+                const csrfInput = form.querySelector('input[name="csrf_token"]');
+                if (csrfInput) {
+                    csrfInput.value = generateCSRFToken();
+                }
+            });
+        });
+        
+        // Cookie consent management
+        function acceptCookies() {
+            localStorage.setItem('cookie_consent', 'accepted');
+            document.getElementById('cookie-banner').classList.add('hidden');
+            // Enable analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+            }
+        }
+        
+        function declineCookies() {
+            localStorage.setItem('cookie_consent', 'declined');
+            document.getElementById('cookie-banner').classList.add('hidden');
+            // Disable analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'denied'
+                });
+            }
+        }
+        
+        // Check cookie consent on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const consent = localStorage.getItem('cookie_consent');
+            if (!consent) {
+                document.getElementById('cookie-banner').classList.remove('hidden');
+            }
+        });
+        // Advanced Animation System
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Progress Bar
+            const progressBar = document.createElement('div');
+            progressBar.className = 'progress-bar';
+            document.body.appendChild(progressBar);
+            
+            window.addEventListener('scroll', () => {
+                const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+            
+            // Intersection Observer for Scroll Animations
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        
+                        // Trigger card animations
+                        if (entry.target.classList.contains('solution-card') || entry.target.classList.contains('stat-card')) {
+                            entry.target.classList.add('animate-in');
+                        }
+                        
+                        // Counter animations for stats
+                        if (entry.target.classList.contains('stat-number')) {
+                            animateCounter(entry.target);
+                        }
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            
+            // Observe all elements that need scroll animations
+            document.querySelectorAll('.solution-card, .stat-card, .scroll-animate, .stat-number').forEach(el => {
+                scrollObserver.observe(el);
+            });
+            
+            // Counter Animation Function
+            function animateCounter(element) {
+                const target = parseInt(element.textContent.replace(/\D/g, ''));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    element.textContent = Math.floor(current) + '%';
+                }, 16);
+            }
+            
+            // Parallax Effect
+            let ticking = false;
+            function updateParallax() {
+                const scrolled = window.pageYOffset;
+                const parallaxElements = document.querySelectorAll('.parallax-slow, .parallax-medium, .parallax-fast');
+                
+                parallaxElements.forEach(element => {
+                    const speed = element.classList.contains('parallax-slow') ? 0.5 : 
+                                element.classList.contains('parallax-medium') ? 0.7 : 1.2;
+                    const yPos = -(scrolled * speed);
+                    element.style.transform = `translateY(${yPos}px)`;
+                });
+                
+                ticking = false;
+            }
+            
+            function requestTick() {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax);
+                    ticking = true;
+                }
+            }
+            
+            window.addEventListener('scroll', requestTick);
+            
+            // Mouse Parallax Effect
+            document.addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+                
+                document.querySelectorAll('.mouse-parallax').forEach(element => {
+                    const speed = element.dataset.speed || 0.05;
+                    const x = (mouseX - 0.5) * speed * 10;
+                    const y = (mouseY - 0.5) * speed * 10;
+                    element.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            });
+            
+            // Magnetic Effect for Buttons
+            document.querySelectorAll('.hero-cta, .cta-bottom, .magnetic').forEach(button => {
+                button.addEventListener('mousemove', (e) => {
+                    const rect = button.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    
+                    button.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+                });
+                
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = '';
+                });
+            });
+            
+            // Form Input Animations
+            document.querySelectorAll('input, textarea').forEach(input => {
+                input.classList.add('form-input');
+                
+                input.addEventListener('focus', () => {
+                    input.parentElement.classList.add('focused');
+                });
+                
+                input.addEventListener('blur', () => {
+                    if (!input.value) {
+                        input.parentElement.classList.remove('focused');
+                    }
+                });
+            });
+            
+            // 3D Card Tilt Effect
+            document.querySelectorAll('.solution-card, .stat-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                });
+            });
+            
+            // Video pause on scroll for better performance
             const heroVideo = document.querySelector('.hero-video-bg');
             const heroSection = document.querySelector('.hero-section');
             
-            const observer = new IntersectionObserver((entries) => {
+            const videoObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         heroVideo.play();
@@ -1640,28 +2315,25 @@
             }, { threshold: 0.1 });
             
             if (heroSection) {
-                observer.observe(heroSection);
+                videoObserver.observe(heroSection);
             }
-        });
 
-        // Autoplay platform overview video when in view
-        window.addEventListener('DOMContentLoaded', function() {
+            // Autoplay platform overview video when in view
             const video = document.getElementById('platform-overview-video');
-            if (!video) return;
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        video.play();
-                    } else {
-                        video.pause();
-                    }
-                });
-            }, { threshold: 0.3 });
-            observer.observe(video);
-        });
+            if (video) {
+                const platformVideoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            video.play();
+                        } else {
+                            video.pause();
+                        }
+                    });
+                }, { threshold: 0.3 });
+                platformVideoObserver.observe(video);
+            }
 
-        // Dropdown for mobile
-        document.addEventListener('DOMContentLoaded', function() {
+            // Dropdown for mobile
             document.querySelectorAll('.dropdown-parent').forEach(function(parent) {
                 var btn = parent.querySelector('.dropdown-toggle');
                 var menu = parent.querySelector('.dropdown-menu');
@@ -1686,7 +2358,36 @@
                     document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
                 }
             });
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
         });
+    </script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
     </script>
 </body>
 </html>

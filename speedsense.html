@@ -2,13 +2,50 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IVMS - AI-powered fleet technology that predicts, optimises, and protects. Advanced telematics solutions for rental companies, logistics fleets, and transport operators.">
+    <meta name="description" content="SpeedSense by IVMS - AI-powered rental fleet protection technology. Instantly detect, process, and recover speed camera fines with court-admissible evidence and automated enforcement.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#004E98">
+    <link rel="canonical" href="https://www.ivmsglobal.com/speedsense.html">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="src/images/optimized/ivms-logo.webp">
     <title>SpeedSense Technology | IVMS - Intelligent Vehicle Management System</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="src/images/ivms-logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SpeedSense Technology | IVMS - Intelligent Vehicle Management System">
+    <meta property="og:description" content="SpeedSense by IVMS - AI-powered rental fleet protection technology. Instantly detect, process, and recover speed camera fines with court-admissible evidence and automated enforcement.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ivmsglobal.com/speedsense.html">
+    <meta property="og:image" content="https://www.ivmsglobal.com/src/images/optimized/ivms-logo.webp">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SpeedSense Technology | IVMS - Intelligent Vehicle Management System">
+    <meta name="twitter:description" content="SpeedSense by IVMS - AI-powered rental fleet protection technology. Instantly detect, process, and recover speed camera fines with court-admissible evidence and automated enforcement.">
+    <meta name="twitter:image" content="https://www.ivmsglobal.com/src/images/optimized/ivms-logo.webp">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "SpeedSense",
+      "brand": {
+        "@type": "Brand",
+        "name": "IVMS"
+      },
+      "description": "AI-powered rental fleet protection technology for speed camera fine detection and recovery",
+      "url": "https://www.ivmsglobal.com/speedsense.html",
+      "image": "https://www.ivmsglobal.com/src/images/optimized/speedsense-dashboard.webp",
+      "offeredBy": {
+        "@type": "Organization",
+        "name": "IVMS",
+        "url": "https://www.ivmsglobal.com/"
+      }
+    }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="icon" type="image/png" href="src/images/optimized/ivms-logo.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" as="style" onload="this.rel='stylesheet'">
     <style>
         :root {
             --primary-blue: #004E98;      /* Main brand blue - Use for primary CTAs, headings */
@@ -33,6 +70,7 @@
             --text-medium: #333333;
             --overlay-opacity: 0.85;
             --font-family-primary: "Suisse BP Intl", sans-serif;
+            --accent-teal: #6ec1a6;
         }
         
         body {
@@ -133,7 +171,7 @@
                 padding: 10rem 0 1rem 0;
             }
         }
-
+        
         /* Remove old hero styles that are no longer relevant */
         .hero-section-split,
         .hero-image-container,
@@ -1208,9 +1246,221 @@
             padding: 0 15px; /* Added horizontal padding for spacing */
         }
         .dropdown-menu a { color: #fff !important; }
+        /* Hide dropdown by default */
+        .dropdown-menu {
+            display: none;
+        }
+        /* Show dropdown when .show is present */
+        .dropdown-menu.show {
+            display: block;
+        }
+        /* Desktop: Show dropdown on hover using CSS only */
+        @media (min-width: 640px) {
+            .dropdown-parent:hover .dropdown-menu {
+                display: block;
+            }
+        }
+        .dropdown-parent {
+            position: relative;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0;
+            z-index: 20;
+        }
+        .tilt-on-hover {
+            transition: transform 0.3s ease;
+        }
+        .tilt-on-hover:hover {
+            transform: rotate(2deg) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+        }
+        .about-hero-image {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        
+        .about-hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Hero section styles matching logistics page */
+        .heading-container {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .heading-container h1 {
+                font-size: 2.4rem;
+                line-height: 1.15;
+            }
+            .heading-container h2 {
+                font-size: 1.7rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        /* Animation Styles */
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Glitch Effect */
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        
+        .glitch-effect {
+            animation: glitch 0.3s ease-in-out;
+        }
+        
+        /* Enhanced card animations */
+        .card-elevated {
+            transition: all 0.3s ease;
+        }
+        
+        .card-elevated:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Process card animations */
+        .process-card {
+            transition: all 0.3s ease;
+        }
+        
+        .process-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Stats animation */
+        .stat-card {
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* ROI Calculator animations */
+        .roi-card {
+            transition: all 0.3s ease;
+        }
+        
+        .roi-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .navbar, .nav, nav:not(.mobile-nav-only) {
+                display: none !important;
+            }
+            .mobile-nav-only {
+                display: block !important;
+            }
+        }
+        @media (min-width: 769px) {
+            .mobile-nav-only {
+                display: none !important;
+            }
+        }
+        .mobile-nav-only a:hover {
+            background: #444 !important;
+        }
+        .mobile-dropdown span { color: #fff !important; }
+
+        @media (max-width: 768px) {
+            main.pt-3, main.pt-6, main.pt-24 {
+                padding-top: 0.375rem !important; /* 0.375rem = 6px, 50% of previous 0.75rem */
+            }
+        }
+        @media (min-width: 769px) {
+          #hero-section {
+            padding-top: 6rem !important;
+          }
+        }
     </style>
 </head>
 <body>
+    <div id="site-header"></div>
     <!-- Navigation Bar -->
     <nav class="fixed w-full z-50 main-nav">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1218,7 +1468,7 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0 nav-logo">
                         <a href="index.html">
-                        <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
+                            <img class="h-12 w-auto" src="src/images/logo ivms-02.png" alt="IVMS Logo">
                         </a>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -1231,7 +1481,7 @@
                                 <a href="logistics.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Logistics</a>
                             </div>
                         </div>
-                        <a href="index.html#technology" class="nav-link">Technology</a>
+                        <a href="governments.html" class="nav-link">Governments</a>
                         <a href="about.html" class="nav-link">About</a>
                         <a href="contact.html" class="nav-link">Contact</a>
                     </div>
@@ -1262,37 +1512,123 @@
                         <a href="logistics.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Logistics</a>
                     </div>
                 </div>
-                <a href="index.html#technology" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Technology</a>
+                <a href="governments.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Governments</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
             </div>
         </div>
     </nav>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-section-new-layout">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/2 w-full">
-                        <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                            SpeedSense™ by iVMS<br>
-                            <span style="color: #004E98;">Rental Fleet Protection Reimagined.</span>
-                        </h1>
-                    </div>
-                    <div class="lg:w-1/2 w-full flex justify-center">
-                        <img src="src/images/speedsense-dashboard.png" alt="SpeedSense Dashboard" class="new-hero-image rounded-lg shadow-xl w-full max-w-xl">
+    <!-- Mobile Navigation Only -->
+    <div class="mobile-nav-only" style="display: none;">
+        <div style="background: #1a1a1a; padding: 15px 20px; position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" style="display: flex; align-items: center;"><img src="src/images/logo ivms-02.png" alt="IVMS Logo" style="height: 38px; width: auto; display: block;"> </a>
+                <button id="mobileOnlyToggle" style="background: none; border: 2px solid white; color: white; padding: 8px 12px; font-size: 18px; cursor: pointer; border-radius: 4px;">☰</button>
+            </div>
+            <div id="mobileOnlyMenu" style="display: none; background: #2a2a2a; margin-top: 15px; border-radius: 5px; overflow: hidden;">
+                <a href="index.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Home</a>
+                <div class="mobile-dropdown" style="border-bottom: 1px solid #444;">
+                    <button id="mobileSolutionsToggle" style="width: 100%; background: none; border: none; color: white; padding: 15px 20px; text-align: left; font-size: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        Solutions <span id="mobileSolutionsIcon">▼</span>
+                    </button>
+                    <div id="mobileSolutionsMenu" style="display: none; background: #232323;">
+                        <a href="speedsense.html" style="display: block; color: white; padding: 15px 32px; text-decoration: none; border-bottom: 1px solid #444;">SpeedSense</a>
+                        <a href="rental-leasing.html" style="display: block; color: white; padding: 15px 32px; text-decoration: none; border-bottom: 1px solid #444;">Rental & Leasing</a>
+                        <a href="logistics.html" style="display: block; color: white; padding: 15px 32px; text-decoration: none; border-bottom: 1px solid #444;">Logistics</a>
                     </div>
                 </div>
+                <a href="governments.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Governments</a>
+                <a href="about.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">About</a>
+                <a href="contact.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    @media (max-width: 768px) {
+        .navbar, .nav, nav:not(.mobile-nav-only) {
+            display: none !important;
+        }
+        .mobile-nav-only {
+            display: block !important;
+        }
+    }
+    @media (min-width: 769px) {
+        .mobile-nav-only {
+            display: none !important;
+        }
+    }
+    .mobile-nav-only a:hover, .mobile-dropdown a:hover {
+        background: #444 !important;
+    }
+    .mobile-dropdown button:focus {
+        outline: 2px solid #3182ce;
+    }
+    </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileToggle = document.getElementById('mobileOnlyToggle');
+        const mobileMenu = document.getElementById('mobileOnlyMenu');
+        const solutionsToggle = document.getElementById('mobileSolutionsToggle');
+        const solutionsMenu = document.getElementById('mobileSolutionsMenu');
+        const solutionsIcon = document.getElementById('mobileSolutionsIcon');
+        
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', function() {
+                if (mobileMenu.style.display === 'block') {
+                    mobileMenu.style.display = 'none';
+                } else {
+                    mobileMenu.style.display = 'block';
+                }
+            });
+            // Close menu when clicking links (except dropdown toggle)
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.style.display = 'none';
+                });
+            });
+        }
+        if (solutionsToggle && solutionsMenu && solutionsIcon) {
+            solutionsToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (solutionsMenu.style.display === 'block') {
+                    solutionsMenu.style.display = 'none';
+                    solutionsIcon.textContent = '▼';
+                    solutionsIcon.style.color = '#fff';
+                } else {
+                    solutionsMenu.style.display = 'block';
+                    solutionsIcon.textContent = '▲';
+                    solutionsIcon.style.color = '#fff';
+                }
+            });
+            // Always force white color on load
+            solutionsIcon.style.color = '#fff';
+        }
+    });
+    </script>
+
+    <main class="pt-3 md:pt-24">
+        <!-- Hero Section -->
+        <section class="section-padding text-center" style="padding-top:2.5rem;" id="hero-section">
+            <div class="container-narrow">
+                <div class="heading-container">
+                    <h1 style="font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 0.5rem; color: #2d3748; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; animation: slideInFromTop 0.8s ease-out;">SpeedSense™ by iVMS</h1>
+                    <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 500; line-height: 1.3; color: #004E98; margin-bottom: 2rem; animation: slideInFromTop 0.8s ease-out 0.15s both;">Rental Fleet Protection Reimagined</h2>
+                </div>
+                <img src="src/images/optimized/speedsense-dashboard.webp" alt="SpeedSense Dashboard" class="about-hero-image" style="width:100%;max-width:800px;height:auto;border-radius:0.75rem;box-shadow:0 4px 12px rgba(0,0,0,0.1);margin-bottom:2rem;display:block;margin-left:auto;margin-right:auto;transition:transform 0.3s ease-in-out,box-shadow 0.3s ease-in-out;">
+                <p class="hero-subtitle animate-on-scroll" style="font-size:1.125rem;line-height:1.6;font-weight:400;max-width:800px;margin:0 auto 3rem auto;text-align:center;">AI-powered rental fleet protection. Instantly detect, process, and recover speed camera fines with court-admissible evidence and automated enforcement. Reduce liability, boost revenue, and protect your business with SpeedSense by iVMS.</p>
+                <a href="#contact" class="cta-bottom animate-on-scroll" style="display:inline-block;background:var(--primary-blue);color:var(--text-light);font-weight:600;font-size:1.08rem;padding:0.9rem 2.2rem;border-radius:0.375rem;box-shadow:0 4px 16px rgba(0,78,152,0.15);margin-bottom:2rem;text-align:center;transition:background 0.2s,box-shadow 0.2s;">Book a Demo</a>
             </div>
         </section>
 
         <!-- Problem Section with Split Layout -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold mb-8">The Problem:</h2>
+                <h2 class="text-4xl font-bold mb-8 animate-on-scroll">The Problem:</h2>
                 <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/2 w-full">
+                    <div class="lg:w-1/2 w-full animate-on-scroll">
                         <h2 class="text-4xl font-bold mb-6">Speed Cameras Are Costing You Millions</h2>
                         <p class="text-lg mb-8">
                             Speed cameras worldwide have severe penalties that can reach thousands in local currency per violation. International visitors frequently depart before settling their traffic violations, leaving rental companies legally responsible for ALL unpaid violations.
@@ -1329,7 +1665,7 @@
                     </div>
                     <div class="lg:w-1/2 w-full flex justify-center">
                         <div class="relative flex justify-center items-center w-full">
-                            <img src="src/images/speed-camera-problem.png" alt="Speed Camera Problem" class="rounded-lg shadow-xl w-full h-[600px] object-cover max-w-xl">
+                            <img src="src/images/optimized/speed-camera-problem.webp" alt="Speed Camera Problem" class="rounded-lg shadow-xl w-full h-[600px] object-cover max-w-xl">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
                         </div>
                     </div>
@@ -1341,36 +1677,36 @@
         <section class="py-20 bg-[#f7f7f9]">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-6">
+                    <h2 class="text-4xl font-bold mb-6 animate-on-scroll">
                         The Solution:<br>
                         <span style="color: #004E98;">SpeedSense by iVMS</span>
                     </h2>
-                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto animate-on-scroll">
                         Our comprehensive solution addresses every aspect of rental fleet management, from speed violations to vehicle health monitoring.
                     </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300 card-elevated animate-on-scroll">
                         <div class="relative mb-6">
-                            <img src="src/images/deposit-system.png" alt="Deposit System" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/deposit-system.webp" alt="Deposit System" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-shield-alt" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Innovative Deposit System</h3>
                         <p class="text-gray-600">Secure minimal deposits with <span style="color: #004E98;">3D authentication</span>. Charge customer cards after rental contract expires.</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300 card-elevated animate-on-scroll">
                         <div class="relative mb-6">
-                            <img src="src/images/violation-coverage.png" alt="Violation Coverage" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/violation-coverage.webp" alt="Violation Coverage" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-camera" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Comprehensive Violation Coverage</h3>
                         <p class="text-gray-600">Captures all traffic violations with <span style="color: #004E98;">irrefutable digital evidence</span> and instant real-time notifications.</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300">
+                    <div class="bg-white rounded-lg shadow-lg p-8 transform hover:-translate-y-2 transition-transform duration-300 card-elevated animate-on-scroll">
                         <div class="relative mb-6">
-                            <img src="src/images/legal-enforcement.png" alt="Legal Enforcement" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/legal-enforcement.webp" alt="Legal Enforcement" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-gavel" style="color: #004E98;"></i></div>
@@ -1384,26 +1720,26 @@
         <!-- Core Features Section with Timeline -->
         <section class="py-20 process-section">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-16" style="color: #2F2F2F;">
+                <h2 class="text-4xl font-bold text-center mb-16 animate-on-scroll" style="color: #2F2F2F;">
                     Core Features With Every Installation<span style="color:#004E98;">.</span>
                 </h2>
                 <div class="process-cards">
-                    <div class="process-card">
+                    <div class="process-card animate-on-scroll">
                         <div class="process-number">1</div>
                         <h3 class="process-title">Driver Behaviour Management</h3>
                         <p class="process-desc">Complete scoring system for renters. Monitor driving behaviour and geofence breaches in real-time to assess driver risk and improve safety.</p>
                     </div>
-                    <div class="process-card">
+                    <div class="process-card animate-on-scroll">
                         <div class="process-number">2</div>
                         <h3 class="process-title">Vehicle Health Protection</h3>
                         <p class="process-desc">Real-time diagnostics and fault monitoring. Track parts life expectancy and proactively manage vehicle maintenance.</p>
                     </div>
-                    <div class="process-card">
+                    <div class="process-card animate-on-scroll">
                         <div class="process-number">3</div>
                         <h3 class="process-title">Advanced Tracking System</h3>
                         <p class="process-desc">Real-time location monitoring with complete trip history and parameter tracking for comprehensive fleet oversight.</p>
                     </div>
-                    <div class="process-card">
+                    <div class="process-card animate-on-scroll">
                         <div class="process-number">4</div>
                         <h3 class="process-title">Administrative Efficiency</h3>
                         <p class="process-desc">Digital contract management and streamlined processes for all administrative tasks, saving time and resources.</p>
@@ -1415,38 +1751,38 @@
         <!-- Complete Fleet Management Section -->
         <section class="py-20 bg-[#f7f7f9]">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-10" style="color: #2F2F2F;">Beyond Fines: Complete Fleet Management<span style="color:#004E98;">.</span></h2>
+                <h2 class="text-4xl font-bold text-center mb-10 animate-on-scroll" style="color: #2F2F2F;">Beyond Fines: Complete Fleet Management<span style="color:#004E98;">.</span></h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 card-elevated animate-on-scroll">
                         <div class="relative mb-6">
-                            <img src="src/images/vehicle-dashboard.png" alt="Vehicle Dashboard" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/optimized/vehicle-dashboard.webp" alt="Vehicle Dashboard" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-tachometer-alt" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Vehicle Health Dashboard</h3>
                         <p class="text-gray-600">Live mileage and fuel monitoring with maintenance alerts</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 card-elevated animate-on-scroll">
                         <div class="relative mb-6">
-                            <img src="src/images/remote-diagnostics.png" alt="Remote Diagnostics" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/optimized/remote-diagnostics.webp" alt="Remote Diagnostics" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-tools" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Remote Diagnostics</h3>
                         <p class="text-gray-600">Clear DTC codes remotely and reduce vehicle downtime</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 card-elevated animate-on-scroll">
                         <div class="relative mb-6">
-                            <img src="src/images/security-management.png" alt="Security Management" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/optimized/security-management.webp" alt="Security Management" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-lock" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Security Management</h3>
                         <p class="text-gray-600">Employee login system with complete audit trail</p>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 card-elevated animate-on-scroll">
                         <div class="relative mb-6">
-                            <img src="src/images/digital-contracts.png" alt="Digital Contracts" class="w-full h-40 object-cover rounded-lg">
+                            <img src="src/images/optimized/digital-contracts.webp" alt="Digital Contracts" class="w-full h-40 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-file-signature" style="color: #004E98;"></i></div>
@@ -1460,11 +1796,11 @@
         <!-- Benefits Section with Cards -->
         <section class="py-20 bg-[#f7f7f9]">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-16">
+                <h2 class="text-4xl font-bold text-center mb-16 animate-on-scroll">
                     Exclusive Benefits for Rental Companies<span style="color:#004E98;">.</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 card-elevated animate-on-scroll">
                         <div class="text-4xl mb-4"><i class="fas fa-chart-line" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Financial Protection</h3>
                         <ul class="text-gray-600 space-y-3">
@@ -1482,7 +1818,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 card-elevated animate-on-scroll">
                         <div class="text-4xl mb-4"><i class="fas fa-cogs" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Operational Efficiency</h3>
                         <ul class="text-gray-600 space-y-3">
@@ -1500,7 +1836,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="bg-white rounded-lg shadow-lg p-8">
+                    <div class="bg-white rounded-lg shadow-lg p-8 card-elevated animate-on-scroll">
                         <div class="text-4xl mb-4"><i class="fas fa-shield-alt" style="color: #004E98;"></i></div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">Risk Reduction</h3>
                         <ul class="text-gray-600 space-y-3">
@@ -1525,31 +1861,31 @@
         <!-- Results Section with Stats -->
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4">
-                <h2 class="text-4xl font-bold text-center mb-16">
+                <h2 class="text-4xl font-bold text-center mb-16 animate-on-scroll">
                     Measurable Results You Can Trust<span style="color:#004E98;">.</span>
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div class="text-center">
+                    <div class="text-center animate-on-scroll">
                         <div class="relative mb-6">
-                            <img src="src/images/recovery-rate.png" alt="Recovery Rate" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/recovery-rate.webp" alt="Recovery Rate" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-6xl font-bold mb-4" style="color: #004E98;">95%</div>
                         <h3 class="text-2xl font-semibold text-gray-800 mb-4">Recovery Rate</h3>
                         <p class="text-gray-600">Successfully recover nearly all traffic violations from customers, eliminating financial losses</p>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center animate-on-scroll">
                         <div class="relative mb-6">
-                            <img src="src/images/time-saved.png" alt="Time Saved" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/time-saved.webp" alt="Time Saved" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-6xl font-bold mb-4" style="color: #004E98;">85%</div>
                         <h3 class="text-2xl font-semibold text-gray-800 mb-4">Time Saved</h3>
                         <p class="text-gray-600">Dramatically reduce administrative workload with automated violation processing systems</p>
                     </div>
-                    <div class="text-center">
+                    <div class="text-center animate-on-scroll">
                         <div class="relative mb-6">
-                            <img src="src/images/deposit-required.png" alt="Deposit Required" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/deposit-required.webp" alt="Deposit Required" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-6xl font-bold mb-4" style="color: #004E98;">1%</div>
@@ -1560,13 +1896,114 @@
             </div>
         </section>
 
+        <!-- ROI Calculator Section -->
+        <section id="roi-calculator" class="py-20 bg-white">
+          <div class="max-w-xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-4 animate-on-scroll" style="color: var(--primary-blue);">Calculate Your Fleet Savings with SpeedSense</h2>
+            <p class="text-lg text-center mb-12 animate-on-scroll" style="color: var(--accent-teal);">
+              See how much your rental company can save with our comprehensive traffic violation protection system
+            </p>
+            <div class="bg-white rounded-2xl shadow-xl p-8 border border-[var(--primary-blue)] roi-card animate-on-scroll" id="roi-inputs">
+              <!-- Fleet Size Slider -->
+              <label for="fleet-size" class="block font-semibold mb-2 text-[var(--primary-blue)]">Fleet Size</label>
+              <div class="flex items-center gap-4 mb-6">
+                <input type="range" id="fleet-size" min="10" max="1000" step="10" value="100" class="w-full" style="accent-color: var(--accent-teal);">
+                <span id="fleet-size-value" class="font-bold text-xl text-[var(--primary-blue)]">100</span>
+              </div>
+              <!-- Violations per Vehicle -->
+              <label for="violations-per-vehicle" class="block font-semibold mb-2 text-[var(--primary-blue)]"><span class="hidden md:inline">Current Monthly Violations per Vehicle</span><span class="md:hidden">Monthly Violations per Vehicle</span></label>
+              <div class="flex items-center gap-4 mb-6">
+                <input type="range" id="violations-per-vehicle" min="1" max="8" step="0.1" value="3.6" class="w-full" style="accent-color: var(--accent-teal);">
+                <span id="violations-per-vehicle-value" class="font-bold text-xl text-[var(--primary-blue)]">3.6</span>
+              </div>
+              <!-- Average Fine Amount -->
+              <label for="avg-fine" class="block font-semibold mb-2 text-[var(--primary-blue)]"><span class="hidden md:inline">Average Fine Amount (AED)</span><span class="md:hidden">Average Fine (AED)</span></label>
+              <div class="flex items-center gap-4 mb-1">
+                <input type="range" id="avg-fine" min="300" max="3000" step="50" value="750" class="w-full" style="accent-color: var(--accent-teal);">
+                <span id="avg-fine-value" class="font-bold text-xl text-[var(--primary-blue)]">750</span>
+              </div>
+              <div class="text-xs mb-6" style="color: var(--accent-teal);"><span class="hidden md:inline">UAE fines range from 300-30K AED</span><span class="md:hidden">Fines: 300-30K AED</span></div>
+              <!-- Current Recovery Rate -->
+              <label for="recovery-rate" class="block font-semibold mb-2 text-[var(--primary-blue)]"><span class="hidden md:inline">Current Recovery Rate (%)</span><span class="md:hidden">Recovery Rate (%)</span></label>
+              <div class="flex items-center gap-4 mb-1">
+                <input type="range" id="recovery-rate" min="0" max="70" step="5" value="30" class="w-full" style="accent-color: var(--accent-teal);">
+                <span id="recovery-rate-value" class="font-bold text-xl text-[var(--primary-blue)]">30%</span>
+              </div>
+              <div class="text-xs mb-6" style="color: var(--accent-teal);"><span class="hidden md:inline">What percentage of fines you currently recover from customers</span><span class="md:hidden">% of fines you recover</span></div>
+              <!-- Admin Cost per Hour -->
+              <label for="admin-cost" class="block font-semibold mb-2 text-[var(--primary-blue)]"><span class="hidden md:inline">Administrative Cost per Hour (AED)</span><span class="md:hidden">Admin Cost per Hour (AED)</span></label>
+              <div class="flex items-center gap-4 mb-1">
+                <input type="range" id="admin-cost" min="50" max="300" step="25" value="150" class="w-full" style="accent-color: var(--accent-teal);">
+                <span id="admin-cost-value" class="font-bold text-xl text-[var(--primary-blue)]">150</span>
+              </div>
+              <div class="text-xs mb-6" style="color: var(--accent-teal);"><span class="hidden md:inline">Staff cost for processing violations</span><span class="md:hidden">Staff processing cost</span></div>
+            </div>
+            <!-- Simplified Results Section -->
+            <div class="mt-12 flex flex-col gap-5" id="roi-results">
+              <!-- Monthly Net Savings Card -->
+              <div class="w-full flex items-center rounded-2xl shadow-md bg-green-50 border border-green-400 animate-on-scroll" style="height:120px; min-height:120px;">
+                <div class="flex flex-col justify-center pl-7 pr-4" style="width:40%; min-width:120px;">
+                  <div class="flex items-center gap-2 mb-1"><span style="font-size:1.7em; color:#1db954;">💰</span><span class="font-medium text-[18px] md:text-[18px] text-[16px]" style="color:#1db954;"><span class="hidden md:inline">Monthly Net Savings</span><span class="md:hidden">Net Savings</span></span></div>
+                  <div class="text-[14px] text-green-900"><span class="hidden md:inline">Immediate protection</span><span class="md:hidden">Protection</span></div>
+                  <div class="text-[14px] text-green-900">vs <span id="current-losses" class="font-bold">AED 0</span> <span class="hidden md:inline">losses</span><span class="md:hidden">lost</span></div>
+                </div>
+                <div class="flex-1 flex flex-col justify-center items-end pr-8">
+                  <div id="net-savings" class="font-extrabold" style="font-size:32px; color:#1db954;">AED 0</div>
+                </div>
+              </div>
+              <!-- Annual Impact Card -->
+              <div class="w-full flex items-center rounded-2xl shadow-md bg-blue-50 border border-blue-400 animate-on-scroll" style="height:120px; min-height:120px;">
+                <div class="flex flex-col justify-center pl-7 pr-4" style="width:40%; min-width:120px;">
+                  <div class="flex items-center gap-2 mb-1"><span style="font-size:1.7em; color:var(--primary-blue);">📈</span><span class="font-medium text-[18px] md:text-[18px] text-[16px]" style="color:var(--primary-blue);"><span class="hidden md:inline">Annual Return</span><span class="md:hidden">Annual</span></span></div>
+                  <div class="text-[14px] text-blue-900"><span class="hidden md:inline">Complete protection</span><span class="md:hidden">Complete</span></div>
+                  <div class="text-[14px] text-blue-900">ROI: <span id="annual-roi" class="font-bold">0%</span> | <span class="hidden md:inline">Payback: </span><span class="md:hidden">Pay: </span><span id="payback-period" class="font-bold">0</span> mo</div>
+                </div>
+                <div class="flex-1 flex flex-col justify-center items-end pr-8">
+                  <div id="annual-savings" class="font-extrabold" style="font-size:32px; color:var(--primary-blue);">AED 0</div>
+                </div>
+              </div>
+              <!-- Investment Cost Card -->
+              <div class="w-full flex items-center rounded-2xl shadow-md bg-gray-100 border border-gray-300 animate-on-scroll" style="height:120px; min-height:120px;">
+                <div class="flex flex-col justify-center pl-7 pr-4" style="width:40%; min-width:120px;">
+                  <div class="flex items-center gap-2 mb-1"><span style="font-size:1.7em; color:#444;">💳</span><span class="font-medium text-[18px] md:text-[18px] text-[16px]" style="color:#444;"><span class="hidden md:inline">Monthly Investment</span><span class="md:hidden">Investment</span></span></div>
+                  <div class="text-[14px] text-gray-700">Per vehicle: <span id="per-vehicle-cost" class="font-bold">AED 0</span></div>
+                  <div class="text-[14px] text-green-700 font-semibold"><span class="hidden md:inline">15% volume discount applied</span><span class="md:hidden">15% discount</span></div>
+                </div>
+                <div class="flex-1 flex flex-col justify-center items-end pr-8">
+                  <div id="package-cost" class="font-extrabold" style="font-size:32px; color:#444;">AED 0</div>
+                </div>
+              </div>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full max-w-lg mx-auto mt-10 mb-8">
+              <div class="flex justify-between text-xs mb-1">
+                <span style="color:var(--primary-blue);">Current Protection</span>
+                <span style="color:#1db954;">With SpeedSense</span>
+              </div>
+              <div class="w-full bg-gray-200 rounded-full h-3">
+                <div id="protection-bar" class="h-3 rounded-full" style="background: linear-gradient(90deg, var(--primary-blue) 0%, #1db954 100%); width: 0%; transition: width 0.5s;"></div>
+              </div>
+            </div>
+            <!-- Summary Section -->
+            <div class="bg-white rounded-xl shadow p-6 max-w-lg mx-auto mb-10">
+              <div class="text-xl font-bold mb-4" style="color: var(--primary-blue);">What This Means for Your Business</div>
+              <ul class="space-y-3 text-lg">
+                <li class="flex items-center"><span style="color:#1db954;font-size:1.5em;">✅</span><span class="ml-3">Protect <span id="violations-prevented" class="font-bold">0</span> violations monthly (90% of traffic violations)</span></li>
+                <li class="flex items-center"><span style="color:#1db954;font-size:1.5em;">✅</span><span class="ml-3">Recover 100% of remaining fines automatically</span></li>
+                <li class="flex items-center"><span style="color:#1db954;font-size:1.5em;">✅</span><span class="ml-3">Save 85% on admin processing time</span></li>
+                <li class="flex items-center"><span style="color:#1db954;font-size:1.5em;">✅</span><span class="ml-3">Eliminate risk of vehicle impoundment</span></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         <!-- Call to Action Section -->
         <section class="pt-0 pb-48 bg-gradient-to-r from-[#004E98] to-[#00A3A3]">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center">
-                    <h2 class="text-4xl font-bold mb-6" style="color: #2F2F2F;">Ready to transform your fleet operations?</h2>
-                    <p class="text-xl mb-10" style="color: #2F2F2F;">Book a demo to see how SpeedSense by iVMS can protect your revenue and streamline your business.</p>
-                    <button class="cta-bottom bg-white text-[#004E98] hover:bg-gray-100" onclick="window.location.href='contact.html'">Book a Demo</button>
+                    <h2 class="text-4xl font-bold mb-6 animate-on-scroll" style="color: #2F2F2F;">Ready to transform your fleet operations?</h2>
+                    <p class="text-xl mb-10 animate-on-scroll" style="color: #2F2F2F;">Book a demo to see how SpeedSense by iVMS can protect your revenue and streamline your business.</p>
+                    <button class="cta-bottom bg-white text-[#004E98] hover:bg-gray-100 animate-on-scroll" onclick="window.location.href='contact.html'">Book a Demo</button>
                 </div>
             </div>
         </section>
@@ -1575,18 +2012,27 @@
     <!-- Footer -->
     <footer class="bg-[#0A0A0A] text-white py-12" style="background-color: #0A0A0A !important; color: #ffffff !important; display: block !important; position: relative !important; min-height: 200px !important;">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="flex flex-col items-center mb-4" style="color: #ffffff !important;">
-                    <img src="src/images/ivms-logo.png" alt="IVMS Logo" class="footer-logo">
+                    <img src="src/images/optimized/ivms-logo.webp" alt="IVMS Logo" class="footer-logo">
                     <p class="footer-text">Dubai, UAE</p>
                 </div>
                 <div style="color: #ffffff !important;">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html#solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
-                        <li><a href="index.html#technology" class="footer-link" style="color: #ffffff !important;">Technology</a></li>
+                        <li><a href="governments.html" class="footer-link" style="color: #ffffff !important;">Governments</a></li>
                         <li><a href="about.html" class="footer-link" style="color: #ffffff !important;">About</a></li>
                         <li><a href="contact.html" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
+                    </ul>
+                </div>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="privacy-policy.html" class="footer-link" style="color: #ffffff !important;">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="footer-link" style="color: #ffffff !important;">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" class="footer-link" style="color: #ffffff !important;">Cookie Policy</a></li>
+                        <li><a href="accessibility-statement.html" class="footer-link" style="color: #ffffff !important;">Accessibility Statement</a></li>
                     </ul>
                 </div>
                 <div style="color: #ffffff !important;">
@@ -1596,10 +2042,9 @@
                         <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link" style="color: #ffffff !important;">info@ivmsgroup.com</a></li>
                     </ul>
                     <div class="footer-social-links">
-                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
-                        <a href="https://instagram.com/YOUR_INSTAGRAM" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/ivms-global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61577934701953" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ivms_global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -1615,35 +2060,164 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Cookie Consent Popup -->
+    <div id="cookie-consent" style="display:none; position:fixed; bottom:0; left:0; width:100vw; background:#222; color:#fff; z-index:9999; padding:1.2rem 1rem; box-shadow:0 -2px 8px rgba(0,0,0,0.12); font-size:1rem;">
+      <div style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem;">
+        <span style="color:#fff;">
+          We use <a href="/cookies-policy.html" style="color:#6ec1a6; text-decoration:underline;">cookies</a> to provide you with a better experience and to help our website run effectively.
+        </span>
+        <button id="cookie-consent-btn" style="background:#1666a9; color:#fff; border:none; border-radius:4px; padding:0.5em 1.5em; font-weight:600; font-size:1rem; cursor:pointer; transition:background 0.2s;">Okay</button>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <script src="src/js/roi-calculator.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelectorAll('.dropdown-parent').forEach(function(parent) {
         var btn = parent.querySelector('.dropdown-toggle');
         var menu = parent.querySelector('.dropdown-menu');
-        // Toggle on click
+
+        // Mobile: Toggle on click
         btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          var isOpen = menu.classList.contains('show');
-          document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
-          if (!isOpen) menu.classList.add('show');
-        });
-        // Close on mouseleave (desktop)
-        parent.addEventListener('mouseleave', function() {
-          menu.classList.remove('show');
-        });
-        // Also close when mouse leaves the menu itself
-        menu.addEventListener('mouseleave', function() {
-          menu.classList.remove('show');
+          if (window.innerWidth < 640) {
+            e.preventDefault();
+            menu.classList.toggle('show');
+          }
         });
       });
+
       // Hide all dropdowns on document click (except when clicking inside)
       document.addEventListener('click', function(e) {
         if (!e.target.closest('.dropdown-parent')) {
           document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
         }
       });
+
+      // Intersection Observer for scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with animate-on-scroll class
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Animated number counting for stats
+      function animateNumbers() {
+        const statNumbers = document.querySelectorAll('.text-6xl.font-bold');
+        
+        statNumbers.forEach(stat => {
+          const text = stat.textContent;
+          const target = parseFloat(text.replace('%', ''));
+          const duration = 2000; // 2 seconds
+          const increment = target / (duration / 16); // 60fps
+          let current = 0;
+          
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              current = target;
+              clearInterval(timer);
+            }
+            stat.textContent = Math.floor(current) + (text.includes('%') ? '%' : '');
+          }, 16);
+        });
+      }
+
+      // Trigger number animation when stats section is visible
+      const statsObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateNumbers();
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      const statsSection = document.querySelector('.py-20.bg-white');
+      if (statsSection) {
+        statsObserver.observe(statsSection);
+      }
+
+      // Enhanced hover effects for cards
+      document.querySelectorAll('.card-elevated, .process-card, .stat-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Hero animations are handled by CSS keyframes
+      // The slideInFromTop animations are applied directly in the HTML
+
+      // Hero image has simple hover effect only
+
+      // Add tilt effect to images
+      document.querySelectorAll('.tilt-on-hover').forEach(img => {
+        img.addEventListener('mousemove', function(e) {
+          const rect = this.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          
+          const rotateX = (y - centerY) / 10;
+          const rotateY = (centerX - x) / 10;
+          
+          this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        });
+        
+        img.addEventListener('mouseleave', function() {
+          this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+        });
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
     });
+
+    // Cookie Consent Logic
+    (function() {
+      function showConsent() {
+        document.getElementById('cookie-consent').style.display = 'block';
+      }
+      function hideConsent() {
+        document.getElementById('cookie-consent').style.display = 'none';
+      }
+      if (!localStorage.getItem('ivms_cookie_consent')) {
+        window.addEventListener('DOMContentLoaded', showConsent);
+      }
+      document.getElementById('cookie-consent-btn').onclick = function() {
+        localStorage.setItem('ivms_cookie_consent', 'accepted');
+        hideConsent();
+      };
+    })();
     </script>
 </body>
 </html> 

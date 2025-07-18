@@ -186,3 +186,731 @@ nav a:hover {
 
 /* Force white text for dropdown menu links */
 .dropdown-menu a { color: #fff !important; }
+
+/* --- Responsive Overhaul: Mobile-First Media Queries & Utilities --- */
+
+/* 1. Universal Responsive Utilities */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container, .section, .card, .content-block {
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* 2. Responsive Typography */
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+p, li, a, label, span, td, th { font-size: 1rem; }
+
+@media (max-width: 900px) {
+  h1 { font-size: 1.7rem; }
+  h2 { font-size: 1.2rem; }
+  h3 { font-size: 1.05rem; }
+  .container, .section, .card, .content-block {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 1.3rem; }
+  h2 { font-size: 1.05rem; }
+  h3 { font-size: 0.95rem; }
+  p, li, a, label, span, td, th { font-size: 0.98rem; }
+  .container, .section, .card, .content-block {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+}
+
+/* 3. Responsive Grid & Flex Utilities */
+.row, .flex-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.col, .flex-col {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+@media (max-width: 900px) {
+  .row, .flex-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* 4. Navigation: Mobile Menu Improvements */
+nav {
+  position: relative;
+  z-index: 100;
+}
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30,30,30,0.97);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+#mobile-menu .nav-link, #mobile-menu a, #mobile-menu button {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+#mobile-menu .dropdown-menu {
+  position: static;
+  background: none;
+  box-shadow: none;
+  margin: 0;
+  padding-left: 1rem;
+}
+#mobile-menu .dropdown-menu a {
+  color: #fff !important;
+  font-size: 1rem;
+  padding: 0.7rem 0;
+}
+
+@media (min-width: 640px) {
+  #mobile-menu {
+    display: none !important;
+  }
+}
+
+/* Hamburger button: larger touch target */
+#mobile-menu-button {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0.7rem;
+  font-size: 1.5rem;
+}
+
+/* 5. Buttons & Touch Targets */
+button, .btn, .hero-cta, .cta-bottom {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.8em 1.5em;
+  font-size: 1.05em;
+  border-radius: 6px;
+}
+@media (max-width: 600px) {
+  button, .btn, .hero-cta, .cta-bottom {
+    width: 100%;
+    font-size: 1em;
+    padding: 1em 0.5em;
+  }
+}
+
+/* 6. Card & Section Responsiveness */
+.card {
+  margin: 1em 0;
+  padding: 1.2em;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(22, 102, 169, 0.06);
+}
+@media (max-width: 600px) {
+  .card {
+    padding: 0.7em;
+    margin: 0.5em 0;
+  }
+}
+
+/* 7. Table & Form Responsiveness */
+table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 0.7em 0.5em;
+  font-size: 1em;
+}
+@media (max-width: 600px) {
+  th, td {
+    font-size: 0.95em;
+    padding: 0.5em 0.2em;
+  }
+}
+
+form, input, select, textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+/* 8. Footer Responsiveness */
+footer {
+  padding: 2em 1em;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  footer {
+    padding: 1em 0.2em;
+    font-size: 0.95em;
+  }
+}
+
+/* 9. Remove horizontal scroll on all pages */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* 10. Utility: Hide scrollbars on mobile for overlays */
+@media (max-width: 600px) {
+  #mobile-menu {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  #mobile-menu::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* --- End Responsive Overhaul --- */
+
+/* Hero Section Centering Styles */
+.rental-hero .heading-container,
+.logistics-hero .heading-container {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure headings remain centered */
+.rental-hero h1,
+.logistics-hero h1 {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+    text-align: center;
+    width: 100%;
+}
+
+.rental-hero h2,
+.logistics-hero h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 500;
+    line-height: 1.3;
+    color: #3182ce;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+/* Mobile Optimization for Centering */
+@media (max-width: 768px) {
+    .rental-hero h1,
+    .logistics-hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+        text-align: center;
+    }
+    
+    .rental-hero h2,
+    .logistics-hero h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    
+    .rental-hero .heading-container,
+    .logistics-hero .heading-container {
+        padding: 0 1rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .rental-hero h1,
+    .logistics-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .rental-hero h2,
+    .logistics-hero h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Force centering with overrides if needed */
+.rental-hero h1,
+.logistics-hero h1 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+.rental-hero h2,
+.logistics-hero h2 {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+}
+
+/* Ensure containers don't cause centering problems */
+.heading-container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Mobile-Specific Fixes for Hero Section and Page Layout */
+@media (max-width: 768px) {
+    /* Index.html Hero Section Mobile Fix */
+    .hero-section {
+        padding-top: 120px !important;
+        padding-bottom: 60px !important;
+        min-height: auto !important;
+    }
+    
+    .hero-content h1,
+    .hero-headline {
+        font-size: 2.5rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1rem !important;
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+        z-index: 10 !important;
+        position: relative !important;
+    }
+    
+    .hero-content p,
+    .hero-support {
+        font-size: 1.1rem !important;
+        color: white !important;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.8) !important;
+        z-index: 10 !important;
+        position: relative !important;
+    }
+    
+    .hero-video,
+    .hero-video-bg {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        z-index: 1 !important;
+    }
+    
+    /* Other Pages Heading Position Mobile Fix */
+    main {
+        margin-top: 80px !important;
+        padding-top: 20px !important;
+    }
+    
+    .main-heading, 
+    .page-title, 
+    h1,
+    .new-hero-headline {
+        margin-top: 0 !important;
+        padding-top: 20px !important;
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    /* Adjust header to be more compact */
+    header {
+        padding: 10px 0 !important;
+    }
+    
+    .nav-container {
+        padding: 10px 20px !important;
+    }
+    
+    /* Remove unnecessary spacing */
+    .container, 
+    .content-wrapper {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Ensure first section after header has proper spacing */
+    .first-section, 
+    .hero-section + section, 
+    main > section:first-child,
+    .hero-section-new-layout {
+        padding-top: 20px !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Additional mobile optimizations for hero overlay */
+    .hero-overlay-bar {
+        padding: 1.5rem 2vw !important;
+        min-height: auto !important;
+    }
+    
+    .hero-overlay-bar .max-w-7xl {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+    }
+    
+    /* Ensure text is visible on mobile */
+    .hero-headline,
+    .hero-support {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+    }
+    
+    /* Header height adjustments for mobile */
+    .main-nav {
+        height: 60px !important;
+        padding: 0.25rem 0 !important;
+    }
+    
+    .main-nav .h-16 {
+        height: 60px !important;
+    }
+    
+    /* Adjust scroll padding for mobile */
+    html {
+        scroll-padding-top: 60px !important;
+    }
+    
+    section[id] {
+        scroll-margin-top: 60px !important;
+    }
+    
+    /* Ensure proper spacing for all page types */
+    .hero-section-new-layout {
+        padding-top: 80px !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Fix for pages with different hero layouts */
+    .new-hero-headline {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+        margin-top: 0 !important;
+        padding-top: 20px !important;
+    }
+    
+    .new-hero-support {
+        font-size: 1.1rem !important;
+        line-height: 1.4 !important;
+        margin-top: 1rem !important;
+    }
+    
+    /* Ensure mobile menu doesn't interfere with content */
+    #mobile-menu {
+        top: 60px !important;
+        max-height: calc(100vh - 60px) !important;
+    }
+    
+    /* Additional spacing fixes for different page layouts */
+    .stats-section-london,
+    .platform-section,
+    .solutions-section {
+        padding-top: 40px !important;
+        margin-top: 0 !important;
+    }
+    
+    /* Ensure proper text visibility in all contexts */
+    .hero-headline,
+    .hero-support,
+    .new-hero-headline,
+    .new-hero-support {
+        color: inherit !important;
+        text-shadow: none !important;
+    }
+    
+    /* Override any conflicting styles */
+    .hero-section .hero-headline,
+    .hero-section .hero-support {
+        color: white !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.8) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* DEBUG: Add red outline to all possible culprits */
+    .main-heading,
+    .page-title,
+    h1,
+    .new-hero-headline,
+    .hero-section,
+    .hero-section-new-layout,
+    main > *,
+    main > section:first-child,
+    .container,
+    .content-wrapper,
+    .first-section,
+    .hero-section + section {
+        outline: 2px solid red !important;
+    }
+
+    /* Remove all top/bottom spacing and min-height */
+    .main-heading,
+    .page-title,
+    h1,
+    .new-hero-headline,
+    .hero-section,
+    .hero-section-new-layout,
+    main > *,
+    main > section:first-child,
+    .container,
+    .content-wrapper,
+    .first-section,
+    .hero-section + section {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        min-height: 0 !important;
+        height: auto !important;
+    }
+
+    /* Remove min-height from hero and all wrappers */
+    .hero-section,
+    .hero-section-new-layout {
+        min-height: 0 !important;
+        height: auto !important;
+    }
+
+    /* Remove top spacing from body and html as well */
+    html, body {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    /* Diagnostic: Add background and outline to html and body */
+    html {
+        background: #ffeaea !important;
+        outline: 3px solid blue !important;
+        min-height: 0 !important;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    body {
+        background: #eaffea !important;
+        outline: 3px solid green !important;
+        min-height: 0 !important;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+    }
+    /* Outline all direct children of body */
+    body > * {
+        outline: 3px solid red !important;
+        background: #eaeaff !important;
+        min-height: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+    /* Keep header compact */
+    header, .main-nav {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        height: 60px !important;
+    }
+    html {
+        scroll-padding-top: 60px !important;
+    }
+    section[id] {
+        scroll-margin-top: 60px !important;
+    }
+    /* Set nav and header to static and add background for debugging */
+    nav, header, .main-nav {
+        position: static !important;
+        background: #ffcccc !important;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        height: 60px !important;
+        z-index: 1 !important;
+    }
+    /* Remove all top margin/padding from first content element after nav/header */
+    body > nav + *,
+    body > header + *,
+    body > .main-nav + * {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        min-height: 0 !important;
+        background: #ccffcc !important;
+    }
+}
+
+@media (max-width: 768px) {
+    main.pt-24 {
+        padding-top: 0 !important;
+    }
+    section[style*='padding-top'] {
+        padding-top: 0 !important;
+    }
+    section.section-padding {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .heading-container h1 {
+        color: red !important;
+    }
+}
+
+/* --- How It Works Section: Horizontal Line Fix --- */
+.process-cards.no-line-overlap {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+.process-card {
+  background: #23262b;
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+  flex: 1 1 0;
+  margin: 0 0.75rem;
+  min-width: 220px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.process-number {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #23262b;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  z-index: 2;
+  position: relative;
+}
+.process-horizontal-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 90px; /* below the numbers and titles */
+  height: 0;
+  border-top: 2px solid #fff;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+}
+@media (max-width: 900px) {
+  .process-cards.no-line-overlap {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .process-horizontal-line {
+    display: none;
+  }
+}
+
+/* --- Comparison Table Mobile Fixes --- */
+@media (max-width: 600px) {
+  /* Remove left padding from table container and center it */
+  .comparison-table-container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    text-align: center;
+  }
+  /* Table cells: allow wrapping and break long words */
+  table, th, td {
+    word-break: break-word;
+    white-space: normal;
+  }
+  /* Optionally, reduce font size and padding for tight fit */
+  th, td {
+    font-size: 0.92em;
+    padding: 0.4em 0.15em;
+  }
+}
+
+/* --- Responsive Comparison Table: Stack Rows on Mobile --- */
+@media (max-width: 600px) {
+  .responsive-comparison-table thead {
+    display: none;
+  }
+  .responsive-comparison-table, .responsive-comparison-table tbody, .responsive-comparison-table tr {
+    display: block;
+    width: 100%;
+  }
+  .responsive-comparison-table tr {
+    margin-bottom: 1.5em;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    background: #fff;
+    padding: 0.5em 0.7em;
+  }
+  .responsive-comparison-table td {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 0.5em 0.2em;
+    font-size: 1em;
+    border: none;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    min-height: 2.2em;
+    word-break: break-word;
+    white-space: normal;
+  }
+  .responsive-comparison-table td:last-child {
+    border-bottom: none;
+  }
+  .responsive-comparison-table td:before {
+    content: attr(data-label);
+    flex: 0 0 45%;
+    font-weight: 600;
+    color: #004E98;
+    padding-right: 0.5em;
+    text-align: left;
+    min-width: 110px;
+    display: block;
+  }
+  .responsive-comparison-table td {
+    flex: 1 1 55%;
+    text-align: left;
+  }
+}

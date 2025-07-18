@@ -2,13 +2,50 @@
 <html lang="en-GB">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="IVMS - Complete rental fleet management solutions. Advanced telematics and fleet management platform for rental and leasing companies.">
-    <title>Rental & Leasing Solutions | IVMS - Intelligent Vehicle Management System</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="src/images/ivms-logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Rental & Leasing Fleet Management by IVMS - Complete rental fleet management solutions with advanced telematics and fleet management platform for rental and leasing companies.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#004E98">
+    <link rel="canonical" href="https://www.ivmsglobal.com/rental-leasing.html">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="src/images/optimized/ivms-logo.webp">
+    <title>Rental & Leasing | IVMS - Intelligent Vehicle Management System</title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Rental & Leasing | IVMS - Intelligent Vehicle Management System">
+    <meta property="og:description" content="Rental & Leasing Fleet Management by IVMS - Complete rental fleet management solutions with advanced telematics and fleet management platform for rental and leasing companies.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ivmsglobal.com/rental-leasing.html">
+    <meta property="og:image" content="https://www.ivmsglobal.com/src/images/optimized/ivms-logo.webp">
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rental & Leasing | IVMS - Intelligent Vehicle Management System">
+    <meta name="twitter:description" content="Rental & Leasing Fleet Management by IVMS - Complete rental fleet management solutions with advanced telematics and fleet management platform for rental and leasing companies.">
+    <meta name="twitter:image" content="https://www.ivmsglobal.com/src/images/optimized/ivms-logo.webp">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "IVMS Rental & Leasing Fleet Management",
+      "brand": {
+        "@type": "Brand",
+        "name": "IVMS"
+      },
+      "description": "Complete rental fleet management solutions with advanced telematics platform",
+      "url": "https://www.ivmsglobal.com/rental-leasing.html",
+      "image": "https://www.ivmsglobal.com/src/images/optimized/rental-fleet.webp",
+      "offeredBy": {
+        "@type": "Organization",
+        "name": "IVMS",
+        "url": "https://www.ivmsglobal.com/"
+      }
+    }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="icon" type="image/png" href="src/images/optimized/ivms-logo.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" as="style" onload="this.rel='stylesheet'">
     <style>
         :root {
             --primary-blue: #004E98;      /* Main brand blue - Use for primary CTAs, headings */
@@ -471,7 +508,7 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 0.2rem;
-            width: 100%;
+                width: 100%;
             }
             .logo {
                 height: 40px;
@@ -528,6 +565,117 @@
           }
         }
         .dropdown-menu a { color: #fff !important; }
+        .tilt-on-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        /* Rental & Leasing Page Hero Heading Optimization */
+        .rental-hero {
+            position: relative;
+            overflow: hidden;
+            padding-top: 4rem;
+            padding-bottom: 3rem;
+        }
+        
+        .heading-container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .rental-hero-title,
+        .rental-hero h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+            margin-bottom: 0.5rem;
+            color: #2d3748;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            text-shadow: none;
+            animation: slideInFromTop 0.8s ease-out;
+        }
+        
+        .rental-hero-subtitle,
+        .rental-hero h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            font-weight: 500;
+            line-height: 1.3;
+            color: #004E98;
+            margin-bottom: 2rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            animation: slideInFromTop 0.8s ease-out 0.15s both;
+        }
+        
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .rental-hero-title,
+            .rental-hero h1 {
+                font-size: 2.5rem;
+                line-height: 1.1;
+            }
+            .rental-hero-subtitle,
+            .rental-hero h2 {
+                font-size: 1.4rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        .tilt-on-hover:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+        }
+        
+        /* Ensure mobile menu button is clickable */
+        #mobile-menu-button {
+            z-index: 1000;
+            position: relative;
+            cursor: pointer;
+            touch-action: manipulation;
+            background: transparent;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        
+        #mobile-menu-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        #mobile-menu-button:focus {
+            outline: 2px solid #3182ce;
+            outline-offset: 2px;
+        }
+        
+        /* Ensure mobile menu is properly positioned */
+        #mobile-menu {
+            z-index: 999;
+            position: relative;
+        }
+        
+        /* Ensure SVG icons are visible */
+        #mobile-menu-button svg {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            stroke-width: 2;
+            fill: none;
+        }
+
     </style>
 </head>
 <body>
@@ -538,7 +686,7 @@
                 <div class="flex items-center">
                     <div class="flex-shrink-0 nav-logo">
                         <a href="index.html">
-                        <img class="h-12 w-auto" src="src/images/ivms-logo.png" alt="IVMS Logo">
+                            <img class="h-12 w-auto" src="src/images/logo ivms-02.png" alt="IVMS Logo">
                         </a>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -548,10 +696,10 @@
                             <div class="dropdown-menu absolute left-0 bg-gray-800 text-white mt-2 rounded-md shadow-lg z-20 min-w-[180px]">
                                 <a href="speedsense.html" class="block px-4 py-2 text-sm hover:bg-gray-700">SpeedSense</a>
                                 <a href="rental-leasing.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Rental & Leasing</a>
-                                <a href="logistics.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Logistics</a>
+                                <a href="logistics.html" class="block px-4 py-2 text-sm hover:bg-gray-700">Transport & Logistics</a>
                             </div>
                         </div>
-                        <a href="index.html#technology" class="nav-link">Technology</a>
+                        <a href="governments.html" class="nav-link">Governments</a>
                         <a href="about.html" class="nav-link">About</a>
                         <a href="contact.html" class="nav-link">Contact</a>
                     </div>
@@ -566,8 +714,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
+                </div>
             </div>
-        </div>
         </div>
         <!-- Mobile menu -->
         <div class="sm:hidden hidden" id="mobile-menu">
@@ -577,61 +725,170 @@
                     <button class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700 w-full text-left dropdown-toggle">Solutions <i class="fas fa-chevron-down text-xs ml-1"></i></button>
                     <div class="dropdown-menu hidden pl-4 space-y-1">
                         <a href="speedsense.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">SpeedSense</a>
-                         <a href="rental-leasing.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Rental & Leasing</a>
-                        <a href="logistics.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Logistics</a>
+                        <a href="rental-leasing.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Rental & Leasing</a>
+                        <a href="logistics.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Transport & Logistics</a>
                     </div>
                 </div>
-                <a href="index.html#technology" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Technology</a>
+                <a href="governments.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Governments</a>
                 <a href="about.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">About</a>
                 <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700">Contact</a>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Navigation Only -->
+    <div class="mobile-nav-only" style="display: none;">
+        <div style="background: #1a1a1a; padding: 15px 20px; position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <a href="index.html" style="display: flex; align-items: center;"><img src="src/images/logo ivms-02.png" alt="IVMS Logo" style="height: 38px; width: auto; display: block;"> </a>
+                <button id="mobileOnlyToggle" style="background: none; border: 2px solid white; color: white; padding: 8px 12px; font-size: 18px; cursor: pointer; border-radius: 4px;">☰</button>
+            </div>
+            <div id="mobileOnlyMenu" style="display: none; background: #2a2a2a; margin-top: 15px; border-radius: 5px; overflow: hidden;">
+                <a href="index.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Home</a>
+                <div class="mobile-dropdown" style="border-bottom: 1px solid #444;">
+                    <button id="mobileSolutionsToggle" style="width: 100%; background: none; border: none; color: white; padding: 15px 20px; text-align: left; font-size: 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+                        Solutions <span id="mobileSolutionsIcon" style="color: #fff;">▼</span>
+                    </button>
+                    <div id="mobileSolutionsMenu" style="display: none; background: #232323;">
+                        <a href="speedsense.html" style="display: block; color: white; padding: 15px 32px; text-decoration: none; border-bottom: 1px solid #444;">SpeedSense</a>
+                        <a href="rental-leasing.html" style="display: block; color: white; padding: 15px 32px; text-decoration: none; border-bottom: 1px solid #444;">Rental & Leasing</a>
+                        <a href="logistics.html" style="display: block; color: white; padding: 15px 32px; text-decoration: none; border-bottom: 1px solid #444;">Logistics</a>
+                    </div>
+                </div>
+                <a href="governments.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Governments</a>
+                <a href="about.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">About</a>
+                <a href="contact.html" style="display: block; color: white; padding: 15px 20px; text-decoration: none; border-bottom: 1px solid #444;">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    @media (max-width: 768px) {
+        .navbar, .nav, nav:not(.mobile-nav-only) {
+            display: none !important;
+        }
+        .mobile-nav-only {
+            display: block !important;
+        }
+    }
+    @media (min-width: 769px) {
+        .mobile-nav-only {
+            display: none !important;
+        }
+    }
+    .mobile-nav-only a:hover, .mobile-dropdown a:hover {
+        background: #444 !important;
+    }
+    .mobile-dropdown button:focus {
+        outline: 2px solid #3182ce;
+    }
+    @media (max-width: 768px) {
+  #hero-section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 0 !important;
+  }
+}
+@media (min-width: 769px) {
+  #hero-section {
+    padding-top: 6rem !important;
+  }
+}
+    
+    /* WhatsApp Button Styles */
+    .whatsapp-button {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        color: white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        transition: all 0.3s ease;
+        z-index: 100;
+        animation: pulse 2s infinite;
+    }
+    
+    .whatsapp-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+    }
+    
+    .whatsapp-button i {
+        font-size: 28px;
+    }
+    
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+        }
+        70% {
+            box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+    }
+    </style>
+
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.dropdown-parent').forEach(function(parent) {
-        var btn = parent.querySelector('.dropdown-toggle');
-        var menu = parent.querySelector('.dropdown-menu');
-        // Toggle on click
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          var isOpen = menu.classList.contains('show');
-          document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
-          if (!isOpen) menu.classList.add('show');
-        });
-        // Close on mouseleave (desktop)
-        parent.addEventListener('mouseleave', function() {
-          menu.classList.remove('show');
-        });
-      });
-      // Hide all dropdowns on document click (except when clicking inside)
-      document.addEventListener('click', function(e) {
-        if (!e.target.closest('.dropdown-parent')) {
-          document.querySelectorAll('.dropdown-menu').forEach(function(m) { m.classList.remove('show'); });
+        const mobileToggle = document.getElementById('mobileOnlyToggle');
+        const mobileMenu = document.getElementById('mobileOnlyMenu');
+        const solutionsToggle = document.getElementById('mobileSolutionsToggle');
+        const solutionsMenu = document.getElementById('mobileSolutionsMenu');
+        const solutionsIcon = document.getElementById('mobileSolutionsIcon');
+        
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', function() {
+                if (mobileMenu.style.display === 'block') {
+                    mobileMenu.style.display = 'none';
+                } else {
+                    mobileMenu.style.display = 'block';
+                }
+            });
+            // Close menu when clicking links (except dropdown toggle)
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.style.display = 'none';
+                });
+            });
         }
-      });
+        if (solutionsToggle && solutionsMenu && solutionsIcon) {
+            solutionsToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (solutionsMenu.style.display === 'block') {
+                    solutionsMenu.style.display = 'none';
+                    solutionsIcon.textContent = '▼';
+                    solutionsIcon.style.color = '#fff';
+                } else {
+                    solutionsMenu.style.display = 'block';
+                    solutionsIcon.textContent = '▲';
+                    solutionsIcon.style.color = '#fff';
+                }
+            });
+        }
     });
     </script>
 
-    <main>
+    <!-- Updated: 2025-01-10 16:21:07 -->
+
+    <main class="pt-3 md:pt-24">
         <!-- Hero Section -->
-        <section class="hero-section-new-layout">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 flex flex-col lg:flex-row items-center gap-12">
-                    <div class="lg:w-1/2 w-full">
-                        <h1 class="new-hero-headline text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                            Rental & Leasing Solutions<br>
-                            <span style="color: #004E98;">Complete Rental Fleet Control</span>
-                        </h1>
-                        <p class="text-lg mb-8">
-                            Transform your rental operations with our comprehensive fleet management platform designed specifically for rental and leasing companies. From driver behaviour monitoring to vehicle health protection, iVMS delivers complete visibility and control over every aspect of your rental fleet.
-                        </p>
-                        <button class="hero-cta">Book Demo</button>
-                    </div>
-                    <div class="lg:w-1/2 w-full flex justify-center">
-                        <img src="src/images/rental-fleet.png" alt="Rental Fleet Management" class="new-hero-image rounded-lg shadow-xl w-full max-w-xl">
-                    </div>
+        <section class="section-padding text-center" style="padding-top:2.5rem;" id="hero-section">
+            <div class="container-narrow">
+                <div class="heading-container">
+                    <h1 style="font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 0.5rem; color: #2d3748; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; animation: slideInFromTop 0.8s ease-out;">Rental & Leasing</h1>
+                    <h2 style="font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 500; line-height: 1.3; color: #004E98; margin-bottom: 2rem; animation: slideInFromTop 0.8s ease-out 0.15s both;">AI-Driven Fleet Intelligence Technology</h2>
                 </div>
+                <img src="src/images/optimized/rental-fleet.webp" alt="Rental Fleet Management" class="about-hero-image" style="width:100%;max-width:800px;height:auto;border-radius:0.75rem;box-shadow:0 4px 6px rgba(0,0,0,0.05);margin-bottom:2rem;display:block;margin-left:auto;margin-right:auto;transition:transform 0.3s ease-in-out,box-shadow 0.3s ease-in-out;">
+                <p class="hero-subtitle animate-on-scroll" style="font-size:1.125rem;line-height:1.6;font-weight:400;max-width:800px;margin:0 auto 3rem auto;text-align:center;">Transform your rental operations with our comprehensive fleet management platform designed specifically for rental and leasing companies. From driver behaviour monitoring to vehicle health protection, iVMS delivers complete visibility and control over every aspect of your rental fleet.</p>
+                <a href="#contact" class="cta-bottom animate-on-scroll" style="display:inline-block;background:var(--primary-blue);color:var(--text-light);font-weight:600;font-size:1.08rem;padding:0.9rem 2.2rem;border-radius:0.375rem;box-shadow:0 4px 16px rgba(0,78,152,0.15);margin-bottom:2rem;text-align:center;transition:background 0.2s,box-shadow 0.2s;">Book a Demo</a>
             </div>
         </section>
 
@@ -683,7 +940,7 @@
                     </div>
                     <div class="lg:w-1/2 w-full flex justify-center">
                         <div class="relative flex justify-center items-center w-full">
-                            <img src="src/images/rental-challenges.png" alt="Rental Fleet Challenges" class="rounded-lg shadow-xl w-full h-[600px] object-cover max-w-xl">
+                            <img src="src/images/optimized/rental-challenges.webp" alt="Rental Fleet Challenges" class="rounded-lg shadow-xl w-full h-[600px] object-cover max-w-xl">
                             <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
                         </div>
                     </div>
@@ -732,7 +989,7 @@
                     <!-- Driver Behaviour Management Card -->
                     <div class="bg-white rounded-lg shadow-lg p-8">
                         <div class="relative mb-6">
-                            <img src="src/images/driver-scoring.png" alt="Driver Scoring System" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/driver-scoring.webp" alt="Driver Scoring System" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-user-shield" style="color: #004E98;"></i></div>
@@ -762,7 +1019,7 @@
                     <!-- Vehicle Health Protection Card -->
                     <div class="bg-white rounded-lg shadow-lg p-8">
                         <div class="relative mb-6">
-                            <img src="src/images/vehicle-health.png" alt="Vehicle Health Monitoring" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/vehicle-health.webp" alt="Vehicle Health Monitoring" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-heartbeat" style="color: #004E98;"></i></div>
@@ -792,7 +1049,7 @@
                     <!-- Advanced Tracking System Card -->
                     <div class="bg-white rounded-lg shadow-lg p-8">
                         <div class="relative mb-6">
-                            <img src="src/images/fleet-tracking.png" alt="Fleet Tracking System" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/fleet-tracking.webp" alt="Fleet Tracking System" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <div class="text-4xl mb-4"><i class="fas fa-map-marked-alt" style="color: #004E98;"></i></div>
@@ -858,7 +1115,7 @@
                         </div>
                         <div class="md:w-1/2 w-full flex justify-center">
                             <div class="relative flex justify-center items-center w-full">
-                                <img src="src/images/digital-rental-form.png" alt="Digital Rental Form Interface" class="rounded-lg shadow-xl w-full h-[400px] object-cover max-w-xl">
+                                <img src="src/images/optimized/digital-rental-form.webp" alt="Digital Rental Form Interface" class="rounded-lg shadow-xl w-full h-[400px] object-cover max-w-xl">
                                 <div class="absolute inset-0 bg-gradient-to-r from-[#004E98]/10 to-transparent rounded-lg"></div>
                             </div>
                         </div>
@@ -866,7 +1123,7 @@
                     <div class="w-full bg-[#f7f7f9] rounded-2xl shadow-xl p-10 flex flex-col md:flex-row items-center gap-12">
                         <div class="md:w-1/2 w-full order-2 md:order-1 flex justify-center">
                             <div class="relative flex justify-center items-center w-full">
-                                <img src="src/images/remote-control-panel.png" alt="Remote Vehicle Control Interface" class="rounded-lg shadow-xl w-full h-[400px] object-cover max-w-xl">
+                                <img src="src/images/optimized/remote-control-panel.webp" alt="Remote Vehicle Control Interface" class="rounded-lg shadow-xl w-full h-[400px] object-cover max-w-xl">
                                 <div class="absolute inset-0 bg-gradient-to-l from-[#004E98]/10 to-transparent rounded-lg"></div>
                             </div>
                         </div>
@@ -948,7 +1205,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
                         <div class="relative mb-6">
-                            <img src="src/images/processing-time.png" alt="Processing Time" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/processing-time.webp" alt="Processing Time" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">95% Reduction in Vehicle Misuse</h3>
@@ -956,7 +1213,7 @@
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
                         <div class="relative mb-6">
-                            <img src="src/images/misuse-prevention.png" alt="Misuse Prevention" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/misuse-prevention.webp" alt="Misuse Prevention" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">80% Faster Rental Processing</h3>
@@ -964,7 +1221,7 @@
                     </div>
                     <div class="bg-white rounded-lg shadow-lg p-8 text-center">
                         <div class="relative mb-6">
-                            <img src="src/images/maintenance-savings.png" alt="Maintenance Savings" class="w-full h-48 object-cover rounded-lg">
+                            <img src="src/images/optimized/maintenance-savings.webp" alt="Maintenance Savings" class="w-full h-48 object-cover rounded-lg">
                             <div class="absolute inset-0 bg-[#004E98]/10 rounded-lg"></div>
                         </div>
                         <h3 class="text-xl font-semibold text-gray-800 mb-3">60% Lower Maintenance Costs</h3>
@@ -980,8 +1237,8 @@
                 <h2 class="text-4xl font-bold text-center mb-10">
                     Complete Rental Fleet Solution Comparison<span style="color:#004E98;">.</span>
                 </h2>
-                <div class="overflow-x-auto pl-16">
-                    <table class="min-w-full bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="overflow-x-auto comparison-table-container">
+                    <table class="min-w-full bg-white rounded-lg shadow-lg overflow-hidden responsive-comparison-table">
                         <thead>
                             <tr class="bg-[#f7f7f9]">
                                 <th class="py-4 px-6 text-left text-lg font-semibold text-[#004E98]">Feature</th>
@@ -991,34 +1248,34 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="py-4 px-6 border-b border-gray-200 font-semibold">Driver Monitoring</td>
-                                <td class="py-4 px-6 border-b border-gray-200">No visibility during rentals</td>
-                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]">Complete real-time oversight</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold" data-label="Feature">Driver Monitoring</td>
+                                <td class="py-4 px-6 border-b border-gray-200" data-label="Without iVMS">No visibility during rentals</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]" data-label="With iVMS">Complete real-time oversight</td>
                             </tr>
                             <tr>
-                                <td class="py-4 px-6 border-b border-gray-200 font-semibold">Vehicle Health</td>
-                                <td class="py-4 px-6 border-b border-gray-200">React to problems</td>
-                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]">Proactive monitoring and prevention</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold" data-label="Feature">Vehicle Health</td>
+                                <td class="py-4 px-6 border-b border-gray-200" data-label="Without iVMS">React to problems</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]" data-label="With iVMS">Proactive monitoring and prevention</td>
                             </tr>
                             <tr>
-                                <td class="py-4 px-6 border-b border-gray-200 font-semibold">Security Control</td>
-                                <td class="py-4 px-6 border-b border-gray-200">Basic alarm systems</td>
-                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]">Multi-layer protection with remote control</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold" data-label="Feature">Security Control</td>
+                                <td class="py-4 px-6 border-b border-gray-200" data-label="Without iVMS">Basic alarm systems</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]" data-label="With iVMS">Multi-layer protection with remote control</td>
                             </tr>
                             <tr>
-                                <td class="py-4 px-6 border-b border-gray-200 font-semibold">Contract Management</td>
-                                <td class="py-4 px-6 border-b border-gray-200">Paper-based processes</td>
-                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]">Digital management system</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold" data-label="Feature">Contract Management</td>
+                                <td class="py-4 px-6 border-b border-gray-200" data-label="Without iVMS">Paper-based processes</td>
+                                <td class="py-4 px-6 border-b border-gray-200 font-semibold text-[#004E98]" data-label="With iVMS">Digital management system</td>
                             </tr>
                             <tr>
-                                <td class="py-4 px-6 font-semibold">Fleet Analytics</td>
-                                <td class="py-4 px-6">Limited reporting</td>
-                                <td class="py-4 px-6 font-semibold text-[#004E98]">Comprehensive insights and analytics</td>
+                                <td class="py-4 px-6 font-semibold" data-label="Feature">Fleet Analytics</td>
+                                <td class="py-4 px-6" data-label="Without iVMS">Limited reporting</td>
+                                <td class="py-4 px-6 font-semibold text-[#004E98]" data-label="With iVMS">Comprehensive insights and analytics</td>
                             </tr>
                             <tr>
-                                <td class="py-4 px-6 font-semibold">Emergency Response</td>
-                                <td class="py-4 px-6">Manual intervention required</td>
-                                <td class="py-4 px-6 font-semibold text-[#004E98]">Automated alerts and remote control</td>
+                                <td class="py-4 px-6 font-semibold" data-label="Feature">Emergency Response</td>
+                                <td class="py-4 px-6" data-label="Without iVMS">Manual intervention required</td>
+                                <td class="py-4 px-6 font-semibold text-[#004E98]" data-label="With iVMS">Automated alerts and remote control</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1068,10 +1325,7 @@
                         <a href="#contact" class="text-white underline hover:no-underline">Contact Our Team</a>
                     </p>
                     <div class="mt-8">
-                        <a href="https://wa.me/971585994323" class="whatsapp-button-cta inline-flex items-center bg-[#25D366] text-black px-6 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-[#1DA851] transition-all duration-300">
-                            <i class="fab fa-whatsapp text-2xl mr-3"></i>
-                            Chat Now +971 58 599 4323
-                        </a>
+                        <!-- WhatsApp Chat Now button removed for clean fit -->
                     </div>
                 </div>
             </div>
@@ -1081,18 +1335,27 @@
     <!-- Footer -->
     <footer class="bg-black text-white py-12" style="background-color: #000000 !important; color: #ffffff !important; display: block !important; position: relative !important; min-height: 200px !important;">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div class="flex flex-col items-center mb-4" style="color: #ffffff !important;">
-                    <img src="src/images/ivms-logo.png" alt="IVMS Logo" class="footer-logo">
+                    <img src="src/images/optimized/ivms-logo.webp" alt="IVMS Logo" class="footer-logo">
                     <p class="footer-text">Dubai, UAE</p>
                 </div>
                 <div style="color: #ffffff !important;">
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html#solutions" class="footer-link" style="color: #ffffff !important;">Solutions</a></li>
-                        <li><a href="index.html#technology" class="footer-link" style="color: #ffffff !important;">Technology</a></li>
+                        <li><a href="governments.html" class="footer-link" style="color: #ffffff !important;">Governments</a></li>
                         <li><a href="about.html" class="footer-link" style="color: #ffffff !important;">About</a></li>
                         <li><a href="contact.html" class="footer-link" style="color: #ffffff !important;">Contact</a></li>
+                    </ul>
+                </div>
+                <div style="color: #ffffff !important;">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="privacy-policy.html" class="footer-link" style="color: #ffffff !important;">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html" class="footer-link" style="color: #ffffff !important;">Terms of Service</a></li>
+                        <li><a href="cookie-policy.html" class="footer-link" style="color: #ffffff !important;">Cookie Policy</a></li>
+                        <li><a href="accessibility-statement.html" class="footer-link" style="color: #ffffff !important;">Accessibility Statement</a></li>
                     </ul>
                 </div>
                 <div style="color: #ffffff !important;">
@@ -1102,10 +1365,9 @@
                         <li class="footer-text">Email: <a href="mailto:info@ivmsgroup.com" class="footer-link" style="color: #ffffff !important;">info@ivmsgroup.com</a></li>
                     </ul>
                     <div class="footer-social-links mt-4">
-                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
-                        <a href="https://instagram.com/YOUR_INSTAGRAM" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/ivms-global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=61577934701953" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/ivms_global/" class="footer-link" style="color: #ffffff !important;"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>

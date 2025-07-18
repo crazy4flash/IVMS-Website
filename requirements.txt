@@ -1,2 +1,6 @@
-Flask
-gunicorn
+Flask==2.3.3
+Flask-Limiter==3.5.0
+Flask-Talisman==1.1.0
+Werkzeug==2.3.7
+gunicorn==21.2.0
+python-dotenv==1.0.0
