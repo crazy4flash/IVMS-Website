@@ -42,6 +42,13 @@ def set_security_headers(response):
     response.headers['X-Content-Type-Options'] = 'nosniff'
     response.headers['Referrer-Policy'] = 'strict-origin-when-cross-origin'
     response.headers['Content-Security-Policy'] = "default-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com https://fonts.gstatic.com; img-src 'self' data: https://www.ivmsglobal.com; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self';"
+    
+    # Add cache-busting headers for images
+    if request.path.endswith(('.webp', '.png', '.jpg', '.jpeg', '.gif')):
+        response.headers['Cache-Control'] = 'no-cache, no-store, must-revalidate'
+        response.headers['Pragma'] = 'no-cache'
+        response.headers['Expires'] = '0'
+    
     return response
 
 @app.after_request
@@ -124,6 +131,34 @@ def accessibility_statement():
 @app.route('/accessibility-statement.html')
 def accessibility_statement_html():
     return send_from_directory('.', 'accessibility-statement.html')
+
+@app.route('/ipay-privacy-policy')
+def ipay_privacy_policy():
+    return send_from_directory('.', 'ipay-privacy-policy.html')
+
+@app.route('/ipay-privacy-policy.html')
+def ipay_privacy_policy_html():
+    return send_from_directory('.', 'ipay-privacy-policy.html')
+
+@app.route('/clear-cache')
+def clear_cache():
+    return send_from_directory('.', 'clear-cache.html')
+
+@app.route('/nuclear-cache-bust')
+def nuclear_cache_bust():
+    return send_from_directory('.', 'nuclear-cache-bust.html')
+
+@app.route('/test-logo')
+def test_logo():
+    return send_from_directory('.', 'test-logo.html')
+
+@app.route('/cache-buster-sw.js')
+def cache_buster_sw():
+    return send_from_directory('.', 'cache-buster-sw.js', mimetype='application/javascript')
+
+@app.route('/force-clear')
+def force_clear():
+    return send_from_directory('.', 'force-clear.html')
 
 @app.route('/submit-contact', methods=['POST'])
 def submit_contact():
