@@ -9,19 +9,19 @@
     <meta name="theme-color" content="#004E98">
     <link rel="canonical" href="https://www.ivmsglobal.com/index.html">
     <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" href="src/images/optimized/logo-ivms-new.webp?v=20241201">
+    <link rel="apple-touch-icon" href="static/images/logo-ivms-new.webp">
     <title>IVMS - Intelligent Vehicle Management System | Fleet Technology Solutions</title>
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="IVMS - Intelligent Vehicle Management System | Fleet Technology Solutions">
     <meta property="og:description" content="AI-powered fleet technology that predicts, optimises, and protects. Advanced telematics solutions for rental companies, logistics fleets, and transport operators.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.ivmsglobal.com/index.html">
-    <meta property="og:image" content="https://www.ivmsglobal.com/src/images/optimized/logo-ivms-new.webp?v=20241201">
+    <meta property="og:image" content="https://www.ivmsglobal.com/static/images/logo-ivms-new.webp">
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="IVMS - Intelligent Vehicle Management System | Fleet Technology Solutions">
     <meta name="twitter:description" content="AI-powered fleet technology that predicts, optimises, and protects. Advanced telematics solutions for rental companies, logistics fleets, and transport operators.">
-    <meta name="twitter:image" content="https://www.ivmsglobal.com/src/images/optimized/logo-ivms-new.webp?v=20241201">
+    <meta name="twitter:image" content="https://www.ivmsglobal.com/static/images/logo-ivms-new.webp">
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -29,7 +29,7 @@
       "@type": "Organization",
       "name": "IVMS",
       "url": "https://www.ivmsglobal.com/",
-              "logo": "https://www.ivmsglobal.com/src/images/optimized/logo-ivms-new.webp?v=20241201",
+      "logo": "https://www.ivmsglobal.com/static/images/logo-ivms-new.webp",
       "sameAs": [
         "https://www.linkedin.com/company/ivmsglobal/"
       ]
@@ -37,7 +37,7 @@
     </script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" as="style" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.rel='stylesheet'">
-    <link rel="icon" type="image/webp" href="src/images/optimized/logo-ivms-new.webp?v=20241201">
+    <link rel="icon" type="image/webp" href="static/images/logo-ivms-new.webp">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" as="style" onload="this.rel='stylesheet'">
     <style>
         :root {
@@ -1562,6 +1562,22 @@
             opacity: 0.6 !important;
           }
         }
+        @media (max-width: 767px) {
+          .hero-desktop { display: none !important; }
+          .hero-mobile { 
+            display: block !important;
+            width: 100vw;
+            height: 60vw;
+            object-fit: contain !important;
+            object-position: center top !important;
+            background: #000;
+            transform: translateY(-20px);
+          }
+        }
+        @media (min-width: 768px) {
+          .hero-desktop { display: block !important; }
+          .hero-mobile { display: none !important; }
+        }
     </style>
 </head>
 <body aria-label="IVMS Website" role="document">
@@ -1713,9 +1729,10 @@
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <video class="hero-video-bg" autoplay loop muted playsinline>
+        <video class="hero-video-bg hero-desktop" autoplay loop muted playsinline>
             <source src="src/videos/hero-background.mp4" type="video/mp4">
         </video>
+        <img class="hero-mobile" src="static/images/hero-image-mobile-car.webp" alt="IVMS Hero Mobile" style="display:none;width:100%;height:auto;object-fit:cover;">
         <div class="hero-overlay-bar">
             <div class="max-w-7xl mx-auto px-4 w-full flex flex-col md:flex-row items-start md:items-center justify-between">
                 <!-- Left column for main headline -->

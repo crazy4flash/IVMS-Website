@@ -914,3 +914,62 @@ html, body {
     text-align: left;
   }
 }
+
+@media (max-width: 768px) {
+  /* Hide the video on mobile */
+  .hero-video {
+    display: none !important;
+  }
+
+  /* Show the mobile hero image */
+  .hero-image-mobile {
+    display: block !important;
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove any unwanted spacing/gaps above the hero image */
+  .hero-section {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Ensure overlays and CTAs are positioned above the image */
+  .hero-overlay,
+  .hero-content,
+  .hero-cta {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    left: 0;
+    right: 0;
+    /* Adjust top as needed to align with your design */
+  }
+
+  /* Optional: If you have a wrapper for the hero, ensure it is relative */
+  .hero-section {
+    position: relative;
+  }
+}
+
+/* Desktop: keep video visible, hide mobile image */
+.hero-image-mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hero-desktop { display: none !important; }
+  .hero-mobile { 
+    display: block !important;
+    width: 100vw;
+    height: 60vw;
+    object-fit: contain !important;
+    object-position: center top !important;
+    background: #000;
+    transform: translateY(-100px); /* Increased from -60px to -100px */
+  }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Test</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background: #f5f5f5;
+        }
+        .logo-test {
+            background: white;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+        .info {
+            background: #e3f2fd;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        .timestamp {
+            font-family: monospace;
+            background: #f0f0f0;
+            padding: 0.5rem;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logo Test Page</h1>
+    
+    <div class="info">
+        <h3>Current Time: <span class="timestamp" id="timestamp"></span></h3>
+        <p>This page tests if the new logo is loading correctly.</p>
+    </div>
+    
+    <div class="logo-test">
+        <h2>Header Logo Test</h2>
+        <img src="src/images/optimized/logo-ivms-new.webp?v=20241201&t=<?php echo time(); ?>" alt="IVMS Logo" class="logo">
+        <p>Source: <code>src/images/optimized/logo-ivms-new.webp?v=20241201&t=<?php echo time(); ?></code></p>
+    </div>
+    
+    <div class="logo-test">
+        <h2>Footer Logo Test</h2>
+        <img src="src/images/optimized/logo-ivms-new.webp?v=20241201&t=<?php echo time(); ?>" alt="IVMS Logo" style="height: 38px; width: auto;">
+        <p>Source: <code>src/images/optimized/logo-ivms-new.webp?v=20241201&t=<?php echo time(); ?></code></p>
+    </div>
+    
+    <div class="info">
+        <h3>Cache-Busting Parameters:</h3>
+        <ul>
+            <li>Version: v=20241201</li>
+            <li>Timestamp: t=<?php echo time(); ?></li>
+            <li>File: logo-ivms-new.webp (renamed from original)</li>
+        </ul>
+    </div>
+    
+    <div class="logo-test">
+        <h2>Actions:</h2>
+        <a href="/nuclear-cache-bust" style="background: #ff5722; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin: 10px; display: inline-block;">Nuclear Cache Clear</a>
+        <a href="/index.html?test=1&t=<?php echo time(); ?>" style="background: #2196f3; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin: 10px; display: inline-block;">Go to Homepage</a>
+    </div>
+
+    <script>
+        // Update timestamp
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+        
+        // Force reload logos
+        function forceReloadLogos() {
+            const logoImages = document.querySelectorAll('img[src*="logo-ivms-new.webp"]');
+            const timestamp = new Date().getTime();
+            
+            logoImages.forEach(function(img) {
+                let cleanSrc = img.src.split('?')[0];
+                img.src = cleanSrc + '?v=20241201&t=' + timestamp;
+            });
+        }
+        
+        // Run immediately and after delays
+        forceReloadLogos();
+        setTimeout(forceReloadLogos, 100);
+        setTimeout(forceReloadLogos, 500);
+    </script>
+</body>
+</html> 
